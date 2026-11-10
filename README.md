@@ -1,5 +1,7 @@
 # KAPSAM
 
+[![tests](https://github.com/serhanyokus/kapsam/actions/workflows/tests.yml/badge.svg)](https://github.com/serhanyokus/kapsam/actions/workflows/tests.yml)
+
 **KAP bildirimlerini ve TMS 29 enflasyon muhasebesini anlayan, yapay zekâ destekli hisse araştırma asistanı.**
 
 Turkcell *Yarının Teknoloji Liderleri 2027*: Fintek ve Dijital Ticaret teması.
@@ -40,7 +42,7 @@ pip install -r requirements.txt
 python data/demo/generate_demo.py      # sentetik demo verisini üret
 python -m kapsam.cli                   # uçtan uca demo çıktısı (terminal)
 streamlit run app.py                   # pano
-pytest -q                              # 27 birim testi
+pytest -q                              # 27 birim testi (GitHub Actions ile her güncellemede otomatik çalışır)
 ```
 
 ### Gerçek veriyle kullanım
