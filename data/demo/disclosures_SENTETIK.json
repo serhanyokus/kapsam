@@ -1,0 +1,10 @@
+[
+  {"id": "D1", "tarih": "2025-11-03", "baslik": "Yeni İş İlişkisi",
+   "metin": "Şirketimiz ile yurt dışında yerleşik bir otomotiv üreticisi arasında 3 yıl süreli tedarik sözleşmesi imzalanmıştır. Sözleşmenin toplam bedeli 45 milyon USD olup bu tutar son yıllık hasılatımızın yaklaşık %18'ine karşılık gelmektedir."},
+  {"id": "D2", "tarih": "2025-11-05", "baslik": "Sermaye Artırımı",
+   "metin": "Yönetim kurulumuz, kayıtlı sermaye tavanı içinde çıkarılmış sermayenin 500.000.000 TL'den 1.500.000.000 TL'ye bedelsiz sermaye artırımı yoluyla artırılmasına karar vermiştir."},
+  {"id": "D3", "tarih": "2025-11-07", "baslik": "Özel Durum Açıklaması (Genel)",
+   "metin": "Rekabet Kurulu tarafından şirketimiz hakkında yürütülen soruşturma sonucunda 120 milyon TL idari para cezası verilmiştir. Karara karşı dava açılması değerlendirilmektedir."},
+  {"id": "D4", "tarih": "2025-11-08", "baslik": "Pay Geri Alım",
+   "metin": "Yönetim kurulumuz, 250 milyon TL'ye kadar pay geri alım programı başlatılmasına karar vermiştir."}
+]
