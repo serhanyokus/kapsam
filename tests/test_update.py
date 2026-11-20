@@ -225,3 +225,42 @@ def test_full_market_run_with_bank(root):
     assert "Piyasa değeri / özkaynak" in bank_note and "TMS 29 enflasyon düzeltmesi uygulamaz" in bank_note
     assert (root / "docs" / "rapor" / "BIMAS_model.xlsx").exists() and not (root / "docs" / "rapor" / "AKBNK_model.xlsx").exists()
     assert "finansal sektör notu" in (root / "docs" / "rapor" / "index.html").read_text(encoding="utf-8")
+
+
+def test_macro_never_shrinks_cpi_and_chains_2025_base(root):
+    """EVDS'teki eski TÜFE (2003=100) Ocak 2026'da biter: kayıtlı 2026 ayları silinmez; 2025=100 serisi varsa zincirlenir."""
+    from kapsam.data import evds
+    p = update.Paths(root)
+    real = pd.read_csv(update.ROOT / "data" / "gercek" / "tufe_aylik.csv", index_col=0, parse_dates=True)
+    (p.data).mkdir(parents=True, exist_ok=True)
+    real.to_csv(p.data / "tufe_aylik.csv", index_label="tarih")
+    old = real["tufe"][real.index <= "2026-01-31"]
+    fx = pd.Series(40.0, index=pd.date_range("2023-01-02", "2026-11-20", freq="B"))
+
+    class C:
+        def __init__(self, new):
+            self.new = new
+
+        def series(self, code, start, end, frequency=None):
+            return {"TP.FG.J0": old.copy(), "TP.DK.USD.A.YTL": fx.copy(), "NEW": self.new}[code].copy()
+
+        def find_cpi_2025(self):
+            return "NEW" if self.new is not None else None
+
+    cfg = {"baslangic": "2023-01-01"}
+    st = update.Status()
+    update.step_macro(p, cfg, st, client=C(None))
+    assert st.steps["makro"]["durum"] == "tamam", st.steps["makro"]
+    got = pd.read_csv(p.data / "tufe_aylik.csv", index_col=0, parse_dates=True)
+    assert got.index[-1] == real.index[-1] and got["tufe"].iloc[-1] == pytest.approx(real["tufe"].iloc[-1])
+    assert "2026Q3" in set(pd.read_csv(p.data / "makro_ceyrek.csv")["period"])
+    # 2025=100 serisi: Şubat +%3, Mart +%2 → eski seviye zincirlenir
+    new = pd.Series([100.0, 103.0, 105.06], index=pd.to_datetime(["2026-01-31", "2026-02-28", "2026-03-31"]))
+    real.to_csv(p.data / "tufe_aylik.csv", index_label="tarih")
+    st = update.Status()
+    update.step_macro(p, cfg, st, client=C(new))
+    got = pd.read_csv(p.data / "tufe_aylik.csv", index_col=0, parse_dates=True)["tufe"]
+    assert got[pd.Timestamp("2026-02-28")] == pytest.approx(old.iloc[-1] * 1.03)
+    assert got[pd.Timestamp("2026-03-31")] == pytest.approx(old.iloc[-1] * 1.0506)
+    assert got.index[-1] == real.index[-1]                     # sonraki kayıtlı aylar yine korunur
+    assert "zincirlendi" in st.steps["makro"]["detay"]

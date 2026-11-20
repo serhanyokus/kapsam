@@ -83,17 +83,44 @@ def step_macro(p: Paths, cfg: dict, st: Status, client=None):
     try:
         c = client or evds_mod.EVDSClient(key)
         start, end = _ddmmyyyy(cfg["baslangic"]), datetime.now().strftime("%d-%m-%Y")
-        cpi = c.series(evds_mod.SERIES["cpi"], start, end)   # TÜFE zaten aylık
+        cpi_old = c.series(evds_mod.SERIES["cpi"], start, end)   # TÜFE 2003=100 (Ocak 2026'da durdu)
         fx = c.series(evds_mod.SERIES["usdtry"], start, end)
-        if cpi.empty or fx.empty:
+        if cpi_old.empty or fx.empty:
             raise ValueError("EVDS boş yanıt döndü")
+        code_new = cfg.get("tufe_2025_kodu") or (c.find_cpi_2025() if hasattr(c, "find_cpi_2025") else None)
+        cpi_new = None
+        if code_new:
+            try:
+                cpi_new = c.series(code_new, start, end)
+            except Exception:  # noqa: BLE001
+                cpi_new = None
+        tf = p.data / "tufe_aylik.csv"
+        existing, src = None, pd.Series(dtype=object)
+        if tf.exists():
+            old_df = pd.read_csv(tf, index_col=0, parse_dates=True)
+            old_df.index = old_df.index + pd.offsets.MonthEnd(0)
+            existing = old_df.iloc[:, 0]
+            src = old_df["kaynak"] if "kaynak" in old_df else src
+        cpi_old.index = cpi_old.index + pd.offsets.MonthEnd(0)
+        if cpi_new is not None:
+            cpi_new.index = cpi_new.index + pd.offsets.MonthEnd(0)
+        cpi, note = evds_mod.merge_cpi(existing, cpi_old, cpi_new)
+        kaynak = src.reindex(cpi.index)
+        kaynak.loc[cpi_old.index] = "TÜİK TÜFE 2003=100 (EVDS TP.FG.J0)"
+        if cpi_new is not None:
+            kaynak.loc[cpi.index > cpi_old.index[-1]] = f"zincirlenmiş: TÜİK 2025=100 (EVDS {code_new}) aylık değişim"
         p.data.mkdir(parents=True, exist_ok=True)
-        cpi.rename("tufe").to_csv(p.data / "tufe_aylik.csv", index_label="tarih")
+        pd.DataFrame({"tufe": cpi, "kaynak": kaynak.fillna("kayıtlı seri")}).to_csv(tf, index_label="tarih")
         fx.rename("usdtry").to_csv(p.data / "kur_gunluk.csv", index_label="tarih")
         q = evds_mod.to_quarter_end(cpi, fx)
+        mq = p.data / "makro_ceyrek.csv"
+        if mq.exists():   # kur verisi gelmeyen eski çeyrekleri koru
+            prev = pd.read_csv(mq).set_index("period")
+            q.index = q.index.astype(str)
+            q = q.combine_first(prev[["cpi", "usdtry"]])
         pd.DataFrame({"period": q.index.astype(str), "cpi": q["cpi"].values, "usdtry": q["usdtry"].values}).to_csv(
-            p.data / "makro_ceyrek.csv", index=False)
-        st.ok("makro", f"TÜFE son: {cpi.index[-1]:%Y-%m}, kur son: {fx.index[-1]:%Y-%m-%d}")
+            mq, index=False)
+        st.ok("makro", f"TÜFE son: {cpi.index[-1]:%Y-%m} ({note}{'; 2025=100 kodu: ' + code_new if code_new else '; 2025=100 serisi bulunamadı, config/takip.json → tufe_2025_kodu'}), kur son: {fx.index[-1]:%Y-%m-%d}")
     except Exception as e:  # noqa: BLE001
         st.fail("makro", e)
 
