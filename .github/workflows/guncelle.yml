@@ -14,6 +14,7 @@ jobs:
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
+        with: {ref: main}   # elle/sırada bekleyen çalıştırmalar da en güncel veriyle başlar
       - uses: actions/setup-python@v5
         with: {python-version: "3.11"}
       - run: pip install -r requirements.txt yfinance
@@ -25,7 +26,16 @@ jobs:
         run: |
           git config user.name "kapsam-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add config/bist_evren.csv data/gercek docs/rapor 2>/dev/null || git add data/gercek docs/rapor
-          git diff --cached --quiet || git commit -m "Otomatik veri güncellemesi $(date -u +%Y-%m-%d)"
-          git pull --rebase --autostash || true
-          git push
+          git add -A data/gercek docs/rapor
+          [ -f config/bist_evren.csv ] && git add config/bist_evren.csv
+          git diff --cached --quiet && { echo "Değişiklik yok"; exit 0; }
+          git commit -q -m "Otomatik veri güncellemesi $(date -u +%Y-%m-%d)"
+          # Başka bir çalıştırma araya girdiyse: en güncel main'in üstüne al, çakışmada bu çalıştırmanın ürettiği veri esas.
+          for i in 1 2 3; do
+            git push origin HEAD:main && exit 0
+            git fetch -q origin main
+            if ! git rebase -X theirs origin/main; then
+              git checkout --theirs -- . && git add -A && GIT_EDITOR=true git rebase --continue
+            fi
+          done
+          exit 1
