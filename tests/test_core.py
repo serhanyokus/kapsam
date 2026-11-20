@@ -176,8 +176,45 @@ def test_evds_parsing_and_quarter_end():
     sess = FakeSession()
     c = EVDSClient(api_key="test", session=sess)
     cpi = c.series("TP.FG.J0", "01-07-2025", "31-10-2025", frequency=5)
-    assert sess.headers_seen == {"key": "test"}  # anahtar başlıkta gönderilir
+    assert sess.headers_seen["key"] == "test"  # anahtar başlıkta gönderilir (URL'de değil)
     assert list(cpi.values) == [100.0, 102.0, 104.0]
     fx = c.series("TP.DK.USD.A.YTL", "01-09-2025", "30-09-2025")
     q = to_quarter_end(cpi, fx)
     assert q.loc[pd.Period("2025Q3"), "cpi"] == 104.0 and q.loc[pd.Period("2025Q3"), "usdtry"] == 41.6
+
+
+def test_evds_uses_evds3_and_falls_back_on_html():
+    """evds3 adresi ve 'key' başlığı kullanılır; HTML dönerse yedek adres denenir; ikisi de HTML ise açık hata."""
+    from kapsam.data import evds
+
+    class R:
+        def __init__(self, body, ctype):
+            self.text, self.headers = body, {"content-type": ctype}
+
+        def raise_for_status(self):
+            pass
+
+        def json(self):
+            import json as j
+            return j.loads(self.text)
+
+    class S:
+        def __init__(self, responses):
+            self.responses, self.calls = responses, []
+
+        def get(self, url, headers, timeout):
+            self.calls.append((url, headers))
+            return self.responses.pop(0)
+
+    ok = R('{"items": [{"Tarih": "2026-9", "TP_FG_J0": "3500.1"}, {"Tarih": "2026-10", "TP_FG_J0": "3580.4"}]}', "application/json")
+    s = S([ok])
+    out = evds.EVDSClient("k", session=s).series("TP.FG.J0", "01-09-2026", "31-10-2026")
+    assert s.calls[0][0].startswith("https://evds3.tcmb.gov.tr/igmevdsms-dis/series=TP.FG.J0&startDate=")
+    assert s.calls[0][1]["key"] == "k" and len(out) == 2 and out.iloc[-1] == 3580.4
+    html = R("<!doctype html><html>EVDS</html>", "text/html")
+    s = S([html, ok])
+    assert len(evds.EVDSClient("k", session=s).series("TP.FG.J0", "01-09-2026", "31-10-2026")) == 2
+    assert "evds2" in s.calls[1][0]
+    s = S([html, R("<html></html>", "text/html")])
+    with pytest.raises(RuntimeError, match="JSON yerine text/html"):
+        evds.EVDSClient("k", session=s).series("TP.FG.J0", "01-09-2026", "31-10-2026")

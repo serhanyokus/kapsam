@@ -83,7 +83,7 @@ def step_macro(p: Paths, cfg: dict, st: Status, client=None):
     try:
         c = client or evds_mod.EVDSClient(key)
         start, end = _ddmmyyyy(cfg["baslangic"]), datetime.now().strftime("%d-%m-%Y")
-        cpi = c.series(evds_mod.SERIES["cpi"], start, end, frequency=5)
+        cpi = c.series(evds_mod.SERIES["cpi"], start, end)   # TÜFE zaten aylık
         fx = c.series(evds_mod.SERIES["usdtry"], start, end)
         if cpi.empty or fx.empty:
             raise ValueError("EVDS boş yanıt döndü")
