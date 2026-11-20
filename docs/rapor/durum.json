@@ -1,9 +1,9 @@
 {
- "guncelleme": "2026-11-20T18:48:20+00:00",
+ "guncelleme": "2026-11-20T19:13:20+00:00",
  "adimlar": {
   "makro": {
-   "durum": "hata",
-   "detay": "Expecting value: line 1 column 1 (char 0)"
+   "durum": "tamam",
+   "detay": "TÜFE son: 2026-01, kur son: 2026-11-20"
   },
   "evren": {
    "durum": "tamam",
@@ -15,11 +15,11 @@
   },
   "tablo": {
    "durum": "tamam",
-   "detay": "150 hisse kontrol edildi, 715 yeni rapor kaydedildi, 5 desteklenmiyor, 2 hata; DOFRB: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; DOKTA: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; EKDMR: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; ERCB: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; FMIZP: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir. …"
+   "detay": "150 hisse kontrol edildi, 730 yeni rapor kaydedildi, 4 desteklenmiyor; INGRM: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; ISDMR: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; KARCL: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; KLMSN: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; KLYPV: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir. …"
   },
   "rapor": {
-   "durum": "tamam",
-   "detay": "10 şirket notu"
+   "durum": "hata",
+   "detay": "THYAO: Period('2026Q2', 'Q-DEC'); ASELS: Period('2026Q2', 'Q-DEC'); BIMAS: Period('2026Q2', 'Q-DEC'); TUPRS: Period('2026Q2', 'Q-DEC'); FROTO: Period('2026Q2', 'Q-DEC'); KCHOL: Period('2026Q2', 'Q-DEC'); TCELL: Period('2026Q2', 'Q-DEC'); MGROS: Period('2026Q2', 'Q-DEC'); ARCLK: Period('2026Q2', 'Q-D"
   },
   "olay": {
    "durum": "atlandı",
@@ -27,7 +27,7 @@
   },
   "tarama": {
    "durum": "tamam",
-   "detay": "290 şirket tarandı, 2 şirkette hata"
+   "detay": "436 şirket tarandı, 429 şirkette hata"
   }
  }
 }
