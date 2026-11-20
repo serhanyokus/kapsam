@@ -59,3 +59,23 @@ def grounded(claim_numbers: list[float], source_text: str, rel_tol: float = 0.00
         hit = np.any(np.isclose(src, n, rtol=rel_tol, atol=0.5))
         result[n] = bool(hit)
     return {"all_grounded": all(result.values()) if result else True, "detail": result}
+
+
+def reported_quarter_checks(quarterly: pd.DataFrame, statements, tol: float = 0.005) -> list[Check]:
+    """KAPSAM'ın kümülatiften hesapladığı çeyreklik akışları, KAP raporundaki '3 aylık' sütunlarla karşılaştırır.
+
+    Aynı rapordaki 3 aylık rakam, cari rapor tarihinin TL'siyle ifade edildiği için doğrudan karşılaştırılabilir.
+    Sapma, ya ayrıştırma hatasına ya da şirketin farklı bir yeniden ifade yöntemine işaret eder.
+    """
+    out: list[Check] = []
+    for st in statements:
+        qr = getattr(st, "quarterly_reported", None)
+        p = st.report_date
+        if qr is None or qr.empty or p not in qr.columns or p not in quarterly.columns:
+            continue
+        for code in ("revenue", "gross_profit", "operating_profit", "net_income"):
+            if code in qr.index and code in quarterly.index and not np.isnan(qr.at[code, p]):
+                ours, theirs = quarterly.at[code, p], qr.at[code, p]
+                ok = abs(ours - theirs) <= tol * max(abs(theirs), 1)
+                out.append(Check(f"3_aylık_{code}", str(p), bool(ok), f"KAPSAM={ours:,.0f} KAP={theirs:,.0f}"))
+    return out

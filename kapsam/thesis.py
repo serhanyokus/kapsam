@@ -32,6 +32,9 @@ class Thesis:
         results, score, wsum = [], 0.0, 0.0
         for r in self.rules:
             v = m.at[r.metric, period]
+            if pd.isna(v):
+                results.append({"kural": r.label or f"{r.metric} {r.op} {r.threshold}", "deger": v, "saglandi": None})
+                continue
             if r.op == ">":
                 ok = v > r.threshold
             elif r.op == "<":

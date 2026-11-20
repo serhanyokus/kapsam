@@ -149,3 +149,35 @@ def test_thesis_status(demo):
     good = Thesis("DEMO", "marj", [Rule("gross_margin", "up", 0, 1)]).evaluate(m)
     bad = Thesis("DEMO", "marj", [Rule("gross_margin", "down", 0, 1)]).evaluate(m)
     assert good["durum"] == "GÜÇLENDİ" and bad["durum"] == "ZAYIFLADI"
+
+
+# --- EVDS istemcisi (ağ olmadan, sahte yanıtla) ---------------------------------------
+def test_evds_parsing_and_quarter_end():
+    from kapsam.data.evds import EVDSClient, to_quarter_end
+
+    class FakeResp:
+        def __init__(self, items):
+            self._items = items
+        def raise_for_status(self):
+            pass
+        def json(self):
+            return {"items": self._items}
+
+    class FakeSession:
+        def __init__(self):
+            self.headers_seen = None
+        def get(self, url, headers=None, timeout=None):
+            self.headers_seen = headers
+            if "TP.FG.J0" in url:
+                return FakeResp([{"Tarih": "2025-7", "TP_FG_J0": "100"}, {"Tarih": "2025-8", "TP_FG_J0": "102"},
+                                 {"Tarih": "2025-9", "TP_FG_J0": "104"}, {"Tarih": "2025-10", "TP_FG_J0": None}])
+            return FakeResp([{"Tarih": "29-09-2025", "TP_DK_USD_A_YTL": "41.5"}, {"Tarih": "30-09-2025", "TP_DK_USD_A_YTL": "41.6"}])
+
+    sess = FakeSession()
+    c = EVDSClient(api_key="test", session=sess)
+    cpi = c.series("TP.FG.J0", "01-07-2025", "31-10-2025", frequency=5)
+    assert sess.headers_seen == {"key": "test"}  # anahtar başlıkta gönderilir
+    assert list(cpi.values) == [100.0, 102.0, 104.0]
+    fx = c.series("TP.DK.USD.A.YTL", "01-09-2025", "30-09-2025")
+    q = to_quarter_end(cpi, fx)
+    assert q.loc[pd.Period("2025Q3"), "cpi"] == 104.0 and q.loc[pd.Period("2025Q3"), "usdtry"] == 41.6

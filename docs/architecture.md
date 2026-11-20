@@ -12,6 +12,7 @@ flowchart LR
     T29[TMS 29 motoru<br/>çeyrek, reel, USD, temel kâr]
     VAL[Sayısal doğrulama]
     CLS[Bildirim sınıflandırıcı<br/>ve önem skoru]
+    KG[Bilgi grafiği<br/>ilişki çıkarımı, etki yayılımı]
     LLM[LLM özet<br/>kaynak zorunlu]
     THS[Tez motoru]
   end
@@ -25,6 +26,9 @@ flowchart LR
   TEZ --> THS --> UI
   T29 --> XL
   CLS --> UI
+  KAP --> KG --> THS
+  CLS --> KG
+  KG --> UI
 ```
 
 ## TMS 29 matematiği
@@ -41,7 +45,19 @@ flowchart LR
 - [x] Kural tabanlı bildirim sınıflandırıcı
 - [x] Kaynak doğrulamalı LLM arayüzü
 - [x] Streamlit panosu
+- [x] Reel İNA, ters İNA, duyarlılık ve çarpanlar (v0.2)
+- [x] HTML araştırma notu ve formüllü Excel modeli (v0.2)
+- [x] Şirketler arası karşılaştırma (v0.2)
+- [x] Bilgi grafiği: ilişki çıkarımı, etki yayılımı, benzer şirket, araştırma önceliği, sıralama metrikleri, olay çalışması (v0.3)
+- [x] KG modelleri: kişiselleştirilmiş PageRank, TransE, CAR'dan katsayı kalibrasyonu, bootstrap ile model karşılaştırma (v0.4)
+- [x] Otomatik gerçek veri hattı: EVDS, piyasa fiyatları, KAP dosyaları, zamanlanmış GitHub Actions, durum sayfası (v0.5)
+- [x] Gerçek KAP Excel düzeni, 3 aylık çapraz kontrol, nakit akışından satış/sermaye, `kap-ekle` (v0.6)
+- [x] İlk gerçek veri: BİM 2025/09–2026/09, gerçek TÜFE ve TCMB kurları; ters İNA ile fiyatlanan marj (v0.7)
+- [x] Herhangi bir hisse için tablo kaynağı, birikimli geçmiş, `analiz` ve `tarama`; 8 şirketle gerçek tarama (v0.8)
+- [x] Tüm BIST: otomatik evren, banka/sigorta tablo biçimleri (nominal mod), akıllı rapor takvimi, günlük limit, aranabilir tarama sayfası, finansal sektör notu (v0.9)
+- [ ] Tüm BIST'te ilk tam tur sonrası doğrulama (ilk hafta)
+- [ ] Gerçek ilişki ağı: faaliyet raporları ve KAP "yeni iş ilişkisi" bildirimlerinden
 - [ ] KAP bildirimlerinin otomatik toplanması (zamanlanmış görev)
 - [ ] XBRL doğrudan okuma
 - [ ] 1.000 etiketli bildirimle sınıflandırıcı ince ayarı
-- [ ] Çoklu şirket ve sektör karşılaştırması
+- [ ] Sektör medyanlarıyla göreli değerleme

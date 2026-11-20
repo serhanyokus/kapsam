@@ -26,8 +26,24 @@ from ..data.statements import Statement
 
 FLOW_ITEMS = {
     "revenue", "cogs", "gross_profit", "operating_profit", "net_monetary_gain",
-    "pretax_profit", "net_income", "net_income_parent", "depreciation",
+    "pretax_profit", "net_income", "net_income_parent", "depreciation", "capex", "operating_cash_flow",
+    "interest_income", "interest_expense", "net_interest_income", "net_fee_income", "operating_income", "credit_provisions",
+    "gross_premiums", "net_premiums", "technical_result_nonlife", "technical_result",
 }
+
+
+def applies_tms29(reports) -> bool:
+    """Raporlardan herhangi birinde net parasal pozisyon satırı varsa şirket TMS 29 uyguluyordur."""
+    return any("net_monetary_gain" in r.values.index for r in reports)
+
+
+def statement_kind(reports) -> str:
+    idx = set().union(*[set(r.values.index) for r in reports]) if reports else set()
+    if "net_interest_income" in idx or "interest_income" in idx:
+        return "banka"
+    if "gross_premiums" in idx or "net_premiums" in idx or "technical_result" in idx:
+        return "sigorta"
+    return "sanayi"
 
 
 def restate(value: float, from_period: pd.Period, to_period: pd.Period, cpi: pd.Series) -> float:
@@ -35,7 +51,7 @@ def restate(value: float, from_period: pd.Period, to_period: pd.Period, cpi: pd.
     return value * cpi[to_period] / cpi[from_period]
 
 
-def quarterly_from_reports(reports: Iterable[Statement], cpi: pd.Series) -> pd.DataFrame:
+def quarterly_from_reports(reports: Iterable[Statement], cpi: pd.Series, restate: bool | None = None) -> pd.DataFrame:
     """Kümülatif raporlardan, her çeyreği KENDİ rapor tarihinin TL'siyle ifade eden çeyreklik tablo üretir.
 
     Q_n = YTD_n  -  restate(YTD_{n-1}, R_{n-1} → R_n)   (aynı mali yıl içinde)
@@ -44,6 +60,8 @@ def quarterly_from_reports(reports: Iterable[Statement], cpi: pd.Series) -> pd.D
     df.attrs['expressed_in'] = {çeyrek: rapor tarihi}.
     """
     reps = sorted(reports, key=lambda r: r.report_date)
+    if restate is None:
+        restate = applies_tms29(reps)
     by_date = {r.report_date: r for r in reps}
     out, expressed = {}, {}
     for r in reps:
@@ -61,13 +79,14 @@ def quarterly_from_reports(reports: Iterable[Statement], cpi: pd.Series) -> pd.D
                     q[k] = np.nan
             else:
                 prev_col = prev.values[prev_p]
-                factor = cpi[p] / cpi[prev_p]
+                factor = cpi[p] / cpi[prev_p] if restate else 1.0
                 for k in FLOW_ITEMS & set(q.index):
                     q[k] = col[k] - prev_col.get(k, np.nan) * factor
         out[p] = q
         expressed[p] = p
     df = pd.DataFrame(out)
     df.attrs["expressed_in"] = expressed
+    df.attrs["restated"] = restate
     return df
 
 
@@ -103,6 +122,13 @@ def core_earnings(df: pd.DataFrame, tax_rate: float = 0.0) -> pd.Series:
 def metrics(df: pd.DataFrame, tax_rate: float = 0.0) -> pd.DataFrame:
     """Normalize edilmiş tablodan temel analist KPI'larını hesaplar."""
     g = lambda k: df.loc[k] if k in df.index else pd.Series(np.nan, index=df.columns)  # noqa: E731
+    if "revenue" not in df.index:            # banka: faaliyet geliri = net faiz + net ücret/komisyon; sigorta: brüt prim
+        if "net_interest_income" in df.index:
+            df = df.copy()
+            df.loc["revenue"] = g("net_interest_income").fillna(0) + g("net_fee_income").fillna(0)
+        elif "gross_premiums" in df.index:
+            df = df.copy()
+            df.loc["revenue"] = g("gross_premiums")
     debt = g("short_term_debt").fillna(0) + g("current_portion_lt_debt").fillna(0) + g("long_term_debt").fillna(0)
     core = core_earnings(df, tax_rate)
     m = pd.DataFrame({
@@ -119,6 +145,14 @@ def metrics(df: pd.DataFrame, tax_rate: float = 0.0) -> pd.DataFrame:
     }).T
     rev = g("revenue")
     m.loc["revenue_real_yoy"] = rev / rev.shift(4) - 1
+    if "net_interest_income" in df.index:
+        m.loc["fee_share"] = g("net_fee_income") / rev
+        m.loc["provision_to_nii"] = -g("credit_provisions") / g("net_interest_income")
+        m.loc["roe_annualized"] = g("net_income") * 4 / g("total_equity")
+        m.loc["loan_to_deposit"] = g("loans") / g("deposits")
+    if "gross_premiums" in df.index:
+        m.loc["retention"] = g("net_premiums") / g("gross_premiums")
+        m.loc["roe_annualized"] = g("net_income") * 4 / g("total_equity")
     m.loc["revenue_real_qoq"] = rev / rev.shift(1) - 1
     return m
 
@@ -132,6 +166,8 @@ def naive_vs_correct(reports: Iterable[Statement], cpi: pd.Series, item: str = "
     by_date = {r.report_date: r for r in reps}
     rows = {}
     q = quarterly_from_reports(reps, cpi)
+    if item not in q.index:
+        return pd.DataFrame(columns=["naive", "correct", "error_pct"])
     for r in reps:
         p = r.report_date
         if p.quarter == 1 or (p - 1) not in by_date:
