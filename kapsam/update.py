@@ -439,6 +439,7 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
 body{{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:900px;margin:24px auto;padding:0 16px;color:#1d2433}}
 table{{border-collapse:collapse;width:100%;font-size:13px;margin:6px 0}}th,td{{border-bottom:1px solid #eef1f5;padding:5px 8px;text-align:right}}
 th:first-child,td:first-child,.l{{text-align:left}}h2{{font-size:15px;margin-top:24px}}.m{{color:#6b7385;font-size:12px}}img{{max-width:640px;width:100%}}
+td.l{{overflow-wrap:anywhere}}@media(max-width:700px){{table{{display:block;overflow-x:auto}}td.l{{min-width:220px}}}}
 </style></head><body><h1>KAPSAM · Gerçek veri</h1><p class="m">Son güncelleme: {e(st.started)} (UTC). Her iş günü otomatik yenilenir.</p>
 <h2>Kaynak durumu</h2><table><tr><th>Adım</th><th>Durum</th><th class='l'>Ayrıntı</th></tr>{srows}</table>
 {''.join(blocks)}
