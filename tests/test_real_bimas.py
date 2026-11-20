@@ -45,12 +45,27 @@ def test_reverse_dcf_margin_is_finite(bim):
     assert 0.05 < m < 0.15 and inp.net_debt > 0
 
 
+EIGHT = ["BIMAS", "TCELL", "FROTO", "TUPRS", "ASELS", "MGROS", "ARCLK", "ULKER"]
+
+
 def test_real_scan_all_companies():
-    """8 gerçek BIST şirketi: düzeltmesiz çeyrek hesabı her birinde hasılatı şişiriyor."""
+    """8 büyük BIST şirketi: düzeltmesiz çeyrek hesabı her birinde hasılatı %5–15 şişiriyor."""
     cpi, fx = pipeline.load_macro_csv(ROOT / "makro_ceyrek.csv")
-    sc = pipeline.screen(ROOT / "kap", cpi, fx)
-    assert {"BIMAS", "TCELL", "FROTO", "TUPRS", "ASELS", "MGROS", "ARCLK", "ULKER"} <= set(sc.index)
-    err = sc["duz_fark_hatasi_hasilat"].astype(float)
+    sc = pipeline.screen(ROOT / "kap", cpi, fx, tickers=EIGHT)
+    assert set(EIGHT) <= set(sc.index)
+    err = sc.loc[EIGHT, "duz_fark_hatasi_hasilat"].astype(float)
     assert (err > 0.05).all() and err.max() < 0.15
     assert sc.loc["MGROS", "parasal_kazanc_olmadan_zarar"]            # parasal kazanç olmasa zarar
     assert sc.loc["ASELS", "parasal_kazanc_net_kar_ytd"] < 0           # net parasal varlık → kayıp
+
+
+def test_real_full_market_scan_has_no_errors():
+    """Kayıtlı tüm şirketler (otomatik güncellemeyle ~600): hiçbiri hata vermez; TMS 29 uygulayanlarda
+    düzeltmesiz yöntemin hasılat hatası medyanı %5–15 aralığındadır."""
+    cpi, fx = pipeline.load_macro_csv(ROOT / "makro_ceyrek.csv")
+    sc = pipeline.screen(ROOT / "kap", cpi, fx)
+    errors = sc[sc["not"].fillna("").str.startswith("hata")]
+    assert errors.empty, errors["not"].head().to_dict()
+    tms = sc[sc["tms29"].astype(bool) & (sc["tur"] == "sanayi")]["duz_fark_hatasi_hasilat"].dropna().astype(float)
+    if len(tms) >= 8:
+        assert 0.05 < tms.median() < 0.15
