@@ -31,14 +31,25 @@ opex_ratio = 0.12
 NET_MONETARY_LIAB_REAL = 600_000_000  # net parasal borç (2023Q1 TL) → parasal KAZANÇ üretir
 
 
-def nominal(p):
+# İkinci sentetik şirket (sektör karşılaştırması için): daha hızlı büyüyen, marjı daralan,
+# net parasal VARLIK pozisyonu nedeniyle parasal KAYIP yazan bir şirket.
+PROFILES = {
+    "DEMO": dict(real_rev=real_rev, gm=gm, nml=NET_MONETARY_LIAB_REAL, assets=5_000_000_000),
+    "DEMO2": dict(real_rev=pd.Series(600_000_000 * (1.03 ** np.arange(len(all_q))), index=all_q),
+                  gm=pd.Series(np.linspace(0.34, 0.27, len(all_q)), index=all_q),
+                  nml=-250_000_000, assets=2_500_000_000),
+}
+
+
+def nominal(p, ticker="DEMO"):
     """Çeyrek p'de gerçekleşen akışların, p dönem sonu TL'siyle değeri."""
+    pr = PROFILES[ticker]
     f = CPI[p] / CPI[all_q[0]]
-    rev = real_rev[p] * f
-    cogs = -rev * (1 - gm[p])
+    rev = pr["real_rev"][p] * f
+    cogs = -rev * (1 - pr["gm"][p])
     gp = rev + cogs
     op = gp - rev * opex_ratio
-    nmg = NET_MONETARY_LIAB_REAL * f * (CPI[p] / CPI[p - 1] - 1) if p > all_q[0] else 0.0
+    nmg = pr["nml"] * f * (CPI[p] / CPI[p - 1] - 1) if p > all_q[0] else 0.0
     pretax = op - rev * 0.03 + nmg
     ni = pretax * 0.75
     return {"Hasılat": rev, "Satışların Maliyeti (-)": cogs, "Brüt Kar (Zarar)": gp,
@@ -46,20 +57,21 @@ def nominal(p):
             "Sürdürülen Faaliyetler Vergi Öncesi Karı (Zararı)": pretax, "Dönem Karı (Zararı)": ni}
 
 
-def ytd(p, in_p):
+def ytd(p, in_p, ticker="DEMO"):
     """p çeyreğine kadar yıl başından kümülatif, in_p tarihinin TL'siyle."""
     tot = {}
     for q in pd.period_range(pd.Period(year=p.year, quarter=1, freq="Q"), p, freq="Q"):
-        for k, v in nominal(q).items():
+        for k, v in nominal(q, ticker).items():
             tot[k] = tot.get(k, 0.0) + v * CPI[in_p] / CPI[q]
     return tot
 
 
-def balance(p, in_p):
+def balance(p, in_p, ticker="DEMO"):
     f = CPI[in_p] / CPI[all_q[0]]
-    assets = 5_000_000_000 * f * (1.01 ** all_q.get_loc(p))
-    cash = 400_000_000 * f
-    st, lt = 900_000_000 * f, 700_000_000 * f
+    k = PROFILES[ticker]["assets"] / 5_000_000_000
+    assets = PROFILES[ticker]["assets"] * f * (1.01 ** all_q.get_loc(p))
+    cash = 400_000_000 * f * k * (2.5 if ticker == "DEMO2" else 1)
+    st, lt = 900_000_000 * f * k, 700_000_000 * f * k
     equity = assets * 0.45
     return {"Nakit ve Nakit Benzerleri": cash, "Toplam Varlıklar": assets,
             "Kısa Vadeli Borçlanmalar": st, "Uzun Vadeli Borçlanmalar": lt,
@@ -72,14 +84,15 @@ def fmt(v):
 
 
 def main():
-    for p in QUARTERS:
-        cur = {**ytd(p, p), **balance(p, p)}
-        prior = {**ytd(p - 4, p), **balance(p - 4, p)}
-        df = pd.DataFrame({"Kalem": list(cur), f"{p.year}/{p.quarter*3}": [fmt(cur[k]) for k in cur],
-                           f"{p.year-1}/{p.quarter*3}": [fmt(prior[k]) for k in cur]})
-        df.to_csv(OUT / f"{TICKER}_{p.year}_{p.quarter*3}.csv", index=False)
+    for ticker in PROFILES:
+        for p in QUARTERS:
+            cur = {**ytd(p, p, ticker), **balance(p, p, ticker)}
+            prior = {**ytd(p - 4, p, ticker), **balance(p - 4, p, ticker)}
+            df = pd.DataFrame({"Kalem": list(cur), f"{p.year}/{p.quarter*3}": [fmt(cur[k]) for k in cur],
+                               f"{p.year-1}/{p.quarter*3}": [fmt(prior[k]) for k in cur]})
+            df.to_csv(OUT / f"{ticker}_{p.year}_{p.quarter*3}.csv", index=False)
     pd.DataFrame({"period": CPI.index.astype(str), "cpi": CPI.values, "usdtry": USDTRY.values}).to_csv(OUT / "macro_SENTETIK.csv", index=False)
-    print(f"{len(QUARTERS)} sentetik rapor üretildi → {OUT}")
+    print(f"{len(PROFILES)} şirket × {len(QUARTERS)} sentetik rapor üretildi → {OUT}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,42 @@
+{
+  "_not": "SENTETİK: Şirketler, ilişkiler ve olaylar kurgudur; gerçek şirketlerle ilgisi yoktur. 'truth' alanları değerlendirme için elle belirlenmiş varsayımsal etkilenen şirketlerdir.",
+  "companies": [
+    {"ticker": "DEMO", "name": "Demo Sanayi A.Ş.", "sector": "Otomotiv yan sanayi"},
+    {"ticker": "DEMO2", "name": "Demo İki Teknoloji A.Ş.", "sector": "Elektronik"},
+    {"ticker": "OTO1", "name": "Örnek Otomotiv A.Ş.", "sector": "Otomotiv"},
+    {"ticker": "OTO2", "name": "Kurgu Motor A.Ş.", "sector": "Otomotiv"},
+    {"ticker": "YAN2", "name": "Deneme Yan Sanayi A.Ş.", "sector": "Otomotiv yan sanayi"},
+    {"ticker": "CLK1", "name": "Hayali Çelik A.Ş.", "sector": "Metal"},
+    {"ticker": "LOJ1", "name": "Örnek Lojistik A.Ş.", "sector": "Lojistik"},
+    {"ticker": "HLD1", "name": "Kurgu Holding A.Ş.", "sector": "Holding"},
+    {"ticker": "ENR1", "name": "Hayali Enerji A.Ş.", "sector": "Enerji"},
+    {"ticker": "PRK1", "name": "Örnek Perakende A.Ş.", "sector": "Perakende"},
+    {"ticker": "AMB1", "name": "Deneme Ambalaj A.Ş.", "sector": "Ambalaj"},
+    {"ticker": "GID1", "name": "Kurgu Gıda A.Ş.", "sector": "Gıda"}
+  ],
+  "relations": [
+    {"source": "YAN2", "target": "OTO2", "kind": "supplier", "weight": 1.0, "evidence": "Faaliyet raporu: başlıca müşteri"},
+    {"source": "CLK1", "target": "YAN2", "kind": "supplier", "weight": 0.6, "evidence": "Faaliyet raporu: hammadde tedarikçisi"},
+    {"source": "LOJ1", "target": "OTO1", "kind": "supplier", "weight": 0.7, "evidence": "Faaliyet raporu: lojistik hizmeti"},
+    {"source": "DEMO2", "target": "OTO1", "kind": "supplier", "weight": 0.4, "evidence": "Faaliyet raporu: elektronik aksam"},
+    {"source": "OTO1", "target": "OTO2", "kind": "competitor", "weight": 1.0, "evidence": "Aynı pazar"},
+    {"source": "DEMO", "target": "YAN2", "kind": "competitor", "weight": 0.8, "evidence": "Aynı ürün grubu"},
+    {"source": "HLD1", "target": "LOJ1", "kind": "owner", "weight": 0.40, "evidence": "Ortaklık yapısı"},
+    {"source": "HLD1", "target": "ENR1", "kind": "owner", "weight": 0.30, "evidence": "Ortaklık yapısı"},
+    {"source": "AMB1", "target": "PRK1", "kind": "supplier", "weight": 0.8, "evidence": "Faaliyet raporu: ambalaj tedariki"},
+    {"source": "GID1", "target": "PRK1", "kind": "supplier", "weight": 1.0, "evidence": "Faaliyet raporu: başlıca müşteri"}
+  ],
+  "disclosures": [
+    {"reporter": "DEMO", "baslik": "Yeni İş İlişkisi", "metin": "Şirketimiz ile Örnek Otomotiv A.Ş. arasında 3 yıl süreli tedarik sözleşmesi imzalanmıştır. Sözleşme bedeli 45 milyon USD'dir."},
+    {"reporter": "DEMO", "baslik": "Hammadde Alımı", "metin": "Hayali Çelik A.Ş. ile 2026 yılı için hammadde alım sözleşmesi imzalanmıştır."},
+    {"reporter": "DEMO", "baslik": "Ortaklık Yapısı", "metin": "Kurgu Holding A.Ş., şirketimiz sermayesindeki %55 oranında paya sahiptir."}
+  ],
+  "events": [
+    {"ticker": "OTO1", "shock": -0.8, "title": "OTO1 üretime ara verdi", "truth": ["OTO1", "DEMO", "LOJ1", "DEMO2", "OTO2", "HLD1"]},
+    {"ticker": "CLK1", "shock": -0.7, "title": "CLK1 fabrikasında yangın", "truth": ["CLK1", "DEMO", "YAN2", "OTO2"]},
+    {"ticker": "DEMO", "shock": 0.9, "title": "DEMO yeni ihracat sözleşmesi", "truth": ["DEMO", "HLD1", "CLK1", "YAN2"]},
+    {"ticker": "PRK1", "shock": 0.6, "title": "PRK1 güçlü satış büyümesi", "truth": ["PRK1", "GID1", "AMB1"]},
+    {"ticker": "HLD1", "shock": -0.5, "title": "HLD1 kredi notu indirimi", "truth": ["HLD1", "DEMO", "LOJ1", "ENR1"]},
+    {"ticker": "YAN2", "shock": -0.6, "title": "YAN2 büyük müşteri kaybı", "truth": ["YAN2", "DEMO", "OTO2", "CLK1"]}
+  ]
+}

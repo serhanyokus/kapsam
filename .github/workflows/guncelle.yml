@@ -1,0 +1,31 @@
+name: gercek-veri-guncelle
+on:
+  schedule:
+    - cron: "40 15 * * 1-5"   # iş günleri 18:40 (İstanbul), piyasa kapanışından sonra
+  workflow_dispatch: {}
+  push:
+    paths: ["data/gercek/kap/**", "config/takip.json"]
+permissions:
+  contents: write
+concurrency: { group: guncelle, cancel-in-progress: false }
+jobs:
+  guncelle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -r requirements.txt yfinance
+      - name: Veriyi güncelle
+        env:
+          EVDS_API_KEY: ${{ secrets.EVDS_API_KEY }}
+        run: python -m kapsam.cli guncelle
+      - name: Değişiklikleri kaydet
+        run: |
+          git config user.name "kapsam-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add config/bist_evren.csv data/gercek docs/rapor 2>/dev/null || git add data/gercek docs/rapor
+          git diff --cached --quiet || git commit -m "Otomatik veri güncellemesi $(date -u +%Y-%m-%d)"
+          git pull --rebase --autostash || true
+          git push

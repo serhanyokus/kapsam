@@ -1,0 +1,50 @@
+{
+  "_aciklama": "Takip listesi ve olaylar. evren='tum': tüm BIST hisseleri (İş Yatırım listesinden her gün yenilenir) taranır; takip listesindekiler önce kontrol edilir ve onlar için ayrıntılı not üretilir. gunluk_limit: bir çalıştırmada en fazla kaç hissenin tablosu kontrol edilir (yeni rapor beklenmeyen hisseler hiç istenmez). hisse_sayisi boş bırakılırsa evrendeki piyasa değeri / kapanış fiyatından bulunur. tablo_kaynagi: 'ekofin' (otomatik) veya 'yok' (yalnızca elle eklenen KAP dosyaları). Olay eklemek için: {\"tarih\": \"2025-05-14\", \"hisse\": \"THYAO\", \"baslik\": \"...\", \"sok\": -0.6}",
+  "evren": "tum",
+  "gunluk_limit": 150,
+  "baslangic": "2022-01-01",
+  "hisseler": [
+    {
+      "kod": "THYAO",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "ASELS",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "BIMAS",
+      "hisse_sayisi": 1200000000.0
+    },
+    {
+      "kod": "TUPRS",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "FROTO",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "KCHOL",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "TCELL",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "MGROS",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "ARCLK",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "ULKER",
+      "hisse_sayisi": null
+    }
+  ],
+  "olaylar": [],
+  "tablo_kaynagi": "ekofin"
+}
