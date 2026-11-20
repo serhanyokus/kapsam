@@ -34,3 +34,9 @@ Basında BİM'in 2026 3. çeyrek net kârı olarak verilen 10.385.559 bin TL, 9 
 
 ## Banka ve sigorta tabloları (v0.9)
 Banka (BDDK) ve sigorta (SEDDK) tablo biçimleri aynı kaynaktan okunur (ör. https://www.ekofin.net/sirket/detay/AKBNK/gelir-tablosu, https://www.ekofin.net/sirket/detay/AKBNK/bilancolar, https://www.ekofin.net/sirket/detay/AKGRT/gelir-tablosu). Bu şirketler TMS 29 uygulamadığı için çeyrekler düz farkla bulunur; testler gerçek sayfa düzeniyle yazılmıştır (`tests/test_sources.py`).
+
+## Takip listesi, olaylar ve ilişki ağı (v0.9)
+- BIST-30 bileşimi (Ekim–Aralık 2026): https://borsapusula.com/blog/bist30-hisseleri-2026, https://www.paraanaliz.com/haberler/borsa-istanbul-2026-4-ceyrek-endeks-degisikliklerini-acikladi-bist-30-bist-50-ve
+- Olaylar: her birinin KAP bildirimi (kap.org.tr/…/BildirimPdf/…) ya da haber kaynağı `config/takip.json` içinde `kaynak` alanındadır.
+- Ortaklık oranları: KAP ortaklık tablolarını aktaran endeks24.com yazıları, Anadolu Efes ortaklık yapısı belgesi, CNBC-e (Petkim/SOCAR). Her ilişkinin kaynağı `data/gercek/ag.json` içindedir. Tofaş (2024) ve THY (2020) tabloları eski tarihlidir; değişirse güncelleyin.
+- Doğrulanamadığı için eklenmeyenler: Ülker–BİM tedarik ilişkisi, Tüpraş–Petkim nafta tedariki (Petkim'in hammaddesini STAR rafinerisi sağlıyor), TRMET–TRALT ortaklık oranı. Yıldız Holding Ülker paylarının tamamını Aralık 2024'te satmıştır.

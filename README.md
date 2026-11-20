@@ -111,6 +111,16 @@ Kaynak her hisse için yalnızca son 5 dönemi gösterir; KAPSAM eski dönem dos
 
 **Sonuç:** Kümülatif rakamları enflasyon düzeltmesi yapmadan çıkarmak, son çeyrek hasılatını **her şirkette %5–14** şişiriyor. Turkcell, Ford Otosan ve BİM'de yılbaşından beri net kârın %84–88'i kadar net parasal pozisyon kazancı var. Migros'ta bu kazanç olmasa yılbaşından beri zarar var. Aselsan ve Tüpraş ise ters yönde: net parasal varlık taşıdıkları için enflasyondan kayıp yazıyorlar.
 
+## Olay çalışması ve gerçek ilişki ağı
+
+Takip listesi **BIST-30** (Ekim–Aralık 2026) ile Arçelik ve Ülker'den oluşur (32 hisse). Bu hisseler için her gün fiyat çekilir, sanayi şirketlerine TMS 29 notu ve Excel modeli, banka ve sigortacılara finansal sektör notu üretilir.
+
+**Olaylar** (`config/takip.json` → `olaylar`): 2025–2026 arasından 25 gerçek KAP açıklaması. Örnekler: THY'nin 225 Boeing siparişi, Turkcell'in 5G lisansı, ASELSAN'ın 1,1 milyar USD ihracatı, Koç'un Tüpraş pay satışları, Arçelik'in Hitachi ortaklığından çıkışı, Şişecam'a Rekabet cezası. Her olayın KAP ya da haber kaynağı ve açıklama saati kayıtlıdır. 18:10'dan sonraki açıklamalarda 0. gün ertesi işlem günüdür. Olay çalışması, BIST 100'e göre piyasa modeliyle [-1,+3] günlük kümülatif anormal getiriyi (CAR) ve t istatistiğini hesaplar. Ardından beklenen yönle karşılaştırır.
+
+**İlişki ağı** (`data/gercek/ag.json`): 16 ortaklık bağı ve oranları, KAP ortaklık tablolarına dayanır. Örnekler: Koç → Tüpraş, Ford Otosan, Tofaş, Arçelik, Yapı Kredi; Sabancı → Akbank; İş Bankası → Şişecam; Varlık Fonu → THY, Turkcell, Türk Telekom; OYAK → Erdemir; Anadolu Grubu → Anadolu Efes, Migros. Bunlara bir tedarik bağı (TAV/Havaş → THY), analist tanımlı rakiplikler (THY–Pegasus, BİM–Migros, Turkcell–Türk Telekom, Ford Otosan–Tofaş, Erdemir–Kardemir) ve sektör benzerliği eklenir. Bir olayın şoku ağda yayılır, ağın öngördüğü bağlantılı şirketlerin gerçek tepkisi de ölçülür.
+
+İlk sonuç (25 olay): olay şirketlerinde anormal getirinin yönü beklentiyle yaklaşık yarı yarıya uyuşuyor ve hiçbir tekil olay %5 düzeyinde anlamlı değil. Bu sonuç, büyük şirketlerde KAP açıklamalarının çoğunun önceden fiyatlandığını ya da günlük oynaklık içinde kaybolduğunu gösteriyor. En büyük tepki, Koç'un Tüpraş payı satışında görüldü (yaklaşık −%8). Yeni olay eklemek için tek satır yeter.
+
 ## Modüller
 
 | Modül | Dosya | Ne yapar |

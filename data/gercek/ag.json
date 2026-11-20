@@ -1,0 +1,353 @@
+{
+ "_not": "Gerçek ilişki ağı: ortaklık oranları KAP ortaklık tablolarını aktaran kaynaklardan (2024–2026), rakiplik analist tanımı. Aynı sektördeki şirketler arasında zayıf 'sektör benzeri' bağ otomatik kurulur. Ortaklık oranı değişirse güncelleyin.",
+ "companies": [
+  {
+   "ticker": "THYAO",
+   "name": "Türk Hava Yolları",
+   "sector": "Havayolları ve Hizm."
+  },
+  {
+   "ticker": "ASELS",
+   "name": "Aselsan",
+   "sector": "Savunma"
+  },
+  {
+   "ticker": "BIMAS",
+   "name": "Bim Birleşik Mağazalar A.Ş",
+   "sector": "Perakande - Ticaret"
+  },
+  {
+   "ticker": "TUPRS",
+   "name": "Tüpraş",
+   "sector": "Petrol"
+  },
+  {
+   "ticker": "FROTO",
+   "name": "Ford Otosan",
+   "sector": "Otomotiv"
+  },
+  {
+   "ticker": "KCHOL",
+   "name": "Koç Holding",
+   "sector": "Holdingler"
+  },
+  {
+   "ticker": "TCELL",
+   "name": "Turkcell",
+   "sector": "İletişim"
+  },
+  {
+   "ticker": "MGROS",
+   "name": "Migros",
+   "sector": "Perakande - Ticaret"
+  },
+  {
+   "ticker": "ARCLK",
+   "name": "Arçelik",
+   "sector": "Dayanıklı Tüketim"
+  },
+  {
+   "ticker": "ULKER",
+   "name": "Ülker Bisküvi",
+   "sector": "Gıda"
+  },
+  {
+   "ticker": "AEFES",
+   "name": "Anadolu Efes",
+   "sector": "Meşrubat / İçecek"
+  },
+  {
+   "ticker": "AKBNK",
+   "name": "Akbank",
+   "sector": "Bankacılık"
+  },
+  {
+   "ticker": "ASTOR",
+   "name": "Astor Enerji",
+   "sector": "Elektrik Enerji Ürt.Teçh/Tesis Kurulum"
+  },
+  {
+   "ticker": "EKGYO",
+   "name": "Emlak Konut GYO",
+   "sector": "GYO"
+  },
+  {
+   "ticker": "ENKAI",
+   "name": "Enka İnşaat",
+   "sector": "İnşaat- Taahhüt"
+  },
+  {
+   "ticker": "EREGL",
+   "name": "Ereğli Demir Çelik",
+   "sector": "Demir-Çelik Temel"
+  },
+  {
+   "ticker": "GARAN",
+   "name": "Garanti Bankası",
+   "sector": "Bankacılık"
+  },
+  {
+   "ticker": "GUBRF",
+   "name": "Gübre Fabrikaları",
+   "sector": "Tarım Kimyasalları"
+  },
+  {
+   "ticker": "ISCTR",
+   "name": "İş Bankası (C)",
+   "sector": "Bankacılık"
+  },
+  {
+   "ticker": "KRDMD",
+   "name": "Kardemir (D)",
+   "sector": "Demir-Çelik Temel"
+  },
+  {
+   "ticker": "PETKM",
+   "name": "Petkim",
+   "sector": "Petrol"
+  },
+  {
+   "ticker": "PGSUS",
+   "name": "Pegasus Hava Taşımacılığı",
+   "sector": "Havayolları ve Hizm."
+  },
+  {
+   "ticker": "SAHOL",
+   "name": "Sabancı Holding",
+   "sector": "Holdingler"
+  },
+  {
+   "ticker": "SASA",
+   "name": "Sasa Polyester Sanayi A.Ş.",
+   "sector": "Endüstriyel Tekstil"
+  },
+  {
+   "ticker": "SISE",
+   "name": "Şişecam",
+   "sector": "Cam"
+  },
+  {
+   "ticker": "TAVHL",
+   "name": "TAV Holding",
+   "sector": "Havayolları ve Hizm."
+  },
+  {
+   "ticker": "TOASO",
+   "name": "Tofaş Fabrika",
+   "sector": "Otomotiv"
+  },
+  {
+   "ticker": "TRALT",
+   "name": "Türk Altın",
+   "sector": "Madencilik"
+  },
+  {
+   "ticker": "TRMET",
+   "name": "TR Anadolu Metal",
+   "sector": "Madencilik"
+  },
+  {
+   "ticker": "TTKOM",
+   "name": "Türk Telekom",
+   "sector": "İletişim"
+  },
+  {
+   "ticker": "VAKBN",
+   "name": "Vakıfbank",
+   "sector": "Bankacılık"
+  },
+  {
+   "ticker": "YKBNK",
+   "name": "Yapı Kredi Bankası",
+   "sector": "Bankacılık"
+  },
+  {
+   "ticker": "TVF",
+   "name": "Türkiye Varlık Fonu",
+   "sector": ""
+  },
+  {
+   "ticker": "OYAK",
+   "name": "Ordu Yardımlaşma Kurumu",
+   "sector": ""
+  },
+  {
+   "ticker": "AGHOL",
+   "name": "AG Anadolu Grubu Holding",
+   "sector": ""
+  },
+  {
+   "ticker": "TARIMKREDI",
+   "name": "Tarım Kredi Kooperatifleri",
+   "sector": ""
+  },
+  {
+   "ticker": "SOCAR",
+   "name": "SOCAR Türkiye",
+   "sector": ""
+  },
+  {
+   "ticker": "ADP",
+   "name": "Groupe ADP",
+   "sector": ""
+  }
+ ],
+ "relations": [
+  {
+   "source": "KCHOL",
+   "target": "TUPRS",
+   "kind": "owner",
+   "weight": 0.394,
+   "evidence": "Koç'un etkin payı ~%39,4 (Enerji Yatırımları %46,4 × Koç %77 + doğrudan %3,7); grup toplamı ~%50,1 (KAP 14.09.2026) — https://www.endeks24.com/tupras-ortaklik-yapisi-enerji-yatirimlari-koc"
+  },
+  {
+   "source": "KCHOL",
+   "target": "FROTO",
+   "kind": "owner",
+   "weight": 0.3932,
+   "evidence": "Koç Holding %39,32; Ford Deutschland %41,04 — https://www.endeks24.com/ford-otosan-froto-temettusunde-ford-ve-koc-yuzde-80-alacak-kalan-borsaya"
+  },
+  {
+   "source": "KCHOL",
+   "target": "TOASO",
+   "kind": "owner",
+   "weight": 0.3762,
+   "evidence": "Koç Holding %37,62; Stellantis Europe %37,86 — https://www.endeks24.com/tofasta-toaso-stellantis-ile-kocun-payi-yaklasik-85-milyar-lira-ediyor"
+  },
+  {
+   "source": "KCHOL",
+   "target": "ARCLK",
+   "kind": "owner",
+   "weight": 0.4853,
+   "evidence": "Koç Holding doğrudan %48,53 (22.12.2025'te %7,1 ek pay alımı sonrası) — https://www.endeks24.com/family-danismanlik-koc-holdingin-kchol-229-milyar-liralik-payina-sahip"
+  },
+  {
+   "source": "KCHOL",
+   "target": "YKBNK",
+   "kind": "owner",
+   "weight": 0.548,
+   "evidence": "Koç grubu %61,17 (KFS %40,95 + doğrudan %20,22); etkin pay ~%54,8 — https://www.endeks24.com/yapi-kredinin-ykbnk-yuzde-61i-kocta-paylarin-degeri-192-milyar-lira"
+  },
+  {
+   "source": "SAHOL",
+   "target": "AKBNK",
+   "kind": "owner",
+   "weight": 0.4075,
+   "evidence": "Sabancı Holding %40,75 — https://www.endeks24.com/akbank-kimin-sabanci-holdingin-yuzde-4075lik-payi-1457-milyar-lira"
+  },
+  {
+   "source": "ISCTR",
+   "target": "SISE",
+   "kind": "owner",
+   "weight": 0.5258,
+   "evidence": "İş Bankası doğrudan %52,58 (KAP 27.10.2026) — https://www.endeks24.com/sisecam-ortaklik-yapisi-is-bankasi-payi"
+  },
+  {
+   "source": "TVF",
+   "target": "TCELL",
+   "kind": "owner",
+   "weight": 0.262,
+   "evidence": "Türkiye Varlık Fonu %26,20 sermaye (%57,83 oy hakkı) — https://www.endeks24.com/turkcell-ortaklik-yapisi-varlik-fonu-oy-hakki"
+  },
+  {
+   "source": "TVF",
+   "target": "THYAO",
+   "kind": "owner",
+   "weight": 0.4912,
+   "evidence": "Türkiye Varlık Fonu %49,12 — https://www.endeks24.com/thy-ortaklik-yapisi-varlik-fonu-payi"
+  },
+  {
+   "source": "TVF",
+   "target": "TTKOM",
+   "kind": "owner",
+   "weight": 0.6168,
+   "evidence": "Türkiye Varlık Fonu %61,68; Hazine %25 — https://www.endeks24.com/turk-telekom-ortaklik-yapisi-varlik-fonu-hazine"
+  },
+  {
+   "source": "OYAK",
+   "target": "EREGL",
+   "kind": "owner",
+   "weight": 0.5008,
+   "evidence": "OYAK dolaylı %50,08 (Ataer Holding %49,54) — https://www.endeks24.com/eregli-kimin-ataer-holdingin-payi-107-milyar-lira"
+  },
+  {
+   "source": "AGHOL",
+   "target": "AEFES",
+   "kind": "owner",
+   "weight": 0.4305,
+   "evidence": "AG Anadolu Grubu Holding %43,05; AB InBev %24 — https://anadoluefes.com/Upload/Docs/2026/genel-kurul/Anadolu-Efes-Shareholding-Structure.pdf"
+  },
+  {
+   "source": "AGHOL",
+   "target": "MGROS",
+   "kind": "owner",
+   "weight": 0.4918,
+   "evidence": "MH Perakendecilik %49,18 (AGHOL'ün %100 iştiraki) — https://www.endeks24.com/migrosun-mgros-yuzde-49u-mh-perakendecilikte-degeri-43-milyar-lira"
+  },
+  {
+   "source": "TARIMKREDI",
+   "target": "GUBRF",
+   "kind": "owner",
+   "weight": 0.7873,
+   "evidence": "Tarım Kredi Kooperatifleri %78,73 — https://www.endeks24.com/gubretas-ortaklik-yapisi-tarim-kredi-temettu"
+  },
+  {
+   "source": "SOCAR",
+   "target": "PETKM",
+   "kind": "owner",
+   "weight": 0.51,
+   "evidence": "SOCAR Turkey Enerji %51 (KAP 02.06.2026) — https://www.cnbce.com/borsa/petkimden-petkm-socar-aciklamasi-petkimde-yuzde-51lik-payin-sahibi-degisti-h30956"
+  },
+  {
+   "source": "ADP",
+   "target": "TAVHL",
+   "kind": "owner",
+   "weight": 0.4612,
+   "evidence": "Groupe ADP %46,12 — https://www.endeks24.com/tav-havalimanlari-ortaklik-yapisi-adp-temettu"
+  },
+  {
+   "source": "TAVHL",
+   "target": "THYAO",
+   "kind": "supplier",
+   "weight": 0.5,
+   "evidence": "TAV'ın Havaş yer hizmetleri şirketi ile THY arasında 15 yıllık yer hizmetleri sözleşmesi (THY KAP 08.06.2018); TAV Esenboğa ve İzmir'i işletiyor — https://investor.turkishairlines.com/en/announcements/public-disclosures/08062018-public-disclosures"
+  },
+  {
+   "source": "THYAO",
+   "target": "PGSUS",
+   "kind": "competitor",
+   "weight": 1.0,
+   "evidence": "Aynı yurt içi ve bölgesel yolcu pazarı (analist tanımı: aynı pazarda rakip)"
+  },
+  {
+   "source": "BIMAS",
+   "target": "MGROS",
+   "kind": "competitor",
+   "weight": 1.0,
+   "evidence": "Gıda perakendesi (analist tanımı: aynı pazarda rakip)"
+  },
+  {
+   "source": "TCELL",
+   "target": "TTKOM",
+   "kind": "competitor",
+   "weight": 1.0,
+   "evidence": "Mobil ve sabit iletişim (analist tanımı: aynı pazarda rakip)"
+  },
+  {
+   "source": "FROTO",
+   "target": "TOASO",
+   "kind": "competitor",
+   "weight": 1.0,
+   "evidence": "Türkiye otomotiv üretimi ve ticari araç pazarı (analist tanımı: aynı pazarda rakip)"
+  },
+  {
+   "source": "EREGL",
+   "target": "KRDMD",
+   "kind": "competitor",
+   "weight": 1.0,
+   "evidence": "Yassı/uzun çelik üretimi (analist tanımı: aynı pazarda rakip)"
+  }
+ ],
+ "disclosures": [],
+ "events": []
+}

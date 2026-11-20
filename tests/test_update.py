@@ -264,3 +264,35 @@ def test_macro_never_shrinks_cpi_and_chains_2025_base(root):
     assert got[pd.Timestamp("2026-03-31")] == pytest.approx(old.iloc[-1] * 1.0506)
     assert got.index[-1] == real.index[-1]                     # sonraki kayıtlı aylar yine korunur
     assert "zincirlendi" in st.steps["makro"]["detay"]
+
+
+def test_real_network_and_events_are_sourced():
+    """Gerçek ağ ve olaylar: her ortaklık ilişkisinin oranı ve kaynağı var; her olayın KAP/haber kaynağı, saati ve 0. günü var."""
+    ag = json.loads((update.ROOT / "data" / "gercek" / "ag.json").read_text(encoding="utf-8"))
+    for r in ag["relations"]:
+        assert ("http" in r["evidence"]) if r["kind"] in ("owner", "supplier") else ("analist" in r["evidence"]), r
+        if r["kind"] == "owner":
+            assert 0 < r["weight"] <= 1
+    cfg = json.loads((update.ROOT / "config" / "takip.json").read_text(encoding="utf-8"))
+    assert len(cfg["hisseler"]) >= 30 and len(cfg["olaylar"]) >= 20
+    for ev in cfg["olaylar"]:
+        assert ev["kaynak"].startswith("http") and -1 <= ev["sok"] <= 1
+        d0, ann = pd.Timestamp(ev["tarih"]), pd.Timestamp(ev["aciklama_tarihi"])
+        assert d0 >= ann and d0.weekday() < 5                       # 0. gün işlem günü, açıklamadan önce değil
+        if ev["saat"] >= "18:10":
+            assert d0 > ann                                         # seans sonrası → ertesi işlem günü
+
+
+def test_event_study_reports_expected_vs_realised(root):
+    p = update.Paths(root)
+    px = pd.read_csv(update.ROOT / "data" / "gercek" / "fiyatlar.csv", index_col=0, parse_dates=True)
+    p.data.mkdir(parents=True, exist_ok=True)
+    px.to_csv(p.data / "fiyatlar.csv", index_label="tarih")
+    (p.data / "ag.json").write_text((update.ROOT / "data" / "gercek" / "ag.json").read_text(encoding="utf-8"), encoding="utf-8")
+    cfg = {"olaylar": [{"tarih": "2026-03-26", "hisse": "TUPRS", "baslik": "Koç Tüpraş satışı", "sok": -0.3, "kaynak": "https://kap.org.tr"}]}
+    st = update.Status()
+    df = update.step_events(p, cfg, st)
+    assert st.steps["olay"]["durum"] == "tamam" and "yön isabeti" in st.steps["olay"]["detay"]
+    own = df[df["rol"] == "olay şirketi"].iloc[0]
+    assert own["hisse"] == "TUPRS" and own["beklenen"] == -0.3 and own["CAR"] < 0
+    assert "KCHOL" in set(df["hisse"])                               # ağ: ana ortak da ölçülür

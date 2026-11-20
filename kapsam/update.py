@@ -24,6 +24,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 from . import graph as kg
@@ -348,20 +349,30 @@ def step_events(p: Paths, cfg: dict, st: Status) -> pd.DataFrame | None:
         rows = []
         for ev in cfg["olaylar"]:
             t = ev["hisse"]
-            targets = [t]
-            if graph is not None and t in graph.g:
-                targets += [i.ticker for i in graph.propagate(t, ev.get("sok", -0.5))[:5]]
+            targets, expected = [t], {}
+            if graph is not None and t in graph.g and ev.get("sok", 0):
+                imps = graph.propagate(t, ev["sok"])[:5]
+                targets += [i.ticker for i in imps]
+                expected = {i.ticker: i.score for i in imps}
             targets = [x for x in dict.fromkeys(targets) if x in r.columns]
             if not targets or "XU100" not in r.columns:
                 continue
             es = kg.event_study(r[targets].dropna(how="all").fillna(0), r["XU100"].fillna(0), ev["tarih"], targets)
             for tk, row in es.iterrows():
+                exp = ev.get("sok", float("nan")) if tk == t else expected.get(tk, float("nan"))
                 rows.append({"olay": ev.get("baslik", ""), "tarih": ev["tarih"], "hisse": tk,
-                             "rol": "olay şirketi" if tk == t else "ağın öngördüğü", "CAR": row["CAR"], "t": row["t_istatistigi"]})
+                             "rol": "olay şirketi" if tk == t else "ağın öngördüğü", "beklenen": exp,
+                             "CAR": row["CAR"], "t": row["t_istatistigi"], "kaynak": ev.get("kaynak", "")})
         df = pd.DataFrame(rows)
         if not df.empty:
             df.to_csv(p.data / "olay_calismasi.csv", index=False)
-        st.ok("olay", f"{len(cfg['olaylar'])} olay, {len(df)} hisse-olay gözlemi")
+        msg = f"{len(cfg['olaylar'])} olay, {len(df)} hisse-olay gözlemi"
+        if not df.empty:
+            own = df[(df["rol"] == "olay şirketi") & (df["beklenen"].fillna(0) != 0)]
+            if len(own):
+                hit = (np.sign(own["CAR"]) == np.sign(own["beklenen"])).mean()
+                msg += f"; olay şirketinde yön isabeti %{hit*100:.0f}, |t|>2: {(own['t'].abs() > 2).sum()}/{len(own)}"
+        st.ok("olay", msg)
         return df
     except Exception as e:  # noqa: BLE001
         st.fail("olay", e)
@@ -426,11 +437,23 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
                       f"<th>Net marj</th><th>Temel net marj</th><th class='l'>Not</th></tr>{body}</table>"
                       "<p class='m'>Düz fark hatası: 9A−6A gibi kümülatif rakamları TÜFE düzeltmesi yapmadan çıkarmanın son çeyrekteki sapması.</p>")
     if events is not None and not events.empty:
-        body = "".join(f"<tr><td>{e(str(r.olay))}</td><td>{e(str(r.tarih))}</td><td>{e(r.hisse)}</td><td>{e(r.rol)}</td>"
-                       f"<td>{r.CAR*100:+.2f}%</td><td>{r.t:+.2f}</td></tr>" for r in events.itertuples())
-        blocks.append("<h2>Olay çalışması (gerçek fiyatlar)</h2><table><tr><th>Olay</th><th>Tarih</th><th>Hisse</th>"
-                      f"<th>Rol</th><th>CAR [-1,+3]</th><th>t</th></tr>{body}</table>"
-                      "<p class='m'>|t| &gt; 2 kabaca %5 düzeyinde anlamlı tepkiyi gösterir.</p>")
+        def _src(u):
+            return f"<a href='{e(u)}'>kaynak</a>" if isinstance(u, str) and u.startswith("http") else ""
+
+        def _dir(exp, car):
+            if pd.isna(exp) or exp == 0:
+                return "–"
+            return "✓" if np.sign(exp) == np.sign(car) else "✗"
+        ev_sorted = events.sort_values(["tarih", "rol"], ascending=[False, False])
+        body = "".join(f"<tr><td class='l'>{e(str(r.olay))} {_src(getattr(r, 'kaynak', ''))}</td><td>{e(str(r.tarih))}</td><td>{e(r.hisse)}</td>"
+                       f"<td>{e(r.rol)}</td><td>{'–' if pd.isna(getattr(r, 'beklenen', float('nan'))) else format(r.beklenen, '+.2f')}</td>"
+                       f"<td>{r.CAR*100:+.2f}%</td><td>{r.t:+.2f}</td><td>{_dir(getattr(r, 'beklenen', float('nan')), r.CAR)}</td></tr>"
+                       for r in ev_sorted.itertuples())
+        blocks.append("<h2>Olay çalışması: KAP açıklamaları ve gerçek fiyat tepkisi</h2><table><tr><th class='l'>Olay</th><th>0. gün</th><th>Hisse</th>"
+                      f"<th>Rol</th><th>Beklenen</th><th>CAR [-1,+3]</th><th>t</th><th>Yön</th></tr>{body}</table>"
+                      "<p class='m'>CAR: piyasa modeline (BIST 100) göre kümülatif anormal getiri, [-1,+3] işlem günü. |t| &gt; 2 kabaca %5 düzeyinde anlamlı. "
+                      "Beklenen: olay şirketinde analist varsayımı (−1..+1), bağlantılı şirketlerde ilişki ağının öngördüğü etki. "
+                      "18:10'dan sonraki açıklamalarda 0. gün ertesi işlem günüdür.</p>")
     icon = {"tamam": "✓", "hata": "✗", "atlandı": "–"}
     srows = "".join(f"<tr><td>{e(k)}</td><td>{icon[v['durum']]} {e(v['durum'])}</td><td class='l'>{e(v['detay'])}</td></tr>"
                     for k, v in st.steps.items())

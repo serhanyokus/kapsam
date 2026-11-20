@@ -43,8 +43,324 @@
     {
       "kod": "ULKER",
       "hisse_sayisi": null
+    },
+    {
+      "kod": "AEFES",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "AKBNK",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "ASTOR",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "EKGYO",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "ENKAI",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "EREGL",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "GARAN",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "GUBRF",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "ISCTR",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "KRDMD",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "PETKM",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "PGSUS",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "SAHOL",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "SASA",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "SISE",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "TAVHL",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "TOASO",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "TRALT",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "TRMET",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "TTKOM",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "VAKBN",
+      "hisse_sayisi": null
+    },
+    {
+      "kod": "YKBNK",
+      "hisse_sayisi": null
     }
   ],
-  "olaylar": [],
-  "tablo_kaynagi": "ekofin"
+  "olaylar": [
+    {
+      "tarih": "2025-05-23",
+      "aciklama_tarihi": "2025-05-22",
+      "saat": "18:14",
+      "hisse": "EREGL",
+      "baslik": "Erdemir: İsdemir 1 No'lu yüksek fırın (2,8 mt/yıl) devreye alındı",
+      "sok": 0.3,
+      "kaynak": "https://uzmanpara.milliyet.com.tr/kap-haberi/ozel-durum-aciklamasi-genel/682f3f3d321e0c4a62dce6d0"
+    },
+    {
+      "tarih": "2025-07-30",
+      "aciklama_tarihi": "2025-07-29",
+      "saat": "18:15",
+      "hisse": "KCHOL",
+      "baslik": "Koç (Tek-Art): Göcek'te iki marina ve otel, 160 milyon USD",
+      "sok": 0.1,
+      "kaynak": "https://kap.org.tr/en/api/BildirimPdf/1467847"
+    },
+    {
+      "tarih": "2025-08-28",
+      "aciklama_tarihi": "2025-08-27",
+      "saat": "18:29",
+      "hisse": "TTKOM",
+      "baslik": "Türk Telekom: imtiyaz 2050'ye uzatıldı; 2,5 milyar USD + KDV bedel, 17 milyar USD yatırım taahhüdü",
+      "sok": -0.2,
+      "kaynak": "https://borsacoo.com/bildirim/36262"
+    },
+    {
+      "tarih": "2025-09-26",
+      "aciklama_tarihi": "2025-09-26",
+      "saat": "09:41",
+      "hisse": "THYAO",
+      "baslik": "THY: Boeing'den 225 uçak (75 B787 + 150 737 MAX, kesin+opsiyon) siparişi",
+      "sok": 0.5,
+      "kaynak": "https://www.capital.com.tr/piyasalar/borsa/thyden-kapa-ucak-siparisi-aciklamasi-var"
+    },
+    {
+      "tarih": "2025-10-17",
+      "aciklama_tarihi": "2025-10-16",
+      "saat": "23:14",
+      "hisse": "TCELL",
+      "baslik": "Turkcell: 5G ihalesinde 160 MHz, 1,224 milyar USD, 2042'ye kadar lisans",
+      "sok": 0.3,
+      "kaynak": "https://www.cnbce.com/teknoloji/turkcell-kapa-bildirdi-12-milyar-dolarlik-lisans-2042ye-kadar-gecerli-h18430"
+    },
+    {
+      "tarih": "2025-10-21",
+      "aciklama_tarihi": "2025-10-20",
+      "saat": "20:33",
+      "hisse": "SISE",
+      "baslik": "Şişecam: Rekabet Kurulu'ndan 3,155 milyar TL idari para cezası",
+      "sok": -0.4,
+      "kaynak": "https://www.bloomberght.com/rekabet-kurulu-ndan-sisecam-a-3-1-milyar-tl-ceza-3759714"
+    },
+    {
+      "tarih": "2025-11-24",
+      "aciklama_tarihi": "2025-11-21",
+      "saat": "18:50",
+      "hisse": "ARCLK",
+      "baslik": "Arçelik: Tayland buzdolabı fabrikasında üretimi durduruyor (411 çalışan)",
+      "sok": -0.3,
+      "kaynak": "https://kap.org.tr/en/api/BildirimPdf/1519084"
+    },
+    {
+      "tarih": "2025-12-08",
+      "aciklama_tarihi": "2025-12-08",
+      "saat": "09:15",
+      "hisse": "PGSUS",
+      "baslik": "Pegasus: Smartwings Group'un %100'ünü 154 milyon EUR'ya alıyor",
+      "sok": 0.3,
+      "kaynak": "https://kap.org.tr/tr/api/BildirimPdf/1524174"
+    },
+    {
+      "tarih": "2025-12-24",
+      "aciklama_tarihi": "2025-12-24",
+      "saat": "08:17",
+      "hisse": "BIMAS",
+      "baslik": "BİM: katılım bankası kurmak için BDDK'ya başvuru",
+      "sok": 0.3,
+      "kaynak": "https://www.bloomberght.com/bim-katilim-bankasi-kurmayi-planliyor-3764640"
+    },
+    {
+      "tarih": "2026-01-12",
+      "aciklama_tarihi": "2026-01-12",
+      "saat": "08:55",
+      "hisse": "SASA",
+      "baslik": "SASA: yıllık 52.500 ton low-melt polyester elyaf tesisi devreye alındı (~75 milyon USD yıllık gelir)",
+      "sok": 0.2,
+      "kaynak": "https://kap.org.tr/tr/api/BildirimPdf/1540510"
+    },
+    {
+      "tarih": "2026-01-27",
+      "aciklama_tarihi": "2026-01-27",
+      "saat": "11:53",
+      "hisse": "MGROS",
+      "baslik": "Migros: 43 dağıtım merkezindeki 7.875 taşeron çalışanı kendi kadrosuna alıyor",
+      "sok": -0.2,
+      "kaynak": "https://kap.org.tr/tr/api/BildirimPdf/1547046"
+    },
+    {
+      "tarih": "2026-01-30",
+      "aciklama_tarihi": "2026-01-30",
+      "saat": "09:39",
+      "hisse": "TUPRS",
+      "baslik": "Tüpraş: İzmit rafinerisi tank sahasında yangın, kontrol altında, önemli etki yok",
+      "sok": -0.2,
+      "kaynak": "https://kap.org.tr/en/api/BildirimPdf/1549131"
+    },
+    {
+      "tarih": "2026-02-13",
+      "aciklama_tarihi": "2026-02-13",
+      "saat": "16:55",
+      "hisse": "AKBNK",
+      "baslik": "Akbank: 600 milyon USD AT1 tahvil ihracı (%7,95 kupon)",
+      "sok": 0.1,
+      "kaynak": "https://kap.org.tr/tr/api/BildirimPdf/1556536"
+    },
+    {
+      "tarih": "2026-02-23",
+      "aciklama_tarihi": "2026-02-20",
+      "saat": "23:20",
+      "hisse": "BIMAS",
+      "baslik": "BİM: %100 bedelsiz sermaye artırımı (600 milyon → 1,2 milyar TL)",
+      "sok": 0.2,
+      "kaynak": "https://kap.org.tr/tr/api/BildirimPdf/1560075"
+    },
+    {
+      "tarih": "2026-03-13",
+      "aciklama_tarihi": "2026-03-13",
+      "saat": "08:47",
+      "hisse": "FROTO",
+      "baslik": "Ford Otosan: Koç Finansman'ın %100'ünü ~137 milyon USD'ye alıyor",
+      "sok": 0.1,
+      "kaynak": "https://kap.org.tr/tr/api/BildirimPdf/1572139"
+    },
+    {
+      "tarih": "2026-03-26",
+      "aciklama_tarihi": "2026-03-26",
+      "saat": "00:16",
+      "hisse": "TUPRS",
+      "baslik": "Koç, Tüpraş'ın %2,1'ini hızlandırılmış talep toplamayla satıyor (9,32 milyar TL)",
+      "sok": -0.3,
+      "kaynak": "https://kap.org.tr/en/api/BildirimPdf/1575944"
+    },
+    {
+      "tarih": "2026-04-13",
+      "aciklama_tarihi": "2026-04-10",
+      "saat": "18:30",
+      "hisse": "FROTO",
+      "baslik": "Ford Otosan: 31,4 milyar TL proje bazlı devlet desteği (Ford Trucks Avrupa)",
+      "sok": 0.4,
+      "kaynak": "https://kap.org.tr/en/api/BildirimPdf/1590995"
+    },
+    {
+      "tarih": "2026-04-21",
+      "aciklama_tarihi": "2026-04-21",
+      "saat": "09:00",
+      "hisse": "ARCLK",
+      "baslik": "Arçelik: Arçelik Hitachi ortak girişimindeki %60 payını ~261 milyon USD'ye satıyor",
+      "sok": 0.4,
+      "kaynak": "https://kap.org.tr/en/api/BildirimPdf/1595828"
+    },
+    {
+      "tarih": "2026-07-06",
+      "aciklama_tarihi": "2026-07-03",
+      "saat": "18:30",
+      "hisse": "FROTO",
+      "baslik": "Ford Otosan: planlı tatil/bakım duruşu, 2026 beklentilerine etkisi yok (plasebo)",
+      "sok": 0.0,
+      "kaynak": "https://kap.org.tr/en/api/BildirimPdf/1624116"
+    },
+    {
+      "tarih": "2026-07-29",
+      "aciklama_tarihi": "2026-07-28",
+      "saat": "19:17",
+      "hisse": "TAVHL",
+      "baslik": "TAV: Almatı Havalimanı'nın kalan %15'ini 133 milyon USD'ye alıyor",
+      "sok": 0.2,
+      "kaynak": "https://kap.org.tr/en/api/BildirimPdf/1637984"
+    },
+    {
+      "tarih": "2026-08-05",
+      "aciklama_tarihi": "2026-08-04",
+      "saat": "21:45",
+      "hisse": "FROTO",
+      "baslik": "Ford Otosan: IVECO ile yeni kabin programı, ~364 milyon EUR yatırım",
+      "sok": 0.2,
+      "kaynak": "https://kap.org.tr/en/api/BildirimPdf/1643223"
+    },
+    {
+      "tarih": "2026-09-02",
+      "aciklama_tarihi": "2026-09-01",
+      "saat": "20:05",
+      "hisse": "TUPRS",
+      "baslik": "Koç ve Temel Ticaret Tüpraş'ın %0,83'ünü satıyor; grup payı ~%50,1",
+      "sok": -0.2,
+      "kaynak": "https://kap.org.tr/en/api/BildirimPdf/1656968"
+    },
+    {
+      "tarih": "2026-10-02",
+      "aciklama_tarihi": "2026-10-01",
+      "saat": "18:11",
+      "hisse": "PGSUS",
+      "baslik": "Pegasus: Smartwings alımı tamamlandı (142,3 milyon EUR)",
+      "sok": 0.1,
+      "kaynak": "https://kap.org.tr/en/api/BildirimPdf/1670922"
+    },
+    {
+      "tarih": "2026-10-23",
+      "aciklama_tarihi": "2026-10-23",
+      "saat": "14:26",
+      "hisse": "ASELS",
+      "baslik": "ASELSAN: 442,5 milyon USD ihracat sözleşmesi (radar, İHA karşıtı sistemler)",
+      "sok": 0.4,
+      "kaynak": "https://www.alomaliye.com/2026/10/23/aselsandan-442-5-milyon-dolarlik-ihracat-sozlesmesi/"
+    },
+    {
+      "tarih": "2026-11-03",
+      "aciklama_tarihi": "2026-11-03",
+      "saat": "12:05",
+      "hisse": "ASELS",
+      "baslik": "ASELSAN: 1,1 milyar USD hava savunma ihracat sözleşmesi",
+      "sok": 0.6,
+      "kaynak": "https://www.alomaliye.com/2026/11/03/aselsandan-1-1-milyar-dolarlik-ihracat-imzasi/"
+    }
+  ],
+  "tablo_kaynagi": "ekofin",
+  "_olay_notu": "Olaylar KAP açıklamalarından alınmıştır (kaynak alanı). 'tarih' olay çalışmasının 0. günüdür: 18:10'dan sonraki açıklamalar ertesi işlem gününe kaydırılır. 'sok' beklenen yön ve büyüklüktür (-1..+1, analist varsayımı); olay çalışması gerçekleşen anormal getiriyi ölçer.",
+  "_liste_notu": "Takip listesi: BIST-30 (Ekim–Aralık 2026 dönemi) + ARCLK, ULKER."
 }
