@@ -130,7 +130,7 @@ def screen(folder: str | Path, cpi: pd.Series, fx: pd.Series, prices: dict[str, 
                 "raporlanan_net_marj": g("net_margin"), "temel_net_marj": g("core_net_margin"),
                 "parasal_kazanc_net_kar_ytd": float("nan"), "parasal_kazanc_olmadan_zarar": False,
                 "reel_hasilat_yillik": g("revenue_real_yoy"),
-                "duz_fark_hatasi_hasilat": a.naive["error_pct"].iloc[-1] if len(a.naive) else float("nan"),
+                "duz_fark_hatasi_hasilat": a.naive["error_pct"].get(p, float("nan")) if len(a.naive) else float("nan"),
                 "duz_fark_hatasi_net_kar": float("nan"),
                 "piyasa_degeri_mn_tl": float("nan"), "fk_ttm": float("nan"), "pd_dd": float("nan"),
                 "ozkaynak_karliligi_yillik": g("roe_annualized") if kind != "sanayi" else g("core_roe_annualized"),
@@ -150,7 +150,7 @@ def screen(folder: str | Path, cpi: pd.Series, fx: pd.Series, prices: dict[str, 
             item = "net_income_parent" if "net_income_parent" in a.quarterly.index else "net_income"
             nk = tms29.naive_vs_correct(reps, cpi, item)
             if len(nk):
-                row["duz_fark_hatasi_net_kar"] = nk["error_pct"].iloc[-1]
+                row["duz_fark_hatasi_net_kar"] = nk["error_pct"].get(p, float("nan"))
             if kind != "sanayi":
                 notes.append(f"{kind}: TMS 29 uygulanmaz, nominal mod")
             elif not restated:

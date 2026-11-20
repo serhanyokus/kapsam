@@ -218,3 +218,20 @@ def test_evds_uses_evds3_and_falls_back_on_html():
     s = S([html, R("<html></html>", "text/html")])
     with pytest.raises(RuntimeError, match="JSON yerine text/html"):
         evds.EVDSClient("k", session=s).series("TP.FG.J0", "01-09-2026", "31-10-2026")
+
+
+def test_naive_error_robust_for_companies_without_sales():
+    """Satışı olmayan holding/GYO: hasılat satırı bazı raporlarda yok ya da çeyrek negatif → çökme yok, anlamsız oran yok."""
+    from kapsam.data.statements import Statement
+    from kapsam.normalize import tms29
+    idx = pd.period_range("2025Q3", "2026Q3", freq="Q")
+    cpi = pd.Series([100, 108, 115, 121, 127.0], index=idx)
+    def rep(p, **v):
+        return Statement("HOLD", pd.Period(p, "Q"), pd.DataFrame({pd.Period(p, "Q"): pd.Series(v, dtype=float)}), cumulative=True)
+    reps = [rep("2026Q1", net_income=10, net_monetary_gain=2),                     # hasılat satırı hiç yok
+            rep("2026Q2", revenue=400, net_income=30, net_monetary_gain=5),
+            rep("2026Q3", revenue=401, net_income=50, net_monetary_gain=8)]        # 3Ç'de satış yok: düzeltilmiş çeyrek < 0
+    rv = tms29.naive_vs_correct(reps, cpi, "revenue")
+    assert rv.empty                                                               # 2Ç: önceki raporda kalem yok; 3Ç: negatif
+    ni = tms29.naive_vs_correct(reps, cpi, "net_income")
+    assert list(ni.index) == [pd.Period("2026Q2"), pd.Period("2026Q3")]

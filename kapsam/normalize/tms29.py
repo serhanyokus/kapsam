@@ -157,6 +157,9 @@ def metrics(df: pd.DataFrame, tax_rate: float = 0.0) -> pd.DataFrame:
     return m
 
 
+POSITIVE_ITEMS = {"revenue", "gross_premiums", "net_premiums", "interest_income", "net_interest_income"}
+
+
 def naive_vs_correct(reports: Iterable[Statement], cpi: pd.Series, item: str = "revenue") -> pd.DataFrame:
     """Analistlerin sık yaptığı hatayı gösterir: farklı raporlardan rakamları düzeltmeden çıkarmak.
 
@@ -172,7 +175,15 @@ def naive_vs_correct(reports: Iterable[Statement], cpi: pd.Series, item: str = "
         p = r.report_date
         if p.quarter == 1 or (p - 1) not in by_date:
             continue
-        naive = r.values.at[item, p] - by_date[p - 1].values.at[item, p - 1]
-        correct = q.at[item, p]
+        cur = r.values[p].get(item, np.nan) if p in r.values.columns else np.nan
+        prv = by_date[p - 1].values
+        prev = prv[p - 1].get(item, np.nan) if (p - 1) in prv.columns else np.nan
+        naive, correct = cur - prev, q.at[item, p] if p in q.columns else np.nan
+        if pd.isna(naive) or pd.isna(correct) or correct == 0:    # kalem yok ya da sıfır (ör. satışı olmayan holding)
+            continue
+        if item in POSITIVE_ITEMS and (correct <= 0 or naive <= 0):   # çeyrekte satış yok → oran anlamsız
+            continue
+        if abs(correct) < 0.02 * abs(cur):                        # çeyrek, yılbaşından beri toplamın %2'sinden küçük: payda ~0
+            continue
         rows[p] = {"naive": naive, "correct": correct, "error_pct": naive / correct - 1}
-    return pd.DataFrame(rows).T
+    return pd.DataFrame(rows).T if rows else pd.DataFrame(columns=["naive", "correct", "error_pct"])
