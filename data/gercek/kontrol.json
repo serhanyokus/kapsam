@@ -127,8 +127,10 @@
  },
  "AFYON": {
   "son_kontrol": "2026-11-20",
-  "durum": "hata",
-  "neden": "503 Server Error: Service Unavailable for url: https://www.ekofin.net/sirket/detay/AFYON/nakit-akim-tablosu"
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
  },
  "AGESA": {
   "son_kontrol": "2026-11-20",
@@ -2029,8 +2031,10 @@
  },
  "ICUGS": {
   "son_kontrol": "2026-11-20",
-  "durum": "hata",
-  "neden": "503 Server Error: Service Unavailable for url: https://www.ekofin.net/sirket/detay/ICUGS/bilancolar"
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
  },
  "IDGYO": {
   "son_kontrol": "2026-11-20",
@@ -2076,8 +2080,10 @@
  },
  "IHLGM": {
   "son_kontrol": "2026-11-20",
-  "durum": "hata",
-  "neden": "503 Server Error: Service Unavailable for url: https://www.ekofin.net/sirket/detay/IHLGM/gelir-tablosu"
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
  },
  "IHYAY": {
   "son_kontrol": "2026-11-20",
@@ -4147,6 +4153,205 @@
   "yeni": 5
  },
  "VBTYZ": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "VERTU": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "VERUS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "VESBE": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "VESTL": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "VEYAS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "VKFYO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "desteklenmiyor",
+  "neden": "VKFYO: hasılat satırı yok; tablo biçimi tanınmadı"
+ },
+ "VKGYO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "VKING": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "VRGYO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "VSNMD": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "YAPRK": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "YATAS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "YAYLA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "YBTAS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/6",
+  "yeni": 5
+ },
+ "YEOTK": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "YESIL": {
+  "son_kontrol": "2026-11-20",
+  "durum": "desteklenmiyor",
+  "neden": "YESIL: hasılat satırı yok; tablo biçimi tanınmadı"
+ },
+ "YGGYO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "YIGIT": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "YKBNK": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "banka",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "YKSLN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "YONGA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/6",
+  "yeni": 5
+ },
+ "YUNSA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "YYAPI": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "YYLGD": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ZEDUR": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ZERGY": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ZGYO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ZOREN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ZRGYO": {
   "son_kontrol": "2026-11-20",
   "durum": "tamam",
   "tur": "sanayi",

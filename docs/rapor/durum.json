@@ -1,5 +1,5 @@
 {
- "guncelleme": "2026-11-20T19:36:03+00:00",
+ "guncelleme": "2026-11-20T19:58:52+00:00",
  "adimlar": {
   "makro": {
    "durum": "tamam",
@@ -15,7 +15,7 @@
   },
   "tablo": {
    "durum": "tamam",
-   "detay": "150 hisse kontrol edildi, 705 yeni rapor kaydedildi, 9 desteklenmiyor; PARSN: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; PENTA: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; PGSUS: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; SEKUR: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; TATEN: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir."
+   "detay": "32 hisse kontrol edildi, 150 yeni rapor kaydedildi, 2 desteklenmiyor"
   },
   "rapor": {
    "durum": "tamam",
@@ -27,7 +27,7 @@
   },
   "tarama": {
    "durum": "tamam",
-   "detay": "577 şirket tarandı, 6 şirkette hata"
+   "detay": "607 şirket tarandı"
   }
  }
 }
