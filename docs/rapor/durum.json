@@ -1,0 +1,33 @@
+{
+ "guncelleme": "2026-11-20T18:06:23+00:00",
+ "adimlar": {
+  "makro": {
+   "durum": "atlandı",
+   "detay": "EVDS_API_KEY tanımlı değil (GitHub → Settings → Secrets → Actions)"
+  },
+  "evren": {
+   "durum": "tamam",
+   "detay": "629 hisse (sanayi: 606, banka: 16, sigorta: 7)"
+  },
+  "fiyat": {
+   "durum": "tamam",
+   "detay": "10/10 hisse, son tarih 2026-11-20"
+  },
+  "tablo": {
+   "durum": "tamam",
+   "detay": "150 hisse kontrol edildi, 697 yeni rapor kaydedildi, 2 desteklenmiyor, 1 hata; A1YEN: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; ALCTL: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; ARFYE: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; BIGEN: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; BMSTL: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir. …"
+  },
+  "rapor": {
+   "durum": "tamam",
+   "detay": "10 şirket notu"
+  },
+  "olay": {
+   "durum": "atlandı",
+   "detay": "config/takip.json içinde olay yok"
+  },
+  "tarama": {
+   "durum": "tamam",
+   "detay": "147 şirket tarandı, 1 şirkette hata"
+  }
+ }
+}

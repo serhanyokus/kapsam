@@ -1,0 +1,1046 @@
+{
+ "ARCLK": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 0
+ },
+ "ASELS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 0
+ },
+ "BIMAS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 0
+ },
+ "FROTO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 0
+ },
+ "KCHOL": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "MGROS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 0
+ },
+ "TCELL": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 0
+ },
+ "THYAO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "TUPRS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 1
+ },
+ "ULKER": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 1
+ },
+ "A1CAP": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "A1YEN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AAGYO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ACSEL": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ADEL": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ADESE": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ADGYO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AEFES": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AFYON": {
+  "son_kontrol": "2026-11-20",
+  "durum": "hata",
+  "neden": "503 Server Error: Service Unavailable for url: https://www.ekofin.net/sirket/detay/AFYON/nakit-akim-tablosu"
+ },
+ "AGESA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sigorta",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AGHOL": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AGROT": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AGYO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AHGAZ": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AHSGY": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AKBNK": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "banka",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AKCNS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AKENR": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AKFGY": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AKFIS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AKFYE": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AKGRT": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sigorta",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AKHAN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AKMGY": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AKSA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AKSEN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AKSGY": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AKSUE": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AKYHO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ALARK": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ALBRK": {
+  "son_kontrol": "2026-11-20",
+  "durum": "desteklenmiyor",
+  "neden": "ALBRK: hasılat satırı yok; tablo biçimi tanınmadı"
+ },
+ "ALBTN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ALCAR": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ALCTL": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ALFAS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ALGYO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ALKA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ALKIM": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ALKLC": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ALTNY": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ALVES": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/6",
+  "yeni": 5
+ },
+ "ANELE": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ANGEN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ANHYT": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sigorta",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ANSGR": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sigorta",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ARASE": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ARDYZ": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ARENA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ARFYE": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ARMGD": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ARSAN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ARTMS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ARZUM": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ASGYO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ASTOR": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ASUZU": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ATAGY": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ATAKP": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ATATP": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ATATR": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ATEKS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ATLAS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "ATSYH": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/6",
+  "yeni": 5
+ },
+ "AVGYO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AVHOL": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AVOD": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AVPGY": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AVTUR": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AYCES": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AYDEM": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AYEN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AYES": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/6",
+  "yeni": 5
+ },
+ "AYGAZ": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "AZTEK": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BAGFS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BAHKM": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BAKAB": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BALAT": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/6",
+  "yeni": 5
+ },
+ "BALSU": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/3",
+  "yeni": 5
+ },
+ "BANVT": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BARMA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BASCM": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/6",
+  "yeni": 5
+ },
+ "BASGZ": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BAYRK": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BEGYO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BERA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BESLR": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BESTE": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BETAE": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BEYAZ": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BFREN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BIENY": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BIGCH": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BIGEN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BIGTK": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BINBN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BINHO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "desteklenmiyor",
+  "neden": "BINHO: hasılat satırı yok; tablo biçimi tanınmadı"
+ },
+ "BIOEN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BIZIM": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BJKAS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/3",
+  "yeni": 5
+ },
+ "BKRGY": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BLCYT": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BLUME": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BMSCH": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BMSTL": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BNTAS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BOBET": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BORLS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BORSK": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/6",
+  "yeni": 5
+ },
+ "BOSSA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BRISA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BRKO": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BRKSN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BRKVY": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "banka",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BRLSM": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BRMEN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BRSAN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BRYAT": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BSOKE": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BTCIM": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/6",
+  "yeni": 5
+ },
+ "BUCIM": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BULGS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BURCE": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BURVA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BVSAN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "BYDNR": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "CANTE": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "CASA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "CATES": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "CCOLA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "CELHA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "CEMAS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "CEMTS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "CEMZY": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "CEOEM": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "CGCAM": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "CIMSA": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "CITAS": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "CLEBI": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ },
+ "CMBTN": {
+  "son_kontrol": "2026-11-20",
+  "durum": "tamam",
+  "tur": "sanayi",
+  "son_donem": "2026/9",
+  "yeni": 5
+ }
+}
