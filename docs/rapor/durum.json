@@ -1,5 +1,5 @@
 {
- "guncelleme": "2026-11-20T19:58:52+00:00",
+ "guncelleme": "2026-11-20T20:37:11+00:00",
  "adimlar": {
   "makro": {
    "durum": "tamam",
@@ -11,19 +11,19 @@
   },
   "fiyat": {
    "durum": "tamam",
-   "detay": "10/10 hisse, son tarih 2026-11-20"
+   "detay": "32/32 hisse, son tarih 2026-11-20"
   },
   "tablo": {
    "durum": "tamam",
-   "detay": "32 hisse kontrol edildi, 150 yeni rapor kaydedildi, 2 desteklenmiyor"
+   "detay": "Yeni rapor beklenen hisse yok (tüm kayıtlar güncel)"
   },
   "rapor": {
    "durum": "tamam",
-   "detay": "10 şirket notu"
+   "detay": "32 şirket notu"
   },
   "olay": {
-   "durum": "atlandı",
-   "detay": "config/takip.json içinde olay yok"
+   "durum": "tamam",
+   "detay": "25 olay, 101 hisse-olay gözlemi; olay şirketinde yön isabeti %50, |t|>2: 2/24"
   },
   "tarama": {
    "durum": "tamam",
