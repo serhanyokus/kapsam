@@ -1,9 +1,9 @@
 {
- "guncelleme": "2026-11-20T18:06:23+00:00",
+ "guncelleme": "2026-11-20T18:48:20+00:00",
  "adimlar": {
   "makro": {
-   "durum": "atlandı",
-   "detay": "EVDS_API_KEY tanımlı değil (GitHub → Settings → Secrets → Actions)"
+   "durum": "hata",
+   "detay": "Expecting value: line 1 column 1 (char 0)"
   },
   "evren": {
    "durum": "tamam",
@@ -15,7 +15,7 @@
   },
   "tablo": {
    "durum": "tamam",
-   "detay": "150 hisse kontrol edildi, 697 yeni rapor kaydedildi, 2 desteklenmiyor, 1 hata; A1YEN: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; ALCTL: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; ARFYE: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; BIGEN: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; BMSTL: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir. …"
+   "detay": "150 hisse kontrol edildi, 715 yeni rapor kaydedildi, 5 desteklenmiyor, 2 hata; DOFRB: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; DOKTA: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; EKDMR: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; ERCB: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; FMIZP: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir. …"
   },
   "rapor": {
    "durum": "tamam",
@@ -27,7 +27,7 @@
   },
   "tarama": {
    "durum": "tamam",
-   "detay": "147 şirket tarandı, 1 şirkette hata"
+   "detay": "290 şirket tarandı, 2 şirkette hata"
   }
  }
 }
