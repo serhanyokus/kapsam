@@ -3,3 +3,9 @@ __pycache__/
 .pytest_cache/
 .env
 .venv/
+
+# Her gün yeniden üretilen ağır çıktılar ana dalda tutulmaz; 'rapor' dalına (geçmişsiz) yayımlanır.
+docs/rapor/[A-Z]*.html
+docs/rapor/*_model.xlsx
+docs/rapor/risk/*.gz
+docs/rapor/risk/index.html

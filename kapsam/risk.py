@@ -42,7 +42,11 @@ def _max_drawdown(p: pd.Series) -> float:
     return float((p / p.cummax() - 1).min())
 
 
-def risk_table(prices: pd.DataFrame, market: str = "XU100", days: int = TRADING_DAYS, min_obs: int = 120,
+MIN_OBS = 20            # her hisse dahil: en az ~1 ay işlem; 120 günden azında 'güvenilirlik: düşük'
+RELIABLE_OBS = 120
+
+
+def risk_table(prices: pd.DataFrame, market: str = "XU100", days: int = TRADING_DAYS, min_obs: int = MIN_OBS,
                cpi_monthly: pd.Series | None = None, usdtry: pd.Series | None = None,
                corr: pd.DataFrame | None = None) -> pd.DataFrame:
     """Hisse başına risk özeti (son `days` işlem günü)."""
@@ -68,7 +72,8 @@ def risk_table(prices: pd.DataFrame, market: str = "XU100", days: int = TRADING_
             continue
         ann_ret = float(np.exp(x.sum() * TRADING_DAYS / len(x)) - 1)
         vol = float(x.std(ddof=1) * np.sqrt(TRADING_DAYS))
-        row = {"gozlem": len(x), "son_fiyat": float(px[t].dropna().iloc[-1]),
+        row = {"gozlem": len(x), "guvenilirlik": "yüksek" if len(x) >= RELIABLE_OBS else "düşük (az veri)",
+               "son_fiyat": float(px[t].dropna().iloc[-1]),
                "getiri_yillik": ann_ret,
                "reel_getiri_yillik": (1 + ann_ret) / (1 + infl) - 1 if pd.notna(infl) else np.nan,
                "usd_getiri_yillik": (1 + ann_ret) / (1 + usd_chg) - 1 if pd.notna(usd_chg) else np.nan,
@@ -105,7 +110,7 @@ def risk_table(prices: pd.DataFrame, market: str = "XU100", days: int = TRADING_
     return out
 
 
-def cov_corr(r: pd.DataFrame, min_obs: int = 120) -> tuple[pd.DataFrame, pd.DataFrame]:
+def cov_corr(r: pd.DataFrame, min_obs: int = MIN_OBS) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Yıllıklaştırılmış örnek kovaryans ve korelasyon (çift bazında ortak gözlemlerle)."""
     keep = [c for c in r.columns if r[c].count() >= min_obs]
     x = r[keep]
@@ -130,6 +135,29 @@ def ledoit_wolf(r: pd.DataFrame, min_coverage: float = 1.0) -> tuple[pd.DataFram
     delta = b2 / d2 if d2 > 0 else 1.0
     sigma = delta * F + (1 - delta) * S
     return pd.DataFrame(sigma * TRADING_DAYS, index=x.columns, columns=x.columns), float(delta)
+
+
+def ledoit_wolf_all(r: pd.DataFrame, min_obs: int = MIN_OBS) -> tuple[pd.DataFrame, float]:
+    """TÜM hisseler için küçültülmüş kovaryans (eksik veri dahil).
+
+    1. Küçültme katsayısı δ, pencerenin tamamında verisi olan hisselerle Ledoit–Wolf (2004) formülünden bulunur.
+    2. Çift bazında örnek kovaryans S (ortak gözlem ≥ min_obs; yetersiz çiftlerde korelasyon 0 varsayılır).
+    3. Σ = δ·(ort. varyans)·I + (1−δ)·S, ardından en yakın pozitif tanımlı matrise izdüşüm (özdeğer kırpma).
+    Dönen matris yıllıklaştırılmıştır ve her zaman pozitif tanımlıdır."""
+    keep = [c for c in r.columns if r[c].count() >= min_obs]
+    x = r[keep]
+    _, delta = ledoit_wolf(x)
+    if pd.isna(delta):
+        delta = 0.5
+    S = x.cov(min_periods=min_obs).values
+    d = np.nanmean(np.diag(S))
+    S = np.where(np.isnan(S), 0.0, S)
+    F = d * np.eye(len(keep))
+    sigma = delta * F + (1 - delta) * S
+    w, v = np.linalg.eigh((sigma + sigma.T) / 2)
+    w = np.clip(w, d * 1e-4, None)
+    sigma = (v * w) @ v.T
+    return pd.DataFrame(sigma * TRADING_DAYS, index=keep, columns=keep), float(delta)
 
 
 def sector_corr(corr: pd.DataFrame, sectors: pd.Series) -> pd.DataFrame:

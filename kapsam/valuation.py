@@ -131,12 +131,21 @@ def sensitivity(inp: DCFInputs, waccs: list[float], growths: list[float]) -> pd.
     return out
 
 
-def multiples(real: pd.DataFrame, market_cap: float, net_debt: float, tax_rate: float = 0.0) -> dict:
-    """Reel (baz tarih TL'si) TTM rakamlarla çarpanlar; parasal kazançtan arındırılmış F/K dahil."""
+def multiples(real: pd.DataFrame, market_cap: float, net_debt: float, tax_rate: float = 0.0, ttm_fn=None) -> dict:
+    """Reel (baz tarih TL'si) TTM rakamlarla çarpanlar; parasal kazançtan arındırılmış F/K dahil.
+    ttm_fn(kalem): son 12 ay hesaplayıcı (çeyrekler eksikse kümülatif raporlardan); verilmezse son 4 çeyrek."""
     from .normalize.tms29 import core_earnings
     ev = market_cap + net_debt
-    rev, ebit = ttm(real.loc["revenue"]), ttm(real.loc["operating_profit"])
-    ni = ttm(real.loc["net_income"])
-    core = ttm(core_earnings(real, tax_rate))
+    if ttm_fn is None:
+        rev, ebit = ttm(real.loc["revenue"]), ttm(real.loc["operating_profit"])
+        ni = ttm(real.loc["net_income"])
+        core = ttm(core_earnings(real, tax_rate))
+    else:
+        rev, ebit, ni = ttm_fn("revenue"), ttm_fn("operating_profit"), ttm_fn("net_income")
+        try:
+            nmg = ttm_fn("net_monetary_gain")
+        except (ValueError, KeyError):
+            nmg = 0.0
+        core = ni - nmg * (1 - tax_rate)
     return {"FD/Satışlar": ev / rev, "FD/FVÖK": ev / ebit, "F/K (raporlanan)": market_cap / ni,
             "F/K (temel)": market_cap / core if core > 0 else float("nan")}

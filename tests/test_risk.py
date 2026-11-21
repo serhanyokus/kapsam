@@ -111,3 +111,50 @@ def test_full_universe_prices_and_risk_step(tmp_path):
     assert full.shape == (5, 5)
     assert tab.loc["H0", "sektor"] == "A" and "en_yakin_3" in tab
     assert "Risk tablosu" in (out / "index.html").read_text(encoding="utf-8")
+
+
+def test_every_stock_included_even_new_listings():
+    """Yeni halka arz (30 gün verisi) da risk tablosuna ve Ledoit–Wolf matrisine girer; güvenilirliği 'düşük' işaretlenir."""
+    px = factor_prices(betas=tuple(np.linspace(0.4, 1.4, 8)))
+    px.loc[px.index[:-30], "H7"] = np.nan                                                # son 30 gün işlem gören hisse
+    r = risk.window(risk.log_returns(px))
+    tab = risk.risk_table(px)
+    assert "H7" in tab.index and tab.loc["H7", "guvenilirlik"].startswith("düşük") and tab.loc["H0", "guvenilirlik"] == "yüksek"
+    lw, delta = risk.ledoit_wolf_all(r.drop(columns="XU100"))
+    assert "H7" in lw.index and len(lw) == 8 and 0 <= delta <= 1
+    assert np.linalg.eigvalsh(lw.values).min() > 0 and np.allclose(lw.values, lw.values.T)
+    # tam veri olan hisselerde örnek kovaryansa yakın (küçültme küçük)
+    s = r[["H0", "H1"]].cov().values * 252
+    assert lw.loc["H0", "H0"] == pytest.approx(s[0, 0], rel=0.3)
+
+
+def test_ttm_from_cumulative_reports_semiannual():
+    """6 ayda bir rapor veren şirket: çeyrek ayrıştırılamaz; son 12 ay = YB + önceki yıl − önceki yıl aynı dönem (TÜFE ile)."""
+    from kapsam.data.statements import Statement
+    from kapsam.normalize import tms29
+    idx = pd.period_range("2025Q2", "2026Q2", freq="Q")
+    cpi = pd.Series([100, 105, 110, 116, 122.0], index=idx)
+
+    def rep(p, rev):
+        return Statement("YARI", pd.Period(p, "Q"), pd.DataFrame({pd.Period(p, "Q"): pd.Series(
+            {"revenue": rev, "net_income": rev / 10, "net_monetary_gain": 1.0}, dtype=float)}), cumulative=True)
+    reps = [rep("2025Q2", 50), rep("2025Q4", 110), rep("2026Q2", 70)]
+    v = tms29.ttm_ytd(reps, "revenue", cpi)
+    assert v == pytest.approx(70 + 110 * 122 / 110 - 50 * 122 / 100)
+    from kapsam import pipeline
+    a = pipeline.analyze("YARI", reps, cpi, pd.Series(30.0, index=idx))
+    assert a.ttm("revenue") == pytest.approx(v)
+
+
+def test_basic_note_for_company_without_sales():
+    from kapsam import pipeline, report
+    from kapsam.data.statements import Statement
+    idx = pd.period_range("2025Q3", "2026Q3", freq="Q")
+    cpi = pd.Series([100, 106, 112, 118, 124.0], index=idx)
+    reps = [Statement("HOLD", p, pd.DataFrame({p: pd.Series({"net_income": 10.0 * (p.quarter), "net_monetary_gain": 3.0 * p.quarter,
+                                                             "total_equity": 500.0}, dtype=float)}), cumulative=True) for p in idx]
+    a = pipeline.analyze("HOLD", reps, cpi, pd.Series(30.0, index=idx))
+    with pytest.raises(report.NoDCF):
+        report.inputs_from_analysis(a, shares=1e6)
+    page = report.basic_note(a, 1e4, "Holding A.Ş.", {"beta": 0.9, "gozlem": 252, "oynaklik_yillik": 0.4}, "hasılat yok")
+    assert "İNA) uygulanmadı" in page and "Piyasa riski" in page and "Holding A.Ş." in page

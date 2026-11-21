@@ -112,8 +112,31 @@ def network_section(graph, ticker: str, events) -> dict:
     return {"relations": lines, "peers": graph.similar(ticker, 3), "exposures": exposures, "img": _png(fig)}
 
 
+def risk_section(risk_row: dict | pd.Series | None) -> str:
+    """Notun 'Piyasa riski' bölümü: son 1 yıl getiri (nominal/reel/USD), oynaklık, beta, korelasyon, VaR, en büyük düşüş."""
+    if risk_row is None:
+        return ""
+    r = dict(risk_row)
+    g = lambda k: r.get(k, float("nan"))  # noqa: E731
+    rows = [("Getiri (1 yıl): nominal / reel / USD", f"{_pct(g('getiri_yillik'))} / {_pct(g('reel_getiri_yillik'))} / {_pct(g('usd_getiri_yillik'))}"),
+            ("Yıllık oynaklık (aşağı yön)", f"{_pct(g('oynaklik_yillik'))} ({_pct(g('asagi_yon_oynaklik'))})"),
+            ("Beta / BIST 100 korelasyonu", f"{_num(g('beta'), 2)} / {_num(g('korelasyon_xu100'), 2)}"),
+            ("Özgün oynaklık / sistematik risk payı", f"{_pct(g('ozgun_oynaklik'))} / {_pct(g('sistematik_risk_payi'))}"),
+            ("Günlük VaR95 / ES95", f"{_pct(g('var95_gunluk'))} / {_pct(g('es95_gunluk'))}"),
+            ("En büyük düşüş (1 yıl)", _pct(g("max_dusus"))),
+            ("Çarpıklık / basıklık", f"{_num(g('carpiklik'), 2)} / {_num(g('basiklik'), 2)}"),
+            ("Ortalama korelasyon (tüm piyasa)", _num(g("ort_korelasyon"), 2)),
+            ("En çok birlikte hareket ettiği hisseler", html.escape(str(r.get("en_yakin_3") or "–")))]
+    obs = g("gozlem")
+    warn = " <b>Az veri: sonuçlar güvenilir değil.</b>" if pd.notna(obs) and obs < 120 else ""
+    body = "".join(f"<tr><td>{k}</td><td>{v}</td></tr>" for k, v in rows)
+    return (f"<h2>Piyasa riski (son 1 yıl, {'' if pd.isna(obs) else int(obs)} işlem günü)</h2><table>{body}</table>"
+            f"<p class='muted'>Günlük log getiri, BIST 100'e göre piyasa modeli. Reel getiri TÜFE, USD getiri TCMB kuru ile.{warn}</p>")
+
+
 def html_note(a: Analysis, inp: val.DCFInputs, market_cap: float, thesis: dict | None = None,
-              disclosures: list[dict] | None = None, synthetic: bool = False, network: dict | None = None) -> str:
+              disclosures: list[dict] | None = None, synthetic: bool = False, network: dict | None = None,
+              risk_row: dict | pd.Series | None = None, name: str | None = None) -> str:
     """Analistin yöneticisine gönderebileceği tek sayfalık (yazdırılabilir) araştırma notu."""
     m, p = a.metrics, a.last
     res = val.dcf(inp)
@@ -121,7 +144,10 @@ def html_note(a: Analysis, inp: val.DCFInputs, market_cap: float, thesis: dict |
     im = val.implied_margin(market_cap + inp.net_debt + inp.minority_and_other, inp)
     sens = val.sensitivity(inp, [inp.real_wacc - 0.01, inp.real_wacc, inp.real_wacc + 0.01],
                            [inp.growth_high - 0.02, inp.growth_high, inp.growth_high + 0.02])
-    mult = val.multiples(a.real, market_cap, inp.net_debt)
+    try:
+        mult = val.multiples(a.real, market_cap, inp.net_debt, ttm_fn=a.ttm)
+    except (ValueError, KeyError):
+        mult = {}
     price = market_cap / inp.shares
     upside = res["per_share"] / price - 1
     ch = charts(a)
@@ -173,7 +199,7 @@ th:first-child,td:first-child,.l{{text-align:left}} img{{width:100%;margin:6px 0
 @media print{{body{{margin:0}} h2{{break-after:avoid}} img{{break-inside:avoid}}}}
 </style></head><body>
 <div class="muted">KAPSAM araştırma notu · {date.today():%d.%m.%Y} · Son veri: {p} · Tutarlar {a.base} TL'si (reel)</div>
-<h1>{e(a.ticker)}: Enflasyondan arındırılmış görünüm ve değerleme</h1>
+<h1>{e(a.ticker)}{(' · ' + e(name)) if name else ''}: Enflasyondan arındırılmış görünüm ve değerleme</h1>
 {banner}
 <div class="kpis">
 <div class="kpi"><span>Reel hasılat büyümesi (yıllık)</span><b>{_pct(m.at['revenue_real_yoy', p])}</b></div>
@@ -202,6 +228,7 @@ Parasal kazanç/kayıp, son çeyrekte net kârın <b>{_pct(m.at['monetary_gain_s
 <table><tr><th>Hisse başı değer</th>{sens_head}</tr>{sens_rows}</table>
 <p class="muted">Satırlar reel AOSM, sütunlar ilk dönem reel büyüme.</p>
 <table><tr><th>Çarpan (son 12 ay, reel)</th><th></th></tr>{mult_rows}</table></div></div>
+{risk_section(risk_row)}
 {net_html}
 {th_html}
 {disc_html}
@@ -335,10 +362,19 @@ def estimate_sales_to_capital(a: Analysis, lo: float = 0.5, hi: float = 5.0) -> 
     return s2c, f"son 12 ay: Δhasılat {d_rev/1e6:,.0f} mn / net yatırım {net_inv/1e6:,.0f} mn"
 
 
+class NoDCF(ValueError):
+    """Şirketin ekonomisi İNA'ya uygun değil (ör. hasılatı olmayan holding)."""
+
+
 def inputs_from_analysis(a: Analysis, **overrides) -> val.DCFInputs:
     """Analizden makul başlangıç girdileri üretir; analist her birini değiştirebilir."""
-    rev0 = val.ttm(a.real.loc["revenue"])
-    m0 = val.ttm(a.real.loc["operating_profit"]) / rev0
+    try:
+        rev0 = a.ttm("revenue")
+    except (ValueError, KeyError) as why:
+        raise NoDCF(f"son 12 ay hasılat hesaplanamadı ({why}): İNA uygulanamaz") from why
+    if not (rev0 > 0):
+        raise NoDCF("son 12 ay hasılat yok ya da sıfır (satışı olmayan holding/GYO): İNA uygulanamaz")
+    m0 = a.ttm("operating_profit") / rev0
     p = a.last
     nd = a.metrics.loc["net_debt"].dropna()          # reel seri: son bilanço eksikse en son bilanço (baz TL'ye taşınmış)
     g = a.metrics.at["revenue_real_yoy", p]
@@ -360,7 +396,8 @@ def is_financial(a: Analysis) -> bool:
         "net_interest_income" in a.quarterly.index or "gross_premiums" in a.quarterly.index)
 
 
-def financial_note(a: Analysis, market_cap: float | None = None, name: str | None = None) -> str:
+def financial_note(a: Analysis, market_cap: float | None = None, name: str | None = None,
+                   risk_row: dict | pd.Series | None = None) -> str:
     """Banka ve sigorta şirketleri için not. Faaliyet kârı/serbest nakit akımı tanımı farklı olduğundan İNA yerine
     özkaynak çarpanları ve kârlılık/risk göstergeleri kullanılır. Tablolar TMS 29'a göre düzeltilmez (BDDK/SEDDK);
     çeyrekler nominal çıkarmayla ayrıştırılır, reel eğilim TÜFE ile baz tarihe taşınarak gösterilir."""
@@ -368,7 +405,10 @@ def financial_note(a: Analysis, market_cap: float | None = None, name: str | Non
     bank = "net_interest_income" in q.index
     row = lambda k: q.loc[k] if k in q.index else pd.Series(np.nan, index=q.columns)  # noqa: E731
     ni = row("net_income_parent") if row("net_income_parent").notna().any() else row("net_income")
-    ttm = ni.iloc[-4:].sum() if ni.iloc[-4:].notna().all() and len(ni) >= 4 else np.nan
+    try:
+        ttm = a.ttm("net_income_parent" if row("net_income_parent").notna().any() else "net_income")
+    except (ValueError, KeyError):
+        ttm = np.nan
     eq = row("total_equity").get(p, np.nan)
     pb = market_cap / eq if market_cap and pd.notna(eq) and eq > 0 else np.nan
     pe = market_cap / ttm if market_cap and pd.notna(ttm) and ttm > 0 else np.nan
@@ -421,9 +461,98 @@ th:first-child,td:first-child{{text-align:left}} img{{width:100%;margin:6px 0}}
 <h2>Çeyreklik görünüm</h2>
 <img src="{img}" alt="Çeyreklik kalemler">
 <table><tr><th>mn TL (nominal)</th>{tbl_head}</tr>{tbl_rows}</table>
+{risk_section(risk_row)}
 <h2>Yöntem</h2>
 <p class="muted">{kind} şirketleri BDDK/SEDDK düzenlemesi gereği TMS 29 enflasyon düzeltmesi uygulamaz; bu yüzden çeyrekler kümülatif
 rakamların düz farkıyla bulunur (düzeltme yapılırsa hata olurdu). Grafikteki reel seri, her çeyreği TÜFE ile {a.base} TL'sine taşır.
 Faaliyet kârı ve serbest nakit akımı bankacılıkta anlamlı olmadığından İNA yerine PD/DD, F/K ve özkaynak kârlılığı gösterilir.
 {len(a.reports)} rapor işlendi. Bu not bir araştırma aracının çıktısıdır; yatırım tavsiyesi değildir.</p>
 </body></html>"""
+
+
+def basic_note(a: Analysis, market_cap: float | None = None, name: str | None = None,
+               risk_row: dict | pd.Series | None = None, reason: str = "") -> str:
+    """İNA'nın anlamlı olmadığı şirketler (hasılatı olmayan holding/GYO, çok kısa geçmiş) için aynı yapıda not:
+    TMS 29 düzeltmeli çeyrekler, parasal kazanç etkisi, düzeltmesiz yöntem hatası, çarpanlar ve piyasa riski."""
+    q, m, p, e = a.quarterly, a.metrics, a.last, html.escape
+    row = lambda k: q.loc[k] if k in q.index else pd.Series(np.nan, index=q.columns)  # noqa: E731
+    item = "net_income_parent" if row("net_income_parent").notna().any() else "net_income"
+    try:
+        ni_ttm = a.ttm(item)
+    except (ValueError, KeyError):
+        ni_ttm = np.nan
+    eq = row("total_equity").dropna()
+    eq = eq.iloc[-1] if len(eq) else np.nan
+    pe = market_cap / ni_ttm if market_cap and pd.notna(ni_ttm) and ni_ttm > 0 else np.nan
+    pb = market_cap / eq if market_cap and pd.notna(eq) and eq > 0 else np.nan
+    ytd = [r for r in a.reports if r.report_date == p][0].values[p]
+    ni_y, nmg_y = ytd.get("net_income", np.nan), ytd.get("net_monetary_gain", np.nan)
+    share = nmg_y / ni_y if pd.notna(ni_y) and pd.notna(nmg_y) and ni_y > 0 else np.nan
+    lines = [("revenue", "Hasılat"), ("operating_profit", "Esas faaliyet kârı"), ("net_monetary_gain", "Net parasal pozisyon kazancı"),
+             ("net_income", "Net kâr"), ("total_equity", "Özkaynak")]
+    fig, ax = plt.subplots(figsize=(6.4, 3.0))
+    x = [str(c) for c in a.real.columns]
+    for (k, lab), col in zip(lines[:4], [BLUE, ORANGE, GREY, "#2e8b57"]):
+        if k in a.real.index and a.real.loc[k].notna().any():
+            ax.plot(x, a.real.loc[k] / 1e6, marker="o", ms=3, color=col, label=lab)
+    _style(ax, f"Çeyreklik kalemler, reel ({a.base} TL'si, mn)")
+    ax.legend(fontsize=7, frameon=False)
+    img = _png(fig)
+    cols = q.columns[-5:]
+    tbl = "".join(f"<tr><td>{lab}</td>" + "".join(f"<td>{_num(q.at[k, c] / 1e6)}</td>" for c in cols) + "</tr>"
+                  for k, lab in lines if k in q.index)
+    naive = "".join(f"<tr><td>{i}</td><td>{_num(r.naive / 1e6)}</td><td>{_num(r.correct / 1e6)}</td><td>{_pct(r.error_pct)}</td></tr>"
+                    for i, r in a.naive.tail(4).iterrows())
+    naive_html = (f"<h2>Düzeltmesiz çeyrek hesabının hatası (hasılat)</h2><table><tr><th>Çeyrek</th><th>Düz fark (mn)</th>"
+                  f"<th>TMS 29 tutarlı (mn)</th><th>Hata</th></tr>{naive}</table>") if len(a.naive) else ""
+    title = e(a.ticker) + (f" · {e(name)}" if name else "")
+    return f"""<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{e(a.ticker)} · KAPSAM notu</title>
+<style>
+body{{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:#1d2433;max-width:860px;margin:24px auto;padding:0 16px;line-height:1.45}}
+h1{{margin:0;font-size:24px}} h2{{font-size:15px;margin:22px 0 8px;border-bottom:1px solid #e3e7ee;padding-bottom:4px}}
+.muted{{color:#6b7385;font-size:12px}} .kpis{{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}}
+.kpi{{background:#f5f7fb;border-radius:8px;padding:10px}} .kpi b{{display:block;font-size:20px}} .kpi span{{font-size:11px;color:#6b7385}}
+.warn{{background:#fff4e0;border:1px solid #f0c27a;padding:8px 12px;border-radius:6px;margin:12px 0;font-size:13px}}
+table{{border-collapse:collapse;width:100%;font-size:13px}} th,td{{border-bottom:1px solid #eef1f5;padding:5px 8px;text-align:right}}
+th:first-child,td:first-child{{text-align:left}} img{{width:100%;margin:6px 0}}
+@media(max-width:640px){{.kpis{{grid-template-columns:repeat(2,1fr)}}}}
+</style></head><body>
+<div class="muted">KAPSAM notu · {date.today():%d.%m.%Y} · Son veri: {p} · Tutarlar {a.base} TL'si (reel) ya da rapor TL'si (tabloda)</div>
+<h1>{title}</h1>
+<div class="warn">Değerleme (İNA) uygulanmadı: {e(reason) or "veri yetersiz"}. Not, aynı TMS 29 analizini ve piyasa riskini içerir.</div>
+<div class="kpis">
+<div class="kpi"><span>F/K (son 12 ay, reel)</span><b>{_num(pe, 1)}x</b></div>
+<div class="kpi"><span>Piyasa değeri / özkaynak</span><b>{_num(pb, 2)}x</b></div>
+<div class="kpi"><span>Parasal kazanç / net kâr (YB)</span><b>{_pct(share)}</b></div>
+<div class="kpi"><span>Son 12 ay net kâr (reel, mn)</span><b>{_num(ni_ttm / 1e6 if pd.notna(ni_ttm) else np.nan)}</b></div>
+</div>
+<h2>Çeyreklik görünüm</h2><img src="{img}" alt="Çeyreklik kalemler">
+<table><tr><th>mn TL (rapor TL'si)</th>{''.join(f"<th>{c}</th>" for c in cols)}</tr>{tbl}</table>
+{naive_html}
+{risk_section(risk_row)}
+<h2>Yöntem</h2>
+<p class="muted">{len(a.reports)} KAP raporu işlendi. Çeyrekler, önceki kümülatif rakam TÜFE ile cari rapor tarihine taşınarak ayrıştırılır;
+çeyrekler eksikse son 12 ay kümülatif raporlardan (YB + önceki yıl − önceki yıl aynı dönem) hesaplanır. Bu not bir araştırma aracının çıktısıdır; yatırım tavsiyesi değildir.</p>
+</body></html>"""
+
+
+def data_excel(a: Analysis, path: str | Path, risk_row: dict | pd.Series | None = None, note: str = "") -> Path:
+    """İNA'sı olmayan şirketler (banka, sigorta, hasılatsız holding) için veri çalışma kitabı:
+    rapor TL'si çeyrekler, reel (baz TL) seriler, USD, göstergeler, düzeltmesiz yöntem karşılaştırması ve piyasa riski."""
+    path = Path(path)
+    with pd.ExcelWriter(path, engine="openpyxl") as xw:
+        info = pd.DataFrame({"Alan": ["Hisse", "Son çeyrek", "Baz tarih", "Rapor sayısı", "Not"],
+                             "Değer": [a.ticker, str(a.last), str(a.base), len(a.reports), note]})
+        info.to_excel(xw, sheet_name="Özet", index=False)
+        for nm, df in [("Çeyrek (rapor TL)", a.quarterly), ("Reel (baz TL)", a.real), ("USD", a.usd), ("Göstergeler", a.metrics)]:
+            out = df.copy()
+            out.columns = [str(c) for c in out.columns]
+            out.to_excel(xw, sheet_name=nm)
+        if len(a.naive):
+            n = a.naive.copy()
+            n.index = [str(i) for i in n.index]
+            n.to_excel(xw, sheet_name="Düzeltmesiz hata")
+        if risk_row is not None:
+            pd.Series(dict(risk_row), name="değer").to_frame().to_excel(xw, sheet_name="Piyasa riski")
+    return path

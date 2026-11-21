@@ -57,6 +57,7 @@ flowchart LR
 - [x] Tüm BIST: otomatik evren, banka/sigorta tablo biçimleri (nominal mod), akıllı rapor takvimi, günlük limit, aranabilir tarama sayfası, finansal sektör notu (v0.9)
 - [x] Tüm BIST'te ilk tam tur (629 hisse, 0 hata), BIST-30 takip listesi, 25 gerçek KAP olayı, kaynaklı ilişki ağı
 - [x] Tüm hisselerin fiyatı; risk tablosu, korelasyon ve kovaryans (örnek + Ledoit–Wolf), sektör korelasyonu (v0.9)
+- [x] Her hisse aynı ayrıntıda: 607 şirket için not + Excel + piyasa riski; tüm hisselerde günlük Ledoit–Wolf; ağır çıktılar geçmişsiz 'rapor' dalında
 - [ ] Gerçek ilişki ağı: faaliyet raporları ve KAP "yeni iş ilişkisi" bildirimlerinden
 - [ ] KAP bildirimlerinin otomatik toplanması (zamanlanmış görev)
 - [ ] XBRL doğrudan okuma

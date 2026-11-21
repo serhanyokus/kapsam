@@ -22,10 +22,22 @@ jobs:
         env:
           EVDS_API_KEY: ${{ secrets.EVDS_API_KEY }}
         run: python -m kapsam.cli guncelle
-      - name: Değişiklikleri kaydet
+      - name: Raporları yayınla ('rapor' dalı; geçmiş tutulmaz, depo büyümez)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          rm -rf /tmp/site && cp -r docs/rapor /tmp/site && touch /tmp/site/.nojekyll
+          cd /tmp/site
+          git init -q -b rapor
+          git config user.name "kapsam-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A && git commit -q -m "Raporlar $(date -u +%Y-%m-%d): $(ls *.html | wc -l) sayfa, $(ls *_model.xlsx 2>/dev/null | wc -l) Excel"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" rapor
+      - name: "Değişiklikleri kaydet (ana dal — veri ve özetler)"
         run: |
           git config user.name "kapsam-bot"
           git config user.email "actions@users.noreply.github.com"
+          git rm -r -q --cached --ignore-unmatch 'docs/rapor/*_model.xlsx' 'docs/rapor/[A-Z]*.html' 'docs/rapor/risk/*.gz' docs/rapor/risk/index.html
           git add -A data/gercek docs/rapor
           [ -f config/bist_evren.csv ] && git add config/bist_evren.csv
           git diff --cached --quiet && { echo "Değişiklik yok"; exit 0; }

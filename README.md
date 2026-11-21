@@ -111,6 +111,21 @@ Kaynak her hisse için yalnızca son 5 dönemi gösterir; KAPSAM eski dönem dos
 
 **Sonuç:** Kümülatif rakamları enflasyon düzeltmesi yapmadan çıkarmak, son çeyrek hasılatını **her şirkette %5–14** şişiriyor. Turkcell, Ford Otosan ve BİM'de yılbaşından beri net kârın %84–88'i kadar net parasal pozisyon kazancı var. Migros'ta bu kazanç olmasa yılbaşından beri zarar var. Aselsan ve Tüpraş ise ters yönde: net parasal varlık taşıdıkları için enflasyondan kayıp yazıyorlar.
 
+## Her hisse aynı ayrıntıda
+
+Takip, tüm listelerde ve tüm hisselerde aynı ayrıntı düzeyindedir. KAP tablosu olan her şirket için her gün şunlar üretilir:
+
+- **Not** (`docs/rapor/HİSSE.html`) ve **Excel** (`HİSSE_model.xlsx`). Not türü şirkete göre değişir:
+  - **Sanayi şirketleri:** TMS 29 düzeltmeli reel İNA, ters İNA, duyarlılık, çarpanlar ve formüllü model.
+  - **Banka ve sigorta:** finansal sektör notu (PD/DD, F/K, özkaynak kârlılığı) ve veri çalışma kitabı.
+  - **İNA'ya uygun olmayan şirketler** (hasılatı olmayan holding ve GYO): aynı TMS 29 analizi, çarpanlar ve veri çalışma kitabı.
+- **Piyasa riski bölümü:** Her notta bulunur. Reel ve USD getiri, oynaklık, beta, VaR/ES, en büyük düşüş ve en çok birlikte hareket edilen hisseleri içerir.
+- **Eksik veride son 12 ay:** Çeyrekleri eksik ya da 6 ayda bir rapor veren şirketlerde son 12 ay, kümülatif raporlardan hesaplanır (YB + önceki yıl − önceki yıl aynı dönem, TÜFE ile).
+
+Tarama sayfasındaki her kod kendi notuna bağlanır. İlk tam çalıştırma 607 şirket için not ve Excel üretti; dağılım 572 İNA, 25 finansal, 10 temel; hata 0.
+
+**Depolama.** Notlar, Excel modelleri ve tam matrisler her gün yeniden üretilir (~100 MB). Bunlar ana dala değil, her çalıştırmada sıfırdan yazılan **`rapor` dalına** yayımlanır, böylece depo büyümez. Ana dalda veriler (KAP tabloları, fiyatlar, TÜFE, kur) ve özet tablolar (`tarama`, `risk_ozet`, takip listesi matrisleri, durum sayfası) tutulur. Notları tarayıcıda açmak için: **Settings → Pages → Branch: `rapor`, klasör: `/ (root)`**. Sayfalar `https://<kullanıcı>.github.io/kapsam/` adresinde yayımlanır.
+
 ## Risk, korelasyon ve kovaryans (tüm BIST)
 
 KAPSAM borsadaki **tüm hisselerin** (~629) günlük fiyatını takip eder. Fiyatlar 2022'den bu yana, bölünme ve bedelsize göre düzeltilmiştir; `data/gercek/fiyat/YYYY.csv` dosyalarında yıllara bölünerek saklanır. Her gün yalnızca içinde bulunulan yılın dosyası değişir. Son 252 işlem günü için `docs/rapor/risk/` klasöründe şunlar üretilir:
@@ -120,10 +135,10 @@ KAPSAM borsadaki **tüm hisselerin** (~629) günlük fiyatını takip eder. Fiya
 | `risk_ozet.csv` | Her hisse için: yıllık getiri (nominal, **reel** TÜFE'ye göre, **USD**), yıllık oynaklık, aşağı yön oynaklığı, beta ve BIST 100 korelasyonu, özgün (şirkete özgü) oynaklık, sistematik risk payı (R²), en büyük düşüş, günlük VaR95/ES95, çarpıklık, basıklık, ortalama korelasyon, en çok birlikte hareket ettiği 3 hisse | Günlük |
 | `takip_korelasyon.csv`, `takip_kovaryans.csv` | Takip listesi (BIST-30+) matrisleri | Günlük |
 | `sektor_korelasyon.csv` | Sektörler arası ve sektör içi ortalama korelasyon | Günlük |
-| `korelasyon_tum.csv.gz`, `kovaryans_tum.csv.gz` | Tüm hisseler, örnek matrisler (çift bazında ortak gözlem) | Haftalık (cuma) |
-| `kovaryans_ledoit_wolf.csv.gz` | Ledoit–Wolf küçültülmüş kovaryans; her zaman pozitif tanımlı, portföy hesabına uygun | Haftalık |
+| `korelasyon_tum.csv.gz`, `kovaryans_tum.csv.gz` | Tüm hisseler, örnek matrisler (çift bazında ortak gözlem) | Günlük |
+| `kovaryans_ledoit_wolf.csv.gz` | **Tüm hisseler** (yeni halka arzlar dahil) için Ledoit–Wolf küçültülmüş kovaryans; eksik veride çift bazında kovaryans + küçültme + pozitif tanımlı izdüşüm, portföy hesabına uygun | Günlük |
 
-`risk/index.html` sayfası aranabilir ve sıralanabilir risk tablosunu, takip listesinin kümelenmiş korelasyon ısı haritasını ve sektör korelasyonunu gösterir. Panoda **Gerçek veri → Görünüm: Risk ve korelasyon** seçilince istenen hisseler için korelasyon ve kovaryans matrisi ile eşit ağırlıklı portföy oynaklığı hesaplanır. `python -m kapsam.cli risk` kayıtlı fiyatlardan her şeyi yeniden üretir. Tam matrisler 629×629 boyutunda olduğu için depoyu şişirmemek adına haftalık güncellenir. Tüm piyasa taraması (`tarama.csv`) ayrıca reel getiri, oynaklık, beta ve en büyük düşüş sütunlarını içerir. Olay çalışması da tüm hisselerin fiyatını kullanır.
+`risk/index.html` sayfası aranabilir ve sıralanabilir risk tablosunu, takip listesinin kümelenmiş korelasyon ısı haritasını ve sektör korelasyonunu gösterir. Panoda **Gerçek veri → Görünüm: Risk ve korelasyon** seçilince istenen hisseler için korelasyon ve kovaryans matrisi ile eşit ağırlıklı portföy oynaklığı hesaplanır. `python -m kapsam.cli risk` kayıtlı fiyatlardan her şeyi yeniden üretir. En az 20 işlem günü verisi olan her hisse dahildir; 120 günden azında risk tablosunda 'Güvenilirlik: düşük' yazar. Tüm piyasa taraması (`tarama.csv`) ayrıca reel getiri, oynaklık, beta ve en büyük düşüş sütunlarını içerir. Olay çalışması da tüm hisselerin fiyatını kullanır.
 
 ## Olay çalışması ve gerçek ilişki ağı
 

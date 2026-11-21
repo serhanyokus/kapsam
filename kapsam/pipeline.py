@@ -60,6 +60,15 @@ class Analysis:
     metrics: pd.DataFrame
     naive: pd.DataFrame
     checks: list[Check] = field(default_factory=list)
+    cpi: pd.Series | None = None
+
+    def ttm(self, item: str) -> float:
+        """Son 12 ay (baz tarih TL'si). Önce son 4 çeyreğin toplamı; çeyrekler eksikse kümülatif raporlardan."""
+        if item in self.real.index and self.real.loc[item].dropna().shape[0] >= 4 and self.real.loc[item].iloc[-4:].notna().all():
+            return float(self.real.loc[item].iloc[-4:].sum())
+        if self.cpi is None:
+            raise ValueError("TTM için en az 4 çeyrek gerekir")
+        return tms29.ttm_ytd(self.reports, item, self.cpi, base=self.base)
 
     @property
     def base(self) -> pd.Period:
@@ -75,7 +84,7 @@ def analyze(ticker: str, reports: list[Statement], cpi: pd.Series, fx: pd.Series
     real = tms29.to_base(q, cpi)
     usd = tms29.to_usd(q, fx)
     return Analysis(ticker, reports, q, real, usd, tms29.metrics(real, tax_rate),
-                    tms29.naive_vs_correct(reports, cpi), accounting_checks(q) + reported_quarter_checks(q, reports))
+                    tms29.naive_vs_correct(reports, cpi), accounting_checks(q) + reported_quarter_checks(q, reports), cpi=cpi)
 
 
 def compare(analyses: list[Analysis]) -> pd.DataFrame:
@@ -160,7 +169,7 @@ def screen(folder: str | Path, cpi: pd.Series, fx: pd.Series, prices: dict[str, 
             if mcap:
                 row["piyasa_degeri_mn_tl"] = mcap / 1e6
                 try:
-                    ni_ttm = _val.ttm(a.quarterly.loc[item])
+                    ni_ttm = a.ttm(item)
                     row["fk_ttm"] = mcap / ni_ttm if ni_ttm > 0 else float("nan")
                 except (ValueError, KeyError):
                     pass

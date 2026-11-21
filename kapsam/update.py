@@ -215,23 +215,19 @@ def step_risk(p: Paths, cfg: dict, st: Status, universe_df: pd.DataFrame | None 
         sec = risk.sector_corr(corr.drop(index="XU100", columns="XU100", errors="ignore"), meta["sektor"]) if meta is not None else None
         if sec is not None:
             sec.round(3).to_csv(out / "sektor_korelasyon.csv")
-        info_f = out / "matris_bilgi.json"
-        info = json.loads(info_f.read_text(encoding="utf-8")) if info_f.exists() else {}
-        last = pd.Timestamp(info.get("tarih", "2000-01-01"))
-        weekly = (not (out / "korelasyon_tum.csv.gz").exists()) or today.weekday() == 4 or (today - last).days >= 7
-        if weekly:
-            corr.round(4).to_csv(out / "korelasyon_tum.csv.gz", compression="gzip")
-            cov.round(6).to_csv(out / "kovaryans_tum.csv.gz", compression="gzip")
-            lw, delta = risk.ledoit_wolf(r.drop(columns="XU100", errors="ignore"))
-            lw.round(6).to_csv(out / "kovaryans_ledoit_wolf.csv.gz", compression="gzip")
-            info = {"tarih": f"{today:%Y-%m-%d}", "pencere": tab.attrs.get("baslangic", "") + " – " + tab.attrs.get("bitis", ""),
-                    "hisse_sayisi": int(len(corr)), "lw_hisse_sayisi": int(len(lw)), "lw_kucultme": delta}
-            info_f.write_text(json.dumps(info, ensure_ascii=False, indent=1), encoding="utf-8")
+        corr.round(4).to_csv(out / "korelasyon_tum.csv.gz", compression="gzip")
+        cov.round(6).to_csv(out / "kovaryans_tum.csv.gz", compression="gzip")
+        lw, delta = risk.ledoit_wolf_all(r.drop(columns="XU100", errors="ignore"))
+        lw.round(6).to_csv(out / "kovaryans_ledoit_wolf.csv.gz", compression="gzip")
+        info = {"tarih": f"{today:%Y-%m-%d}", "pencere": tab.attrs.get("baslangic", "") + " – " + tab.attrs.get("bitis", ""),
+                "hisse_sayisi": int(len(corr)), "lw_hisse_sayisi": int(len(lw)), "lw_kucultme": delta,
+                "az_veri_hisse": int((tab["gozlem"] < risk.RELIABLE_OBS).sum())}
+        (out / "matris_bilgi.json").write_text(json.dumps(info, ensure_ascii=False, indent=1), encoding="utf-8")
         (out / "index.html").write_text(risk_page(tab, corr.loc[watch, watch], sec, info, st.started), encoding="utf-8")
         avg = tab["ort_korelasyon"].median() if "ort_korelasyon" in tab else np.nan
         st.ok("risk", f"{len(tab)} hisse; medyan yıllık oynaklık %{tab['oynaklik_yillik'].median()*100:.0f}, "
-              f"medyan beta {tab['beta'].median():.2f}, ort. korelasyon {avg:.2f}; tüm piyasa matrisleri "
-              + ("güncellendi" if weekly else f"haftalık ({info.get('tarih', '')})"))
+              f"medyan beta {tab['beta'].median():.2f}, ort. korelasyon {avg:.2f}; korelasyon, kovaryans ve Ledoit–Wolf "
+              f"matrisleri {len(lw)} hisse (az veri: {info['az_veri_hisse']})")
         return tab
     except Exception as e:  # noqa: BLE001
         st.fail("risk", e)
@@ -240,7 +236,8 @@ def step_risk(p: Paths, cfg: dict, st: Status, universe_df: pd.DataFrame | None 
 
 def risk_page(tab: pd.DataFrame, wcorr: pd.DataFrame, sec: pd.DataFrame | None, info: dict, stamp: str) -> str:
     e = html.escape
-    cols = [("ad", "Şirket", "t"), ("sektor", "Sektör", "t"), ("getiri_yillik", "Getiri 1Y", "p"), ("reel_getiri_yillik", "Reel getiri", "p"),
+    cols = [("ad", "Şirket", "t"), ("sektor", "Sektör", "t"), ("guvenilirlik", "Güvenilirlik", "t"), ("gozlem", "Gün", "n"),
+            ("getiri_yillik", "Getiri 1Y", "p"), ("reel_getiri_yillik", "Reel getiri", "p"),
             ("usd_getiri_yillik", "USD getiri", "p"), ("oynaklik_yillik", "Oynaklık", "p"), ("beta", "Beta", "x"),
             ("korelasyon_xu100", "Kor. XU100", "x"), ("ozgun_oynaklik", "Özgün oynaklık", "p"), ("max_dusus", "Max düşüş", "p"),
             ("var95_gunluk", "VaR95 (gün)", "p"), ("es95_gunluk", "ES95 (gün)", "p"), ("getiri_oynaklik_orani", "Getiri/oynaklık", "x"),
@@ -252,6 +249,8 @@ def risk_page(tab: pd.DataFrame, wcorr: pd.DataFrame, sec: pd.DataFrame | None, 
             return f"<td class='l'>{e('' if pd.isna(v) else str(v))}</td>"
         if pd.isna(v):
             return "<td data-v=''>–</td>"
+        if kind == "n":
+            return f"<td data-v='{v}'>{int(v)}</td>"
         return f"<td data-v='{v:.6f}'>{v*100:.1f}%</td>" if kind == "p" else f"<td data-v='{v:.6f}'>{v:.2f}</td>"
     head = "<th>Kod</th>" + "".join(f"<th>{e(lab)}</th>" for _, lab, _ in cols)
     body = "".join(f"<tr><td class='l'><b>{e(t)}</b></td>" + "".join(cell(r.get(c), k) for c, _, k in cols) + "</tr>"
@@ -278,7 +277,8 @@ th,td{{border-bottom:1px solid #eef1f5;padding:4px 8px;text-align:right}}.l{{tex
 <p class="m">{len(tab)} hisse · pencere: son 252 işlem günü ({e(tab.attrs.get('baslangic', ''))} – {e(tab.attrs.get('bitis', ''))}) · {e(stamp)} (UTC).
 Günlük log getiri; yıllıklaştırma 252 gün. Beta ve korelasyon BIST 100'e göre. Reel getiri TÜFE, USD getiri TCMB kuru ile.
 Yıllık enflasyon: {'' if pd.isna(tab.attrs.get('yillik_enflasyon')) else f"%{tab.attrs['yillik_enflasyon']*100:.1f}"}.
-Tüm piyasa matrisleri haftalık güncellenir (son: {e(str(info.get('tarih', '–')))}; Ledoit–Wolf küçültme katsayısı {'' if lw is None else f'{lw:.2f}'}, {info.get('lw_hisse_sayisi', '–')} hisse).</p>
+Tüm matrisler her gün güncellenir ({e(str(info.get('tarih', '–')))}): Ledoit–Wolf küçültme katsayısı {'' if lw is None else f'{lw:.2f}'}, {info.get('lw_hisse_sayisi', '–')} hisse.
+120 işlem gününden az verisi olan {info.get('az_veri_hisse', 0)} hisse (yeni halka arzlar) dahildir; 'Güvenilirlik' sütununa bakın.</p>
 <p>İndir: {links}</p>
 {imgs}
 <h2>Risk tablosu</h2><input id="q" placeholder="Kod, şirket veya sektör ara" oninput="f()">
@@ -417,9 +417,11 @@ def step_tables(p: Paths, cfg: dict, st: Status, source=None, universe_df: pd.Da
         st.ok("tablo", detail)
 
 
-def step_reports(p: Paths, cfg: dict, st: Status, universe_df: pd.DataFrame | None = None) -> list[dict]:
-    """Takip listesindeki hisseler için not üretir. Sanayi: TMS 29 + reel İNA + Excel; banka/sigorta: finansal sektör notu.
-    Hisse sayısı ayarda yoksa evrendeki piyasa değeri / kapanış fiyatından bulunur. Tüm evren için tarama ayrı adımdır."""
+def step_reports(p: Paths, cfg: dict, st: Status, universe_df: pd.DataFrame | None = None,
+                 risk_tab: pd.DataFrame | None = None) -> list[dict]:
+    """Her şirket için not ve Excel (cfg['notlar']: 'tum' → tablosu olan TÜM şirketler; 'takip' → takip listesi).
+    Sanayi: TMS 29 + reel İNA + formüllü model; banka/sigorta: finansal sektör notu; İNA'ya uygun olmayan (hasılatsız
+    holding/GYO): temel not. Hepsinde piyasa riski bölümü vardır. Hisse sayısı yoksa evrendeki piyasa değeri / kapanıştan."""
     made = []
     mq = p.data / "makro_ceyrek.csv"
     if not p.kap.exists() or not any(p.kap.iterdir()):
@@ -431,50 +433,65 @@ def step_reports(p: Paths, cfg: dict, st: Status, universe_df: pd.DataFrame | No
     cpi, fx = pipeline.load_macro_csv(mq)
     px = pd.read_csv(p.data / "fiyatlar.csv", index_col=0, parse_dates=True) if (p.data / "fiyatlar.csv").exists() else None
     shares = json.loads((p.data / "hisse_sayilari.json").read_text()) if (p.data / "hisse_sayilari.json").exists() else {}
+    if universe_df is None and (p.root / "config" / "bist_evren.csv").exists():
+        universe_df = pd.read_csv(p.root / "config" / "bist_evren.csv")
     uni = universe_df.set_index("kod") if universe_df is not None and len(universe_df) else None
     watch = [h["kod"] for h in cfg.get("hisseler", [])]
     have = set(pipeline.discover(p.kap))
-    tickers = [t for t in watch if t in have] if watch else sorted(have)
+    scope = cfg.get("notlar", "tum" if cfg.get("evren") == "tum" else "takip")
+    tickers = sorted(have) if scope == "tum" or not watch else [t for t in watch if t in have]
     p.out.mkdir(parents=True, exist_ok=True)
-    errors = []
+    errors, kinds = [], {"İNA": 0, "finansal": 0, "temel": 0}
     for t in tickers:
         try:
             a = pipeline.analyze(t, pipeline.load_company(p.kap, t), cpi, fx)
             price = float(px[t].dropna().iloc[-1]) if px is not None and t in px and px[t].notna().any() else None
             sh = shares.get(t)
-            if uni is not None and t in uni.index:
-                u = uni.loc[t]
+            u = uni.loc[t] if uni is not None and t in uni.index else None
+            if u is not None:
                 price = price or (float(u["kapanis"]) if pd.notna(u.get("kapanis")) else None)
-                if not sh and pd.notna(u.get("piyasa_degeri_mn_tl")) and price:
+                if not sh and pd.notna(u.get("piyasa_degeri_mn_tl")) and u.get("kapanis"):
                     sh = float(u["piyasa_degeri_mn_tl"]) * 1e6 / float(u["kapanis"])
-            name = str(uni.at[t, "ad"]) if uni is not None and t in uni.index and "ad" in uni else None
+            name = str(u["ad"]) if u is not None and "ad" in u else None
+            rr = risk_tab.loc[t] if risk_tab is not None and t in risk_tab.index else None
+            mcap = price * float(sh) if (price and sh) else None
+            base = {"hisse": t, "son_ceyrek": str(a.last), "fiyat": price, "takip": (t in watch) or not watch}
             if report.is_financial(a):
-                mcap = price * float(sh) if (price and sh) else None
-                (p.out / f"{t}.html").write_text(report.financial_note(a, mcap, name), encoding="utf-8")
-                made.append({"hisse": t, "tur": "finansal", "son_ceyrek": str(a.last), "fiyat": price,
-                             "ima_edilen_marj": float("nan"), "temel_net_marj": float(a.metrics.at["net_margin", a.last])})
+                (p.out / f"{t}.html").write_text(report.financial_note(a, mcap, name, rr), encoding="utf-8")
+                report.data_excel(a, p.out / f"{t}_model.xlsx", rr, "Banka/sigorta: TMS 29 uygulanmaz, nominal mod")
+                made.append({**base, "tur": "finansal", "ima_edilen_marj": float("nan"),
+                             "temel_net_marj": float(a.metrics.at["net_margin", a.last])})
+                kinds["finansal"] += 1
                 continue
-            if not (sh and price):
-                raise ValueError("fiyat veya hisse sayısı yok")
-            inp = report.inputs_from_analysis(a, shares=float(sh))
-            mcap = price * float(sh)
-            if pd.isna(inp.net_debt):
-                inp = report.val.DCFInputs(**{**inp.__dict__, "net_debt": 0.0})
-            (p.out / f"{t}.html").write_text(report.html_note(a, inp, mcap), encoding="utf-8")
-            report.excel_model(a, inp, mcap, p.out / f"{t}_model.xlsx")
-            res = valuation.dcf(inp)
-            made.append({"hisse": t, "tur": "sanayi", "son_ceyrek": str(a.last), "fiyat": price, "ina_deger": res["per_share"],
-                         "ima_edilen_reel_buyume": valuation.implied_growth(mcap + inp.net_debt, inp),
-                         "ima_edilen_marj": valuation.implied_margin(mcap + inp.net_debt, inp),
-                         "temel_net_marj": float(a.metrics.at["core_net_margin", a.last])})
+            try:
+                if not mcap:
+                    raise report.NoDCF("fiyat veya hisse sayısı yok")
+                inp = report.inputs_from_analysis(a, shares=float(sh))
+                if pd.isna(inp.net_debt):
+                    inp = report.val.DCFInputs(**{**inp.__dict__, "net_debt": 0.0})
+                (p.out / f"{t}.html").write_text(report.html_note(a, inp, mcap, risk_row=rr, name=name), encoding="utf-8")
+                report.excel_model(a, inp, mcap, p.out / f"{t}_model.xlsx")
+                res = valuation.dcf(inp)
+                made.append({**base, "tur": "sanayi", "ina_deger": res["per_share"],
+                             "ima_edilen_reel_buyume": valuation.implied_growth(mcap + inp.net_debt, inp),
+                             "ima_edilen_marj": valuation.implied_margin(mcap + inp.net_debt, inp),
+                             "temel_net_marj": float(a.metrics.at["core_net_margin", a.last])})
+                kinds["İNA"] += 1
+            except (report.NoDCF, ValueError, KeyError, ZeroDivisionError) as why:
+                (p.out / f"{t}.html").write_text(report.basic_note(a, mcap, name, rr, str(why)), encoding="utf-8")
+                report.data_excel(a, p.out / f"{t}_model.xlsx", rr, f"İNA uygulanmadı: {why}")
+                made.append({**base, "tur": "temel", "ima_edilen_marj": float("nan"),
+                             "temel_net_marj": float(a.metrics.at["core_net_margin", a.last]) if "core_net_margin" in a.metrics.index else float("nan")})
+                kinds["temel"] += 1
         except Exception as e:  # noqa: BLE001
             errors.append(f"{t}: {e}")
+    detail = f"{len(made)} şirket notu + Excel (İNA {kinds['İNA']}, finansal {kinds['finansal']}, temel {kinds['temel']})"
     if made:
-        st.ok("rapor", f"{len(made)} şirket notu" + (f"; hatalar: {'; '.join(errors)}" if errors else ""))
+        st.ok("rapor", detail + (f"; hatalar: {'; '.join(errors[:10])}" if errors else ""))
     elif errors:
-        st.fail("rapor", "; ".join(errors))
+        st.fail("rapor", "; ".join(errors[:10]))
     else:
-        st.skip("rapor", "Takip listesindeki hisselerin tablosu henüz yok")
+        st.skip("rapor", "Not üretilecek şirket tablosu yok")
     return made
 
 
@@ -559,14 +576,16 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
                       "<p class='m'>Reel getiri, aynı dönemin TÜFE'siyle arındırılmıştır.</p>")
     if reports:
         f2 = lambda v, fmt: "–" if v is None or pd.isna(v) else format(v, fmt)  # noqa: E731
-        body = "".join(f"<tr><td><a href='{e(r['hisse'])}.html'>{e(r['hisse'])}</a></td><td>{e(r['son_ceyrek'])}</td>"
+        shown = [r for r in reports if r.get("takip", True)]
+        body = "".join(f"<tr><td><a href='{e(r['hisse'])}.html'>{e(r['hisse'])}</a></td><td>{e(r['son_ceyrek'])}</td><td>{e(r.get('tur', ''))}</td>"
                        f"<td>{f2(r.get('fiyat'), ',.2f')}</td><td>{f2(r.get('ima_edilen_marj'), '.1%')}</td>"
-                       f"<td>{f2(r.get('temel_net_marj'), '.1%')}</td><td>"
-                       + ("finansal sektör notu" if r.get("tur") == "finansal" else f"<a href='{e(r['hisse'])}_model.xlsx'>Excel</a>")
-                       + "</td></tr>" for r in reports)
-        blocks.append("<h2>Takip listesi notları</h2><table><tr><th>Hisse</th><th>Son çeyrek</th><th>Fiyat</th>"
+                       f"<td>{f2(r.get('temel_net_marj'), '.1%')}</td><td><a href='{e(r['hisse'])}_model.xlsx'>Excel</a></td></tr>"
+                       for r in shown)
+        blocks.append(f"<h2>Şirket notları ({len(reports)} şirket; burada takip listesi, tümü <a href='tarama.html'>taramada</a>)</h2>"
+                      "<table><tr><th>Hisse</th><th>Son çeyrek</th><th>Tür</th><th>Fiyat</th>"
                       f"<th>Fiyatlanan kalıcı faaliyet marjı</th><th>Temel net marj</th><th></th></tr>{body}</table>"
-                      "<p class='m'>Sanayi şirketleri: TMS 29 düzeltmeli reel İNA. Banka ve sigorta: nominal tablolar, PD/DD, F/K, özkaynak kârlılığı.</p>")
+                      "<p class='m'>sanayi: TMS 29 düzeltmeli reel İNA ve formüllü model · finansal: banka/sigorta, nominal tablolar, PD/DD, F/K, "
+                      "özkaynak kârlılığı · temel: İNA'ya uygun olmayan (hasılatsız holding/GYO), TMS 29 analizi ve çarpanlar. Hepsinde piyasa riski bölümü vardır.</p>")
     if screen is not None and not screen.empty:
         pct = lambda v: "–" if v is None or pd.isna(v) else f"{float(v)*100:.1f}%"  # noqa: E731
         screen = screen.sort_values("duz_fark_hatasi_hasilat", ascending=False, na_position="last") if "duz_fark_hatasi_hasilat" in screen else screen
@@ -644,13 +663,14 @@ def step_screen(p: Paths, st: Status, universe_df: pd.DataFrame | None = None,
         sc = sc.join(risk_tab[rc].astype(float), how="left")
     p.out.mkdir(parents=True, exist_ok=True)
     sc.to_csv(p.out / "tarama.csv")
-    (p.out / "tarama.html").write_text(screen_page(sc, st.started), encoding="utf-8")
+    notes = {f.stem for f in p.out.glob("*.html") if f.stem not in ("index", "tarama")}
+    (p.out / "tarama.html").write_text(screen_page(sc, st.started, notes), encoding="utf-8")
     ok = sc["not"].astype(str).str.startswith("hata").sum() if "not" in sc else 0
     st.ok("tarama", f"{len(sc)} şirket tarandı" + (f", {ok} şirkette hata" if ok else ""))
     return sc
 
 
-def screen_page(sc: pd.DataFrame, stamp: str) -> str:
+def screen_page(sc: pd.DataFrame, stamp: str, notes: set[str] | None = None) -> str:
     """Tüm şirketler için sıralanabilir, aranabilir tarama sayfası (tek dosya, dış bağımlılık yok)."""
     e = html.escape
     cols = [("ad", "Şirket", "t"), ("sektor", "Sektör", "t"), ("tur", "Tür", "t"), ("son_ceyrek", "Son çeyrek", "t"),
@@ -671,7 +691,9 @@ def screen_page(sc: pd.DataFrame, stamp: str) -> str:
             return f"<td data-v='{float(v):.6f}'>{float(v):.1f}x</td>"
         return f"<td data-v='{e(str(v))}' class='l'>{e(str(v))}</td>"
     head = "<th>Kod</th>" + "".join(f"<th>{e(lab)}</th>" for _, lab, _ in cols)
-    body = "".join(f"<tr><td class='l'><b>{e(str(t))}</b></td>" + "".join(cell(r.get(c), k) for c, _, k in cols) + "</tr>"
+    notes = notes or set()
+    link = lambda t: f"<a href='{e(str(t))}.html'>{e(str(t))}</a>" if t in notes else e(str(t))  # noqa: E731
+    body = "".join(f"<tr><td class='l'><b>{link(t)}</b></td>" + "".join(cell(r.get(c), k) for c, _, k in cols) + "</tr>"
                    for t, r in sc.iterrows())
     return f"""<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>KAPSAM · BIST taraması</title><style>
@@ -705,13 +727,13 @@ def run(root: Path = ROOT, evds_client=None, market: Market | None = None, sourc
     uni = step_universe(p, cfg, st, universe_getter) if (cfg.get("evren") == "tum" or universe_getter) else None
     step_prices(p, cfg, st, market, uni)
     step_tables(p, cfg, st, source, uni, today)
+    rk = step_risk(p, cfg, st, uni, today)
     reports = []
     try:
-        reports = step_reports(p, cfg, st, uni)
+        reports = step_reports(p, cfg, st, uni, rk)
     except Exception:  # noqa: BLE001
         st.fail("rapor", traceback.format_exc(limit=1))
     events = step_events(p, cfg, st)
-    rk = step_risk(p, cfg, st, uni, today)
     sc = None
     try:
         sc = step_screen(p, st, uni, rk)

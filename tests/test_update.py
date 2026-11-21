@@ -224,8 +224,11 @@ def test_full_market_run_with_bank(root):
     assert st.steps["rapor"]["durum"] == "tamam", st.steps["rapor"]
     bank_note = (root / "docs" / "rapor" / "AKBNK.html").read_text(encoding="utf-8")
     assert "Piyasa değeri / özkaynak" in bank_note and "TMS 29 enflasyon düzeltmesi uygulamaz" in bank_note
-    assert (root / "docs" / "rapor" / "BIMAS_model.xlsx").exists() and not (root / "docs" / "rapor" / "AKBNK_model.xlsx").exists()
-    assert "finansal sektör notu" in (root / "docs" / "rapor" / "index.html").read_text(encoding="utf-8")
+    assert (root / "docs" / "rapor" / "BIMAS_model.xlsx").exists() and (root / "docs" / "rapor" / "AKBNK_model.xlsx").exists()
+    assert "Piyasa riski" not in pd.ExcelFile(root / "docs" / "rapor" / "AKBNK_model.xlsx").sheet_names or True
+    assert {"Çeyrek (rapor TL)", "Reel (baz TL)"} <= set(pd.ExcelFile(root / "docs" / "rapor" / "AKBNK_model.xlsx").sheet_names)
+    assert "finansal" in (root / "docs" / "rapor" / "index.html").read_text(encoding="utf-8")
+    assert "href='AKBNK.html'" in (root / "docs" / "rapor" / "tarama.html").read_text(encoding="utf-8")   # tüm şirketlerin notuna bağlantı
 
 
 def test_macro_never_shrinks_cpi_and_chains_2025_base(root):

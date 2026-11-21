@@ -187,3 +187,30 @@ def naive_vs_correct(reports: Iterable[Statement], cpi: pd.Series, item: str = "
             continue
         rows[p] = {"naive": naive, "correct": correct, "error_pct": naive / correct - 1}
     return pd.DataFrame(rows).T if rows else pd.DataFrame(columns=["naive", "correct", "error_pct"])
+
+
+def ttm_ytd(reports: Iterable[Statement], item: str, cpi: pd.Series, base: pd.Period | None = None,
+            restate: bool | None = None) -> float:
+    """Kümülatif (yılbaşından beri) rakamlardan son 12 ay: YB_son + Yıl_önceki − YB_önceki_aynı_dönem.
+    Çeyrek ayrıştırması yapılamayan şirketler (6 ayda bir rapor, eksik çeyrek) için. Her terim TMS 29 uygulanıyorsa
+    kendi rapor tarihinden `base` tarihinin TL'sine taşınır. Kalem yoksa ValueError."""
+    reps = {r.report_date: r for r in reports}
+    if restate is None:
+        restate = applies_tms29(list(reps.values()))
+    have = [p for p, r in reps.items() if p in r.values.columns and pd.notna(r.values[p].get(item, np.nan))]
+    if not have:
+        raise ValueError(f"TTM: hiçbir raporda {item} yok")
+    last = max(have)
+    base = base or last
+    f = (lambda p: cpi[base] / cpi[p]) if restate else (lambda p: 1.0)
+
+    def v(p):
+        r = reps.get(p)
+        x = r.values[p].get(item, np.nan) if r is not None and p in r.values.columns else np.nan
+        if pd.isna(x):
+            raise ValueError(f"TTM: {p} raporunda {item} yok")
+        return float(x) * f(p)
+    if last.quarter == 4:
+        return v(last)
+    fy, prev = pd.Period(year=last.year - 1, quarter=4, freq="Q"), pd.Period(year=last.year - 1, quarter=last.quarter, freq="Q")
+    return v(last) + v(fy) - v(prev)
