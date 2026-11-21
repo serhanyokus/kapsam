@@ -346,7 +346,7 @@ def to_english(page: str, depth: int, here: str) -> str:
                 x = x.replace(k, v)
             for k, v in _PH:
                 if len(k) > 8 and k in x:
-                    x = x.replace(k, v)
+                    x = x.replace(k, v.replace("'", "\\'"))      # betik içinde: kesme işareti dizeyi kapatmasın
             out.append(x)
         elif x.startswith("<"):
             x = re.sub(r"(placeholder|title|alt)='([^']*)'", lambda m: f"{m.group(1)}='{_translate_text(m.group(2))}'", x)

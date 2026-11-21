@@ -158,3 +158,12 @@ def test_basic_note_for_company_without_sales():
         report.inputs_from_analysis(a, shares=1e6)
     page = report.basic_note(a, 1e4, "Holding A.Ş.", {"beta": 0.9, "gozlem": 252, "oynaklik_yillik": 0.4}, "hasılat yok")
     assert "İNA) uygulanmadı" in page and "Piyasa riski" in page and "Holding A.Ş." in page
+
+
+def test_english_translation_keeps_scripts_valid():
+    """İngilizce çeviri betik içindeki dizelere kesme işareti eklerse kaçışlanmalı (ör. "stock's")."""
+    from kapsam import i18n, update
+    page = "<html lang='tr'><head><style></style></head><body><nav class='nav'></nav>" + update.PORTFOLIO_TOOL + "<footer></footer></body></html>"
+    en = i18n.to_english(page, 1, "risk/index.html")
+    assert "stock\\'s share" in en and "stock's share" not in en.replace("stock\\'s", "")
+    assert "fetch('../../risk/kovaryans_ledoit_wolf.csv.gz')" in en
