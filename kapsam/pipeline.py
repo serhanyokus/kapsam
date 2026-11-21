@@ -5,6 +5,7 @@ import re
 from dataclasses import dataclass, field, replace
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 from .data.statements import Statement, load_file
@@ -187,4 +188,4 @@ def screen(folder: str | Path, cpi: pd.Series, fx: pd.Series, prices: dict[str, 
             rows[t] = row
         except Exception as e:  # noqa: BLE001
             rows[t] = {**base, "not": f"hata: {e}"}
-    return pd.DataFrame(rows).T
+    return pd.DataFrame(rows).T.replace([np.inf, -np.inf], np.nan)

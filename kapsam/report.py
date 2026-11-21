@@ -67,8 +67,8 @@ def charts(a: Analysis) -> dict[str, str]:
 
 
 def _pct(x, d=1):
-    """Türkçe yüzde biçimi: %6,1"""
-    if pd.isna(x):
+    """Türkçe yüzde biçimi: %6,1 (tanımsız/sonsuz → –)"""
+    if pd.isna(x) or not np.isfinite(x):
         return "–"
     v = f"{abs(x)*100:.{d}f}".replace(".", ",")
     return ("-" if x < 0 else "") + "%" + v
@@ -82,7 +82,7 @@ YON = {1: "Olumlu", 0: "Nötr", -1: "Olumsuz"}
 
 
 def _num(x, d=0):
-    return "–" if pd.isna(x) else f"{x:,.{d}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    return "–" if pd.isna(x) or not np.isfinite(x) else f"{x:,.{d}f}".replace(",", "X").replace(".", ",").replace("X", ".")
 
 
 def network_section(graph, ticker: str, events) -> dict:
@@ -195,7 +195,7 @@ h1{{margin:0;font-size:24px}} h2{{font-size:15px;margin:22px 0 8px;border-bottom
 .kpi b{{display:block;font-size:20px}} .kpi span{{font-size:11px;color:#6b7385}}
 table{{border-collapse:collapse;width:100%;font-size:13px}} th,td{{border-bottom:1px solid #eef1f5;padding:5px 8px;text-align:right}}
 th:first-child,td:first-child,.l{{text-align:left}} img{{width:100%;margin:6px 0}} img.narrow{{max-width:520px;display:block}} .tag{{background:#e8f0ff;color:{BLUE};padding:1px 8px;border-radius:10px}}
-.grid2{{display:grid;grid-template-columns:1fr 1fr;gap:16px}} @media(max-width:640px){{.kpis{{grid-template-columns:repeat(2,1fr)}}.grid2{{grid-template-columns:1fr}}}}
+.grid2{{display:grid;grid-template-columns:1fr 1fr;gap:16px}} @media(max-width:640px){{.kpis{{grid-template-columns:repeat(2,1fr)}}.grid2{{grid-template-columns:1fr}}table{{display:block;overflow-x:auto}}}}
 @media print{{body{{margin:0}} h2{{break-after:avoid}} img{{break-inside:avoid}}}}
 </style></head><body>
 <div class="muted">KAPSAM araştırma notu · {date.today():%d.%m.%Y} · Son veri: {p} · Tutarlar {a.base} TL'si (reel)</div>
@@ -447,7 +447,7 @@ h1{{margin:0;font-size:24px}} h2{{font-size:15px;margin:22px 0 8px;border-bottom
 .kpi{{background:#f5f7fb;border-radius:8px;padding:10px}} .kpi b{{display:block;font-size:20px}} .kpi span{{font-size:11px;color:#6b7385}}
 table{{border-collapse:collapse;width:100%;font-size:13px}} th,td{{border-bottom:1px solid #eef1f5;padding:5px 8px;text-align:right}}
 th:first-child,td:first-child{{text-align:left}} img{{width:100%;margin:6px 0}}
-@media(max-width:640px){{.kpis{{grid-template-columns:repeat(2,1fr)}}}}
+@media(max-width:640px){{.kpis{{grid-template-columns:repeat(2,1fr)}}table{{display:block;overflow-x:auto}}}}
 </style></head><body>
 <div class="muted">KAPSAM finansal sektör notu · {date.today():%d.%m.%Y} · Son veri: {p} · {kind} tablo biçimi</div>
 <h1>{title}</h1>
@@ -516,7 +516,7 @@ h1{{margin:0;font-size:24px}} h2{{font-size:15px;margin:22px 0 8px;border-bottom
 .warn{{background:#fff4e0;border:1px solid #f0c27a;padding:8px 12px;border-radius:6px;margin:12px 0;font-size:13px}}
 table{{border-collapse:collapse;width:100%;font-size:13px}} th,td{{border-bottom:1px solid #eef1f5;padding:5px 8px;text-align:right}}
 th:first-child,td:first-child{{text-align:left}} img{{width:100%;margin:6px 0}}
-@media(max-width:640px){{.kpis{{grid-template-columns:repeat(2,1fr)}}}}
+@media(max-width:640px){{.kpis{{grid-template-columns:repeat(2,1fr)}}table{{display:block;overflow-x:auto}}}}
 </style></head><body>
 <div class="muted">KAPSAM notu · {date.today():%d.%m.%Y} · Son veri: {p} · Tutarlar {a.base} TL'si (reel) ya da rapor TL'si (tabloda)</div>
 <h1>{title}</h1>

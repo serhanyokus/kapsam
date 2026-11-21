@@ -154,7 +154,7 @@ def metrics(df: pd.DataFrame, tax_rate: float = 0.0) -> pd.DataFrame:
         m.loc["retention"] = g("net_premiums") / g("gross_premiums")
         m.loc["roe_annualized"] = g("net_income") * 4 / g("total_equity")
     m.loc["revenue_real_qoq"] = rev / rev.shift(1) - 1
-    return m
+    return m.replace([np.inf, -np.inf], np.nan)          # sıfır paydalı oranlar (ör. önceki yıl hasılat 0) tanımsız
 
 
 POSITIVE_ITEMS = {"revenue", "gross_premiums", "net_premiums", "interest_income", "net_interest_income"}

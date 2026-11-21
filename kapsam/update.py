@@ -208,6 +208,7 @@ def step_risk(p: Paths, cfg: dict, st: Status, universe_df: pd.DataFrame | None 
             attrs = dict(tab.attrs)
             tab = meta.reindex(tab.index).join(tab)
             tab.attrs.update(attrs)
+        tab = tab.replace([np.inf, -np.inf], np.nan)
         tab.to_csv(out / "risk_ozet.csv")
         watch = [h["kod"] for h in cfg["hisseler"] if h["kod"] in corr.index]
         corr.loc[watch, watch].round(4).to_csv(out / "takip_korelasyon.csv")
@@ -658,6 +659,7 @@ def step_screen(p: Paths, st: Status, universe_df: pd.DataFrame | None = None,
     from .data.universe import market_caps
     caps = market_caps(universe_df) if universe_df is not None else {}
     sc = pipeline.screen(p.kap, cpi, fx, prices, shares, market_caps=caps, meta=universe_df)
+    sc = sc.replace([np.inf, -np.inf], np.nan)
     if risk_tab is not None and len(risk_tab):
         rc = [c for c in ["reel_getiri_yillik", "oynaklik_yillik", "beta", "max_dusus"] if c in risk_tab]
         sc = sc.join(risk_tab[rc].astype(float), how="left")

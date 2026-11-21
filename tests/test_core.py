@@ -235,3 +235,14 @@ def test_naive_error_robust_for_companies_without_sales():
     assert rv.empty                                                               # 2Ç: önceki raporda kalem yok; 3Ç: negatif
     ni = tms29.naive_vs_correct(reps, cpi, "net_income")
     assert list(ni.index) == [pd.Period("2026Q2"), pd.Period("2026Q3")]
+
+
+def test_no_infinite_ratios_when_prior_revenue_is_zero():
+    """Önceki yıl hasılatı 0 olan şirkette büyüme/marj oranları 'inf' değil tanımsız (NaN) olmalı; notta '–' görünür."""
+    from kapsam.normalize import tms29
+    from kapsam import report
+    cols = pd.period_range("2025Q3", "2026Q3", freq="Q")
+    df = pd.DataFrame({c: {"revenue": 0.0 if i == 0 else 100.0, "net_income": 5.0, "total_equity": 50.0} for i, c in enumerate(cols)})
+    m = tms29.metrics(df)
+    assert not np.isinf(m.values.astype(float)).any()
+    assert report._pct(float("inf")) == "–" and report._num(float("-inf")) == "–"
