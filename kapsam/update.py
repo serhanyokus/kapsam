@@ -28,7 +28,7 @@ import numpy as np
 import pandas as pd
 
 from . import graph as kg
-from . import pipeline, risk, report, valuation
+from . import pipeline, report, risk, theme, valuation
 from .data import evds as evds_mod
 from .data.market import Market, returns, summary
 
@@ -224,7 +224,8 @@ def step_risk(p: Paths, cfg: dict, st: Status, universe_df: pd.DataFrame | None 
                 "hisse_sayisi": int(len(corr)), "lw_hisse_sayisi": int(len(lw)), "lw_kucultme": delta,
                 "az_veri_hisse": int((tab["gozlem"] < risk.RELIABLE_OBS).sum())}
         (out / "matris_bilgi.json").write_text(json.dumps(info, ensure_ascii=False, indent=1), encoding="utf-8")
-        (out / "index.html").write_text(risk_page(tab, corr.loc[watch, watch], sec, info, st.started), encoding="utf-8")
+        (out / "index.html").write_text(theme.restyle(risk_page(tab, corr.loc[watch, watch], sec, info, st.started), "risk/index.html", "../"),
+                                        encoding="utf-8")
         avg = tab["ort_korelasyon"].median() if "ort_korelasyon" in tab else np.nan
         st.ok("risk", f"{len(tab)} hisse; medyan yıllık oynaklık %{tab['oynaklik_yillik'].median()*100:.0f}, "
               f"medyan beta {tab['beta'].median():.2f}, ort. korelasyon {avg:.2f}; korelasyon, kovaryans ve Ledoit–Wolf "
@@ -253,7 +254,7 @@ def risk_page(tab: pd.DataFrame, wcorr: pd.DataFrame, sec: pd.DataFrame | None, 
         if kind == "n":
             return f"<td data-v='{v}'>{int(v)}</td>"
         return f"<td data-v='{v:.6f}'>{v*100:.1f}%</td>" if kind == "p" else f"<td data-v='{v:.6f}'>{v:.2f}</td>"
-    head = "<th>Kod</th>" + "".join(f"<th>{e(lab)}</th>" for _, lab, _ in cols)
+    head = "<th class='l'>Kod</th>" + "".join(f"<th{' class=l' if k == 't' else ''}>{e(lab)}</th>" for _, lab, k in cols)
     body = "".join(f"<tr><td class='l'><b>{e(t)}</b></td>" + "".join(cell(r.get(c), k) for c, _, k in cols) + "</tr>"
                    for t, r in tab.iterrows())
     imgs = ""
@@ -274,8 +275,9 @@ body{{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:16px;col
 input{{font-size:14px;padding:6px 10px;width:280px;max-width:100%}}.wrap{{overflow-x:auto}}img{{max-width:100%}}
 table{{border-collapse:collapse;font-size:12px;white-space:nowrap}}th{{position:sticky;top:0;background:#f5f7fb;cursor:pointer}}
 th,td{{border-bottom:1px solid #eef1f5;padding:4px 8px;text-align:right}}.l{{text-align:left}}.m{{color:#6b7385;font-size:12px}}
-</style></head><body><h1>KAPSAM · Risk ve korelasyon (tüm BIST)</h1>
-<p class="m">{len(tab)} hisse · pencere: son 252 işlem günü ({e(tab.attrs.get('baslangic', ''))} – {e(tab.attrs.get('bitis', ''))}) · {e(stamp)} (UTC).
+</style></head><body><div class="eyebrow">Risk</div><h1>Riski ölçün. Birlikte hareketi görün.</h1>
+<p class="lead">Her hisse için oynaklık, beta, VaR ve en büyük düşüş; tüm piyasa için korelasyon, kovaryans ve Ledoit–Wolf matrisleri.</p>
+<p class="m">{len(tab)} hisse · pencere: son 252 işlem günü ({e(tab.attrs.get('baslangic', ''))} – {e(tab.attrs.get('bitis', ''))}) · {e(stamp[:16].replace('T', ' '))} UTC.
 Günlük log getiri; yıllıklaştırma 252 gün. Beta ve korelasyon BIST 100'e göre. Reel getiri TÜFE, USD getiri TCMB kuru ile.
 Yıllık enflasyon: {'' if pd.isna(tab.attrs.get('yillik_enflasyon')) else f"%{tab.attrs['yillik_enflasyon']*100:.1f}"}.
 Tüm matrisler her gün güncellenir ({e(str(info.get('tarih', '–')))}): Ledoit–Wolf küçültme katsayısı {'' if lw is None else f'{lw:.2f}'}, {info.get('lw_hisse_sayisi', '–')} hisse.
@@ -560,20 +562,23 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
     if cpi is not None and len(cpi) > 13:
         yoy = (cpi / cpi.shift(12) - 1).dropna() * 100
         fig, ax = plt.subplots(figsize=(6.4, 2.6))
-        ax.plot(yoy.index, yoy.values, color="#1f5fbf")
-        ax.set_title(f"Yıllık TÜFE (%) · son: %{yoy.iloc[-1]:.1f}".replace(".", ","), loc="left", fontsize=10)
-        ax.spines[["top", "right"]].set_visible(False)
-        blocks.append(f"<h2>Makro</h2><p>Yıllık TÜFE: <b>%{yoy.iloc[-1]:.1f}</b> ({yoy.index[-1]:%m/%Y})".replace(".", ",", 1)
-                      + f"</p><img src='{_png(fig)}' alt='Enflasyon'>")
+        ax.plot(yoy.index, yoy.values, color=theme.ACCENT, linewidth=2)
+        ax.fill_between(yoy.index, yoy.values, color=theme.ACCENT, alpha=0.08)
+        theme.style_axes(ax, f"Yıllık TÜFE (%) · son: %{yoy.iloc[-1]:.1f}".replace(".", ","))
+        blocks.append(f"<h2>Enflasyon</h2><p class='muted'>Yıllık TÜFE <b>%{yoy.iloc[-1]:.1f}</b> ({yoy.index[-1]:%m/%Y}). Tüm reel hesaplar bu seriye dayanır.".replace(".", ",", 1)
+                      + f"</p><img class='narrow' src='{_png(fig)}' alt='Enflasyon'>")
     if (p.data / "fiyatlar.csv").exists():
         px = pd.read_csv(p.data / "fiyatlar.csv", index_col=0, parse_dates=True)
         sm = summary(px, cpi)
         cols = [c for c in ["son_fiyat", "getiri_1a", "getiri_3a", "getiri_1y", "reel_getiri_1y"] if c in sm]
-        head = "".join(f"<th>{e(c.replace('_', ' '))}</th>" for c in cols)
-        body = "".join("<tr><td>" + e(t) + "</td>" + "".join(
-            f"<td>{v:,.2f}</td>" if c == "son_fiyat" else f"<td>{v*100:+.1f}%</td>" for c, v in row[cols].items()) + "</tr>"
-            for t, row in sm.iterrows())
-        blocks.append(f"<h2>Piyasa</h2><table><tr><th>Hisse</th>{head}</tr>{body}</table>"
+        lab = {"son_fiyat": "Son fiyat", "getiri_1a": "1 ay", "getiri_3a": "3 ay", "getiri_1y": "1 yıl", "reel_getiri_1y": "1 yıl reel"}
+        head = "".join(f"<th>{lab[c]}</th>" for c in cols)
+        col = lambda v: "var(--pos)" if v > 0 else "var(--neg)"  # noqa: E731
+        body = "".join(f"<tr><td><a href='{e(t)}.html'><b>{e(t)}</b></a></td>" + "".join(
+            f"<td>{v:,.2f}</td>" if c == "son_fiyat" else f"<td style='color:{col(v)}'>{v*100:+.1f}%</td>"
+            for c, v in row[cols].items()) + "</tr>"
+            for t, row in sm.iterrows() if t != "XU100")
+        blocks.append(f"<h2>Takip listesi: piyasa</h2><table><tr><th>Hisse</th>{head}</tr>{body}</table>"
                       "<p class='m'>Reel getiri, aynı dönemin TÜFE'siyle arındırılmıştır.</p>")
     if reports:
         f2 = lambda v, fmt: "–" if v is None or pd.isna(v) else format(v, fmt)  # noqa: E731
@@ -628,18 +633,42 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
                          f"En düşük reel getiri: {e(top('reel_getiri_yillik', True))}</p>" if "reel_getiri_yillik" in rt else "")
                       + "<p class='m'>Korelasyon ve kovaryans matrisleri (örnek ve Ledoit–Wolf), sektör korelasyonu ve takip listesi ısı haritası risk sayfasındadır.</p>")
     icon = {"tamam": "✓", "hata": "✗", "atlandı": "–"}
-    srows = "".join(f"<tr><td>{e(k)}</td><td>{icon[v['durum']]} {e(v['durum'])}</td><td class='l'>{e(v['detay'])}</td></tr>"
+    names = {"makro": "TÜFE ve kur (TCMB)", "evren": "Hisse listesi", "fiyat": "Fiyatlar", "tablo": "KAP tabloları", "risk": "Risk ve korelasyon",
+             "rapor": "Şirket notları", "olay": "Olay çalışması", "tarama": "TMS 29 taraması"}
+    dot = {"tamam": "<span style='color:var(--pos)'>●</span>", "hata": "<span style='color:var(--neg)'>●</span>", "atlandı": "<span style='color:var(--muted)'>●</span>"}
+    srows = "".join(f"<tr><td>{dot[v['durum']]} {e(names.get(k, k))}</td><td class='l muted'>{e(v['detay'])}</td></tr>"
                     for k, v in st.steps.items())
+    ok_all = all(v["durum"] != "hata" for v in st.steps.values())
+    rt_f = p.out / "risk" / "risk_ozet.csv"
+    rt_k = pd.read_csv(rt_f, index_col=0) if rt_f.exists() else None
+    infl = (cpi.iloc[-1] / cpi.iloc[-13] - 1) if cpi is not None and len(cpi) > 13 else None
+    kpi = lambda label, val, sub="": f"<div class='kpi'><span>{label}</span><b>{val}</b><span>{sub}</span></div>"  # noqa: E731
+    tiles = "".join([
+        kpi("Şirket notu ve model", f"{len(reports)}" if reports else "–", "her iş günü yenilenir"),
+        kpi("TMS 29 taraması", f"{len(screen)}" if screen is not None else "–", "şirket, 0 hata" if screen is not None and not
+            screen.get("not", pd.Series(dtype=str)).astype(str).str.startswith("hata").any() else "şirket"),
+        kpi("Yıllık enflasyon", f"%{infl*100:.1f}".replace(".", ",") if infl is not None else "–", "TÜFE, TCMB EVDS"),
+        kpi("Medyan oynaklık", f"%{rt_k['oynaklik_yillik'].median()*100:.0f}" if rt_k is not None else "–",
+            f"{len(rt_k)} hisse, son 1 yıl" if rt_k is not None else ""),
+    ])
+    cards = ("<div class='grid2'>"
+             "<a class='card' href='tarama.html' style='text-decoration:none;color:inherit'><div class='eyebrow'>Tarama</div>"
+             "<h3 style='margin:0 0 6px'>Tüm BIST, tek tabloda →</h3><p class='muted' style='margin:0'>Her şirketin düzeltmesiz çeyrek hatası, parasal kazanç payı, "
+             "temel marj, çarpanlar, beta ve reel getiri. Her kod kendi notuna açılır.</p></a>"
+             "<a class='card' href='risk/index.html' style='text-decoration:none;color:inherit'><div class='eyebrow'>Risk</div>"
+             "<h3 style='margin:0 0 6px'>Korelasyon ve kovaryans →</h3><p class='muted' style='margin:0'>Oynaklık, beta, VaR, en büyük düşüş; "
+             "tüm hisseler için korelasyon, kovaryans ve Ledoit–Wolf matrisleri.</p></a></div>")
     page = f"""<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KAPSAM · Gerçek veri durumu</title><style>
-body{{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:900px;margin:24px auto;padding:0 16px;color:#1d2433}}
-table{{border-collapse:collapse;width:100%;font-size:13px;margin:6px 0}}th,td{{border-bottom:1px solid #eef1f5;padding:5px 8px;text-align:right}}
-th:first-child,td:first-child,.l{{text-align:left}}h2{{font-size:15px;margin-top:24px}}.m{{color:#6b7385;font-size:12px}}img{{max-width:640px;width:100%}}
-td.l{{overflow-wrap:anywhere}}@media(max-width:700px){{table{{display:block;overflow-x:auto}}td.l{{min-width:220px}}}}
-</style></head><body><h1>KAPSAM · Gerçek veri</h1><p class="m">Son güncelleme: {e(st.started)} (UTC). Her iş günü otomatik yenilenir.</p>
-<h2>Kaynak durumu</h2><table><tr><th>Adım</th><th>Durum</th><th class='l'>Ayrıntı</th></tr>{srows}</table>
+<title>KAPSAM · BIST araştırma asistanı</title><style></style></head><body>
+<div class="eyebrow">{'Tüm sistemler çalışıyor' if ok_all else 'Bazı adımlarda hata var'} · güncelleme {e(st.started[:16].replace('T', ' '))} UTC</div>
+<h1>Borsa İstanbul'un tamamı,<br>enflasyondan arındırılmış.</h1>
+<p class="lead">KAPSAM, KAP finansal tablolarını TMS 29'a göre doğru çeyreklere ayırır; her şirket için not, model ve risk analizi üretir.</p>
+<div class="kpis">{tiles}</div>
+{cards}
 {''.join(blocks)}
-<p class="m">Kaynaklar: TCMB EVDS, Yahoo Finance (gecikmeli), KAP. Yatırım tavsiyesi değildir.</p></body></html>"""
+<h2>Sistem durumu</h2><table>{srows}</table>
+<p class="m">Kaynaklar: KAP finansal tabloları, TCMB EVDS (TÜFE, kur), İş Yatırım (hisse listesi), Yahoo Finance (gecikmeli fiyatlar).</p></body></html>"""
+    page = theme.restyle(page, "index.html")
     out = p.out / "index.html"
     out.write_text(page, encoding="utf-8")
     (p.out / "durum.json").write_text(json.dumps({"guncelleme": st.started, "adimlar": st.steps}, ensure_ascii=False, indent=1),
@@ -666,7 +695,7 @@ def step_screen(p: Paths, st: Status, universe_df: pd.DataFrame | None = None,
     p.out.mkdir(parents=True, exist_ok=True)
     sc.to_csv(p.out / "tarama.csv")
     notes = {f.stem for f in p.out.glob("*.html") if f.stem not in ("index", "tarama")}
-    (p.out / "tarama.html").write_text(screen_page(sc, st.started, notes), encoding="utf-8")
+    (p.out / "tarama.html").write_text(theme.restyle(screen_page(sc, st.started, notes), "tarama.html"), encoding="utf-8")
     ok = sc["not"].astype(str).str.startswith("hata").sum() if "not" in sc else 0
     st.ok("tarama", f"{len(sc)} şirket tarandı" + (f", {ok} şirkette hata" if ok else ""))
     return sc
@@ -692,7 +721,7 @@ def screen_page(sc: pd.DataFrame, stamp: str, notes: set[str] | None = None) -> 
         if kind == "x":
             return f"<td data-v='{float(v):.6f}'>{float(v):.1f}x</td>"
         return f"<td data-v='{e(str(v))}' class='l'>{e(str(v))}</td>"
-    head = "<th>Kod</th>" + "".join(f"<th>{e(lab)}</th>" for _, lab, _ in cols)
+    head = "<th class='l'>Kod</th>" + "".join(f"<th{' class=l' if k == 't' else ''}>{e(lab)}</th>" for _, lab, k in cols)
     notes = notes or set()
     link = lambda t: f"<a href='{e(str(t))}.html'>{e(str(t))}</a>" if t in notes else e(str(t))  # noqa: E731
     body = "".join(f"<tr><td class='l'><b>{link(t)}</b></td>" + "".join(cell(r.get(c), k) for c, _, k in cols) + "</tr>"
@@ -703,8 +732,9 @@ body{{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:16px;col
 input{{font-size:14px;padding:6px 10px;width:280px;max-width:100%}}.wrap{{overflow-x:auto}}
 table{{border-collapse:collapse;font-size:12px;white-space:nowrap}}th{{position:sticky;top:0;background:#f5f7fb;cursor:pointer}}
 th,td{{border-bottom:1px solid #eef1f5;padding:4px 8px;text-align:right}}.l{{text-align:left}}.m{{color:#6b7385;font-size:12px}}
-</style></head><body><h1>KAPSAM · BIST taraması</h1>
-<p class="m">{len(sc)} şirket · {e(stamp)} (UTC) · Sütun başlığına tıklayarak sıralayın. Banka ve sigorta şirketleri TMS 29 uygulamaz; nominal modda gösterilir. Yatırım tavsiyesi değildir.</p>
+</style></head><body><div class="eyebrow">Tarama</div><h1>Tüm BIST, tek tabloda.</h1>
+<p class="lead">Düzeltmesiz çeyrek hesabının hatası, parasal kazancın kârdaki payı, temel marj, çarpanlar ve piyasa riski. Bir koda tıklayın, şirketin notu açılır.</p>
+<p class="m">{len(sc)} şirket · {e(stamp[:16].replace('T', ' '))} UTC · Sütun başlığına tıklayarak sıralayın. Banka ve sigorta şirketleri TMS 29 uygulamaz; nominal modda gösterilir. Yatırım tavsiyesi değildir.</p>
 <input id="q" placeholder="Kod, şirket veya sektör ara" oninput="f()">
 <div class="wrap"><table id="t"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>
 <script>

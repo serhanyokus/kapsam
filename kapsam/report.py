@@ -21,7 +21,9 @@ from openpyxl.utils import get_column_letter  # noqa: E402
 from . import valuation as val  # noqa: E402
 from .pipeline import Analysis  # noqa: E402
 
-BLUE, ORANGE, GREY = "#1f5fbf", "#e07b00", "#8a94a6"
+from . import theme  # noqa: E402
+
+BLUE, ORANGE, GREY = theme.ACCENT, theme.ORANGE, theme.GREY
 
 
 def _png(fig) -> str:
@@ -32,9 +34,7 @@ def _png(fig) -> str:
 
 
 def _style(ax, title):
-    ax.set_title(title, loc="left", fontsize=11, fontweight="bold")
-    for s in ("top", "right"):
-        ax.spines[s].set_visible(False)
+    theme.style_axes(ax, title)
     ax.grid(axis="y", alpha=0.25)
     ax.tick_params(labelsize=8)
 
@@ -134,7 +134,7 @@ def risk_section(risk_row: dict | pd.Series | None) -> str:
             f"<p class='muted'>Günlük log getiri, BIST 100'e göre piyasa modeli. Reel getiri TÜFE, USD getiri TCMB kuru ile.{warn}</p>")
 
 
-def html_note(a: Analysis, inp: val.DCFInputs, market_cap: float, thesis: dict | None = None,
+def _html_note_raw(a: Analysis, inp: val.DCFInputs, market_cap: float, thesis: dict | None = None,
               disclosures: list[dict] | None = None, synthetic: bool = False, network: dict | None = None,
               risk_row: dict | pd.Series | None = None, name: str | None = None) -> str:
     """Analistin yöneticisine gönderebileceği tek sayfalık (yazdırılabilir) araştırma notu."""
@@ -396,7 +396,7 @@ def is_financial(a: Analysis) -> bool:
         "net_interest_income" in a.quarterly.index or "gross_premiums" in a.quarterly.index)
 
 
-def financial_note(a: Analysis, market_cap: float | None = None, name: str | None = None,
+def _financial_note_raw(a: Analysis, market_cap: float | None = None, name: str | None = None,
                    risk_row: dict | pd.Series | None = None) -> str:
     """Banka ve sigorta şirketleri için not. Faaliyet kârı/serbest nakit akımı tanımı farklı olduğundan İNA yerine
     özkaynak çarpanları ve kârlılık/risk göstergeleri kullanılır. Tablolar TMS 29'a göre düzeltilmez (BDDK/SEDDK);
@@ -470,7 +470,7 @@ Faaliyet kârı ve serbest nakit akımı bankacılıkta anlamlı olmadığından
 </body></html>"""
 
 
-def basic_note(a: Analysis, market_cap: float | None = None, name: str | None = None,
+def _basic_note_raw(a: Analysis, market_cap: float | None = None, name: str | None = None,
                risk_row: dict | pd.Series | None = None, reason: str = "") -> str:
     """İNA'nın anlamlı olmadığı şirketler (hasılatı olmayan holding/GYO, çok kısa geçmiş) için aynı yapıda not:
     TMS 29 düzeltmeli çeyrekler, parasal kazanç etkisi, düzeltmesiz yöntem hatası, çarpanlar ve piyasa riski."""
@@ -556,3 +556,15 @@ def data_excel(a: Analysis, path: str | Path, risk_row: dict | pd.Series | None 
         if risk_row is not None:
             pd.Series(dict(risk_row), name="değer").to_frame().to_excel(xw, sheet_name="Piyasa riski")
     return path
+
+
+def html_note(*args, **kw) -> str:
+    return theme.restyle(_html_note_raw(*args, **kw))
+
+
+def financial_note(*args, **kw) -> str:
+    return theme.restyle(_financial_note_raw(*args, **kw))
+
+
+def basic_note(*args, **kw) -> str:
+    return theme.restyle(_basic_note_raw(*args, **kw))
