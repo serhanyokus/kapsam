@@ -55,7 +55,8 @@ flowchart LR
 - [x] İlk gerçek veri: BİM 2025/09–2026/09, gerçek TÜFE ve TCMB kurları; ters İNA ile fiyatlanan marj (v0.7)
 - [x] Herhangi bir hisse için tablo kaynağı, birikimli geçmiş, `analiz` ve `tarama`; 8 şirketle gerçek tarama (v0.8)
 - [x] Tüm BIST: otomatik evren, banka/sigorta tablo biçimleri (nominal mod), akıllı rapor takvimi, günlük limit, aranabilir tarama sayfası, finansal sektör notu (v0.9)
-- [ ] Tüm BIST'te ilk tam tur sonrası doğrulama (ilk hafta)
+- [x] Tüm BIST'te ilk tam tur (629 hisse, 0 hata), BIST-30 takip listesi, 25 gerçek KAP olayı, kaynaklı ilişki ağı
+- [x] Tüm hisselerin fiyatı; risk tablosu, korelasyon ve kovaryans (örnek + Ledoit–Wolf), sektör korelasyonu (v0.9)
 - [ ] Gerçek ilişki ağı: faaliyet raporları ve KAP "yeni iş ilişkisi" bildirimlerinden
 - [ ] KAP bildirimlerinin otomatik toplanması (zamanlanmış görev)
 - [ ] XBRL doğrudan okuma

@@ -28,7 +28,7 @@ import numpy as np
 import pandas as pd
 
 from . import graph as kg
-from . import pipeline, report, valuation
+from . import pipeline, risk, report, valuation
 from .data import evds as evds_mod
 from .data.market import Market, returns, summary
 
@@ -126,27 +126,171 @@ def step_macro(p: Paths, cfg: dict, st: Status, client=None):
         st.fail("makro", e)
 
 
-def step_prices(p: Paths, cfg: dict, st: Status, market: Market | None = None):
-    tickers = [h["kod"] for h in cfg["hisseler"]]
+def _download_chunks(m: Market, tickers: list[str], start: str, chunk: int = 60, pause: float = 1.0) -> tuple[pd.DataFrame, list[str]]:
+    """Çok sayıda hisseyi parça parça indirir; bir parça hata verirse diğerleri etkilenmez."""
+    import time
+    frames, failed = [], []
+    for i in range(0, len(tickers), chunk):
+        part = tickers[i:i + chunk]
+        try:
+            df = m.prices(part, start, with_index=(i == 0))
+            frames.append(df)
+        except Exception:  # noqa: BLE001
+            failed += part
+        if pause and i + chunk < len(tickers):
+            time.sleep(pause)
+    if not frames:
+        return pd.DataFrame(), failed
+    px = pd.concat(frames, axis=1)
+    px = px.loc[:, ~px.columns.duplicated()].sort_index()
+    return px, failed
+
+
+def step_prices(p: Paths, cfg: dict, st: Status, market: Market | None = None, universe_df: pd.DataFrame | None = None):
+    """Takip listesi + (evren='tum' ise) borsadaki TÜM hisselerin günlük düzeltilmiş fiyatları.
+    Tüm hisseler data/gercek/fiyat/YYYY.csv dosyalarına yıllara bölünerek yazılır; fiyatlar.csv takip listesidir."""
+    watch = [h["kod"] for h in cfg["hisseler"]]
+    every = list(universe_df["kod"]) if (cfg.get("evren") == "tum" and universe_df is not None and len(universe_df)) else []
+    tickers = list(dict.fromkeys(watch + every))
     if not tickers:
         st.skip("fiyat", "Takip listesi boş")
         return
     try:
         m = market or Market()
-        px = m.prices(tickers, cfg["baslangic"])
+        px, failed = _download_chunks(m, tickers, cfg["baslangic"], pause=0 if market else 1.0)
         if px.empty:
             raise ValueError("Fiyat verisi boş")
         p.data.mkdir(parents=True, exist_ok=True)
-        px.to_csv(p.data / "fiyatlar.csv", index_label="tarih")
+        cols = [c for c in watch if c in px.columns] + (["XU100"] if "XU100" in px.columns else [])
+        px[cols].dropna(how="all").to_csv(p.data / "fiyatlar.csv", index_label="tarih")
+        if every:
+            risk.save_prices_by_year(px, p.data / "fiyat")
         shares = {}
         for h in cfg["hisseler"]:
             shares[h["kod"]] = h.get("hisse_sayisi") or m.shares(h["kod"])
         (p.data / "hisse_sayilari.json").write_text(json.dumps(shares, indent=1), encoding="utf-8")
-        missing = [t for t in tickers if t not in px.columns or px[t].dropna().empty]
-        st.ok("fiyat", f"{len(tickers) - len(missing)}/{len(tickers)} hisse, son tarih {px.index[-1]:%Y-%m-%d}"
-              + (f"; eksik: {', '.join(missing)}" if missing else ""))
+        have = [t for t in tickers if t in px.columns and px[t].notna().any()]
+        miss_w = [t for t in watch if t not in have]
+        st.ok("fiyat", f"{len(have)}/{len(tickers)} hisse (takip listesi {len(watch) - len(miss_w)}/{len(watch)}), "
+              f"son tarih {px.index[-1]:%Y-%m-%d}" + (f"; takipte eksik: {', '.join(miss_w)}" if miss_w else ""))
     except Exception as e:  # noqa: BLE001
         st.fail("fiyat", e)
+
+
+def _all_prices(p: Paths) -> pd.DataFrame:
+    full = risk.load_prices(p.data / "fiyat") if (p.data / "fiyat").exists() else pd.DataFrame()
+    if not full.empty:
+        return full
+    fp = p.data / "fiyatlar.csv"
+    return pd.read_csv(fp, index_col=0, parse_dates=True) if fp.exists() else pd.DataFrame()
+
+
+def step_risk(p: Paths, cfg: dict, st: Status, universe_df: pd.DataFrame | None = None,
+              today: pd.Timestamp | None = None) -> pd.DataFrame | None:
+    """Tüm hisseler için risk tablosu; takip listesi ve sektör korelasyonu her gün, tüm piyasa matrisleri haftalık."""
+    px = _all_prices(p)
+    if px.empty or "XU100" not in px:
+        st.skip("risk", "Fiyat verisi yok")
+        return None
+    try:
+        today = today or pd.Timestamp.today()
+        out = p.out / "risk"
+        out.mkdir(parents=True, exist_ok=True)
+        r = risk.window(risk.log_returns(px))
+        cov, corr = risk.cov_corr(r)
+        cpi = _read_csv_series(p.data / "tufe_aylik.csv") if (p.data / "tufe_aylik.csv").exists() else None
+        fx = _read_csv_series(p.data / "kur_gunluk.csv") if (p.data / "kur_gunluk.csv").exists() else None
+        tab = risk.risk_table(px, cpi_monthly=cpi, usdtry=fx, corr=corr)
+        meta = universe_df.set_index("kod")[["ad", "sektor"]] if universe_df is not None and len(universe_df) else None
+        if meta is None and (p.root / "config" / "bist_evren.csv").exists():
+            meta = pd.read_csv(p.root / "config" / "bist_evren.csv").set_index("kod")[["ad", "sektor"]]
+        if meta is not None:
+            attrs = dict(tab.attrs)
+            tab = meta.reindex(tab.index).join(tab)
+            tab.attrs.update(attrs)
+        tab.to_csv(out / "risk_ozet.csv")
+        watch = [h["kod"] for h in cfg["hisseler"] if h["kod"] in corr.index]
+        corr.loc[watch, watch].round(4).to_csv(out / "takip_korelasyon.csv")
+        cov.loc[watch, watch].round(6).to_csv(out / "takip_kovaryans.csv")
+        sec = risk.sector_corr(corr.drop(index="XU100", columns="XU100", errors="ignore"), meta["sektor"]) if meta is not None else None
+        if sec is not None:
+            sec.round(3).to_csv(out / "sektor_korelasyon.csv")
+        info_f = out / "matris_bilgi.json"
+        info = json.loads(info_f.read_text(encoding="utf-8")) if info_f.exists() else {}
+        last = pd.Timestamp(info.get("tarih", "2000-01-01"))
+        weekly = (not (out / "korelasyon_tum.csv.gz").exists()) or today.weekday() == 4 or (today - last).days >= 7
+        if weekly:
+            corr.round(4).to_csv(out / "korelasyon_tum.csv.gz", compression="gzip")
+            cov.round(6).to_csv(out / "kovaryans_tum.csv.gz", compression="gzip")
+            lw, delta = risk.ledoit_wolf(r.drop(columns="XU100", errors="ignore"))
+            lw.round(6).to_csv(out / "kovaryans_ledoit_wolf.csv.gz", compression="gzip")
+            info = {"tarih": f"{today:%Y-%m-%d}", "pencere": tab.attrs.get("baslangic", "") + " – " + tab.attrs.get("bitis", ""),
+                    "hisse_sayisi": int(len(corr)), "lw_hisse_sayisi": int(len(lw)), "lw_kucultme": delta}
+            info_f.write_text(json.dumps(info, ensure_ascii=False, indent=1), encoding="utf-8")
+        (out / "index.html").write_text(risk_page(tab, corr.loc[watch, watch], sec, info, st.started), encoding="utf-8")
+        avg = tab["ort_korelasyon"].median() if "ort_korelasyon" in tab else np.nan
+        st.ok("risk", f"{len(tab)} hisse; medyan yıllık oynaklık %{tab['oynaklik_yillik'].median()*100:.0f}, "
+              f"medyan beta {tab['beta'].median():.2f}, ort. korelasyon {avg:.2f}; tüm piyasa matrisleri "
+              + ("güncellendi" if weekly else f"haftalık ({info.get('tarih', '')})"))
+        return tab
+    except Exception as e:  # noqa: BLE001
+        st.fail("risk", e)
+        return None
+
+
+def risk_page(tab: pd.DataFrame, wcorr: pd.DataFrame, sec: pd.DataFrame | None, info: dict, stamp: str) -> str:
+    e = html.escape
+    cols = [("ad", "Şirket", "t"), ("sektor", "Sektör", "t"), ("getiri_yillik", "Getiri 1Y", "p"), ("reel_getiri_yillik", "Reel getiri", "p"),
+            ("usd_getiri_yillik", "USD getiri", "p"), ("oynaklik_yillik", "Oynaklık", "p"), ("beta", "Beta", "x"),
+            ("korelasyon_xu100", "Kor. XU100", "x"), ("ozgun_oynaklik", "Özgün oynaklık", "p"), ("max_dusus", "Max düşüş", "p"),
+            ("var95_gunluk", "VaR95 (gün)", "p"), ("es95_gunluk", "ES95 (gün)", "p"), ("getiri_oynaklik_orani", "Getiri/oynaklık", "x"),
+            ("ort_korelasyon", "Ort. korelasyon", "x"), ("en_yakin_3", "En çok birlikte hareket eden", "t")]
+    cols = [c for c in cols if c[0] in tab.columns]
+
+    def cell(v, kind):
+        if kind == "t" or isinstance(v, str):
+            return f"<td class='l'>{e('' if pd.isna(v) else str(v))}</td>"
+        if pd.isna(v):
+            return "<td data-v=''>–</td>"
+        return f"<td data-v='{v:.6f}'>{v*100:.1f}%</td>" if kind == "p" else f"<td data-v='{v:.6f}'>{v:.2f}</td>"
+    head = "<th>Kod</th>" + "".join(f"<th>{e(lab)}</th>" for _, lab, _ in cols)
+    body = "".join(f"<tr><td class='l'><b>{e(t)}</b></td>" + "".join(cell(r.get(c), k) for c, _, k in cols) + "</tr>"
+                   for t, r in tab.iterrows())
+    imgs = ""
+    if len(wcorr) > 2:
+        order = risk.cluster_order(wcorr)
+        imgs += f"<h2>Takip listesi korelasyon ısı haritası (kümelenmiş)</h2><img src='{risk.heatmap_png(wcorr.loc[order, order])}' alt='Korelasyon'>"
+    if sec is not None and len(sec) > 2:
+        imgs += f"<h2>Sektörler arası ortalama korelasyon</h2><img src='{risk.heatmap_png(sec)}' alt='Sektör korelasyonu'>"
+    files = [("risk_ozet.csv", "Risk tablosu (tüm hisseler)"), ("takip_korelasyon.csv", "Takip listesi korelasyon"),
+             ("takip_kovaryans.csv", "Takip listesi kovaryans (yıllık)"), ("sektor_korelasyon.csv", "Sektör korelasyonu"),
+             ("korelasyon_tum.csv.gz", "Tüm hisseler korelasyon matrisi"), ("kovaryans_tum.csv.gz", "Tüm hisseler kovaryans (yıllık, örnek)"),
+             ("kovaryans_ledoit_wolf.csv.gz", "Tüm hisseler Ledoit–Wolf kovaryans (pozitif tanımlı)")]
+    links = " · ".join(f"<a href='{f}'>{e(lab)}</a>" for f, lab in files)
+    lw = info.get("lw_kucultme")
+    return f"""<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>KAPSAM · Risk ve korelasyon</title><style>
+body{{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:16px;color:#1d2433}}h2{{font-size:15px;margin-top:22px}}
+input{{font-size:14px;padding:6px 10px;width:280px;max-width:100%}}.wrap{{overflow-x:auto}}img{{max-width:100%}}
+table{{border-collapse:collapse;font-size:12px;white-space:nowrap}}th{{position:sticky;top:0;background:#f5f7fb;cursor:pointer}}
+th,td{{border-bottom:1px solid #eef1f5;padding:4px 8px;text-align:right}}.l{{text-align:left}}.m{{color:#6b7385;font-size:12px}}
+</style></head><body><h1>KAPSAM · Risk ve korelasyon (tüm BIST)</h1>
+<p class="m">{len(tab)} hisse · pencere: son 252 işlem günü ({e(tab.attrs.get('baslangic', ''))} – {e(tab.attrs.get('bitis', ''))}) · {e(stamp)} (UTC).
+Günlük log getiri; yıllıklaştırma 252 gün. Beta ve korelasyon BIST 100'e göre. Reel getiri TÜFE, USD getiri TCMB kuru ile.
+Yıllık enflasyon: {'' if pd.isna(tab.attrs.get('yillik_enflasyon')) else f"%{tab.attrs['yillik_enflasyon']*100:.1f}"}.
+Tüm piyasa matrisleri haftalık güncellenir (son: {e(str(info.get('tarih', '–')))}; Ledoit–Wolf küçültme katsayısı {'' if lw is None else f'{lw:.2f}'}, {info.get('lw_hisse_sayisi', '–')} hisse).</p>
+<p>İndir: {links}</p>
+{imgs}
+<h2>Risk tablosu</h2><input id="q" placeholder="Kod, şirket veya sektör ara" oninput="f()">
+<div class="wrap"><table id="t"><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>
+<p class="m">VaR95/ES95: günlük %5 en kötü getiri eşiği ve o günlerin ortalama kaybı (tarihsel). Özgün oynaklık: piyasa (beta) etkisi çıkarıldıktan sonra kalan.
+Getiri/oynaklık: risksiz faiz düşülmemiş basit oran. Fiyatlar Yahoo Finance (gecikmeli, bölünme ve bedelsize göre düzeltilmiş). Yatırım tavsiyesi değildir.</p>
+<script>
+function f(){{const q=document.getElementById('q').value.toLocaleLowerCase('tr');for(const r of document.querySelectorAll('#t tbody tr'))r.style.display=r.innerText.toLocaleLowerCase('tr').includes(q)?'':'none'}}
+document.querySelectorAll('#t th').forEach((th,i)=>th.onclick=()=>{{const tb=document.querySelector('#t tbody');const rs=[...tb.rows];const d=th.dataset.d=th.dataset.d==='1'?'0':'1';
+rs.sort((a,b)=>{{const x=a.cells[i].dataset.v??a.cells[i].innerText,y=b.cells[i].dataset.v??b.cells[i].innerText;const nx=parseFloat(x),ny=parseFloat(y);
+const c=(isNaN(nx)||isNaN(ny))?String(x).localeCompare(String(y),'tr'):nx-ny;return d==='1'?-c:c}});rs.forEach(r=>tb.appendChild(r))}});
+</script></body></html>"""
 
 
 def _read_csv_series(path: Path) -> pd.Series:
@@ -338,12 +482,11 @@ def step_events(p: Paths, cfg: dict, st: Status) -> pd.DataFrame | None:
     if not cfg["olaylar"]:
         st.skip("olay", "config/takip.json içinde olay yok")
         return None
-    fp = p.data / "fiyatlar.csv"
-    if not fp.exists():
+    px = _all_prices(p)
+    if px.empty:
         st.skip("olay", "Fiyat verisi yok")
         return None
     try:
-        px = pd.read_csv(fp, index_col=0, parse_dates=True)
         r = returns(px)
         graph = kg.load_with_disclosures(p.data / "ag.json")[0] if (p.data / "ag.json").exists() else None
         rows = []
@@ -454,6 +597,16 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
                       "<p class='m'>CAR: piyasa modeline (BIST 100) göre kümülatif anormal getiri, [-1,+3] işlem günü. |t| &gt; 2 kabaca %5 düzeyinde anlamlı. "
                       "Beklenen: olay şirketinde analist varsayımı (−1..+1), bağlantılı şirketlerde ilişki ağının öngördüğü etki. "
                       "18:10'dan sonraki açıklamalarda 0. gün ertesi işlem günüdür.</p>")
+    rf = p.out / "risk" / "risk_ozet.csv"
+    if rf.exists():
+        rt = pd.read_csv(rf, index_col=0)
+        top = lambda col, asc: ", ".join(f"{t} {v*100:.0f}%" for t, v in rt[col].dropna().sort_values(ascending=asc).head(5).items())  # noqa: E731
+        blocks.append(f"<h2>Risk ve korelasyon ({len(rt)} hisse, <a href='risk/index.html'>tümü ve matrisler</a>)</h2>"
+                      f"<p>Medyan yıllık oynaklık %{rt['oynaklik_yillik'].median()*100:.0f} · medyan beta {rt['beta'].median():.2f}"
+                      + (f" · ortalama korelasyon {rt['ort_korelasyon'].median():.2f}" if "ort_korelasyon" in rt else "") + "</p>"
+                      + (f"<p class='m'>Son 1 yılda en yüksek reel getiri: {e(top('reel_getiri_yillik', False))}<br>"
+                         f"En düşük reel getiri: {e(top('reel_getiri_yillik', True))}</p>" if "reel_getiri_yillik" in rt else "")
+                      + "<p class='m'>Korelasyon ve kovaryans matrisleri (örnek ve Ledoit–Wolf), sektör korelasyonu ve takip listesi ısı haritası risk sayfasındadır.</p>")
     icon = {"tamam": "✓", "hata": "✗", "atlandı": "–"}
     srows = "".join(f"<tr><td>{e(k)}</td><td>{icon[v['durum']]} {e(v['durum'])}</td><td class='l'>{e(v['detay'])}</td></tr>"
                     for k, v in st.steps.items())
@@ -474,7 +627,8 @@ td.l{{overflow-wrap:anywhere}}@media(max-width:700px){{table{{display:block;over
     return out
 
 
-def step_screen(p: Paths, st: Status, universe_df: pd.DataFrame | None = None) -> pd.DataFrame | None:
+def step_screen(p: Paths, st: Status, universe_df: pd.DataFrame | None = None,
+                risk_tab: pd.DataFrame | None = None) -> pd.DataFrame | None:
     mq = p.data / "makro_ceyrek.csv"
     if not mq.exists() or not p.kap.exists() or not pipeline.discover(p.kap):
         return None
@@ -485,6 +639,9 @@ def step_screen(p: Paths, st: Status, universe_df: pd.DataFrame | None = None) -
     from .data.universe import market_caps
     caps = market_caps(universe_df) if universe_df is not None else {}
     sc = pipeline.screen(p.kap, cpi, fx, prices, shares, market_caps=caps, meta=universe_df)
+    if risk_tab is not None and len(risk_tab):
+        rc = [c for c in ["reel_getiri_yillik", "oynaklik_yillik", "beta", "max_dusus"] if c in risk_tab]
+        sc = sc.join(risk_tab[rc].astype(float), how="left")
     p.out.mkdir(parents=True, exist_ok=True)
     sc.to_csv(p.out / "tarama.csv")
     (p.out / "tarama.html").write_text(screen_page(sc, st.started), encoding="utf-8")
@@ -501,7 +658,8 @@ def screen_page(sc: pd.DataFrame, stamp: str) -> str:
             ("parasal_kazanc_net_kar_ytd", "Parasal kazanç / net kâr (YB)", "p"), ("raporlanan_net_marj", "Net marj", "p"),
             ("temel_net_marj", "Temel net marj", "p"), ("reel_hasilat_yillik", "Reel büyüme (yıllık)", "p"),
             ("ozkaynak_karliligi_yillik", "ÖK kârlılığı (yıllık)", "p"), ("fk_ttm", "F/K", "x"), ("pd_dd", "PD/DD", "x"),
-            ("fiyatlanan_faaliyet_marji", "Fiyatlanan faaliyet marjı", "p"), ("not", "Not", "t")]
+            ("fiyatlanan_faaliyet_marji", "Fiyatlanan faaliyet marjı", "p"), ("reel_getiri_yillik", "Reel getiri 1Y", "p"),
+            ("oynaklik_yillik", "Oynaklık", "p"), ("beta", "Beta", "x"), ("max_dusus", "Max düşüş", "p"), ("not", "Not", "t")]
     cols = [c for c in cols if c[0] in sc.columns]
 
     def cell(v, kind):
@@ -545,7 +703,7 @@ def run(root: Path = ROOT, evds_client=None, market: Market | None = None, sourc
         return st
     step_macro(p, cfg, st, evds_client)
     uni = step_universe(p, cfg, st, universe_getter) if (cfg.get("evren") == "tum" or universe_getter) else None
-    step_prices(p, cfg, st, market)
+    step_prices(p, cfg, st, market, uni)
     step_tables(p, cfg, st, source, uni, today)
     reports = []
     try:
@@ -553,9 +711,10 @@ def run(root: Path = ROOT, evds_client=None, market: Market | None = None, sourc
     except Exception:  # noqa: BLE001
         st.fail("rapor", traceback.format_exc(limit=1))
     events = step_events(p, cfg, st)
+    rk = step_risk(p, cfg, st, uni, today)
     sc = None
     try:
-        sc = step_screen(p, st, uni)
+        sc = step_screen(p, st, uni, rk)
     except Exception as e:  # noqa: BLE001
         st.fail("tarama", e)
     build_status_page(p, st, reports, events, sc)

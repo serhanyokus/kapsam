@@ -40,3 +40,6 @@ Banka (BDDK) ve sigorta (SEDDK) tablo biçimleri aynı kaynaktan okunur (ör. ht
 - Olaylar: her birinin KAP bildirimi (kap.org.tr/…/BildirimPdf/…) ya da haber kaynağı `config/takip.json` içinde `kaynak` alanındadır.
 - Ortaklık oranları: KAP ortaklık tablolarını aktaran endeks24.com yazıları, Anadolu Efes ortaklık yapısı belgesi, CNBC-e (Petkim/SOCAR). Her ilişkinin kaynağı `data/gercek/ag.json` içindedir. Tofaş (2024) ve THY (2020) tabloları eski tarihlidir; değişirse güncelleyin.
 - Doğrulanamadığı için eklenmeyenler: Ülker–BİM tedarik ilişkisi, Tüpraş–Petkim nafta tedariki (Petkim'in hammaddesini STAR rafinerisi sağlıyor), TRMET–TRALT ortaklık oranı. Yıldız Holding Ülker paylarının tamamını Aralık 2024'te satmıştır.
+
+## Fiyatlar ve risk (v0.9)
+`data/gercek/fiyat/YYYY.csv`: evrendeki tüm hisseler ve BIST 100 (XU100) için Yahoo Finance günlük düzeltilmiş kapanış (gecikmeli; bölünme ve bedelsize göre düzeltilmiş). Tek günde |%60|'ı aşan hareketler veri hatası sayılıp getiri hesabından çıkarılır. Ücretsiz kaynak zaman zaman eksik olabilir; profesyonel kullanımda lisanslı veri sağlayıcıya geçin.

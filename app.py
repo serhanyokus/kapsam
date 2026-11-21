@@ -29,7 +29,42 @@ with st.sidebar:
     tax = st.slider("Parasal kazanç vergi varsayımı", 0.0, 0.3, 0.0, 0.05)
 
 TARAMA = Path(__file__).parent / "docs" / "rapor" / "tarama.csv"
-if mode.startswith("Gerçek") and st.sidebar.radio("Görünüm", ["Tek hisse", "Tüm BIST tarama"]) == "Tüm BIST tarama":
+RISK = Path(__file__).parent / "docs" / "rapor" / "risk"
+view = st.sidebar.radio("Görünüm", ["Tek hisse", "Tüm BIST tarama", "Risk ve korelasyon"]) if mode.startswith("Gerçek") else "Tek hisse"
+if view == "Risk ve korelasyon":
+    if not (RISK / "risk_ozet.csv").exists():
+        st.info("Risk verisi henüz yok: `python -m kapsam.cli guncelle` ya da `python -m kapsam.cli risk` çalıştırın.")
+        st.stop()
+    rt = pd.read_csv(RISK / "risk_ozet.csv", index_col=0)
+    k1, k2, k3, k4 = st.columns(4)
+    k1.metric("Hisse", len(rt))
+    k2.metric("Medyan yıllık oynaklık", f"{rt['oynaklik_yillik'].median()*100:.0f}%")
+    k3.metric("Medyan beta", f"{rt['beta'].median():.2f}")
+    if "ort_korelasyon" in rt:
+        k4.metric("Medyan ort. korelasyon", f"{rt['ort_korelasyon'].median():.2f}")
+    full = RISK / "korelasyon_tum.csv.gz"
+    corr = pd.read_csv(full, index_col=0) if full.exists() else pd.read_csv(RISK / "takip_korelasyon.csv", index_col=0)
+    default = [t for t in ["THYAO", "PGSUS", "BIMAS", "MGROS", "TCELL", "TTKOM", "AKBNK", "GARAN"] if t in corr.index]
+    pick = st.multiselect("Hisseler (korelasyon ve kovaryans)", list(corr.index), default=default)
+    if len(pick) >= 2:
+        st.dataframe(corr.loc[pick, pick].style.background_gradient(cmap="RdBu_r", vmin=-1, vmax=1).format("{:.2f}"), width="stretch")
+        cov_f = RISK / "kovaryans_ledoit_wolf.csv.gz"
+        if cov_f.exists():
+            cov = pd.read_csv(cov_f, index_col=0)
+            pk = [t for t in pick if t in cov.index]
+            if len(pk) >= 2:
+                st.caption("Ledoit–Wolf kovaryans (yıllık) ve eşit ağırlıklı portföy oynaklığı")
+                st.dataframe(cov.loc[pk, pk].style.format("{:.4f}"), width="stretch")
+                import numpy as np
+                w = np.ones(len(pk)) / len(pk)
+                st.metric("Eşit ağırlıklı portföy yıllık oynaklık", f"{float(np.sqrt(w @ cov.loc[pk, pk].values @ w))*100:.1f}%")
+    sec = st.multiselect("Sektör", sorted(rt["sektor"].dropna().unique()) if "sektor" in rt else [])
+    v = rt[rt["sektor"].isin(sec)] if sec else rt
+    st.dataframe(v, width="stretch")
+    st.download_button("Risk tablosu CSV", v.to_csv().encode("utf-8"), "kapsam_risk.csv", "text/csv")
+    st.caption("Son 252 işlem günü, günlük log getiri, BIST 100'e göre beta. Matrisler haftalık güncellenir.")
+    st.stop()
+if view == "Tüm BIST tarama":
     if not TARAMA.exists():
         st.info("Tarama henüz üretilmedi: `python -m kapsam.cli guncelle` çalıştırın (GitHub Actions her iş günü çalıştırır).")
         st.stop()

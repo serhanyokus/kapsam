@@ -233,12 +233,21 @@ def main(argv=None):
     an.add_argument("--cevrimdisi", action="store_true", help="Kaynağa bağlanma, yalnızca kayıtlı dosyaları kullan")
     tr = sub.add_parser("tarama", help="Kayıtlı tüm şirketler için TMS 29 taraması")
     tr.add_argument("--out", default=None)
+    sub.add_parser("risk", help="Tüm hisseler için risk tablosu, korelasyon ve kovaryans matrisleri (kayıtlı fiyatlardan)")
     sub.add_parser("guncelle", help="Gerçek veriyi güncelle (EVDS, fiyatlar, KAP dosyaları) ve durum sayfasını üret")
     args = ap.parse_args(argv)
     if args.cmd == "analiz":
         return cmd_analiz(args)
     if args.cmd == "tarama":
         return cmd_tarama(args)
+    if args.cmd == "risk":
+        from . import update as up
+        p, st_ = up.Paths(), up.Status()
+        cfg = up.load_config(p)
+        evren = p.root / "config" / "bist_evren.csv"
+        tab = up.step_risk(p, cfg, st_, pd.read_csv(evren) if evren.exists() else None, pd.Timestamp("2000-01-07"))
+        print(st_.steps["risk"]["detay"], "→", p.out / "risk" / "index.html")
+        return tab
     if args.cmd == "kap-ekle":
         from .data.statements import file_into
         from .update import Paths

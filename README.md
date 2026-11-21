@@ -111,6 +111,20 @@ Kaynak her hisse için yalnızca son 5 dönemi gösterir; KAPSAM eski dönem dos
 
 **Sonuç:** Kümülatif rakamları enflasyon düzeltmesi yapmadan çıkarmak, son çeyrek hasılatını **her şirkette %5–14** şişiriyor. Turkcell, Ford Otosan ve BİM'de yılbaşından beri net kârın %84–88'i kadar net parasal pozisyon kazancı var. Migros'ta bu kazanç olmasa yılbaşından beri zarar var. Aselsan ve Tüpraş ise ters yönde: net parasal varlık taşıdıkları için enflasyondan kayıp yazıyorlar.
 
+## Risk, korelasyon ve kovaryans (tüm BIST)
+
+KAPSAM borsadaki **tüm hisselerin** (~629) günlük fiyatını takip eder. Fiyatlar 2022'den bu yana, bölünme ve bedelsize göre düzeltilmiştir; `data/gercek/fiyat/YYYY.csv` dosyalarında yıllara bölünerek saklanır. Her gün yalnızca içinde bulunulan yılın dosyası değişir. Son 252 işlem günü için `docs/rapor/risk/` klasöründe şunlar üretilir:
+
+| Çıktı | İçerik | Sıklık |
+|---|---|---|
+| `risk_ozet.csv` | Her hisse için: yıllık getiri (nominal, **reel** TÜFE'ye göre, **USD**), yıllık oynaklık, aşağı yön oynaklığı, beta ve BIST 100 korelasyonu, özgün (şirkete özgü) oynaklık, sistematik risk payı (R²), en büyük düşüş, günlük VaR95/ES95, çarpıklık, basıklık, ortalama korelasyon, en çok birlikte hareket ettiği 3 hisse | Günlük |
+| `takip_korelasyon.csv`, `takip_kovaryans.csv` | Takip listesi (BIST-30+) matrisleri | Günlük |
+| `sektor_korelasyon.csv` | Sektörler arası ve sektör içi ortalama korelasyon | Günlük |
+| `korelasyon_tum.csv.gz`, `kovaryans_tum.csv.gz` | Tüm hisseler, örnek matrisler (çift bazında ortak gözlem) | Haftalık (cuma) |
+| `kovaryans_ledoit_wolf.csv.gz` | Ledoit–Wolf küçültülmüş kovaryans; her zaman pozitif tanımlı, portföy hesabına uygun | Haftalık |
+
+`risk/index.html` sayfası aranabilir ve sıralanabilir risk tablosunu, takip listesinin kümelenmiş korelasyon ısı haritasını ve sektör korelasyonunu gösterir. Panoda **Gerçek veri → Görünüm: Risk ve korelasyon** seçilince istenen hisseler için korelasyon ve kovaryans matrisi ile eşit ağırlıklı portföy oynaklığı hesaplanır. `python -m kapsam.cli risk` kayıtlı fiyatlardan her şeyi yeniden üretir. Tam matrisler 629×629 boyutunda olduğu için depoyu şişirmemek adına haftalık güncellenir. Tüm piyasa taraması (`tarama.csv`) ayrıca reel getiri, oynaklık, beta ve en büyük düşüş sütunlarını içerir. Olay çalışması da tüm hisselerin fiyatını kullanır.
+
 ## Olay çalışması ve gerçek ilişki ağı
 
 Takip listesi **BIST-30** (Ekim–Aralık 2026) ile Arçelik ve Ülker'den oluşur (32 hisse). Bu hisseler için her gün fiyat çekilir, sanayi şirketlerine TMS 29 notu ve Excel modeli, banka ve sigortacılara finansal sektör notu üretilir.
@@ -125,6 +139,7 @@ Takip listesi **BIST-30** (Ekim–Aralık 2026) ile Arçelik ve Ülker'den oluş
 
 | Modül | Dosya | Ne yapar |
 |---|---|---|
+| Risk ve bağımlılık | `kapsam/risk.py` | Log getiri, oynaklık, beta, VaR/ES, en büyük düşüş; örnek ve Ledoit–Wolf kovaryans; sektör korelasyonu; kümelenmiş ısı haritası; yıllara bölünmüş fiyat deposu |
 | Hisse evreni | `kapsam/data/universe.py` | Tüm BIST hisselerinin kodu, adı, sektörü, kapanışı ve piyasa değeri; sektörden tablo türü (sanayi / banka / sigorta) |
 | Tablo kaynağı | `kapsam/data/sources.py` | Herhangi bir hisse için gelir tablosu, bilanço ve nakit akışı okur; sanayi, banka (BDDK) ve sigorta (SEDDK) biçimlerini tanır; yalnızca yeni dönemleri kaydeder; TMS 29 uygulamayan şirketleri işaretler |
 | Veri içe aktarma | `kapsam/data/statements.py` | Gerçek KAP Excel düzenini okur: başlık satırları, dipnot sütunu, "Cari Dönem 01.01.2025 - 30.09.2025" gibi başlıklar, çok sayfalı dosyalar (bilanço, gelir tablosu, nakit akış), Türkçe ve İngilizce kalem adları, "3 Aylık" sütunları. İndirilen dosyanın dönemini kendisi bulur (`kap-ekle`) |

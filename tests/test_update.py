@@ -62,7 +62,8 @@ def root(tmp_path, demo):  # noqa: F811
 def test_full_update_pipeline(root):
     st = update.run(root, evds_client=FakeEVDS(), market=Market(fake_downloader, lambda s: 2e9))
     assert {k: v["durum"] for k, v in st.steps.items()} == {"makro": "tamam", "fiyat": "tamam", "tablo": "atlandı",
-                                                            "rapor": "tamam", "olay": "tamam", "tarama": "tamam"}
+                                                            "rapor": "tamam", "olay": "tamam", "risk": "tamam",
+                                                            "tarama": "tamam"}
     sc = pd.read_csv(root / "docs" / "rapor" / "tarama.csv", index_col=0)
     assert "DEMO" in sc.index and sc.loc["DEMO", "duz_fark_hatasi_hasilat"] > 0.05
     assert "TMS 29 taraması" in (root / "docs" / "rapor" / "index.html").read_text(encoding="utf-8")
