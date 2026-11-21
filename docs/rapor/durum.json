@@ -1,5 +1,5 @@
 {
- "guncelleme": "2026-11-21T09:19:39+00:00",
+ "guncelleme": "2026-11-21T10:07:18+00:00",
  "adimlar": {
   "makro": {
    "durum": "tamam",
@@ -17,17 +17,17 @@
    "durum": "tamam",
    "detay": "Yeni rapor beklenen hisse yok (tüm kayıtlar güncel)"
   },
+  "risk": {
+   "durum": "tamam",
+   "detay": "628 hisse; medyan yıllık oynaklık %53, medyan beta 0.81, ort. korelasyon 0.23; korelasyon, kovaryans ve Ledoit–Wolf matrisleri 628 hisse (az veri: 20)"
+  },
   "rapor": {
    "durum": "tamam",
-   "detay": "32 şirket notu"
+   "detay": "607 şirket notu + Excel (İNA 572, finansal 25, temel 10)"
   },
   "olay": {
    "durum": "tamam",
    "detay": "25 olay, 104 hisse-olay gözlemi; olay şirketinde yön isabeti %50, |t|>2: 2/24"
-  },
-  "risk": {
-   "durum": "tamam",
-   "detay": "608 hisse; medyan yıllık oynaklık %52, medyan beta 0.80, ort. korelasyon 0.23; tüm piyasa matrisleri güncellendi"
   },
   "tarama": {
    "durum": "tamam",
