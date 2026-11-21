@@ -28,7 +28,7 @@ BLUE, ORANGE, GREY = theme.ACCENT, theme.ORANGE, theme.GREY
 
 def _png(fig) -> str:
     buf = io.BytesIO()
-    fig.savefig(buf, format="png", dpi=150, bbox_inches="tight")
+    fig.savefig(buf, format="png", dpi=120, bbox_inches="tight")
     plt.close(fig)
     return "data:image/png;base64," + base64.b64encode(buf.getvalue()).decode()
 
@@ -558,13 +558,63 @@ def data_excel(a: Analysis, path: str | Path, risk_row: dict | pd.Series | None 
     return path
 
 
-def html_note(*args, **kw) -> str:
-    return theme.restyle(_html_note_raw(*args, **kw))
+def context_section(ticker: str, prices: pd.Series | None = None, index: pd.Series | None = None,
+                    comparison: list[tuple] | None = None, sector: str | None = None, peers: int = 0) -> str:
+    """Notun 'Fiyat ve sektör' bölümü: son 1 yıl fiyat (BIST 100 ile, başlangıç=100) ve şirket–sektör medyanı tablosu.
+    comparison: [(etiket, şirket değeri, sektör medyanı, 'p'|'x'), ...]"""
+    out = ""
+    if prices is not None and len(prices.dropna()) > 20:
+        s = prices.dropna().iloc[-252:]
+        fig, ax = plt.subplots(figsize=(7.2, 2.8))
+        ax.plot(s.index, s / s.iloc[0] * 100, color=BLUE, linewidth=2, label=ticker)
+        if index is not None:
+            m = index.reindex(s.index).ffill().dropna()
+            if len(m) > 20:
+                ax.plot(m.index, m / m.iloc[0] * 100, color=GREY, linewidth=1.4, label="BIST 100")
+        ax.axhline(100, color="#d2d2d7", linewidth=0.8)
+        theme.style_axes(ax, "Son 1 yıl fiyat (başlangıç = 100)")
+        ax.legend(fontsize=8, frameon=False, loc="upper left")
+        chg = s.iloc[-1] / s.iloc[0] - 1
+        out += (f"<h2>Fiyat ve sektör</h2><p class='muted'>Son 1 yılda hisse {_pct(chg)} "
+                f"{'(BIST 100 ' + _pct(m.iloc[-1] / m.iloc[0] - 1) + ')' if index is not None and len(m) > 20 else ''}. "
+                f"Fiyatlar bölünme ve bedelsize göre düzeltilmiştir.</p><img src='{_png(fig)}' alt='Fiyat'>")
+    if comparison:
+        if not out:
+            out += "<h2>Fiyat ve sektör</h2>"
+        def fmt(v, k):
+            try:
+                v = float(v)
+            except (TypeError, ValueError):
+                return "–"
+            if pd.isna(v) or not np.isfinite(v):
+                return "–"
+            return _pct(v) if k == "p" else (_num(v, 1) + "x" if k == "x" else _num(v, 2))
+        rows = "".join(f"<tr><td>{html.escape(lab)}</td><td>{fmt(v, k)}</td><td>{fmt(med, k)}</td></tr>"
+                       for lab, v, med, k in comparison)
+        sec = html.escape(sector or "")
+        link = f"<a href='sektor/{theme.slug(sector)}.html'>{sec}</a>" if sector else "sektör"
+        out += (f"<h3>{html.escape(ticker)} ve {link} medyanı ({peers} şirket)</h3>"
+                f"<table><tr><th>Gösterge</th><th>{html.escape(ticker)}</th><th>Sektör medyanı</th></tr>{rows}</table>")
+    return out
 
 
-def financial_note(*args, **kw) -> str:
-    return theme.restyle(_financial_note_raw(*args, **kw))
+def _inject(page: str, extra: str) -> str:
+    if not extra:
+        return page
+    for anchor in ("<h2>Piyasa riski", "<h2>3. Bağlantılı", "<h2>Veri kalitesi", "<h2>Yöntem"):
+        i = page.find(anchor)
+        if i >= 0:
+            return page[:i] + extra + page[i:]
+    return page.replace("</body>", extra + "</body>", 1)
 
 
-def basic_note(*args, **kw) -> str:
-    return theme.restyle(_basic_note_raw(*args, **kw))
+def html_note(a, *args, context: str = "", **kw) -> str:
+    return theme.restyle(_inject(_html_note_raw(a, *args, **kw), context), here=f"{a.ticker}.html")
+
+
+def financial_note(a, *args, context: str = "", **kw) -> str:
+    return theme.restyle(_inject(_financial_note_raw(a, *args, **kw), context), here=f"{a.ticker}.html")
+
+
+def basic_note(a, *args, context: str = "", **kw) -> str:
+    return theme.restyle(_inject(_basic_note_raw(a, *args, **kw), context), here=f"{a.ticker}.html")

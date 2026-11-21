@@ -37,7 +37,7 @@ jobs:
         run: |
           git config user.name "kapsam-bot"
           git config user.email "actions@users.noreply.github.com"
-          git rm -r -q --cached --ignore-unmatch 'docs/rapor/*_model.xlsx' 'docs/rapor/[A-Z]*.html' 'docs/rapor/risk/*.gz' docs/rapor/risk/index.html
+          git rm -r -q --cached --ignore-unmatch 'docs/rapor/*_model.xlsx' 'docs/rapor/[A-Z]*.html' 'docs/rapor/risk/*.gz' docs/rapor/risk/index.html docs/rapor/en
           git add -A data/gercek docs/rapor
           [ -f config/bist_evren.csv ] && git add config/bist_evren.csv
           git diff --cached --quiet && { echo "Değişiklik yok"; exit 0; }

@@ -49,42 +49,64 @@ th,td{padding:11px 14px;text-align:right;border-bottom:1px solid var(--line);ver
 tr:last-child td{border-bottom:0}
 th{font-size:12px;font-weight:600;color:var(--muted);text-transform:none;letter-spacing:0;background:var(--card);white-space:nowrap}
 th:first-child,td:first-child,.l{text-align:left}
-tbody tr:hover td{background:color-mix(in srgb,var(--accent) 4%,transparent)}
 .tw{overflow-x:auto;border-radius:18px;box-shadow:var(--shadow);background:var(--card);margin:10px 0 8px}
 .tw>table{box-shadow:none;border-radius:0;margin:0}
 .wrap .tw{box-shadow:none;border-radius:0;margin:0;overflow:visible}
 .wrap{overflow-x:auto;border-radius:18px;box-shadow:var(--shadow);background:var(--card);margin:10px 0}
 .wrap table{box-shadow:none;border-radius:0;margin:0;white-space:nowrap}
 .wrap th{position:sticky;top:0;z-index:1;cursor:pointer;user-select:none}
-.wrap th:hover{color:var(--text)}
 input{font:inherit;font-size:15px;padding:11px 16px;width:360px;max-width:100%;border-radius:12px;border:1px solid var(--line);
 background:var(--card);color:var(--text);outline:none;margin:8px 0 10px}
 input:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-weak)}
 img{max-width:100%;height:auto;display:block;border-radius:14px;background:#fff;margin:10px 0}
 img.narrow{max-width:min(560px,100%)}
 ul{padding-left:20px}
+.more{display:inline-block;margin-top:10px;font-size:15px;font-weight:500}
+.search{position:relative;max-width:520px}
+.search input{width:100%;font-size:17px;padding:14px 18px;border-radius:14px}
+.hits{position:absolute;left:0;right:0;top:58px;background:var(--card);border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.12);z-index:5;overflow:hidden}
+.hits a{display:flex;justify-content:space-between;gap:12px;padding:10px 18px;color:var(--text);border-bottom:1px solid var(--line);font-size:15px}
+.hits a:last-child{border-bottom:0}.hits a span{color:var(--muted);font-size:13px}.hits a.sel{background:var(--accent-weak);text-decoration:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;display:inline-flex;gap:8px;align-items:center}
+.chip button{border:0;background:none;color:var(--muted);cursor:pointer;font-size:15px;padding:0}
+.btn{font:inherit;font-size:15px;border:0;border-radius:12px;padding:11px 18px;background:var(--accent);color:#fff;cursor:pointer}
+.btn.sec{background:var(--card);color:var(--accent);border:1px solid var(--line)}
+.lang{border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-size:12px}
 footer{max-width:1080px;margin:0 auto;padding:28px 22px 60px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
 @media(max-width:760px){main{padding-top:36px}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2{grid-template-columns:minmax(0,1fr)}
 .nav .in{gap:16px}.kpi b{font-size:24px}h2{margin-top:40px}}
 @media print{.nav,footer{display:none}body{background:#fff}table,.kpi,.card{box-shadow:none}}
 """
 
-NAV = [("index.html", "Genel bakış"), ("tarama.html", "Tarama"), ("risk/index.html", "Risk")]
+NAV = {"tr": [("index.html", "Genel bakış"), ("tarama.html", "Tarama"), ("sektor/index.html", "Sektörler"), ("risk/index.html", "Risk")],
+       "en": [("index.html", "Overview"), ("tarama.html", "Screener"), ("sektor/index.html", "Sectors"), ("risk/index.html", "Risk")]}
+FOOT = {"tr": ("KAPSAM · TMS 29 farkındalıklı BIST araştırma asistanı · Veri: KAP, TCMB EVDS, Yahoo Finance (gecikmeli). "
+               "Bu sayfalar bir araştırma aracının çıktısıdır; yatırım tavsiyesi değildir."),
+        "en": ("KAPSAM · IAS 29-aware Borsa Istanbul research assistant · Data: KAP, CBRT EVDS, Yahoo Finance (delayed). "
+               "These pages are the output of a research tool; not investment advice.")}
 
 
-def restyle(page: str, active: str = "", root: str = "") -> str:
+def nav_html(active: str, root: str, lang: str = "tr", here: str = "") -> str:
+    links = "".join(f"<a href='{root}{href}'{' class=on' if href == active else ''}>{label}</a>" for href, label in NAV[lang])
+    other = (f"<a class='lang' href='{root}en/{here}'>EN</a>" if lang == "tr" else f"<a class='lang' href='{root}../{here}'>TR</a>") if here else ""
+    return f"<nav class='nav'><div class='in'><a class='brand' href='{root}index.html'>KAPSAM</a>{links}{other}</div></nav>"
+
+
+def restyle(page: str, active: str = "", root: str = "", lang: str = "tr", here: str = "") -> str:
     """Şablonun <style> bloğunu tema ile değiştirir; gezinme çubuğu, <main> sarmalayıcı ve altbilgi ekler.
-    root: sayfanın site köküne göre konumu ('' kök, '../' bir alt klasör)."""
-    page = re.sub(r"<style>.*?</style>", "<style>" + CSS + "</style>", page, count=1, flags=re.S)
+    root: sayfanın site köküne göre konumu ('' kök, '../' bir alt klasör). here: sayfanın kökten yolu (dil geçişi için)."""
+    page = re.sub(r"<style>.*?</style>", lambda m: "<style>" + CSS + "</style>", page, count=1, flags=re.S)
     if "<style>" not in page:
         page = page.replace("</head>", "<style>" + CSS + "</style></head>", 1)
-    links = "".join(f"<a href='{root}{href}'{' class=on' if href == active else ''}>{label}</a>" for href, label in NAV)
-    nav = f"<nav class='nav'><div class='in'><a class='brand' href='{root}index.html'>KAPSAM</a>{links}</div></nav><main>"
-    foot = ("</main><footer>KAPSAM · TMS 29 farkındalıklı BIST araştırma asistanı · Veri: KAP, TCMB EVDS, Yahoo Finance (gecikmeli). "
-            "Bu sayfalar bir araştırma aracının çıktısıdır; yatırım tavsiyesi değildir.</footer>")
+    nav = nav_html(active, root, lang, here) + "<main>"
+    foot = f"</main><footer>{FOOT[lang]}</footer>"
     page = re.sub(r"<body[^>]*>", lambda m: m.group(0) + nav, page, count=1)
-    # her tablo kendi kaydırılabilir kutusunda: hiçbir ekran genişliğinde sayfa yana taşmaz
-    page = re.sub(r"<table(?=[\s>])", "<div class='tw'><table", page).replace("</table>", "</table></div>")
+    parts = re.split(r"(<script.*?</script>)", page, flags=re.S)          # betiklerin içine dokunma
+    page = "".join(x if x.startswith("<script") else
+                   re.sub(r"<table(?=[\s>])", "<div class='tw'><table", x).replace("</table>", "</table></div>") for x in parts)
+    if lang == "en":
+        page = page.replace('<html lang="tr">', '<html lang="en">', 1)
     return page.replace("</body>", foot + "</body>", 1)
 
 
@@ -98,3 +120,12 @@ def style_axes(ax, title: str = ""):
     ax.tick_params(colors="#6e6e73", labelsize=8, length=0)
     ax.grid(axis="y", color="#ececf0", linewidth=0.8)
     ax.set_axisbelow(True)
+
+
+_TR = str.maketrans("çğıöşüÇĞİÖŞÜâîû", "cgiosuCGIOSUaiu")
+
+
+def slug(name: str) -> str:
+    """Sektör adından dosya adı: 'Perakande - Ticaret' → 'perakande-ticaret'."""
+    s = (name or "diger").translate(_TR).lower()
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-") or "diger"
