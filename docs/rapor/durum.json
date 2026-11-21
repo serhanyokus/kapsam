@@ -1,5 +1,5 @@
 {
- "guncelleme": "2026-11-20T20:37:11+00:00",
+ "guncelleme": "2026-11-21T09:19:39+00:00",
  "adimlar": {
   "makro": {
    "durum": "tamam",
@@ -11,7 +11,7 @@
   },
   "fiyat": {
    "durum": "tamam",
-   "detay": "32/32 hisse, son tarih 2026-11-20"
+   "detay": "629/629 hisse (takip listesi 32/32), son tarih 2026-11-20"
   },
   "tablo": {
    "durum": "tamam",
@@ -23,7 +23,11 @@
   },
   "olay": {
    "durum": "tamam",
-   "detay": "25 olay, 101 hisse-olay gözlemi; olay şirketinde yön isabeti %50, |t|>2: 2/24"
+   "detay": "25 olay, 104 hisse-olay gözlemi; olay şirketinde yön isabeti %50, |t|>2: 2/24"
+  },
+  "risk": {
+   "durum": "tamam",
+   "detay": "608 hisse; medyan yıllık oynaklık %52, medyan beta 0.80, ort. korelasyon 0.23; tüm piyasa matrisleri güncellendi"
   },
   "tarama": {
    "durum": "tamam",
