@@ -50,6 +50,9 @@ tr:last-child td{border-bottom:0}
 th{font-size:12px;font-weight:600;color:var(--muted);text-transform:none;letter-spacing:0;background:var(--card);white-space:nowrap}
 th:first-child,td:first-child,.l{text-align:left}
 tbody tr:hover td{background:color-mix(in srgb,var(--accent) 4%,transparent)}
+.tw{overflow-x:auto;border-radius:18px;box-shadow:var(--shadow);background:var(--card);margin:10px 0 8px}
+.tw>table{box-shadow:none;border-radius:0;margin:0}
+.wrap .tw{box-shadow:none;border-radius:0;margin:0;overflow:visible}
 .wrap{overflow-x:auto;border-radius:18px;box-shadow:var(--shadow);background:var(--card);margin:10px 0}
 .wrap table{box-shadow:none;border-radius:0;margin:0;white-space:nowrap}
 .wrap th{position:sticky;top:0;z-index:1;cursor:pointer;user-select:none}
@@ -62,7 +65,7 @@ img.narrow{max-width:min(560px,100%)}
 ul{padding-left:20px}
 footer{max-width:1080px;margin:0 auto;padding:28px 22px 60px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
 @media(max-width:760px){main{padding-top:36px}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2{grid-template-columns:minmax(0,1fr)}
-table{display:block;overflow-x:auto}.nav .in{gap:16px}.kpi b{font-size:24px}h2{margin-top:40px}}
+.nav .in{gap:16px}.kpi b{font-size:24px}h2{margin-top:40px}}
 @media print{.nav,footer{display:none}body{background:#fff}table,.kpi,.card{box-shadow:none}}
 """
 
@@ -80,6 +83,8 @@ def restyle(page: str, active: str = "", root: str = "") -> str:
     foot = ("</main><footer>KAPSAM · TMS 29 farkındalıklı BIST araştırma asistanı · Veri: KAP, TCMB EVDS, Yahoo Finance (gecikmeli). "
             "Bu sayfalar bir araştırma aracının çıktısıdır; yatırım tavsiyesi değildir.</footer>")
     page = re.sub(r"<body[^>]*>", lambda m: m.group(0) + nav, page, count=1)
+    # her tablo kendi kaydırılabilir kutusunda: hiçbir ekran genişliğinde sayfa yana taşmaz
+    page = re.sub(r"<table(?=[\s>])", "<div class='tw'><table", page).replace("</table>", "</table></div>")
     return page.replace("</body>", foot + "</body>", 1)
 
 
