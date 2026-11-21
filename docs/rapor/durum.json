@@ -1,5 +1,5 @@
 {
- "guncelleme": "2026-11-21T14:35:18+00:00",
+ "guncelleme": "2026-11-21T15:37:59+00:00",
  "adimlar": {
   "makro": {
    "durum": "tamam",
@@ -21,6 +21,10 @@
    "durum": "tamam",
    "detay": "628 hisse; medyan yıllık oynaklık %53, medyan beta 0.81, ort. korelasyon 0.23; korelasyon, kovaryans ve Ledoit–Wolf matrisleri 628 hisse (az veri: 20)"
   },
+  "tarama": {
+   "durum": "tamam",
+   "detay": "607 şirket tarandı"
+  },
   "rapor": {
    "durum": "tamam",
    "detay": "607 şirket notu + Excel (İNA 572, finansal 25, temel 10)"
@@ -29,9 +33,9 @@
    "durum": "tamam",
    "detay": "25 olay, 104 hisse-olay gözlemi; olay şirketinde yön isabeti %50, |t|>2: 2/24"
   },
-  "tarama": {
+  "sektor": {
    "durum": "tamam",
-   "detay": "607 şirket tarandı"
+   "detay": "53 sektör sayfası"
   }
  }
 }

@@ -1,0 +1,80 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Perakande - Ticaret · KAPSAM</title><style>
+:root{--bg:#f5f5f7;--card:#ffffff;--text:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--accent:#0071e3;--accent-weak:#e8f1fc;
+--pos:#248a3d;--neg:#d70015;--warn:#fff8e6;--warn-line:#f5d48a;--nav:rgba(245,245,247,.72);--shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.04)}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--card:#1c1c1e;--text:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e;--accent:#2997ff;
+--accent-weak:#0a2a4a;--pos:#30d158;--neg:#ff453a;--warn:#2b2412;--warn-line:#6b5420;--nav:rgba(22,22,23,.72);--shadow:none}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.47 -apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",Inter,system-ui,sans-serif;
+letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:10;background:var(--nav);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+border-bottom:1px solid var(--line)}
+.nav .in{max-width:1080px;margin:0 auto;padding:0 22px;height:48px;display:flex;align-items:center;gap:26px;font-size:13px}
+.nav .brand{font-weight:600;font-size:15px;color:var(--text);margin-right:auto;letter-spacing:-.02em}
+.nav a{color:var(--text);opacity:.8}.nav a:hover{opacity:1;text-decoration:none}.nav a.on{opacity:1;font-weight:600}
+main{max-width:1080px;margin:0 auto;padding:56px 22px 40px}
+h1{font-size:clamp(32px,5vw,48px);line-height:1.08;font-weight:700;letter-spacing:-.03em;margin:4px 0 14px}
+h2{font-size:24px;line-height:1.17;font-weight:600;letter-spacing:-.02em;margin:56px 0 16px;border:0;padding:0}
+h3{font-size:19px;font-weight:600;margin:28px 0 10px}
+p{margin:0 0 14px}
+.muted,.m{color:var(--muted);font-size:13px;line-height:1.5}
+.eyebrow{color:var(--muted);font-size:14px;font-weight:500;margin-bottom:6px}
+.lead{font-size:21px;line-height:1.38;color:var(--muted);max-width:760px;margin-bottom:28px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:26px 0}
+.kpi{background:var(--card);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow)}
+.kpi span{display:block;font-size:13px;color:var(--muted);line-height:1.35}
+.kpi b{display:block;font-size:30px;font-weight:600;letter-spacing:-.025em;margin:6px 0 2px;font-variant-numeric:tabular-nums}
+.card{background:var(--card);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow);margin:14px 0}
+.warn{background:var(--warn);border:1px solid var(--warn-line);border-radius:14px;padding:14px 18px;margin:18px 0;font-size:15px}
+.tag{background:var(--accent-weak);color:var(--accent);padding:2px 10px;border-radius:999px;font-size:13px;font-weight:500}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}.grid2>*{min-width:0}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:14px;font-variant-numeric:tabular-nums;background:var(--card);
+border-radius:18px;box-shadow:var(--shadow);overflow:hidden;margin:10px 0 8px}
+th,td{padding:11px 14px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-size:12px;font-weight:600;color:var(--muted);text-transform:none;letter-spacing:0;background:var(--card);white-space:nowrap}
+th:first-child,td:first-child,.l{text-align:left}
+.tw{overflow-x:auto;border-radius:18px;box-shadow:var(--shadow);background:var(--card);margin:10px 0 8px}
+.tw>table{box-shadow:none;border-radius:0;margin:0}
+.wrap .tw{box-shadow:none;border-radius:0;margin:0;overflow:visible}
+.wrap{overflow-x:auto;border-radius:18px;box-shadow:var(--shadow);background:var(--card);margin:10px 0}
+.wrap table{box-shadow:none;border-radius:0;margin:0;white-space:nowrap}
+.wrap th{position:sticky;top:0;z-index:1;cursor:pointer;user-select:none}
+input{font:inherit;font-size:15px;padding:11px 16px;width:360px;max-width:100%;border-radius:12px;border:1px solid var(--line);
+background:var(--card);color:var(--text);outline:none;margin:8px 0 10px}
+input:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-weak)}
+img{max-width:100%;height:auto;display:block;border-radius:14px;background:#fff;margin:10px 0}
+img.narrow{max-width:min(560px,100%)}
+ul{padding-left:20px}
+.more{display:inline-block;margin-top:10px;font-size:15px;font-weight:500}
+.search{position:relative;max-width:520px}
+.search input{width:100%;font-size:17px;padding:14px 18px;border-radius:14px}
+.hits{position:absolute;left:0;right:0;top:58px;background:var(--card);border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.12);z-index:5;overflow:hidden}
+.hits a{display:flex;justify-content:space-between;gap:12px;padding:10px 18px;color:var(--text);border-bottom:1px solid var(--line);font-size:15px}
+.hits a:last-child{border-bottom:0}.hits a span{color:var(--muted);font-size:13px}.hits a.sel{background:var(--accent-weak);text-decoration:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;display:inline-flex;gap:8px;align-items:center}
+.chip button{border:0;background:none;color:var(--muted);cursor:pointer;font-size:15px;padding:0}
+.btn{font:inherit;font-size:15px;border:0;border-radius:12px;padding:11px 18px;background:var(--accent);color:#fff;cursor:pointer}
+.btn.sec{background:var(--card);color:var(--accent);border:1px solid var(--line)}
+.lang{border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-size:12px}
+footer{max-width:1080px;margin:0 auto;padding:28px 22px 60px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+@media(max-width:760px){main{padding-top:36px}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2{grid-template-columns:minmax(0,1fr)}
+.nav .in{gap:16px}.kpi b{font-size:24px}h2{margin-top:40px}}
+@media print{.nav,footer{display:none}body{background:#fff}table,.kpi,.card{box-shadow:none}}
+</style></head><body><nav class='nav'><div class='in'><a class='brand' href='../index.html'>KAPSAM</a><a href='../index.html'>Genel bakış</a><a href='../tarama.html'>Tarama</a><a href='../sektor/index.html' class=on>Sektörler</a><a href='../risk/index.html'>Risk</a><a class='lang' href='../en/sektor/perakande-ticaret.html'>EN</a></div></nav><main>
+<div class="eyebrow"><a href="index.html">Sektörler</a></div><h1>Perakande - Ticaret</h1>
+<p class="lead">15 şirket. Medyanlar son çeyrek (TMS 29 düzeltmeli) ve son 1 yıl fiyat verisinden.</p>
+<div class="kpis"><div class='kpi'><span>Toplam piyasa değeri</span><b>635 mr TL</b><span></span></div><div class='kpi'><span>Medyan temel net marj</span><b>−%0,2</b><span>parasal etki hariç</span></div><div class='kpi'><span>Medyan reel getiri</span><b>−%44,5</b><span>son 1 yıl, TÜFE'ye göre</span></div><div class='kpi'><span>Sektör içi korelasyon</span><b>0,21</b><span>ortalama, son 1 yıl</span></div></div>
+<p class='muted'>Son 1 yılda en yüksek reel getiri: <a href='../GMTAS.html'>GMTAS</a> %45,5, <a href='../BIMAS.html'>BIMAS</a> %6,5, <a href='../EBEBK.html'>EBEBK</a> −%0,4<br>En düşük reel getiri: <a href='../SSAAT.html'>SSAAT</a> −%93,7, <a href='../GRTHO.html'>GRTHO</a> −%84,0, <a href='../CASA.html'>CASA</a> −%70,5</p>
+<h2>Şirketler</h2><input id="q" placeholder="Kod veya şirket ara" oninput="f()">
+<div class='wrap'><div class='tw'><table id='t'><thead><tr><th class='l'>Kod</th><th class=l>Şirket</th><th>Piyasa değeri (mn TL)</th><th class=l>Son çeyrek</th><th>Net marj</th><th>Temel net marj</th><th>Parasal kazanç / net kâr</th><th>Düz fark hatası</th><th>F/K</th><th>PD/DD</th><th>Reel getiri 1Y</th><th>Oynaklık</th><th>Beta</th></tr></thead><tbody><tr><td class='l'><a href='../BIMAS.html'><b>BIMAS</b></a></td><td class='l'>Bim Birleşik Mağazalar A.Ş</td><td data-v='449100.000000'>449.100</td><td class='l'>2026Q3</td><td data-v='0.043643'>4.4%</td><td data-v='0.032111'>3.2%</td><td data-v='0.840655'>84.1%</td><td data-v='0.120579'>12.1%</td><td data-v='12.472260'>12.5x</td><td data-v='2.210819'>2.2x</td><td data-v='0.065196'>6.5%</td><td data-v='0.332537'>33.3%</td><td data-v='0.833476'>0.83</td></tr><tr><td class='l'><a href='../MGROS.html'><b>MGROS</b></a></td><td class='l'>Migros</td><td data-v='78803.900000'>78.804</td><td class='l'>2026Q3</td><td data-v='0.027949'>2.8%</td><td data-v='-0.005072'>-0.5%</td><td data-v='4.763822'>476.4%</td><td data-v='0.109912'>11.0%</td><td data-v='14.196208'>14.2x</td><td data-v=''>–</td><td data-v='-0.354328'>-35.4%</td><td data-v='0.339461'>33.9%</td><td data-v='0.777811'>0.78</td></tr><tr><td class='l'><a href='../SOKM.html'><b>SOKM</b></a></td><td class='l'>Şok Marketler</td><td data-v='24348.600000'>24.349</td><td class='l'>2026Q3</td><td data-v='0.012852'>1.3%</td><td data-v='-0.023121'>-2.3%</td><td data-v=''>–</td><td data-v='0.118658'>11.9%</td><td data-v=''>–</td><td data-v='0.564948'>0.6x</td><td data-v='-0.305217'>-30.5%</td><td data-v='0.372024'>37.2%</td><td data-v='0.763559'>0.76</td></tr><tr><td class='l'><a href='../CRFSA.html'><b>CRFSA</b></a></td><td class='l'>Carrefoursa</td><td data-v='17952.200000'>17.952</td><td class='l'>2026Q3</td><td data-v='-0.084873'>-8.5%</td><td data-v='-0.176489'>-17.6%</td><td data-v=''>–</td><td data-v='0.124330'>12.4%</td><td data-v=''>–</td><td data-v='2.051751'>2.1x</td><td data-v='-0.080093'>-8.0%</td><td data-v='0.737651'>73.8%</td><td data-v='0.856613'>0.86</td></tr><tr><td class='l'><a href='../SSAAT.html'><b>SSAAT</b></a></td><td class='l'>Saat ve Saat</td><td data-v='13643.600000'>13.644</td><td class='l'>2026Q3</td><td data-v='0.081359'>8.1%</td><td data-v='0.095329'>9.5%</td><td data-v='0.139618'>14.0%</td><td data-v='0.149007'>14.9%</td><td data-v='8.237817'>8.2x</td><td data-v='2.183625'>2.2x</td><td data-v='-0.936554'>-93.7%</td><td data-v='0.549923'>55.0%</td><td data-v='1.011173'>1.01</td></tr><tr><td class='l'><a href='../GMTAS.html'><b>GMTAS</b></a></td><td class='l'>Gimat Mağazacılık</td><td data-v='13278.000000'>13.278</td><td class='l'>2026Q3</td><td data-v='-0.016668'>-1.7%</td><td data-v='0.005692'>0.6%</td><td data-v='-2.172132'>-217.2%</td><td data-v='0.136246'>13.6%</td><td data-v=''>–</td><td data-v='2.743456'>2.7x</td><td data-v='0.454850'>45.5%</td><td data-v='0.587758'>58.8%</td><td data-v='0.372884'>0.37</td></tr><tr><td class='l'><a href='../EBEBK.html'><b>EBEBK</b></a></td><td class='l'>Ebebek</td><td data-v='10992.000000'>10.992</td><td class='l'>2026Q3</td><td data-v='0.031015'>3.1%</td><td data-v='0.001930'>0.2%</td><td data-v='2.213053'>221.3%</td><td data-v='0.113915'>11.4%</td><td data-v='14.994778'>15.0x</td><td data-v='1.717297'>1.7x</td><td data-v='-0.004178'>-0.4%</td><td data-v='0.365460'>36.5%</td><td data-v='0.710026'>0.71</td></tr><tr><td class='l'><a href='../GRTHO.html'><b>GRTHO</b></a></td><td class='l'>GrainTurk Tarım</td><td data-v='8575.000000'>8.575</td><td class='l'>2026Q3</td><td data-v='-1.254362'>-125.4%</td><td data-v='-0.850814'>-85.1%</td><td data-v=''>–</td><td data-v='0.374105'>37.4%</td><td data-v='9.849894'>9.8x</td><td data-v='0.805493'>0.8x</td><td data-v='-0.839868'>-84.0%</td><td data-v='0.740686'>74.1%</td><td data-v='0.807686'>0.81</td></tr><tr><td class='l'><a href='../VAKKO.html'><b>VAKKO</b></a></td><td class='l'>Vakko Tekstil</td><td data-v='7593.600000'>7.594</td><td class='l'>2026Q3</td><td data-v='0.029956'>3.0%</td><td data-v='-0.016390'>-1.6%</td><td data-v=''>–</td><td data-v='0.132383'>13.2%</td><td data-v='1229.784868'>1229.8x</td><td data-v='0.694055'>0.7x</td><td data-v='-0.332531'>-33.3%</td><td data-v='0.410679'>41.1%</td><td data-v='0.808023'>0.81</td></tr><tr><td class='l'><a href='../MOPAS.html'><b>MOPAS</b></a></td><td class='l'>Mopaş</td><td data-v='4015.800000'>4.016</td><td class='l'>2026Q3</td><td data-v='0.016624'>1.7%</td><td data-v='0.037933'>3.8%</td><td data-v='1.209983'>121.0%</td><td data-v='0.132481'>13.2%</td><td data-v='12.297940'>12.3x</td><td data-v='0.657945'>0.7x</td><td data-v='-0.640800'>-64.1%</td><td data-v='0.551506'>55.2%</td><td data-v='0.806148'>0.81</td></tr><tr><td class='l'><a href='../KIMMR.html'><b>KIMMR</b></a></td><td class='l'>Ersan Alışveriş Hizmetleri</td><td data-v='2551.200000'>2.551</td><td class='l'>2026Q3</td><td data-v='0.050986'>5.1%</td><td data-v='0.024531'>2.5%</td><td data-v='0.391478'>39.1%</td><td data-v='0.131002'>13.1%</td><td data-v='2.763553'>2.8x</td><td data-v='0.444583'>0.4x</td><td data-v='-0.445254'>-44.5%</td><td data-v='0.480925'>48.1%</td><td data-v='0.843101'>0.84</td></tr><tr><td class='l'><a href='../TKNSA.html'><b>TKNSA</b></a></td><td class='l'>Teknosa İç ve Dış Tic.</td><td data-v='2213.000000'>2.213</td><td class='l'>2026Q3</td><td data-v='-0.041356'>-4.1%</td><td data-v='-0.089646'>-9.0%</td><td data-v=''>–</td><td data-v='0.124033'>12.4%</td><td data-v=''>–</td><td data-v='-1.318535'>-1.3x</td><td data-v='-0.668570'>-66.9%</td><td data-v='0.472498'>47.2%</td><td data-v='0.778866'>0.78</td></tr><tr><td class='l'><a href='../BIZIM.html'><b>BIZIM</b></a></td><td class='l'>Bizim Toptan</td><td data-v='1144.400000'>1.144</td><td class='l'>2026Q3</td><td data-v='-0.015090'>-1.5%</td><td data-v='-0.070833'>-7.1%</td><td data-v=''>–</td><td data-v='0.129378'>12.9%</td><td data-v=''>–</td><td data-v='-2.624589'>-2.6x</td><td data-v='-0.572609'>-57.3%</td><td data-v='0.366137'>36.6%</td><td data-v='0.889549'>0.89</td></tr><tr><td class='l'><a href='../PSDTC.html'><b>PSDTC</b></a></td><td class='l'>Pergamon Status</td><td data-v='519.000000'>519</td><td class='l'>2026Q3</td><td data-v='0.141913'>14.2%</td><td data-v='0.780790'>78.1%</td><td data-v='-19.760753'>-1976.1%</td><td data-v='0.129999'>13.0%</td><td data-v='24.231756'>24.2x</td><td data-v='1.858046'>1.9x</td><td data-v='-0.618775'>-61.9%</td><td data-v='0.618931'>61.9%</td><td data-v='0.519980'>0.52</td></tr><tr><td class='l'><a href='../CASA.html'><b>CASA</b></a></td><td class='l'>Casa Emtia Petrol Kim.Tür.AŞ</td><td data-v='182.000000'>182</td><td class='l'>2026Q3</td><td data-v=''>–</td><td data-v=''>–</td><td data-v='0.144616'>14.5%</td><td data-v=''>–</td><td data-v=''>–</td><td data-v='3.029241'>3.0x</td><td data-v='-0.704785'>-70.5%</td><td data-v='0.592350'>59.2%</td><td data-v='0.672227'>0.67</td></tr></tbody></table></div></div>
+<p class="m">Sütun başlığına tıklayarak sıralayın. Düz fark hatası: kümülatif rakamları TÜFE düzeltmesi yapmadan çıkarmanın son çeyrek hasılatındaki sapması.</p>
+<script>
+function f(){const q=document.getElementById('q').value.toLocaleLowerCase('tr');for(const r of document.querySelectorAll('#t tbody tr'))r.style.display=r.innerText.toLocaleLowerCase('tr').includes(q)?'':'none'}
+document.querySelectorAll('#t th').forEach((th,i)=>th.onclick=()=>{const tb=document.querySelector('#t tbody');const rs=[...tb.rows];const d=th.dataset.d=th.dataset.d==='1'?'0':'1';
+rs.sort((a,b)=>{const x=a.cells[i].dataset.v??a.cells[i].innerText,y=b.cells[i].dataset.v??b.cells[i].innerText;const nx=parseFloat(x),ny=parseFloat(y);
+const c=(isNaN(nx)||isNaN(ny))?String(x).localeCompare(String(y),'tr'):nx-ny;return d==='1'?-c:c});rs.forEach(r=>tb.appendChild(r))});
+</script></main><footer>KAPSAM · TMS 29 farkındalıklı BIST araştırma asistanı · Veri: KAP, TCMB EVDS, Yahoo Finance (gecikmeli). Bu sayfalar bir araştırma aracının çıktısıdır; yatırım tavsiyesi değildir.</footer></body></html>

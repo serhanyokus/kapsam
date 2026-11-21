@@ -1,0 +1,80 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Savunma · KAPSAM</title><style>
+:root{--bg:#f5f5f7;--card:#ffffff;--text:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--accent:#0071e3;--accent-weak:#e8f1fc;
+--pos:#248a3d;--neg:#d70015;--warn:#fff8e6;--warn-line:#f5d48a;--nav:rgba(245,245,247,.72);--shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.04)}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--card:#1c1c1e;--text:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e;--accent:#2997ff;
+--accent-weak:#0a2a4a;--pos:#30d158;--neg:#ff453a;--warn:#2b2412;--warn-line:#6b5420;--nav:rgba(22,22,23,.72);--shadow:none}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.47 -apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",Inter,system-ui,sans-serif;
+letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:10;background:var(--nav);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+border-bottom:1px solid var(--line)}
+.nav .in{max-width:1080px;margin:0 auto;padding:0 22px;height:48px;display:flex;align-items:center;gap:26px;font-size:13px}
+.nav .brand{font-weight:600;font-size:15px;color:var(--text);margin-right:auto;letter-spacing:-.02em}
+.nav a{color:var(--text);opacity:.8}.nav a:hover{opacity:1;text-decoration:none}.nav a.on{opacity:1;font-weight:600}
+main{max-width:1080px;margin:0 auto;padding:56px 22px 40px}
+h1{font-size:clamp(32px,5vw,48px);line-height:1.08;font-weight:700;letter-spacing:-.03em;margin:4px 0 14px}
+h2{font-size:24px;line-height:1.17;font-weight:600;letter-spacing:-.02em;margin:56px 0 16px;border:0;padding:0}
+h3{font-size:19px;font-weight:600;margin:28px 0 10px}
+p{margin:0 0 14px}
+.muted,.m{color:var(--muted);font-size:13px;line-height:1.5}
+.eyebrow{color:var(--muted);font-size:14px;font-weight:500;margin-bottom:6px}
+.lead{font-size:21px;line-height:1.38;color:var(--muted);max-width:760px;margin-bottom:28px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:26px 0}
+.kpi{background:var(--card);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow)}
+.kpi span{display:block;font-size:13px;color:var(--muted);line-height:1.35}
+.kpi b{display:block;font-size:30px;font-weight:600;letter-spacing:-.025em;margin:6px 0 2px;font-variant-numeric:tabular-nums}
+.card{background:var(--card);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow);margin:14px 0}
+.warn{background:var(--warn);border:1px solid var(--warn-line);border-radius:14px;padding:14px 18px;margin:18px 0;font-size:15px}
+.tag{background:var(--accent-weak);color:var(--accent);padding:2px 10px;border-radius:999px;font-size:13px;font-weight:500}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}.grid2>*{min-width:0}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:14px;font-variant-numeric:tabular-nums;background:var(--card);
+border-radius:18px;box-shadow:var(--shadow);overflow:hidden;margin:10px 0 8px}
+th,td{padding:11px 14px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-size:12px;font-weight:600;color:var(--muted);text-transform:none;letter-spacing:0;background:var(--card);white-space:nowrap}
+th:first-child,td:first-child,.l{text-align:left}
+.tw{overflow-x:auto;border-radius:18px;box-shadow:var(--shadow);background:var(--card);margin:10px 0 8px}
+.tw>table{box-shadow:none;border-radius:0;margin:0}
+.wrap .tw{box-shadow:none;border-radius:0;margin:0;overflow:visible}
+.wrap{overflow-x:auto;border-radius:18px;box-shadow:var(--shadow);background:var(--card);margin:10px 0}
+.wrap table{box-shadow:none;border-radius:0;margin:0;white-space:nowrap}
+.wrap th{position:sticky;top:0;z-index:1;cursor:pointer;user-select:none}
+input{font:inherit;font-size:15px;padding:11px 16px;width:360px;max-width:100%;border-radius:12px;border:1px solid var(--line);
+background:var(--card);color:var(--text);outline:none;margin:8px 0 10px}
+input:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-weak)}
+img{max-width:100%;height:auto;display:block;border-radius:14px;background:#fff;margin:10px 0}
+img.narrow{max-width:min(560px,100%)}
+ul{padding-left:20px}
+.more{display:inline-block;margin-top:10px;font-size:15px;font-weight:500}
+.search{position:relative;max-width:520px}
+.search input{width:100%;font-size:17px;padding:14px 18px;border-radius:14px}
+.hits{position:absolute;left:0;right:0;top:58px;background:var(--card);border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.12);z-index:5;overflow:hidden}
+.hits a{display:flex;justify-content:space-between;gap:12px;padding:10px 18px;color:var(--text);border-bottom:1px solid var(--line);font-size:15px}
+.hits a:last-child{border-bottom:0}.hits a span{color:var(--muted);font-size:13px}.hits a.sel{background:var(--accent-weak);text-decoration:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;display:inline-flex;gap:8px;align-items:center}
+.chip button{border:0;background:none;color:var(--muted);cursor:pointer;font-size:15px;padding:0}
+.btn{font:inherit;font-size:15px;border:0;border-radius:12px;padding:11px 18px;background:var(--accent);color:#fff;cursor:pointer}
+.btn.sec{background:var(--card);color:var(--accent);border:1px solid var(--line)}
+.lang{border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-size:12px}
+footer{max-width:1080px;margin:0 auto;padding:28px 22px 60px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+@media(max-width:760px){main{padding-top:36px}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2{grid-template-columns:minmax(0,1fr)}
+.nav .in{gap:16px}.kpi b{font-size:24px}h2{margin-top:40px}}
+@media print{.nav,footer{display:none}body{background:#fff}table,.kpi,.card{box-shadow:none}}
+</style></head><body><nav class='nav'><div class='in'><a class='brand' href='../index.html'>KAPSAM</a><a href='../index.html'>Genel bakış</a><a href='../tarama.html'>Tarama</a><a href='../sektor/index.html' class=on>Sektörler</a><a href='../risk/index.html'>Risk</a><a class='lang' href='../en/sektor/savunma.html'>EN</a></div></nav><main>
+<div class="eyebrow"><a href="index.html">Sektörler</a></div><h1>Savunma</h1>
+<p class="lead">4 şirket. Medyanlar son çeyrek (TMS 29 düzeltmeli) ve son 1 yıl fiyat verisinden.</p>
+<div class="kpis"><div class='kpi'><span>Toplam piyasa değeri</span><b>1.510 mr TL</b><span></span></div><div class='kpi'><span>Medyan temel net marj</span><b>%16,2</b><span>parasal etki hariç</span></div><div class='kpi'><span>Medyan reel getiri</span><b>−%48,3</b><span>son 1 yıl, TÜFE'ye göre</span></div><div class='kpi'><span>Sektör içi korelasyon</span><b>0,47</b><span>ortalama, son 1 yıl</span></div></div>
+<p class='muted'>Son 1 yılda en yüksek reel getiri: <a href='../ASELS.html'>ASELS</a> %36,9, <a href='../ALTNY.html'>ALTNY</a> −%45,5, <a href='../SDTTR.html'>SDTTR</a> −%51,1<br>En düşük reel getiri: <a href='../ONRYT.html'>ONRYT</a> −%63,3, <a href='../SDTTR.html'>SDTTR</a> −%51,1, <a href='../ALTNY.html'>ALTNY</a> −%45,5</p>
+<h2>Şirketler</h2><input id="q" placeholder="Kod veya şirket ara" oninput="f()">
+<div class='wrap'><div class='tw'><table id='t'><thead><tr><th class='l'>Kod</th><th class=l>Şirket</th><th>Piyasa değeri (mn TL)</th><th class=l>Son çeyrek</th><th>Net marj</th><th>Temel net marj</th><th>Parasal kazanç / net kâr</th><th>Düz fark hatası</th><th>F/K</th><th>PD/DD</th><th>Reel getiri 1Y</th><th>Oynaklık</th><th>Beta</th></tr></thead><tbody><tr><td class='l'><a href='../ASELS.html'><b>ASELS</b></a></td><td class='l'>Aselsan</td><td data-v='1491120.000000'>1.491.120</td><td class='l'>2026Q3</td><td data-v='0.193821'>19.4%</td><td data-v='0.209288'>20.9%</td><td data-v='-0.301585'>-30.2%</td><td data-v='0.098439'>9.8%</td><td data-v='28.056296'>28.1x</td><td data-v=''>–</td><td data-v='0.369051'>36.9%</td><td data-v='0.501605'>50.2%</td><td data-v='1.228740'>1.23</td></tr><tr><td class='l'><a href='../ALTNY.html'><b>ALTNY</b></a></td><td class='l'>Altınay Savunma</td><td data-v='10530.000000'>10.530</td><td class='l'>2026Q3</td><td data-v='0.171299'>17.1%</td><td data-v='0.115588'>11.6%</td><td data-v='2.686030'>268.6%</td><td data-v='0.083770'>8.4%</td><td data-v='40.526328'>40.5x</td><td data-v='1.649669'>1.6x</td><td data-v='-0.454745'>-45.5%</td><td data-v='0.483247'>48.3%</td><td data-v='0.854615'>0.85</td></tr><tr><td class='l'><a href='../SDTTR.html'><b>SDTTR</b></a></td><td class='l'>SDT Uzay</td><td data-v='6565.000000'>6.565</td><td class='l'>2026Q3</td><td data-v='-0.931919'>-93.2%</td><td data-v='-0.799984'>-80.0%</td><td data-v=''>–</td><td data-v='0.202118'>20.2%</td><td data-v=''>–</td><td data-v='2.407398'>2.4x</td><td data-v='-0.511143'>-51.1%</td><td data-v='0.545002'>54.5%</td><td data-v='0.642243'>0.64</td></tr><tr><td class='l'><a href='../ONRYT.html'><b>ONRYT</b></a></td><td class='l'>Onur Yüksek Teknoloji</td><td data-v='1895.000000'>1.895</td><td class='l'>2026Q3</td><td data-v='0.082256'>8.2%</td><td data-v='0.247985'>24.8%</td><td data-v='-7.472371'>-747.2%</td><td data-v='0.061154'>6.1%</td><td data-v=''>–</td><td data-v='0.582304'>0.6x</td><td data-v='-0.633116'>-63.3%</td><td data-v='0.515695'>51.6%</td><td data-v='0.860158'>0.86</td></tr></tbody></table></div></div>
+<p class="m">Sütun başlığına tıklayarak sıralayın. Düz fark hatası: kümülatif rakamları TÜFE düzeltmesi yapmadan çıkarmanın son çeyrek hasılatındaki sapması.</p>
+<script>
+function f(){const q=document.getElementById('q').value.toLocaleLowerCase('tr');for(const r of document.querySelectorAll('#t tbody tr'))r.style.display=r.innerText.toLocaleLowerCase('tr').includes(q)?'':'none'}
+document.querySelectorAll('#t th').forEach((th,i)=>th.onclick=()=>{const tb=document.querySelector('#t tbody');const rs=[...tb.rows];const d=th.dataset.d=th.dataset.d==='1'?'0':'1';
+rs.sort((a,b)=>{const x=a.cells[i].dataset.v??a.cells[i].innerText,y=b.cells[i].dataset.v??b.cells[i].innerText;const nx=parseFloat(x),ny=parseFloat(y);
+const c=(isNaN(nx)||isNaN(ny))?String(x).localeCompare(String(y),'tr'):nx-ny;return d==='1'?-c:c});rs.forEach(r=>tb.appendChild(r))});
+</script></main><footer>KAPSAM · TMS 29 farkındalıklı BIST araştırma asistanı · Veri: KAP, TCMB EVDS, Yahoo Finance (gecikmeli). Bu sayfalar bir araştırma aracının çıktısıdır; yatırım tavsiyesi değildir.</footer></body></html>
