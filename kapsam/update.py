@@ -64,6 +64,11 @@ class Status:
         self.steps[step] = {"durum": "atlandı", "detay": why}
 
 
+def gizli() -> bool:
+    """Gizli sürüm (KAPSAM_GIZLI=1): sınıf etiketleri üretilir, site yayınlanmaz, zip olarak indirilir."""
+    return os.environ.get("KAPSAM_GIZLI", "") == "1"
+
+
 def load_config(p: Paths) -> dict:
     cfg = json.loads(p.config.read_text(encoding="utf-8"))
     cfg.setdefault("baslangic", "2022-01-01")
@@ -477,6 +482,54 @@ COMPARE = [("Raporlanan net marj", "raporlanan_net_marj", "p"), ("Temel net marj
            ("Yıllık oynaklık", "oynaklik_yillik", "p"), ("Beta", "beta", "n")]
 
 
+def step_tamamla(p: Paths, st: Status, universe_df: pd.DataFrame | None, today: pd.Timestamp | None = None, limit: int = 150,
+                 fetcher=None) -> None:
+    """Eksik tablolu şirketleri İş Yatırım mali tablo servisinden tamamlar (gizli sürüm)."""
+    from .data import isyatirim
+    if universe_df is None or "kod" not in universe_df:
+        st.skip("tamamla", "evren yok")
+        return
+    today = today or pd.Timestamp.today().normalize()
+    last = expected_latest(today)
+    todo = isyatirim.incomplete(p.kap, list(universe_df["kod"]))[:limit]   # her gün en fazla `limit` şirket; kalanlar ertesi gün
+    if not todo:
+        st.ok("tamamla", "Eksik tablolu şirket yok")
+        return
+    done, fail = [], []
+    for t in todo:
+        try:
+            fin = isyatirim.is_financial(p.kap, t) or (universe_df.set_index("kod").get("tur", pd.Series(dtype=str)).get(t, "sanayi") != "sanayi")
+            have = [pd.Period(year=int(f.stem.split("_")[-2]), quarter=int(f.stem.split("_")[-1]) // 3, freq="Q")
+                    for f in p.kap.glob(f"{t}_*.csv")]
+            last_t = max(have + [last]) if have else last          # şirketin en son yayımladığı dönemden geriye
+            data = isyatirim.fetch(t, last_t, fin=fin) if fetcher is None else fetcher(t, last_t)
+            if data and isyatirim.write(t, data, p.kap):
+                done.append(t)
+        except Exception as e:  # noqa: BLE001
+            fail.append(f"{t}: {str(e)[:60]}")
+    left = isyatirim.incomplete(p.kap, todo)
+    st.ok("tamamla", f"{len(todo)} eksik şirket denendi, {len(done)} tamamlandı (İş Yatırım), {len(left)} hâlâ eksik"
+          + (f"; {len(fail)} hata" if fail else ""))
+
+
+def step_gundem(p: Paths, st: Status, universe_df: pd.DataFrame | None) -> None:
+    """Türkiye/dünya göstergeleri ve haber başlıkları (gizli sürüm)."""
+    from . import gundem
+    try:
+        names = dict(zip(universe_df["kod"], universe_df["ad"])) if universe_df is not None and "ad" in universe_df else {}
+        g = gundem.build(p.root, names, gundem.focus_list(p.out, universe_df))
+        if gizli():                                           # gizli sürümde gündem, seviyeler sayfasının içinde
+            (p.out / "gundem.html").write_text("<!doctype html><meta charset='utf-8'><meta http-equiv='refresh' content='0;url=siniflar.html#gundem'>"
+                                               "<a href='siniflar.html#gundem'>Gündem</a>", encoding="utf-8")
+        else:
+            (p.out / "gundem.html").write_text(theme.restyle(gundem.page(g, st.started), "gundem.html", "", "tr", "gundem.html"), encoding="utf-8")
+        st.ok("gundem", f"{len(g.get('gostergeler', {}))} gösterge, {len(g.get('makro_tr', [])) + len(g.get('makro_global', []))} makro başlık, "
+              f"{len(g.get('sirket', {}))} şirketin haberleri; risk primi eki %{g.get('erp_ek', 0)*100:.0f}"
+              + (f"; {len(g['hatalar'])} uyarı" if g.get("hatalar") else ""))
+    except Exception as e:  # noqa: BLE001
+        st.fail("gundem", e)
+
+
 def sector_table(screen: pd.DataFrame | None, risk_tab: pd.DataFrame | None, universe_df: pd.DataFrame | None) -> pd.DataFrame:
     """Şirket başına tarama + risk göstergeleri ve sektör adı (sektör medyanları ve sektör sayfaları için)."""
     parts = [x for x in (screen, risk_tab) if x is not None and len(x)]
@@ -738,7 +791,9 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
     icon = {"tamam": "✓", "hata": "✗", "atlandı": "–"}
     names = {"makro": "TÜFE ve kur (TCMB)", "evren": "Hisse listesi", "fiyat": "Fiyatlar", "tablo": "KAP tabloları", "risk": "Risk ve korelasyon",
              "rapor": "Şirket notları", "olay": "Olay çalışması", "tarama": "TMS 29 taraması", "sektor": "Sektör sayfaları",
-             "ingilizce": "İngilizce sürüm"}
+             "ingilizce": "İngilizce sürüm", "seviye": "Seviye rozetleri", "deger": "İNA değerleri", "seviye_gecmis": "Seviye geçmişi",
+             "tamamla": "Eksik veri tamamlama", "gundem": "Gündem (gösterge ve haber)",
+             "kalite": "Kalite bayrakları"}
     dot = {"tamam": "<span style='color:var(--pos)'>●</span>", "hata": "<span style='color:var(--neg)'>●</span>", "atlandı": "<span style='color:var(--muted)'>●</span>"}
     srows = "".join(f"<tr><td>{dot[v['durum']]} {e(names.get(k, k))}</td><td class='l muted'>{e(v['detay'])}</td></tr>"
                     for k, v in st.steps.items())
@@ -755,7 +810,10 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
         kpi("Medyan oynaklık", f"%{rt_k['oynaklik_yillik'].median()*100:.0f}" if rt_k is not None else "–",
             f"{len(rt_k)} hisse, son 1 yıl" if rt_k is not None else ""),
     ])
-    cards = ("<div class='grid2'>"
+    gcard = ("<div class='card'><div class='eyebrow'>Gizli sürüm</div><h3 style='margin:0 0 6px'>Seviyeler: AL, TUT, AZALT, SAT</h3>"
+             "<p class='muted' style='margin:0'>Kâr kalitesi, nakit, borç ve değerlemeye göre beş sınıf; her satırda gerekçe ve risk notu.</p>"
+             "<a class='more' href='siniflar.html'>Seviyeleri aç →</a></div>") if (p.out / "siniflar.html").exists() and gizli() else ""
+    cards = ("<div class='grid2'>" + gcard +
              "<div class='card'><div class='eyebrow'>Tarama</div>"
              "<h3 style='margin:0 0 6px'>Tüm BIST, tek tabloda</h3><p class='muted' style='margin:0'>Her şirketin düzeltmesiz çeyrek hatası, parasal kazanç payı, "
              "temel marj, çarpanlar, beta ve reel getiri.</p><a class='more' href='tarama.html'>Taramayı aç →</a></div>"
@@ -821,9 +879,75 @@ def step_screen(p: Paths, st: Status, universe_df: pd.DataFrame | None = None,
         rc = [c for c in ["reel_getiri_yillik", "oynaklik_yillik", "beta", "max_dusus"] if c in risk_tab]
         sc = sc.join(risk_tab[rc].astype(float), how="left")
     p.out.mkdir(parents=True, exist_ok=True)
+    if gizli():                                               # gizli sürüm: İNA değeri → seviyeler → gerekçe → değişimler → model portföy
+        from . import deger, siniflar
+        infl = np.nan
+        try:
+            allp = dict(prices)
+            try:                                              # tüm evrenin günlük fiyatları (fiyatlar.csv yalnızca takip listesi)
+                ap = _all_prices(p)
+                allp.update({t: float(ap[t].dropna().iloc[-1]) for t in ap.columns if ap[t].notna().any()})
+            except Exception:  # noqa: BLE001
+                pass
+            if universe_df is not None and "kapanis" in universe_df:         # fiyat serisi olmayanlar: evrendeki son kapanış
+                for t, v in universe_df.set_index("kod")["kapanis"].dropna().items():
+                    allp.setdefault(t, float(v))
+            dg = deger.build(p.root, sc, allp)
+            sc = sc.join(dg[[c for c in dg.columns if c not in sc.columns]], how="left")
+            _, infl = deger._cpi_today_factor(p.root, pd.Period(pd.Timestamp.today(), "Q") - 1, cpi)
+            st.ok("deger", f"{int((pd.to_numeric(sc['deger'], errors='coerce') > 0).sum())} hissede İNA değeri")
+        except Exception as e:  # noqa: BLE001
+            st.fail("deger", e)
+        try:
+            from . import gundem as _gd
+            comp = _gd.load(p.root).get("sirket", {})
+            sc["haber_bayrak"] = pd.Series({t: d.get("bayrak", "") for t, d in comp.items()})
+            sc["haber_ozet"] = pd.Series({t: f"son 14 gün {d.get('olumlu', 0)} olumlu / {d.get('olumsuz', 0)} olumsuz başlık" for t, d in comp.items()})
+        except Exception:  # noqa: BLE001
+            pass
+        from . import gundem as _gd2
+        gd_now = _gd2.load(p.root)
+        rg = _gd2.regime(gd_now)
+        sc = siniflar.build(sc, rg["al_esik"])
+        sc["azaltma"] = [deger.azaltma_orani(r.get("seviye"), r.get("bayraklar"), pd.to_numeric(r.get("potansiyel"), errors="coerce"))
+                         for _, r in sc.iterrows()]
+        ch = pd.DataFrame()
+        try:
+            stamp = pd.Timestamp.now(tz="Europe/Istanbul").strftime("%Y-%m-%d %H:%M")
+            ch = deger.update_history(p.root, sc, stamp)
+            ch.to_csv(p.out / "seviye_degisim.csv", index=False)
+            st.ok("seviye_gecmis", f"{len(ch)} seviye değişimi (son 30 gün)")
+        except Exception as e:  # noqa: BLE001
+            st.fail("seviye_gecmis", e)
+        (p.out / "siniflar.html").write_text(theme.restyle(siniflar.page(sc, st.started, deger.changes_section(ch), infl, gd_now, ch), "siniflar.html", "",
+                                                           "tr", "siniflar.html"), encoding="utf-8")
+        (p.out / "deger.html").write_text("<!doctype html><meta charset='utf-8'><meta http-equiv='refresh' content='0;url=siniflar.html'>"
+                                          "<a href='siniflar.html'>Seviyeler ve değerleme</a>", encoding="utf-8")
+        cols = ["ad", "sektor", "seviye", "gerekce", "fiyat", "deger", "potansiyel", "hedef_12a", "guven", "azaltma", "bayraklar", "yontem", "deger_not"]
+        sc[[c for c in cols if c in sc]].to_csv(p.out / "siniflar.csv")
+        siniflar.model_portfolio(sc).to_csv(p.out / "model_portfoy.csv")
+    else:                                                     # herkese açık sürüm: yalnızca nötr kalite bayrakları (seviye/öneri yok)
+        try:
+            from . import gundem as _gdp, siniflar
+            comp = _gdp.load(p.root).get("sirket", {})
+            sc["haber_bayrak"] = pd.Series({t: d.get("bayrak", "") for t, d in comp.items()})
+            sc["haber_ozet"] = pd.Series({t: f"son 14 gün {d.get('olumlu', 0)} olumlu / {d.get('olumsuz', 0)} olumsuz başlık" for t, d in comp.items()})
+            q = siniflar.build(sc)
+            sc["bayraklar"] = q["bayraklar"]
+            (p.out / "kalite.html").write_text(theme.restyle(siniflar.kalite_page(q, st.started), "kalite.html", "", "tr", "kalite.html"),
+                                               encoding="utf-8")
+            q.reindex(columns=["ad", "sektor", "bayraklar"]).to_csv(p.out / "kalite.csv")
+            st.ok("kalite", f"{int((q['bayraklar'].fillna('') == '').sum())} şirkette bayrak yok, "
+                  f"{int((q['bayraklar'].fillna('') != '').sum())} şirkette en az bir bayrak")
+        except Exception as e:  # noqa: BLE001
+            st.fail("kalite", e)
     sc.to_csv(p.out / "tarama.csv")
     notes = set(sc.index)                                     # her taranan şirketin notu üretilir
-    (p.out / "tarama.html").write_text(theme.restyle(screen_page(sc, st.started, notes), "tarama.html", "", "tr", "tarama.html"), encoding="utf-8")
+    page = theme.restyle(screen_page(sc, st.started, notes), "tarama.html", "", "tr", "tarama.html")
+    if gizli():
+        from . import siniflar
+        page = siniflar.badgify(page)
+    (p.out / "tarama.html").write_text(page, encoding="utf-8")
     ok = sc["not"].astype(str).str.startswith("hata").sum() if "not" in sc else 0
     st.ok("tarama", f"{len(sc)} şirket tarandı" + (f", {ok} şirkette hata" if ok else ""))
     return sc
@@ -832,7 +956,8 @@ def step_screen(p: Paths, st: Status, universe_df: pd.DataFrame | None = None,
 def screen_page(sc: pd.DataFrame, stamp: str, notes: set[str] | None = None) -> str:
     """Tüm şirketler için sıralanabilir, aranabilir tarama sayfası (tek dosya, dış bağımlılık yok)."""
     e = html.escape
-    cols = [("ad", "Şirket", "t"), ("sektor", "Sektör", "t"), ("tur", "Tür", "t"), ("son_ceyrek", "Son çeyrek", "t"),
+    cols = [("ad", "Şirket", "t"), ("sektor", "Sektör", "t"), ("seviye", "Seviye", "t"), ("bayraklar", "Bayraklar", "t"), ("deger", "İNA değeri (TL)", "n"),
+            ("potansiyel", "Potansiyel", "p"), ("azaltma", "Azaltma oranı", "p"), ("tur", "Tür", "t"), ("son_ceyrek", "Son çeyrek", "t"),
             ("duz_fark_hatasi_hasilat", "Düz fark hatası: hasılat", "p"), ("duz_fark_hatasi_net_kar", "Düz fark hatası: net kâr", "p"),
             ("parasal_kazanc_net_kar_ytd", "Parasal kazanç / net kâr (YB)", "p"), ("raporlanan_net_marj", "Net marj", "p"),
             ("temel_net_marj", "Temel net marj", "p"), ("reel_hasilat_yillik", "Reel büyüme (yıllık)", "p"),
@@ -848,6 +973,11 @@ def screen_page(sc: pd.DataFrame, stamp: str, notes: set[str] | None = None) -> 
             return f"<td data-v='{float(v):.6f}'>{float(v)*100:.1f}%</td>"
         if kind == "x":
             return f"<td data-v='{float(v):.6f}'>{float(v):.1f}x</td>"
+        if kind == "n":
+            try:
+                return f"<td data-v='{float(v):.6f}'>{float(v):,.2f}</td>".replace(",", "X").replace(".", ",").replace("X", ".")
+            except (TypeError, ValueError):
+                return "<td data-v=''>–</td>"
         return f"<td data-v='{e(str(v))}' class='l'>{e(str(v))}</td>"
     head = "<th class='l'>Kod</th>" + "".join(f"<th{' class=l' if k == 't' else ''}>{e(lab)}</th>" for _, lab, k in cols)
     notes = notes or set()
@@ -887,7 +1017,12 @@ def run(root: Path = ROOT, evds_client=None, market: Market | None = None, sourc
     uni = step_universe(p, cfg, st, universe_getter) if (cfg.get("evren") == "tum" or universe_getter) else None
     step_prices(p, cfg, st, market, uni)
     step_tables(p, cfg, st, source, uni, today)
+    if cfg.get("tablo_kaynagi", "ekofin") not in (None, "yok"):
+        step_tamamla(p, st, uni, today)                       # eksik tabloları İş Yatırım'dan tamamla (her iki sürüm)
     rk = step_risk(p, cfg, st, uni, today)
+    p.out.mkdir(parents=True, exist_ok=True)
+    if market is None and cfg.get("gundem", True):            # gerçek piyasa verisiyle çalışırken (testlerde sahte piyasa verilir)
+        step_gundem(p, st, uni)
     sc = None
     try:
         sc = step_screen(p, st, uni, rk)
@@ -898,6 +1033,12 @@ def run(root: Path = ROOT, evds_client=None, market: Market | None = None, sourc
         reports = step_reports(p, cfg, st, uni, rk, sc)
     except Exception:  # noqa: BLE001
         st.fail("rapor", traceback.format_exc(limit=1))
+    if gizli() and sc is not None and "seviye" in sc:
+        try:
+            from . import siniflar
+            st.ok("seviye", f"{siniflar.badge_pages(p.out, sc)} şirket notuna seviye rozeti eklendi")
+        except Exception as e:  # noqa: BLE001
+            st.fail("seviye", e)
     events = step_events(p, cfg, st)
     try:
         step_sectors(p, st, sector_table(sc, rk, uni))

@@ -43,7 +43,7 @@ ACCOUNT_SYNONYMS: dict[str, list[str]] = {
     "cash": ["Nakit ve Nakit Benzerleri", "Cash and cash equivalents"],
     "total_assets": ["Toplam Varlıklar", "TOPLAM VARLIKLAR", "Total assets"],
     "total_liabilities_equity": ["Toplam Kaynaklar", "TOPLAM KAYNAKLAR", "Total liabilities and equity"],
-    "total_equity": ["Toplam Özkaynaklar", "Özkaynaklar", "Total equity"],
+    "total_equity": ["Toplam Özkaynaklar", "Özkaynaklar", "Total equity", "Özsermaye Toplamı", "ÖZKAYNAK", "Toplam Özsermaye"],
     "short_term_debt": ["Kısa Vadeli Borçlanmalar", "Current borrowings"],
     "current_portion_lt_debt": ["Uzun Vadeli Borçlanmaların Kısa Vadeli Kısımları",
                                 "Current portion of non-current borrowings"],

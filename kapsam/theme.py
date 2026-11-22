@@ -6,6 +6,7 @@ Açık/koyu mod sistem ayarını izler.
 """
 from __future__ import annotations
 
+import os
 import re
 
 # Grafik paleti (matplotlib) — CSS değişkenleriyle aynı aile
@@ -76,6 +77,10 @@ ul{padding-left:20px}
 footer{max-width:1080px;margin:0 auto;padding:28px 22px 60px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
 @media(max-width:760px){main{padding-top:36px}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2{grid-template-columns:minmax(0,1fr)}
 .nav .in{gap:16px}.kpi b{font-size:24px}h2{margin-top:40px}}
+.lvl{display:inline-block;min-width:52px;text-align:center;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.02em;color:#fff;white-space:nowrap}
+.lvl.al{background:#248a3d}.lvl.tut{background:#8e8e93}.lvl.azalt{background:#ff9f0a}.lvl.sat{background:#d70015}.lvl.yok{background:#e5e5ea;color:#1d1d1f}
+.lvl.big{font-size:15px;padding:6px 16px;vertical-align:middle;margin-left:10px}
+.kpi span.lvl{display:inline-block;color:#fff;font-size:13px;line-height:1.4}.kpi span.lvl.yok{color:#1d1d1f}
 @media print{.nav,footer{display:none}body{background:#fff}table,.kpi,.card{box-shadow:none}}
 """
 
@@ -88,7 +93,10 @@ FOOT = {"tr": ("KAPSAM · TMS 29 farkındalıklı BIST araştırma asistanı · 
 
 
 def nav_html(active: str, root: str, lang: str = "tr", here: str = "") -> str:
-    links = "".join(f"<a href='{root}{href}'{' class=on' if href == active else ''}>{label}</a>" for href, label in NAV[lang])
+    items = NAV[lang] + ([("siniflar.html", "Seviyeler · değerleme · gündem" if lang == "tr" else "Levels · valuation · agenda")]
+                         if os.environ.get("KAPSAM_GIZLI") == "1" else
+                         [("kalite.html", "Kalite" if lang == "tr" else "Quality"), ("gundem.html", "Gündem" if lang == "tr" else "Agenda")])
+    links = "".join(f"<a href='{root}{href}'{' class=on' if href == active else ''}>{label}</a>" for href, label in items)
     other = (f"<a class='lang' href='{root}en/{here}'>EN</a>" if lang == "tr" else f"<a class='lang' href='{root}../{here}'>TR</a>") if here else ""
     return f"<nav class='nav'><div class='in'><a class='brand' href='{root}index.html'>KAPSAM</a>{links}{other}</div></nav>"
 

@@ -184,8 +184,47 @@ def screen(folder: str | Path, cpi: pd.Series, fx: pd.Series, prices: dict[str, 
                         row["fiyatlanan_faaliyet_marji"] = _val.implied_margin(mcap + nd, replace(inp, net_debt=nd))
                     except (ValueError, KeyError) as e:
                         notes.append(f"değerleme: {e}")
+            row.update(_quality(a, reps, cpi, p, item, kind))
             row["not"] = "; ".join(notes)
             rows[t] = row
         except Exception as e:  # noqa: BLE001
             rows[t] = {**base, "not": f"hata: {e}"}
     return pd.DataFrame(rows).T.replace([np.inf, -np.inf], np.nan)
+
+
+def _quality(a: "Analysis", reps: list, cpi: pd.Series, p: pd.Period, item: str, kind: str) -> dict:
+    """Kâr kalitesi, nakit üretimi ve bilanço göstergeleri (son 12 ay, baz tarih TL'si; mn TL).
+    İşletme nakit akışı − yatırım harcaması serbest nakit akışı (FCFF) değildir; kaba göstergedir."""
+    nan = float("nan")
+    out = {k: nan for k in ("net_kar_ana_ttm_mn", "isletme_na_ttm_mn", "capex_ttm_mn", "serbest_nakit_ttm_mn", "nakit_donusumu",
+                            "faaliyet_disi_pay", "net_borc_mn", "net_borc_favok", "reel_hasilat_9a")}
+
+    def ttm(k):
+        try:
+            v = a.ttm(k)
+            return v if np.isfinite(v) else nan
+        except Exception:  # noqa: BLE001
+            return nan
+    ni, ocf, cx = ttm(item), ttm("operating_cash_flow"), ttm("capex")
+    out.update(net_kar_ana_ttm_mn=ni / 1e6, isletme_na_ttm_mn=ocf / 1e6, capex_ttm_mn=cx / 1e6)
+    if pd.notna(ocf):
+        out["serbest_nakit_ttm_mn"] = (ocf - abs(cx if pd.notna(cx) else 0.0)) / 1e6
+        if pd.notna(ni) and ni > 0:
+            out["nakit_donusumu"] = ocf / ni
+    if kind == "sanayi":
+        op, dep = ttm("operating_profit"), ttm("depreciation")
+        if pd.notna(op) and op > 0 and pd.notna(ni):
+            out["faaliyet_disi_pay"] = ni / op
+        nd = a.metrics.loc["net_debt"].dropna() if "net_debt" in a.metrics.index else pd.Series(dtype=float)
+        if len(nd):
+            out["net_borc_mn"] = float(nd.iloc[-1]) / 1e6
+            ebitda = (op if pd.notna(op) else nan) + (dep if pd.notna(dep) else 0.0)
+            if pd.notna(ebitda) and ebitda > 0:
+                out["net_borc_favok"] = float(nd.iloc[-1]) / ebitda
+        prev = [r for r in reps if r.report_date == p - 4]
+        cur = [r for r in reps if r.report_date == p]
+        if prev and cur and p in cpi.index and (p - 4) in cpi.index:
+            x, y = cur[0].values[p].get("revenue", nan), prev[0].values[p - 4].get("revenue", nan)
+            if pd.notna(x) and pd.notna(y) and y > 0:
+                out["reel_hasilat_9a"] = x / (y * cpi[p] / cpi[p - 4]) - 1
+    return out
