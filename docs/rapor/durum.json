@@ -1,5 +1,5 @@
 {
- "guncelleme": "2026-11-21T19:14:43+00:00",
+ "guncelleme": "2026-11-22T00:40:55+00:00",
  "adimlar": {
   "makro": {
    "durum": "tamam",
@@ -17,17 +17,29 @@
    "durum": "tamam",
    "detay": "Yeni rapor beklenen hisse yok (tüm kayıtlar güncel)"
   },
+  "tamamla": {
+   "durum": "tamam",
+   "detay": "67 eksik şirket denendi, 55 tamamlandı (İş Yatırım), 12 hâlâ eksik"
+  },
   "risk": {
    "durum": "tamam",
    "detay": "628 hisse; medyan yıllık oynaklık %53, medyan beta 0.81, ort. korelasyon 0.23; korelasyon, kovaryans ve Ledoit–Wolf matrisleri 628 hisse (az veri: 20)"
   },
+  "gundem": {
+   "durum": "tamam",
+   "detay": "12 gösterge, 60 makro başlık, 60 şirketin haberleri; risk primi eki %1"
+  },
+  "kalite": {
+   "durum": "tamam",
+   "detay": "46 şirkette bayrak yok, 571 şirkette en az bir bayrak"
+  },
   "tarama": {
    "durum": "tamam",
-   "detay": "607 şirket tarandı"
+   "detay": "617 şirket tarandı"
   },
   "rapor": {
    "durum": "tamam",
-   "detay": "607 şirket notu + Excel (İNA 572, finansal 25, temel 10)"
+   "detay": "617 şirket notu + Excel (İNA 575, finansal 26, temel 16)"
   },
   "olay": {
    "durum": "tamam",
