@@ -1,5 +1,5 @@
 {
- "guncelleme": "2026-11-22T09:58:56+00:00",
+ "guncelleme": "2026-11-22T13:47:54+00:00",
  "adimlar": {
   "makro": {
    "durum": "tamam",
@@ -24,6 +24,10 @@
   "risk": {
    "durum": "tamam",
    "detay": "628 hisse; medyan yıllık oynaklık %53, medyan beta 0.81, ort. korelasyon 0.23; korelasyon, kovaryans ve Ledoit–Wolf matrisleri 628 hisse (az veri: 20)"
+  },
+  "oranlar": {
+   "durum": "tamam",
+   "detay": "politika_faizi: %36.00 (2026-10-22, haber: Anadolu Ajansı); enflasyon_beklentisi_12a: %23.89 (2026-10-23, haber: Anka Haber)"
   },
   "gundem": {
    "durum": "tamam",

@@ -205,7 +205,7 @@ ENDAE,Enda Enerji,Elektrik Üretim,ZARAR KUCULME
 ENERY,Enerya Enerji,Elektrik - Doğalgaz Dağıtım,PAHALI
 ENJSA,Enerjisa Enerji,Elektrik - Doğalgaz Dağıtım,KUCULME
 ENKAI,Enka İnşaat,İnşaat- Taahhüt,
-ENPRA,Enpara,Bankacılık,PAHALI HABER-
+ENPRA,Enpara,Bankacılık,PAHALI
 ENSRI,Ensari Deri,Deri Giyim,ZARAR PARASAL0 NAKIT- BORC KUCULME
 ENTRA,Ic Enterra Yenilenebilir,Elektrik Üretim,ZARAR PARASAL0 PARASAL KUCULME
 EPLAS,Egeplast,İnşaat Malzemeleri,ZARAR PARASAL0 NAKIT- PARASAL
@@ -327,7 +327,7 @@ KAYSE,Kayseri Şeker,Gıda,ZARAR NAKIT-
 KBORU,Kuzey Boru,İnşaat Malzemeleri,NAKIT-
 KCAER,Kocaer Çelik Sanayi,Demir-Çelik Temel,KUCULME PAHALI
 KCHOL,Koç Holding,Holdingler,SERBEST
-KENT,Kent Gıda,Gıda,ZARAR KUCULME
+KENT,Kent Gıda,Gıda,ZARAR KUCULME HABER-
 KERVN,Kervansaray Yat. Holding,Holdingler,NAKIT- FDISI KUCULME
 KFEIN,Kafein Yazılım,Teknoloji,KUCULME SERBEST PAHALI
 KGYO,Koray GYO,GYO,ZARAR PARASAL0 NAKIT- BORC
