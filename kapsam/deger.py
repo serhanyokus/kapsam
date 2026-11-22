@@ -178,11 +178,9 @@ def build(root: Path, sc: pd.DataFrame, prices: dict[str, float]) -> pd.DataFram
     data = root / "data" / "gercek"
     cpi, fx = pipeline.load_macro_csv(data / "makro_ceyrek.csv")
     global BEKLENEN_ENF
-    try:
-        import json as _json
-        v = _json.loads((root / "config" / "takip.json").read_text(encoding="utf-8")).get("enflasyon_beklentisi_12a")
-        if v is not None:
-            BEKLENEN_ENF = float(v)
+    try:                                                      # canlı (EVDS/haber) → config → varsayılan
+        from .oranlar import deger as _oran
+        BEKLENEN_ENF = float(_oran(root, "enflasyon_beklentisi_12a")[0])
     except Exception:  # noqa: BLE001
         pass
     try:

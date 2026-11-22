@@ -212,6 +212,23 @@ def _news(items: list[dict], n: int = 12) -> str:
     return f"<table><tr><th class='l'>Tarih</th><th class='l'>Başlık</th><th class='l'>Kaynak</th><th>Ton</th></tr>{rows}</table>"
 
 
+ORAN_AD = {"politika_faizi": "TCMB politika faizi (bir hafta vadeli repo)",
+           "enflasyon_beklentisi_12a": "12 ay sonrası enflasyon beklentisi (TCMB Piyasa Katılımcıları Anketi)"}
+
+
+def oran_table(g: dict) -> str:
+    from .theme import pct as _pct
+    """Faiz ve enflasyon beklentisi (oranlar.json; EVDS ya da haber başlıkları). Nötr makro veri."""
+    e = html.escape
+    o = g.get("oranlar") or {}
+    rows = "".join(f"<tr><td class='l'>{e(ad)}</td><td><b>{_pct(o[k]['deger'], 2)}</b></td><td class='l'>{e(str(o[k].get('tarih', '')))}</td>"
+                   f"<td class='l'>{e(str(o[k].get('kaynak', '')))}</td></tr>" for k, ad in ORAN_AD.items() if isinstance(o.get(k), dict) and o[k].get("deger") is not None)
+    if not rows:
+        return ""
+    return (f"<h3 id='faiz-enflasyon'>Faiz ve enflasyon beklentisi</h3><table><tr><th class='l'>Gösterge</th><th>Oran</th><th class='l'>Tarih</th>"
+            f"<th class='l'>Kaynak</th></tr>{rows}</table>")
+
+
 def section(g: dict) -> str:
     """Seviyeler sayfasına gömülen gündem bölümü (göstergeler + makro/küresel başlıklar + şirket haber akışı özeti)."""
     e = html.escape
@@ -227,7 +244,8 @@ def section(g: dict) -> str:
     def lst(xs):
         return ", ".join(f"<a href='{e(t)}.html'><b>{e(t)}</b></a> ({d['olumlu']}▲/{d['olumsuz']}▼)" for t, d in xs) or "–"
     return f"""<h2 id='gundem'>Gündem: Türkiye ve dünya</h2>
-<div class='grid2'><div><h3>Piyasa göstergeleri</h3><table><tr><th class='l'>Gösterge</th><th>Son</th><th>1 gün</th><th>1 ay</th><th>1 yıl</th></tr>{irows}</table></div>
+<div class='grid2'><div><h3>Piyasa göstergeleri</h3><table><tr><th class='l'>Gösterge</th><th>Son</th><th>1 gün</th><th>1 ay</th><th>1 yıl</th></tr>{irows}</table>
+{oran_table(g)}</div>
 <div><h3>Şirket haber akışı (son 14 gün)</h3><p class='muted'>Olumsuz (HABER-, seviyeyi etkiler): {lst(neg)}</p>
 <p class='muted'>Olumlu (HABER+, gerekçede belirtilir): {lst(pos)}</p></div></div>
 <div class='grid2'><div><h3>Türkiye</h3>{_news(g.get('makro_tr', []), 8)}</div><div><h3>Dünya</h3>{_news(g.get('makro_global', []), 8)}</div></div>
@@ -250,7 +268,7 @@ def page(g: dict, stamp: str) -> str:
                      + _news(d.get("haberler", []), 6) for t, d in comp.items() if d.get("haberler"))
     erp = g.get("erp_ek", 0.0)
     return f"""<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow"><title>Gündem · KAPSAM (gizli)</title><style></style></head><body>
+<title>Gündem · KAPSAM</title><style></style></head><body>
 <div class="eyebrow">Gündem · her iş günü yenilenir</div><h1>Türkiye ve dünya, bugün.</h1>
 <p class="lead">Piyasa göstergeleri, makro ve küresel başlıklar, {len(comp)} şirketin son 14 günlük haberleri. Bu veriler şirket notlarındaki İNA
 iskonto oranına ve kalite bayraklarına açık kurallarla girer.</p>
@@ -261,6 +279,7 @@ iskonto oranına ve kalite bayraklarına açık kurallarla girer.</p>
 <div class="warn">Gündem eki: {e('; '.join(g.get('erp_neden', [])))}. Haber tonu başlıktaki kelimelerden otomatik çıkarılır ve hatalı olabilir; başlığa tıklayıp
 kaynağı okuyun. Yatırım tavsiyesi değildir. {e(stamp[:16].replace('T',' '))} UTC.</div>
 <h2>Piyasa göstergeleri</h2><table><tr><th class='l'>Gösterge</th><th>Son</th><th>1 gün</th><th>1 ay</th><th>1 yıl</th><th class='l'>Tarih</th></tr>{irows}</table>
+{oran_table(g)}
 <h2>Türkiye</h2>{_news(g.get('makro_tr', []), 15)}
 <h2>Dünya</h2>{_news(g.get('makro_global', []), 15)}
 <h2>Şirket haberleri</h2><p class='muted'>Olumsuz akış (HABER-): {lst(neg)}<br>Olumlu akış (HABER+): {lst(pos)}</p>

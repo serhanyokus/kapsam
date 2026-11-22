@@ -556,12 +556,35 @@ def _turnover(tickers: list[str], days: int = 60) -> dict[str, float]:
     return {syms[s]: float(v) for s, v in tv.items() if s in syms and pd.notna(v)}
 
 
+def step_oran_kurum(p: Paths, st: Status, universe_df: pd.DataFrame | None) -> None:
+    """Aracı kurum hedef fiyatları (haber/araştırma sayfası taraması), yalnızca gizli sürüm."""
+    from . import kurumlar
+    try:
+        if universe_df is None or "kod" not in universe_df:
+            raise RuntimeError("hisse listesi yok")
+        px = {k: v for k, v in zip(universe_df["kod"], pd.to_numeric(universe_df.get("kapanis"), errors="coerce")) if pd.notna(v)}
+        r = kurumlar.guncelle(p.root, universe_df, px)
+        st.ok("kurum_hedef", f"{r['haber']} haber açıldı, {r['yeni']} yeni hedef, toplam {r['toplam']} kayıt"
+              + (f"; {len(r['hatalar'])} uyarı" if r["hatalar"] else ""))
+    except Exception as e:  # noqa: BLE001
+        st.fail("kurum_hedef", e)
+
+
 def step_gundem(p: Paths, st: Status, universe_df: pd.DataFrame | None) -> None:
     """Türkiye/dünya göstergeleri ve haber başlıkları (gizli sürüm)."""
     from . import gundem
     try:
         names = dict(zip(universe_df["kod"], universe_df["ad"])) if universe_df is not None and "ad" in universe_df else {}
         g = gundem.build(p.root, names, gundem.focus_list(p.out, universe_df))
+        try:                                                  # faiz ve enflasyon beklentisi (her iki sürüm; nötr makro veri)
+            from . import oranlar
+            o = oranlar.guncelle(p.root)
+            g["oranlar"] = o
+            parts = [f"{k}: %{v['deger']*100:.2f} ({v.get('tarih', '')}, {v.get('kaynak', '')})" for k, v in o.items()
+                     if isinstance(v, dict) and "deger" in v]
+            (st.ok if parts else st.fail)("oranlar", "; ".join(parts) or ("; ".join(o.get("hatalar", [])) or "veri yok"))
+        except Exception as e:  # noqa: BLE001
+            st.fail("oranlar", e)
         if gizli():                                           # gizli sürümde gündem, seviyeler sayfasının içinde
             (p.out / "gundem.html").write_text("<!doctype html><meta charset='utf-8'><meta http-equiv='refresh' content='0;url=siniflar.html#gundem'>"
                                                "<a href='siniflar.html#gundem'>Gündem</a>", encoding="utf-8")
@@ -990,7 +1013,20 @@ def step_screen(p: Paths, st: Status, universe_df: pd.DataFrame | None = None,
             st.ok("seviye_gecmis", f"{len(ch)} seviye değişimi (son 30 gün)")
         except Exception as e:  # noqa: BLE001
             st.fail("seviye_gecmis", e)
-        (p.out / "siniflar.html").write_text(theme.restyle(siniflar.page(sc, st.started, deger.changes_section(ch), infl, gd_now, ch), "siniflar.html", "",
+        kiyas_html = ""
+        try:
+            from . import kiyas
+            kd, kes = kiyas.build(sc, p.root, infl)
+            kd.to_csv(p.out / "kiyas.csv")
+            kiyas_html = kiyas.section(kd, kes)
+            sm = os.environ.get("GITHUB_STEP_SUMMARY")
+            if sm:
+                with open(sm, "a", encoding="utf-8") as fh:
+                    fh.write(kiyas.summary_md(kd, kes) + "\n")
+            st.ok("kiyas", f"{int((kd['grup'] == 'Faizi geçiyor').sum())} şirket faizi, {int((kd['grup'] == 'Enflasyonu geçiyor').sum())} enflasyonu geçiyor")
+        except Exception as e:  # noqa: BLE001
+            st.fail("kiyas", e)
+        (p.out / "siniflar.html").write_text(theme.restyle(siniflar.page(sc, st.started, deger.changes_section(ch), infl, gd_now, ch, kiyas_html), "siniflar.html", "",
                                                            "tr", "siniflar.html"), encoding="utf-8")
         (p.out / "deger.html").write_text("<!doctype html><meta charset='utf-8'><meta http-equiv='refresh' content='0;url=siniflar.html'>"
                                           "<a href='siniflar.html'>Seviyeler ve değerleme</a>", encoding="utf-8")
@@ -1094,6 +1130,8 @@ def run(root: Path = ROOT, evds_client=None, market: Market | None = None, sourc
     p.out.mkdir(parents=True, exist_ok=True)
     if market is None and cfg.get("gundem", True):            # gerçek piyasa verisiyle çalışırken (testlerde sahte piyasa verilir)
         step_gundem(p, st, uni)
+        if gizli():
+            step_oran_kurum(p, st, uni)
     sc = None
     try:
         sc = step_screen(p, st, uni, rk)

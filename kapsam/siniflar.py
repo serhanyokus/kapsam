@@ -397,7 +397,7 @@ def yorum(df: pd.DataFrame, g: dict, ch: pd.DataFrame | None, infl: float = np.n
 
 
 def page(df: pd.DataFrame, stamp: str, changes_html: str = "", infl: float = np.nan, g: dict | None = None,
-         ch: pd.DataFrame | None = None) -> str:
+         ch: pd.DataFrame | None = None, kiyas_html: str = "") -> str:
     """Birleşik Seviyeler + Değerleme + Gündem sayfası."""
     from . import gundem as _gd
     gdict = g or {}
@@ -435,13 +435,14 @@ hepsi birden sağlanmalıdır: İNA değeri fiyatın altında kalan bir hisse AL
 içermez. 12 ay hedef = İNA değeri × (1 + son 12 ay TÜFE {_pct(infl)}). {e(stamp[:16].replace('T', ' '))} UTC.</div>
 <div class="kpis">{tiles}</div>
 <p class="muted">{badge('VERİ YOK')} {int(counts.get('Veri Eksik', 0))} şirket · <a href='#degisenler'>Seviye değişenler</a> ·
-<a href='#yorum'>Günün yorumu</a> · <a href='#gundem'>Gündem</a> · <a href='#model-portfoy'>Model portföy</a> ·
+<a href='#yorum'>Günün yorumu</a> · <a href='#gundem'>Gündem</a> · <a href='#model-portfoy'>Model portföy</a> · <a href='#kiyas'>Faiz/enflasyon/kurum</a> ·
 <a href='#potansiyel'>En yüksek potansiyel</a> · <a href='#veri-yok'>Veri yok listesi</a></p>
 <input id="q" placeholder="Kod, şirket ya da seviye ara (tüm tablolarda)" oninput="f()">
 {yorum(df, gdict, ch, infl)}
 {changes_html}
 {_gd.section(gdict) if gdict else ""}
 {portfolio_section(model_portfolio(df))}
+{kiyas_html}
 <h2 id='potansiyel'>En yüksek İNA potansiyeli <span class='muted'>(güveni orta/yüksek)</span></h2>
 <p class='muted'>Potansiyeli yüksek ama AL olmayan hisselerin gerekçesi satırda yazar (çoğunlukla kalite bayrağı ya da çarpan koşulu).</p>
 <table><tr><th class='l'>Kod</th><th class='l'>Seviye</th><th>Fiyat</th><th>İNA değeri</th><th>Potansiyel</th><th class='l'>Gerekçe</th></tr>{top}</table>
