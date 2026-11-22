@@ -204,7 +204,7 @@ EMPAE,Empa Elektronik,Teknoloji,NAKIT- PAHALI
 ENDAE,Enda Enerji,Elektrik Üretim,ZARAR KUCULME
 ENERY,Enerya Enerji,Elektrik - Doğalgaz Dağıtım,PAHALI
 ENJSA,Enerjisa Enerji,Elektrik - Doğalgaz Dağıtım,KUCULME
-ENKAI,Enka İnşaat,İnşaat- Taahhüt,HABER-
+ENKAI,Enka İnşaat,İnşaat- Taahhüt,
 ENPRA,Enpara,Bankacılık,PAHALI HABER-
 ENSRI,Ensari Deri,Deri Giyim,ZARAR PARASAL0 NAKIT- BORC KUCULME
 ENTRA,Ic Enterra Yenilenebilir,Elektrik Üretim,ZARAR PARASAL0 PARASAL KUCULME
@@ -548,7 +548,7 @@ TEKTU,Tek-Art Turizm,Turizm,ZARAR PARASAL0 NAKIT-
 TEZOL,Europap Tezol,Kağıt Ürünleri,ZARAR KUCULME
 TGSAS,TGS Dış Ticaret,Pazarlama,NAKIT
 THYAO,Türk Hava Yolları,Havayolları ve Hizm.,BORC FDISI
-TKFEN,Tekfen Holding,İnşaat- Taahhüt,ZARAR PARASAL0 KUCULME
+TKFEN,Tekfen Holding,İnşaat- Taahhüt,ZARAR PARASAL0 KUCULME HABER-
 TKNKA,Teknika Plastik,Petrol,ZARAR PARASAL0 PARASAL KUCULME
 TKNSA,Teknosa İç ve Dış Tic.,Perakande - Ticaret,ZARAR PARASAL0 BORC KUCULME
 TLMAN,Trabzon Liman İşletmeciliği,Ulaştırma-Lojistik,ZARAR NAKIT- KUCULME

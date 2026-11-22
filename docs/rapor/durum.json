@@ -1,5 +1,5 @@
 {
- "guncelleme": "2026-11-22T02:17:18+00:00",
+ "guncelleme": "2026-11-22T09:58:56+00:00",
  "adimlar": {
   "makro": {
    "durum": "tamam",
@@ -27,11 +27,11 @@
   },
   "gundem": {
    "durum": "tamam",
-   "detay": "12 gösterge, 60 makro başlık, 59 şirketin haberleri; risk primi eki %1; 1 uyarı"
+   "detay": "12 gösterge, 60 makro başlık, 60 şirketin haberleri; risk primi eki %1"
   },
   "kalite": {
    "durum": "tamam",
-   "detay": "46 şirkette bayrak yok, 571 şirkette en az bir bayrak"
+   "detay": "47 şirkette bayrak yok, 570 şirkette en az bir bayrak"
   },
   "tarama": {
    "durum": "tamam",

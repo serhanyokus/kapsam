@@ -1,5 +1,5 @@
 {
- "guncelleme": "2026-11-22T02:21+00:00",
+ "guncelleme": "2026-11-22T10:02+00:00",
  "gostergeler": {
   "XU100.IS": {
    "ad": "BIST 100",
@@ -67,11 +67,11 @@
   },
   "BZ=F": {
    "ad": "Brent petrol",
-   "son": 92.5699996948,
+   "son": 89.9499969482,
    "tarih": "2026-11-20",
-   "gun": 0.0064143979,
-   "ay": -0.1820270284,
-   "yil": 0.4654108339
+   "gun": -0.0220700841,
+   "ay": -0.2051780648,
+   "yil": 0.4239354053
   },
   "GC=F": {
    "ad": "Altın (ons)",
@@ -120,18 +120,18 @@
    "konu": "Merkez Bankası faiz kararı"
   },
   {
-   "baslik": "FED faiz kararı ne zaman açıklanacak? Gözler yılın son faiz kararında - NTV Haber",
-   "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSjdGem5KN1RqQ2dOLV9RYUN3QlhtSEpaRlRVZEJPX0hTY1lzR0FzYUMwZFBuSEpYb3FVek5GQjNGTjNUVGppQlhmcEMwVnFkX1pKM2Y1a3VJWUtOWk55OXVDb0Utc0tkMzcxem5JQ0w4bXd2LVBhZkotWTBDZENhUzlrem45YTN5aldGRmFyUTlybUQ1MkFEYmNsNVhPcWk4bkplLWJKUE5YYUE?oc=5",
-   "tarih": "2026-11-19",
-   "kaynak": "NTV Haber",
-   "puan": 0,
-   "konu": "Merkez Bankası faiz kararı"
-  },
-  {
    "baslik": "Fed faiz kararı toplantısı ne zaman? Ekonomistlerin tahminleri neler? ABD Merkez Bankası faizi artıracak mı? - Cumhuriyet",
    "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxOeDdqRXlKYUlsNHYxZkxkbGZjUEVLRnRHeWRndHJhNmRscjJ0Wm5rc0dsX2x1NmVoOFhFSlNONnBXbHRkb01YUjVMMzVUcXpLcm82aW5lV2JySTFEYkdYRjJNeVRhbHBPeFVrRjR6YnRoWmR6UGdlcTlXMU4zcER2TnBKUDBweVVEUFdsU0QzV0FhMW9wVUNMRUhXcTNNZjkwT1A2RTREWm15bnlzOXkyeDQwcVU0RExHZ1JZY01VTnZmSlNzbWI1TFlXUU9xenlEN2VMdjAxZjFsSkwyTjUtZUJwZlM?oc=5",
    "tarih": "2026-11-20",
    "kaynak": "Cumhuriyet",
+   "puan": 0,
+   "konu": "Merkez Bankası faiz kararı"
+  },
+  {
+   "baslik": "FED faiz kararı ne zaman açıklanacak? Gözler yılın son faiz kararında - NTV Haber",
+   "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSjdGem5KN1RqQ2dOLV9RYUN3QlhtSEpaRlRVZEJPX0hTY1lzR0FzYUMwZFBuSEpYb3FVek5GQjNGTjNUVGppQlhmcEMwVnFkX1pKM2Y1a3VJWUtOWk55OXVDb0Utc0tkMzcxem5JQ0w4bXd2LVBhZkotWTBDZENhUzlrem45YTN5aldGRmFyUTlybUQ1MkFEYmNsNVhPcWk4bkplLWJKUE5YYUE?oc=5",
+   "tarih": "2026-11-19",
+   "kaynak": "NTV Haber",
    "puan": 0,
    "konu": "Merkez Bankası faiz kararı"
   },
@@ -162,7 +162,7 @@
   {
    "baslik": "KASIM AYI ENFLASYON BEKLENTİSİ 2026 | TÜFE Verileri Ne Zaman Açıklanacak? Kasım Ayı Enflasyon Beklentisi Ne Oldu? Piyasaların Gözü Yeni Rakamlarda - CNN Türk",
    "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxOSHppcy14eENDd1dwZ3B4LVRMbWxQMkZpT0hNUmVFc3JPdkthc1BMYW9wRDc2MDYwUmZ5ZTdTNVllbEthUEtQQXMxWnRxcGZfS1ljd2VRLXM3REx1LVNIMXI4cnlSMVo2U243cS1mdG9kZW1OdTgwdUlJaUdEMjdGeEZPQkxGT09qQUlWTFgxZFZ4WVRjMjF6NDNVNTdTWXBfU0o0V1dmb3ZKVElXU3FmbDd6VnZadWxNTGRub1dtR0NRcEczMHZCdmhUWXRJZE00WG14VDlGWXBMRURMdjdXNVBmSjl4aUpBNE51ZW9NSmkzS3Y1Z2lFYWRrU3l3NEFQ?oc=5",
-   "tarih": "2026-11-19",
+   "tarih": "2026-11-22",
    "kaynak": "CNN Türk",
    "puan": 0,
    "konu": "TÜİK enflasyon"
@@ -216,34 +216,26 @@
    "konu": "Borsa İstanbul"
   },
   {
-   "baslik": "Borsa güne yükselişle başladı - Anadolu Ajansı",
-   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1QQzFDYzdiYl83X0h5UkMyUnNBNW40SXY0UmFWVXVrU1FvUko2NjAyby1qazN5cV9zZldvdWhIWS1PRDFxTDBBb01KWmFtWW1MeEc4SUR5WjRKNWxaeEdBZVpvbnZyN040cE1lUEU1MkdDbDFMal92UkNB?oc=5",
-   "tarih": "2026-11-19",
+   "baslik": "Borsa günü düşüşle tamamladı - Anadolu Ajansı",
+   "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBDMTVDMHVoeUpVUVZMRTRvcE5nQTNnblRoZE56NUlKZFV0LXAwaUtESWY5em1lUlJfbDlETGpKT0Z1bFk5RXpVMTFtd242YWpxU0otbGxfZ2FTUUFTSTYtUU43OFp6QU5GN0RDUTVVTm1FVVE?oc=5",
+   "tarih": "2026-11-20",
    "kaynak": "Anadolu Ajansı",
-   "puan": 1,
+   "puan": -1,
    "konu": "Borsa İstanbul"
   },
   {
-   "baslik": "1 Dolar kaç TL? 14 Kasım dolar/TL kur fiyatları ne kadar? - gdh dijital",
-   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOcjJZQ2U2cnR0di1ZdGNrUUduZTVCdEZZZlhaU1RlOFpVbHF2WEdVbk9ldUt5T015T29yVWNnajJHQTR3TGQ4MlRlaFBzbFV1cExZaDFfVWQxb21PQjZmczFaTVJoZEtvYlpVa1VRLWZzNkJxVEZhZkw1WFRVSXduYXlmNlBUSGQ2NXJhU2tYU29tSjAwN3ZRMWFTOA?oc=5",
-   "tarih": "2026-11-15",
+   "baslik": "1 Dolar kaç TL? 17 Kasım dolar ne kadardan alınıyor ne kadardan satılıyor? - gdh dijital",
+   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdkliWEhzWjVfOWZ6ZUgyLWZOWmZlVHN4YkVtRmNSeWpDbi10Nk9GS1dlS1FuV2N5QVN6T3hTZmdKRU11Mm1rX2FiNDVsOGdySV95Z042SWhfeF9hU3k4UWFLQjlISzlPLTEyUWh2ZXpIM1dvWm4xSjZ6WEFDU0lmN04xcnh5Rk1PZ1duNkRWSi00bTBKZ2s3Ul85UDE0T2RYY2htcGVPNmp2bWtwbGl6Y3VVbw?oc=5",
+   "tarih": "2026-11-17",
    "kaynak": "gdh dijital",
    "puan": 0,
    "konu": "dolar TL kur"
   },
   {
-   "baslik": "Amerikan Doları kaç TL? USD/TL Sabah kuru (20.11.2026) - Canlı Gaste",
-   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPck43Nzc1ZUxJdmJlOFNDclRiUGp6cUd4QmYxVVdPcUw5cGc2THdZcUJKZUh0VjZXY19JdTlLaEJuUkpaV1RWbXRROERnQmg1cGdJNUNsVWNCdnpwVHR0Sk5Tb3lIY240MUtvZDZ5clA2X1ZnNTR2WFFieUtsU1F1eFd5clNkQTc1N3hKMFE0aw?oc=5",
-   "tarih": "2026-11-20",
+   "baslik": "Amerikan Doları kaç TL? USD/TL Sabah kuru (22.11.2026) - Canlı Gaste",
+   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNZXZoWlcxTGtZelY1bUpCY1RHWjgyUjhuOEQtUm5zM25aVmlhUHhvSDFDSzdNd0NDRXlQNmlSTk5tRVp5OG05UFJXaWtWTTRrVzlLX2VVbmFNbFhaUEVyLW5FVVI0b0N2TjV0QzRqbFU5eUh1dGhiVjRxR0NUWkJOZjJKYmxnaVJEUW9TSWJCRQ?oc=5",
+   "tarih": "2026-11-22",
    "kaynak": "Canlı Gaste",
-   "puan": 0,
-   "konu": "dolar TL kur"
-  },
-  {
-   "baslik": "15 Kasım 2026 Dolar Bugün Kaç TL? Serbest Piyasa Dolar Kuru - Mynet Finans",
-   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOSTRNcWFFbHZwTjh4ZWp0RDE3Y2MxNUFQa0NKRHBQYm5BRElsN2g5NEJZeE9hNE8tbjZlc0JsT2ZJZ2Q4eUw4dDN1Z0VUZzJiNTZuS3NRN0p0Wmt2T3NJazNtSzNaZ1B5SVlrYVYtVWZZVWJIY2wzaGxlc0ViSF9CNW1PVEtNWk14WU44TjQ4aVRsZkRxN1prb2cwRXZ4LS0xd3Zmd2lxV1JUdUltZGc?oc=5",
-   "tarih": "2026-11-15",
-   "kaynak": "Mynet Finans",
    "puan": 0,
    "konu": "dolar TL kur"
   },
@@ -256,10 +248,18 @@
    "konu": "dolar TL kur"
   },
   {
-   "baslik": "1 Dolar kaç TL? 17 Kasım dolar ne kadardan alınıyor ne kadardan satılıyor? - gdh dijital",
-   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdkliWEhzWjVfOWZ6ZUgyLWZOWmZlVHN4YkVtRmNSeWpDbi10Nk9GS1dlS1FuV2N5QVN6T3hTZmdKRU11Mm1rX2FiNDVsOGdySV95Z042SWhfeF9hU3k4UWFLQjlISzlPLTEyUWh2ZXpIM1dvWm4xSjZ6WEFDU0lmN04xcnh5Rk1PZ1duNkRWSi00bTBKZ2s3Ul85UDE0T2RYY2htcGVPNmp2bWtwbGl6Y3VVbw?oc=5",
+   "baslik": "17 Kasım 2026 Dolar Bugün Kaç TL? Serbest Piyasa Dolar Kuru - Mynet Finans",
+   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQVmF3ZmJFOVE1NG9DOHFEMVo2TmZWdFNBbGhjbFlZWm83d1MzMmNGWkdMZm9PUEJ2Sl91LUYxMDEwM0MybnRFMndJbE9JaUVTSWtrNTExaFJueUtvMzJmaXUzbkNhMjNoQldmbHROb296TVlhaURSVFRDemhVZ3U4ZzVKZlNiZ2tQSkwtem9veDl6ZVBCdzdxclkyR25pM0wySDVUUkY1LUROeHBoeUE?oc=5",
    "tarih": "2026-11-17",
-   "kaynak": "gdh dijital",
+   "kaynak": "Mynet Finans",
+   "puan": 0,
+   "konu": "dolar TL kur"
+  },
+  {
+   "baslik": "Amerikan Doları kaç TL? USD/TL Sabah kuru (20.11.2026) - Canlı Gaste",
+   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPck43Nzc1ZUxJdmJlOFNDclRiUGp6cUd4QmYxVVdPcUw5cGc2THdZcUJKZUh0VjZXY19JdTlLaEJuUkpaV1RWbXRROERnQmg1cGdJNUNsVWNCdnpwVHR0Sk5Tb3lIY240MUtvZDZ5clA2X1ZnNTR2WFFieUtsU1F1eFd5clNkQTc1N3hKMFE0aw?oc=5",
+   "tarih": "2026-11-20",
+   "kaynak": "Canlı Gaste",
    "puan": 0,
    "konu": "dolar TL kur"
   },
@@ -280,6 +280,14 @@
    "konu": "Türkiye ekonomi büyüme"
   },
   {
+   "baslik": "AB Komisyonu büyüme tahminini yükseltti: Türkiye ekonomisi için 2027 beklentisi yüzde 3,5 - CNN Türk Finans",
+   "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNWFk0ejd6cjIwMGhGVXRDbUtQQ0R6RlhqNjhNRGF2ZVBnQm1xSjVTRmFrdzRaR0hubWRTdTlrc01sVWl3VXZscHNOZExqWkN5bG5jcGFDWnQyeUtnaDV4UTVuSUZtRFpaMnJqMHVHUDVpRGZuM3BfaGdRdGFHekVwTDV4Y3doa3V6WWhzWE1OSE82UFJ6V1QtdjdQclRLNjhHV25ZTlNHX3JsT3RGX3JzTFo0TGY0dFFIcTBOUzAxOFF2djhtS243OFVZMWl6Y0V6ME16NWZ3?oc=5",
+   "tarih": "2026-11-17",
+   "kaynak": "CNN Türk Finans",
+   "puan": 1,
+   "konu": "Türkiye ekonomi büyüme"
+  },
+  {
    "baslik": "AB, Türkiye'ye yönelik büyüme tahminini düşürdü, enflasyon beklentisini yükseltti - T24",
    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNRjZTbTNFWFItTXpRd2N3QjdMcDRaRlFWMjRSZGNHQ3R6VTBwbjJLVVh1c29tN2RwS2haMVJjZkZVdEJpdEtsX2wtSmpYWVYzWXlTcmQ4dWJnZ2RhYjlYVlBUSlpsb19ZYVRJam16LS1oZHdadGo2YW5qYnk5Rnc2ZjZUUHM1VlA0Z2JoeDg4aEtHY21NU3JyUnVHU0E1RDllS3ZYbzZZaXcyRE83aUxjYmN6RQ?oc=5",
    "tarih": "2026-11-17",
@@ -294,22 +302,6 @@
    "kaynak": "Bloomberght",
    "puan": 1,
    "konu": "Türkiye ekonomi büyüme"
-  },
-  {
-   "baslik": "AB’nin Türkiye için 2026-2028 enflasyon-büyüme tahminleri değişti - Paratic Haber",
-   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNUG03QVJ2WjNaWlJSWk9ia0w1ZTFRSTFRNVdpXzNKM0JzYko4WHVOY0p6SzBYZlBGMjUxVUxucDFacUFJZU9NMFZxbEx1R0Jfb2hNb3l1bk5JTUJWM1UzNl9LTlFRc1NNU3FaUE9rek5XbEV5YjVQenB5LVNydHlBUUxRNVZXaUk0bHdVTjZR?oc=5",
-   "tarih": "2026-11-17",
-   "kaynak": "Paratic Haber",
-   "puan": 1,
-   "konu": "Türkiye ekonomi büyüme"
-  },
-  {
-   "baslik": "Türkiye'nin CDS primi iki haftanın zirvesinde haberi - Borsanın Gündemi",
-   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOSHFpbk5Kb20wOThvT2tqY2h2QmF5M285b1dsLUVjZjlxRU1EaEtoYXl2MjlRYlhsMVc1MWFGLUdWdnphN0s0RV9reW5GbTh5WHpBMVJWa0xZcVYtTDV1dVpIMWpEaThHX3g1SzB5Nlhyem1kcFRlNHpFZnJfYUlLVUpkVmQ0Z2pSbWtTWG8zVk9kdFJK?oc=5",
-   "tarih": "2026-11-20",
-   "kaynak": "Borsanın Gündemi",
-   "puan": 0,
-   "konu": "Türkiye CDS risk primi"
   },
   {
    "baslik": "Türkiye'nin CDS primi yeniden yükseliyor: Yabancı yatırımcı çıkışı mı, küresel riskten kaçış mı? - Para Analiz",
@@ -340,6 +332,14 @@
    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPZDlKRjFmT0phSjFFLTJ1T0lyRWoyTy1SQ3dYWDVZYXV4X21kanh5VGVvMklKUnVUeHhsai1XYTJwV2NWTnU1N190LUVYRHNmUU1zTXdHcUZpQXJGMi1mX0IwQkZnMlY3RTNCNVgyZTlWVXBLZENlbnR4SllFY3ppUXRUX2dYX0pRek9CYlFGTzRNQkZmbGlaVFNDTmI?oc=5",
    "tarih": "2026-11-20",
    "kaynak": "Bağımsız Gazete",
+   "puan": 0,
+   "konu": "Türkiye CDS risk primi"
+  },
+  {
+   "baslik": "Türkiye’nin risk primi yeniden 250 baz puanın üzerine çıktı - T24",
+   "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNaUNidk9qQVVBdXhoekxMbjJEQWtybEhtWG1EdjFndUVMZ0dtQnFXeU96T2JfSG9nTDNtWXR0QmhwWmQtSEVqRGhqNDZJY2psZDl2dTJRdDZ3bHR2czJsMFlESjZ1VHFKX2tBeVl2R1ZRa1Fubm55dl9uWHpvaUxIRDFrZnhQQjhaUkpYdUxOSkVFNmxxSUgySA?oc=5",
+   "tarih": "2026-11-20",
+   "kaynak": "T24",
    "puan": 0,
    "konu": "Türkiye CDS risk primi"
   }
@@ -394,18 +394,10 @@
    "konu": "global stock markets"
   },
   {
-   "baslik": "Tech leads global stocks rout, Treasury yields fall - Reuters",
-   "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxORTBuejlwS3Nua0szT1dTbnYtSElZYjI2RUg0NnRsVHNlOW1SMTBlUFIxdmtVcnB2TFd0N19aU1RlbzVWREhqYnZmWF9HRG5odm55UUxLMnJzckZpWjh6UHdrZGtZNlBIMVh3cU1QcUNIQlZRNXJMTW54TjdkaVdGbE9yVQ?oc=5",
+   "baslik": "The snowballing selloff in global markets - Reuters",
+   "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE84ZFFzbDlRd0J6aHAxMkFGQUl6R2swRWt1ZTFUNWhNZlB1Q3VTMFlIcWNUUWpvZGY4TjdodG9qYkw5eVZiaENISVhjZlVQNy1RRjZ2QktKOER1d3lNOUxyOTc3aThONVdUU3VmX19fMnl2ZmpZeG1idEFGR1BkMlk?oc=5",
    "tarih": "2026-11-20",
    "kaynak": "Reuters",
-   "puan": -1,
-   "konu": "global stock markets"
-  },
-  {
-   "baslik": "The snowballing selloff in global markets - Yahoo Finance",
-   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPVVNGMWsybFVrOFFTYXhRVW5CSHdqMi00Rm1vZF9TR2g5eVFYdFJnLWdvTUtVa0ZDUzgyRm5KMkxIWEJ1bjJZV0hiZ3ROa1dBWXFmRTZKVUNydnFwSjZUd1Bab2xPNGEyRWd4VkU2bHY4NmJ3NmxVTjJ3YUJXeHUxb09haElIQ2lzeVdtSW1yRnU2V2dVbmxR?oc=5",
-   "tarih": "2026-11-20",
-   "kaynak": "Yahoo Finance",
    "puan": 0,
    "konu": "global stock markets"
   },
@@ -414,6 +406,14 @@
    "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcTE2UjRDRTBqRElBclJqUE1jaHJLcERZcjRJZE5qeC1OSGFtVDI1bXM4VHVESlMxbVJWMzFXRUkzM0VHb0kxZEJ0V3k0ZkhjeDdlUFNuTm1RWUM0NXpHLTdSU1AxTXBybC1mRHZrQ1RJQjF2aE1JdXF4TTlGcGpfSjR0STROQzdhWVU0ZQ?oc=5",
    "tarih": "2026-11-18",
    "kaynak": "Morgan Stanley",
+   "puan": 0,
+   "konu": "global stock markets"
+  },
+  {
+   "baslik": "Weekly market commentary - BlackRock",
+   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQLWJDTjBBalYwVHVpc0VxV1BwRE1xeUt1RWlLQ1VJdnJQRXNnb3p6MnFNbjRBV0s0TnlldW4wSVIycFRQeVNISWJ3VV9wMWdjX1ZndE1Tc24tNzc0anNYWjl0SVBsRDhSa0dVTWlyVVYxX0w5b2JhTFB0Tm9Vb2FwYVZubTU1SVJlcy0zMEpXOEM4ZlhiSU1QazdVQVlldw?oc=5",
+   "tarih": "2026-11-16",
+   "kaynak": "BlackRock",
    "puan": 0,
    "konu": "global stock markets"
   },
@@ -458,10 +458,10 @@
    "konu": "oil prices OPEC"
   },
   {
-   "baslik": "Agency Reports Suggest Oil Market Approaching Turning Point - Rigzone",
-   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOcldjYzg2SUl1ZC16aWxrQXVtRWN0UlNOZ24yZ0ZmZHAtczYzV18zbUVpUHQ3c1RlTXdJSHJzbkVwQjFNaVpncExBSV9VblZraElLLUp1aHBYOXdRemdkWWxvdFNUZTlHZWpsdGloZkR4ZXY4blkxWmJMbmpVNFpaWlZ1UWRITVhabWVPejBuZGVDX3c0NlI4VVZnZzlJVHlXT0lLRHo4eXgyZThkdnBRRkVhVHFSbWc?oc=5",
-   "tarih": "2026-11-18",
-   "kaynak": "Rigzone",
+   "baslik": "VIDEO WTI Under Pressure Despite OPEC Production Cut Extension - FOREX.com",
+   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOZHc2S0FVUzJfOU1taXl5TC1keUdmSHVlWlhFek1rblo0enRiNUdVSmlYSExNNUFyRlNXQnVBU1N4bTU5QzdKMFJ4X1Rqc3M0QUctMWk2TDJueE5lYmtnU0F1bDVLWjFyaFMxSk9EaGt3ak03VUN2SGN5X2ZMQkExalQ3U3BfeWtjNUZmSFlTVXZZcG5XRVluajd3bElmWjVQTXRfNW5Yc2MtQQ?oc=5",
+   "tarih": "2026-11-20",
+   "kaynak": "FOREX.com",
    "puan": 0,
    "konu": "oil prices OPEC"
   },
@@ -522,6 +522,14 @@
    "konu": "China economy"
   },
   {
+   "baslik": "Demand for Chinese Goods Is Soaring but Economic Momentum Slows at Home - WSJ",
+   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNTVl1aGxrVkh0SGpPTXRaUHpEM0lTTmQtdHEySlRNWE9vbVh4OWJwTlBocGpiQzBrVHg0RGFndGZkRGFGWWdxb3RMdHBsc1c3alFpbFNqVUxEVm1yUUwwN2F3NnpOQl9vZVpPbS1uZnJ3UFJyVXpCQ0FIc2FYNWI3b05haGVNVG1IY2xB?oc=5",
+   "tarih": "2026-11-16",
+   "kaynak": "WSJ",
+   "puan": 0,
+   "konu": "China economy"
+  },
+  {
    "baslik": "China’s slowdown deepens in October as industrial output, retail sales, investment miss estimates - CNBC",
    "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPR2M1YTlBdHBScHZBdV9FWFhGcWgzVGVxbG9Cb044OXdIYnRtZ2l0RFlnY09kUW9vWGZjNGRZOVdkUXRvTVBEa0MxMnItWDZsVzhRVkJWNTNydURkZmFaSkt6ZGNkSWRZWnNrLW9kd2dTeVU4eVduUThfZHMtbzA1Q3ZxNGtQeHhkazNjWWh0Vk1nOWczWjdZ?oc=5",
    "tarih": "2026-11-16",
@@ -534,14 +542,6 @@
    "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBkT2UySldNczFBWVBFNXJycEF5bjc5TVBBRkJCVmw1TFczLWNRZTNneWNEd2ZQcThhTThlVDRtcHFGOVh1aUo4UHByREtaLXFsdFQyUnVqNFp6MnBwWmNLM3JhRFBqWFI2TTNGcElVMEFWd2hzRGtCa1BxUQ?oc=5",
    "tarih": "2026-11-20",
    "kaynak": "The New York Times",
-   "puan": 0,
-   "konu": "China economy"
-  },
-  {
-   "baslik": "China’s economic activity slows more than expected in October - Financial Times",
-   "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQdUh5THNud2ZrVGJuYTd2YXRlaEVFclZiU0JYQVBJM0ZCbThIdUdUM1d2eElJZXBhRXBBdFNRdHdkb1l0QTdRQWtuNE45dVJYNjB6dnZZUnJkTFBab3Y0UUstRVl1MVFobENIeWxmWlBOM0s0WEFtZy1XVWhuU3gtSk9walM?oc=5",
-   "tarih": "2026-11-16",
-   "kaynak": "Financial Times",
    "puan": 0,
    "konu": "China economy"
   },
@@ -562,14 +562,6 @@
    "konu": "emerging markets"
   },
   {
-   "baslik": "Expanding financial services in emerging markets, why local context is a moat - Cornell SC Johnson College of Business",
-   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPVWlUeXFWSHdJS1l6RnFYblo1QXh2cmNSN3pUMXBNaXBKV0VGMFNRRGk5Z1lsU1R0MHh2WnMwX0lIbGpnUmxUTzFwYkJRVktfbVdvN2NmNEJNMDl4WThxdmFoTnFDaWFJSVd6X3dwUHg1Y01ra09yU1Zkc3Ezc1pmSi1uQlZtQkQ0dU5jNEI3Mkp4c1VHWk00Z2FwcEtQRHJJN0JpWExpY28?oc=5",
-   "tarih": "2026-11-17",
-   "kaynak": "Cornell SC Johnson College of Business",
-   "puan": 0,
-   "konu": "emerging markets"
-  },
-  {
    "baslik": "Emerging Market Stablecoin Growth Is Creating Risks to Global Financial Stability - Council on Foreign Relations",
    "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOYURTaVNUa1VTNVlaaDkxdWNFdndKN2l1YlM2elB6c09ocXd3UWVwNmZNMzRPQlAyd0M2emdPMHF4OWFxVGt4bWowVmFSNmRIR3lZTWhwSUZUdUllNWdIaFZ3V2k5d1pIVGhJeHZZNTRmWUQ4YUZvMklqd205TzBSYUlURGNkYWJwWjhpWlVpc2dTekFuNDB6T1lsblc4aFpJWWp3TEhVRm5OeXEtTzVF?oc=5",
    "tarih": "2026-11-20",
@@ -584,6 +576,14 @@
    "kaynak": "Morningstar",
    "puan": 0,
    "konu": "emerging markets"
+  },
+  {
+   "baslik": "Emerging markets are less hostile to the Fed than they used to be - OMFIF",
+   "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOSFlxUUZPaTY3X1JyUHpfM3NzTFlTOVE1MFdWTS01Smk5eGRJVjRwd0pIdDM2WXA4ekk5Q0xFQTNQQ0ZOdzZKcUt1eHdxVTQ3eXpOczc2NDRVTG5XZE5Mc0p4d3JmWmZvWmFuMWFQVDJtRjVBMXhIQllyVmVKRzNLVjFIRWVRNFRqUGk3ZmpKbUhTWk9jeHYzNkkyQ24?oc=5",
+   "tarih": "2026-11-17",
+   "kaynak": "OMFIF",
+   "puan": 0,
+   "konu": "emerging markets"
   }
  ],
  "sirket": {
@@ -595,20 +595,6 @@
      "tarih": "2026-11-08",
      "kaynak": "Ekonomim",
      "puan": 1
-    },
-    {
-     "baslik": "Midas ile gün sonu: ARMK, ASELS, XPEV, LKMNH, TSN, MIATK - Midas",
-     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPY3ZodG03aThfQ1RiVm9JMTlWZDFrb0haSlRRZnZ6YWY1eWFZWXVBd0hrMmV3UUNrejJNRTMwMVhwbGxLQUNrWWltOVpWNG9WVEJiUTdpYWxsUHFJTWVibklhOU16Zm1vbXBvOUIyY05aS1liQTJudVZIYlloVEQ5VlJxOFZLRXN1b2lsUjJiak03MGdaS3Z4TU9KSFBYZjJGNi1IVQ?oc=5",
-     "tarih": "2026-11-16",
-     "kaynak": "Midas",
-     "puan": 0
-    },
-    {
-     "baslik": "BIST 30’da 3 yılda yüzde 721 kazanç haberi - Borsa Gündem",
-     "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxORmVHZEU0SnpiVktKdjhYUjRFbmEzUzM4T3BjeGpvUldlZlhYSlJnMDE3el9raFVmZjNNQmhFQ1BXWnV0YXdJY0xSSkpkX2ZndlRVSWtQNlFPN3g1Mzk5M0pKbnRJeDFQY05wYTVuVXVwNU94YnA3YUJiLW9aeVpKeGxOeFpvcHc?oc=5",
-     "tarih": "2026-11-13",
-     "kaynak": "Borsa Gündem",
-     "puan": -1
     },
     {
      "baslik": "ASELSAN'dan 17 Ülkeye Sağlık Teknolojisi İhracatı - Finans Hattı",
@@ -625,17 +611,10 @@
      "puan": 0
     },
     {
-     "baslik": "Borsa İstanbul'da 5 şirket temettü dağıtacak - Borsa Gundem",
-     "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFB5VXBnLTBMNGp4Nng4R1FINVhMTkRJTzdtcHZPR2FMcW5PRHZVRk1odUIxQWlqaFp0NHctcDN3cVlDM1VfdE4xUEQ4NWxmMmJWQW4welNFelhIU1FJRE50VWhFdmozSXZ1SDAxZ1RGUUMzY3Q1djFFVTl1aDlvZWs?oc=5",
-     "tarih": "2026-11-21",
-     "kaynak": "Borsa Gundem",
-     "puan": 1
-    },
-    {
-     "baslik": "Borsada yabancının gözdesi belli oldu: Beş günde aynı hisseyi aldılar haberi - Borsanın Gündemi",
-     "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPaklYRXNXZ0txbWJiaEc3MVVhbEt4UFF2bTJOWUtBVC1NcHdkYkpLSVduWkt4WHZMMXVKTzAtbDljT1lWTGcyZDJHUS1HQzZ5SGE5MldORW82Si1CYkZMOGhCeHNHQ0RsbC1iMVN6cjFPbVUtNUtqelJjX1JaWHpSLVBIbkRRdWFrMy1qRTJpbVNNRUlsUnNsY2I0ZWRhejBqN0d6YXFnbUtLNmFpREZmbHR6a2Q?oc=5",
-     "tarih": "2026-11-10",
-     "kaynak": "Borsanın Gündemi",
+     "baslik": "Aselsan (ASELS) hisselerinde Bank of America (BofA) üzerinden yüklü satış - Rota Borsa - Howl.Link",
+     "link": "https://news.google.com/rss/articles/CBMiO0FVX3lxTE5jWThjNnlZN0tYeDl4azhGMnBBT3hKZnB6czg1NjRQNlRkaHlXT2MtdEZFYTFMQ0FydnZz?oc=5",
+     "tarih": "2026-11-19",
+     "kaynak": "Howl.Link",
      "puan": 0
     },
     {
@@ -644,6 +623,27 @@
      "tarih": "2026-11-16",
      "kaynak": "Finans Hattı",
      "puan": 0
+    },
+    {
+     "baslik": "ASELS yukarı, TUPRS aşağı çekti: BIST 100’ü en çok etkileyen hisseler - Paratic Haber",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOVFQtTnhxM1ZzZDhLU3J5amJNenpOOGdMTlRZT2xPNGZBS3dzcXRDSDNVLUhvbFhqdjlWY2N4dlBrMmZjSnFzVC1YWG1UV2pRbHZMTmgtbkNIYXl2ZzVPemVrZzVTd3B1UzZ1blNnT1FDVzI0MXA1TDAtd3FWaFNaLUREWlNhbnltVkNwZE45SEs?oc=5",
+     "tarih": "2026-11-16",
+     "kaynak": "Paratic Haber",
+     "puan": 0
+    },
+    {
+     "baslik": "Aselsan (ASELS) Temettü Ödemesi: Tarih Ve Detaylar Belli Oldu - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPU3VKbUY0ZjVKU21PUVkwSFBqYWxfcXA2cWd6MTZhR3djb2VlanEyc20xVFl0aEtucnpUQVppYUxoLTAwSWxhQWhqNHBqNndxUEp5Wm9wamZKOWp4SHBzMXVyYTNBTC1EbXRubDhZRlpybWNOQ2xuNjdtRk9xMDZjMURIcmFQUDEtWmdyaXFR?oc=5",
+     "tarih": "2026-11-21",
+     "kaynak": "Finans Hattı",
+     "puan": 1
+    },
+    {
+     "baslik": "ASELS, MAVI ve ENJSA dahil 19 hissede haftalık hedef ve stop-loss seviyeleri - Paratic Haber",
+     "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQYVNVVHdpaGVoM2dvaGNqY1F6Zll2S3RBWjFTWE1CRVlpWjJndVhQZEx1NUg1UWNYcUZPQUVrbFQzcXdDOEFWcklOaHhnYjlTNGVOYkhyUVkxTTJlZzhDeElVNl8wMzZJLUJkSFZpdHI1X1ZJbmNrMmpkblBsMW9EeXd4cHREajF2bjVhRXllLWRKUGZjUFQ4UGZqZW0?oc=5",
+     "tarih": "2026-11-16",
+     "kaynak": "Paratic Haber",
+     "puan": -1
     }
    ],
    "olumlu": 2,
@@ -765,6 +765,13 @@
      "puan": -1
     },
     {
+     "baslik": "TURKIYE GARANTI - KAP Haberleri - 2026-11-16 tarihli - Bloomberght",
+     "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9VdFNYdnVBamdmaVN1NVN6TVRuZmJ2VVlEMndrTWNabENRd2ZEcWNxUldjNm9MYUV3dE9Hc2I2Q0IwQXg4ZlozeTZkQjNjVDRrTTFWSi10TnZCdElkdnF3bUV6b0NPelNJRm1jS3ZOMmlJeHJYTzR6d0F5Z2lhdw?oc=5",
+     "tarih": "2026-11-16",
+     "kaynak": "Bloomberght",
+     "puan": 0
+    },
+    {
      "baslik": "Borsada 24 şirket hisselerini topladı: Dev şirketler listede! 8 milyon lotluk hareket - CNBC-e",
      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPeW91ZFFOblpnMXJqR3hleS1kbDRlXzh1R1ZaN1hhWDl3a3pBbzJJMVNfbmJfR2F3TEoyd1ZXS2I1NGFiYXRQeVRaUEg0MVpiNkQtQzRJamMzakhsY1gzWEhNTms5OWVUT2xlLWVqUGV5UjZRWDV4S2wzb1l5ekYtNXhnM29McVlVVEdmdWpfZERIc2lXU2piRnc1c0xJNW5UUl9pTUZvd3JwOHduWFB0dFhuaFZhbVFwbGc?oc=5",
      "tarih": "2026-11-19",
@@ -777,16 +784,9 @@
      "tarih": "2026-11-19",
      "kaynak": "Finans Hattı",
      "puan": 1
-    },
-    {
-     "baslik": "AK Yatırım aracılığıyla 1,74 milyar liralık net alış ; İşte en fazla alım yapılan 10 hisse… - Ekonomim",
-     "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNR0lLLWk0RGRTZlVvQnF3M3hKRlhSanVmdTJpNjd3YmFvdDBNaWw3LUViNGptVm1KUEZJSzAwdDNqTVpDWDN6RUpSbTZjcV9ucndxNUlEY20xdFdCODM2M2ZNdEg4Vkc5bGs2TkxmM1RBcmdrTHFnenhVZTRDczd5c3Nxd3hZRTVvNWVmdTNjT05LalU3U0VjR0l0ZnVPZF9UZS1KSE5GRnlZMGVwNmZmNUhReURrYXpCSjhQbnJKby05LTZoVE9zT3pwYnF5MUVLcngxaG1TQm9UaU5YSUNQOVln?oc=5",
-     "tarih": "2026-11-18",
-     "kaynak": "Ekonomim",
-     "puan": 1
     }
    ],
-   "olumlu": 6,
+   "olumlu": 5,
    "olumsuz": 1,
    "bayrak": "HABER+"
   },
@@ -828,13 +828,6 @@
      "puan": 0
     },
     {
-     "baslik": "Koç Holding'den 10 Kasım mesajı - Habertürk",
-     "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE16VEFYdlVKdUJuSV95cV94NEpVZjM4YV93N3hWTlFMQXo5MThBUDBUR05TRkluVnJ1U1Z1SGVQeWozSVdaelhsRHVHS29fMDJQZE1iWjlvNTRLNG1xaXIxaU4tbjl4a05oa2tEUk9rSXc1LWtQMWVKdjZMeFk3dw?oc=5",
-     "tarih": "2026-11-08",
-     "kaynak": "Habertürk",
-     "puan": 0
-    },
-    {
      "baslik": "Koç Holding tatlı su çekimini 2040'a kadar yüzde 85 azaltmayı hedefliyor - Diken",
      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPNzcwenlsaEZ3bzFqU093NVR5S0pEQkxEaVFHa255bExMRHBHbGhzSXpuNHJQWUNCdEpSNGJMUXA3WmsxX0F4Q0ZabkczTlFpOUJNWExmRld1SEp3N180anJpdGZRVkJzQy01X2RxN0g3YXlrc2hVNlN6U2NuNXBSZ2IzZHU5UW1PMnZnNS1oTnlBTE5sZHY1VWZzNEdodw?oc=5",
      "tarih": "2026-11-09",
@@ -847,9 +840,16 @@
      "tarih": "2026-11-09",
      "kaynak": "Sözcü Gazetesi",
      "puan": 0
+    },
+    {
+     "baslik": "Ünlü & Co, Koç Holding’i kâr realizasyonu vurgusuyla model portföyünden çıkardı - Paratic Haber",
+     "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPQUNsa29fVTRjanNVS3pTS1BXNTRZOXNfTVhsNFl5OGlSd2tiSnJiaV9aV21BSHJDMWVCNmFrR0x1bVNtdjNHV1E4YUtTQzM3LUZ5X01lcWxvM1d3bXpHb0tOZktyTlMtc0FHamE0SGVMZTN5Z3NjdzFUVE1kUktmU0p6YWo4Vl9OR29DSm15M2VsZDg0UjFtM25vdm0?oc=5",
+     "tarih": "2026-11-11",
+     "kaynak": "Paratic Haber",
+     "puan": 1
     }
    ],
-   "olumlu": 3,
+   "olumlu": 4,
    "olumsuz": 0,
    "bayrak": "HABER+"
   },
@@ -919,13 +919,6 @@
   "ENKAI": {
    "haberler": [
     {
-     "baslik": "ENKAI Hisse Hedef Fiyat: 6 Aracı Kurum Analizi - Finans Hattı",
-     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNZUI5SU5jcFMwRy1zUTRvZU1QWkJudjhpYmtlNVI2R2tzanROQjhqYkpCUk14bHY1MENXWGF0dzQ1YVVCX05QSzd2Rk9MUkMwVG9WV01pc1M0M3F1STBMVkF3UHBzWThnUW15TVhGaFhWZUFydHNFZDN1NElsazgzNm56ODRyRjhTNUV0Tg?oc=5",
-     "tarih": "2026-11-09",
-     "kaynak": "Finans Hattı",
-     "puan": 1
-    },
-    {
      "baslik": "ENKAI hisselerinde ortak alımı: Mehmet Sinan Tara 300 bin lot aldı - CNBC-e",
      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPODRLWXJZME5wR2wybTJFdzlnWmRsMDVmNjdtUE9LREtCeTlkRnVyLXVyS0Fab3JUTDNjY21VeEgxLXRnYlJYZmhrMGVxWS1aWmF3SFNfT2lSY3RJX1dnTWxONTE2VEVUbzN1LVZSQ0JXZF96VmwzVGw4VEYxMmFXUDQ0TXFmTUExYkNjRC1zZkJjMDh4Q3VqMzVsSTNnUXB4ZGc?oc=5",
      "tarih": "2026-11-11",
@@ -940,44 +933,51 @@
      "puan": -2
     },
     {
-     "baslik": "BIST 30’da 3 yılda yüzde 721 kazanç haberi - Borsa Gündem",
-     "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxORmVHZEU0SnpiVktKdjhYUjRFbmEzUzM4T3BjeGpvUldlZlhYSlJnMDE3el9raFVmZjNNQmhFQ1BXWnV0YXdJY0xSSkpkX2ZndlRVSWtQNlFPN3g1Mzk5M0pKbnRJeDFQY05wYTVuVXVwNU94YnA3YUJiLW9aeVpKeGxOeFpvcHc?oc=5",
-     "tarih": "2026-11-13",
-     "kaynak": "Borsa Gündem",
-     "puan": -1
-    },
-    {
-     "baslik": "ENKAI Hisse Haberleri: Mehmet Sinan Tara'dan 600 Bin Lot Alım - Finans Hattı",
-     "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOLVRQdXhKUGdPc3NuWGdYQWx1SV9MZnpRcjE3UGlqMlJ6VG9Nb2lZY3pXdDBGVG5ORUJNbFhXTHlCWV9TanVnQnNTNjE0Q3ZxRWM0OG9uc0VQbkc0YVN1TzkxVnRTZHJmNlo3VUZpQlJNc3ppQVZCUXZXS05tZnYzbUl3?oc=5",
-     "tarih": "2026-11-20",
-     "kaynak": "Finans Hattı",
+     "baslik": "ENKAI Teknik Analizi / A1 Capital – (16.11.2026) - Para & Borsa",
+     "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBYVDZkampkbE1iOU42MjIyaG9HVk45WV9jZWRxdUFKUDFLd2p6SlJWNFRzNFNva1hHWGViX0lzZGtMdThnSnJ0MjlmU3JCdTJSS2RHeDZzRUpCTEtrUk9GcGVScDkwNDZPaEVXWFBweUJZVGFDX0pmejdSZw?oc=5",
+     "tarih": "2026-11-16",
+     "kaynak": "Para & Borsa",
      "puan": 0
     },
     {
-     "baslik": "ENKAI Hisse Alımı: Mehmet Sinan Tara'dan Stratejik Hamle - Finans Hattı",
-     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPbExlejZIOFlpWVJzMEEwX083TEl6TVF5Z0I5dlg4U1BOSDFybjA2ek91blhiVzZ3aDJLbHpKakJmYWNQX1ZkaTgwZkZCLTc0NVUwWW1XQkt0aFBFUnBwNVhXeEtqWVlqVHJrMUdiR2xMOGFXTnpqSDFlYkY1eVhmcnMzeDFhQ0tyNWc?oc=5",
-     "tarih": "2026-11-13",
+     "baslik": "ENKAI Hisse Hedef Fiyat: 6 Aracı Kurum Analizi - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNZUI5SU5jcFMwRy1zUTRvZU1QWkJudjhpYmtlNVI2R2tzanROQjhqYkpCUk14bHY1MENXWGF0dzQ1YVVCX05QSzd2Rk9MUkMwVG9WV01pc1M0M3F1STBMVkF3UHBzWThnUW15TVhGaFhWZUFydHNFZDN1NElsazgzNm56ODRyRjhTNUV0Tg?oc=5",
+     "tarih": "2026-11-09",
      "kaynak": "Finans Hattı",
-     "puan": 0
+     "puan": 1
     },
     {
-     "baslik": "ENKAI Hisse Haberleri: Mehmet Sinan Tara'dan Patron Alımı - Finans Hattı",
-     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNQ28wZFRXT002bXJ2eXk2dEw0bHFjU0szUjI4STAzRVVvSGJnZHI0cmZLQjVTWTVqSE1tU2ZPbENIa2NGazJvTk5VcTlhUUtScUZMYXI1OWw2NHhiQVc0eERGUHpiZU5hcmh6VmVmYl82TVI0NU12cVBvZXRVV2owaUZwdFlUQXZBYnpLbzVBbXhmbkE?oc=5",
-     "tarih": "2026-11-11",
-     "kaynak": "Finans Hattı",
-     "puan": 0
+     "baslik": "Patron alımlarıyla öne çıkan ENKAI için hedef fiyat aşağı... - Hisse.net",
+     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNT0pDV2NpUXdGNG5BRERnbW1fdFhIazg1U0tLbjBvWDhjanAwWDNvVmczRXpIOVZfYTVCa1o4a01GcDlpOW85NXJQM212OF83M0Y5anBOVG1scFdFSDFpNjVCd0p3UHlNdVJDM2hUbHNuVTVEX29vOGh2N3RlcE54M1E4N1AwRUROeW1heFRPb21RLVBDcFVOZmhnOWlyNzhDdWfSAacBQVVfeXFMT2FPdlJPTWNCS2VjNTJ1clRXVm53U0tDTUFTbVJhSjRVeVJ5VDBhY29rbktvMU9JZXFIU1VVLTlQVXVFdExXWGNkN0liV09JZlpUc0NfSWRjSnpmSVYxU1dQUWwxc0pzSDdvRnhUNXJ1dU5wMUhJS1ZLc2FGUTFPaU5kUTVqX00xMlRzSFJ2SGoyV2NVUzdQVTVYM1MtNWo0RlZfbkd2bWc?oc=5",
+     "tarih": "2026-11-09",
+     "kaynak": "Hisse.net",
+     "puan": 1
     },
     {
-     "baslik": "ENKAI Hissesinde Patron Alımı: Mehmet Sinan Tara’dan Dev Hamle - Finans Hattı",
-     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPM0U4aTM4YTB3ZHlUbmUtdXNYR3gtSVlrYS1FREdVQ1Q0ZEt3blJDYlpJM254LXBTbUNFdVpBV283MXZuXzFHYmt4c252T21sQ3F0TFRiaUFXejNDOXB6VWd0X1hDYkR0bEF4WkRUdzMyV01EeVZTd1c3dTRHVExMNVdHREZHazdXanFGTnp3?oc=5",
-     "tarih": "2026-11-17",
-     "kaynak": "Finans Hattı",
+     "baslik": "ENKA İnşaat Bu Yıl Yatırımcısına Dağıtacağı Nakit Temettü Miktarını Açıkladı - Para Ajansı",
+     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQVWlnX0xCR1p3ZjZKYkhEUXdseU94NFJZTGFFQXdfMlloNmI5bE9QU0xudlFTMDVGUFVENzF2cWlZUVUwclBObExldVY2MVJ0M3NNNzI4dzRxS2pEaG9lZFBDdG16dTVFX0F2MTRVeEJWZ2xISVpPMjBScnZ5WkI3cnZSMDNaN091SnpvRlBCUW12TG1MSFJZRENkT19Yd2ljYXd2bzR2eVZkb3RKVlI1NGJpRjktRnNCNnZZUg?oc=5",
+     "tarih": "2026-11-10",
+     "kaynak": "Para Ajansı",
+     "puan": 2
+    },
+    {
+     "baslik": "Enka İnşaat hissesi için hedef fiyatlar değişti - Borsamatik",
+     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNODdJckFoUmt2SEdNT0hLakw0aEV4MVpjYUE1ZVhUN1RyaUVlSUFvRk8wODlFTjBZR1pYUU9QWXVoeUlzRmJhb2FUTmZWUlpJUjRjTVpra1N3WFl4WVJaSEZkb0xmTGlYdl90Yk1JVkhCNlZ1R0h1anNPSEJCdGpreUpja24wa0pCUUZaaUNVZVBTSkJR?oc=5",
+     "tarih": "2026-11-09",
+     "kaynak": "Borsamatik",
+     "puan": 1
+    },
+    {
+     "baslik": "Mehmet Sinan Tara’dan Enka İnşaat’ta (ENKAI) hisse alış açıklaması - Rota Borsa",
+     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOTjZtTHltSFlDSTJncWRpTmhqTFpUY05velhKTU14MF94dGtuWWtNLUJLUThueXJ3bFZia1paWTE0dmw1cmlFV1NsT1lDdXJka0t2UEpsa2VSTHE5ZjhDbVpEb2ZWWEVGZFJQZHAxVDgwY0x4dTRCVG5ucDFndjVweUhodmFkcFhucHBNdHdsVnk2Zw?oc=5",
+     "tarih": "2026-11-16",
+     "kaynak": "Rota Borsa",
      "puan": 0
     }
    ],
-   "olumlu": 1,
-   "olumsuz": 2,
-   "bayrak": "HABER-"
+   "olumlu": 4,
+   "olumsuz": 1,
+   "bayrak": "HABER+"
   },
   "THYAO": {
    "haberler": [
@@ -1003,6 +1003,20 @@
      "puan": 0
     },
     {
+     "baslik": "THYAO Hisse Analizi: Ak Yatırım'dan Büyük Alım Ve Veriler - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNblJMdlNXdllaZndtc3M3S2FBd2pyNGRMUjBhZ09PTWsyWEdEXzNvb3lQNVd6OWV2TDNJY3FETlg3eUQwb1NjdU54R2xaOVliMnFQNlRmTS1aM0NuTUI2MHF5MGUyamhBTnp3ZFpobDFwRzEzYmhpd1hUeGcwZHhvOGNoeDBFaE0?oc=5",
+     "tarih": "2026-11-17",
+     "kaynak": "Finans Hattı",
+     "puan": 1
+    },
+    {
+     "baslik": "THYAO, MAVI ve ALARK dahil 14 hissede destek ve direnç seviyeleri - Paratic Haber",
+     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxON2E3dnhLQTlqWEk0cWFnNjlvbkJQN281Q2tvMFNKUXV4My1YY094enl2NUVGa3Vya0QzQ2RLaEQtQjZUYmYtV2xxWDJOME1ESlBhTGE0eFItOWludk5IdHIydExSa25nUm85N0VQZFRhcHc2OVFqRGlMVzBvS2JIY2hFMGxXdXlvc0NZemZwa0RZR0FuWUVDY01fSnhoNTg?oc=5",
+     "tarih": "2026-11-13",
+     "kaynak": "Paratic Haber",
+     "puan": 0
+    },
+    {
      "baslik": "THYAO ve ASTOR öne çıktı: BIST’te en çok para giren ve çıkan hisseler açıklandı - Paratic Haber",
      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQbnJfVzhCUzZiZ2EwcVRfTDQ3NEZIdVNRREhBaUxkNmd6WjFLWmFKaU9nVFRLMmVDM2pkSU1FellnY1ZiN1RtZG9mU1Z1MWhFdVY1aVRuV2o0WHV3NVpXUUlPSW1MbjVSZTR4R3NYSWJCYWRQSUJaejZLaUI1VXc1dzczUk9QdVc1THR2WFZqaDRuZlBSWE9ZOXVINFhuTzA?oc=5",
      "tarih": "2026-11-13",
@@ -1022,32 +1036,18 @@
      "tarih": "2026-11-14",
      "kaynak": "Van Bölge Gazetesi",
      "puan": -1
-    },
-    {
-     "baslik": "Türk Hava Yolları (THYAO) Hisse Hedef Fiyatları 2026 - Rota Borsa",
-     "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE4zNVRhSTdJMGRUSF9FWERNdFUxVzh3bGFHWURlTVNqcE0tNC1kNHJqWUtwUmFPckQyQjMwcGNmbndsZmM2ZkJpRGpwc1RHMVVCR0FJU29RZHVDMHo1UV95U3p6UVhHT0Znb3RVNg?oc=5",
-     "tarih": "2026-11-11",
-     "kaynak": "Rota Borsa",
-     "puan": 1
-    },
-    {
-     "baslik": "Borsada 46 hisseye hedef fiyat! THYAO, ASELS ve TUPRS için... - Hisse.net",
-     "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQeUFPOHJqcHlvLVBNNzVCUmRFOXFUeGRGYTVFMy1aM1lISXI4eEg3Q1BaT2NmUHZWcG1tR0s5SUFydXFNaFp3WEJlR0ZmV2tpOVpzN0cwWEFpa2JvZzFjbGtzR2hWT1lUQTNGdFRoY2s3YVFEdlIzMkRUdHVSOUZmMFlBVV91MVhDNUlSVnNRblNkREk4OGZaaTM2bkg0Qi1GUk9ua09ldVVOejQ5Y2g40gG0AUFVX3lxTFBjN0tlNEs1RWx3LXpZNHgyekp6RDFIZjhWV2hsVElldkI5Q0RTY0RJd3lMZnlCdTNDYVUwSmhKYk45eXVkTEJ4VjcwX1I5MzdyU0JNaGhIMHFIX2laaF9fS0ZEZmRuajAzS0xxNUtnOXZPYV9QVkU3VGVBVlVhRWI5WUtPWXpHQzVjS0xoVlJ5aWNNR1JTLTVxSnlkRk52ZTNIWWZydEwyclpPeU1BenM2WHZkMg?oc=5",
-     "tarih": "2026-11-08",
-     "kaynak": "Hisse.net",
-     "puan": 1
     }
    ],
-   "olumlu": 2,
+   "olumlu": 1,
    "olumsuz": 1,
-   "bayrak": "HABER+"
+   "bayrak": ""
   },
   "BIMAS": {
    "haberler": [
     {
      "baslik": "BIM MAGAZALAR Hisse Senedi Canlı Grafik - Mynet Finans",
      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5mdnU2cW5FMTVGamZFV1llVFgzNEQtakZMUjdCUGkxck1objV0U0pPcE9LTVVuQ2w0bERDeXpiUDBOWlFCclRoTlp6WmJrZlJQZDN1NHNmSHIybkZmdUJXYnZlbjBWV0wzemdleQ?oc=5",
-     "tarih": "2026-11-21",
+     "tarih": "2026-11-20",
      "kaynak": "Mynet Finans",
      "puan": 0
     },
@@ -1063,6 +1063,13 @@
      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQYmFwRGFZNGxXSjJycmtweUJBeHVySFlLWnBsNnV4TlZFV0QzMXpGR28xOVFIMXlmTWlmcEVVTFRkYlZTelVtSnBHN1JBT0ZacDk0eFVhMDI1OVJaMkFfMjRlMG8xYWl2QU1wTFpqUzJjbkVYSTViQjl1ZVhDQ2lTVFhRTnk?oc=5",
      "tarih": "2026-11-11",
      "kaynak": "Paratic Haber",
+     "puan": 0
+    },
+    {
+     "baslik": "BofA'nın milyarlık alım ve satımlarında öne çıkan 10 hisse - Ekonomim",
+     "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPeEdlWnZRVjVUR3h6TURneWh6RDVJMFFxUWVHUU1lTTJ1cjhNRnhuSjQtM2RVV0QwWEtVVlg1Ylo5WXY0dHZDcEY1UjhsVnpFeThUOFBJS1NROFc0UWhQRE1Vbk1fTHBROGIwTXNwQmd1VlRuVU9BWnpJZnFsTExyLS1CeGtGbzZYVFAyb2xrS2dNdXBxTU5aNmhURWJ4V0k0RGpsakN6Z1l6cTB6ek5kc21EQTVTcDA?oc=5",
+     "tarih": "2026-11-21",
+     "kaynak": "Ekonomim",
      "puan": 0
     },
     {
@@ -1092,16 +1099,9 @@
      "tarih": "2026-11-13",
      "kaynak": "Finans Hattı",
      "puan": 2
-    },
-    {
-     "baslik": "BIMAS 3. Çeyrek Bilanço Analizi: Kâr Beklentileri Aştı - Finans Hattı",
-     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPRW9OUnMwcU8zblZGYTRMamh3YlRZeGZsbzgtNjdwc2J6UDc0SG00NmVwQmFpMUZ1RUVIZmRWRnFaNUl4b1B1M0tIa0pzQ3hadnk0dmpfOTJWTXQydjRTT0tIbk9RRzVkVTQyVFE3dVlZQmdnblJvY25hUE5OUnVMaTFLYjJCQ1lJT3RsT0l2VTlwWXM0?oc=5",
-     "tarih": "2026-11-09",
-     "kaynak": "Finans Hattı",
-     "puan": 1
     }
    ],
-   "olumlu": 5,
+   "olumlu": 4,
    "olumsuz": 0,
    "bayrak": "HABER+"
   },
@@ -1192,13 +1192,6 @@
      "puan": 1
     },
     {
-     "baslik": "VakıfBank ile KfW arasında 250 milyon Euro'luk yeşil dönüşüm iş birliği - Platin Dergisi",
-     "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNc2loT0cxd0VGTFI2UlVBNEJDV3B1emY4ekZydFJIZUxyb2xGRzQ1bEoyUlZWc3ExcThEZ25Zb2ZwSUMwc3AyTnhEYjlSc1VMN1pqcmFleER3X2hHcmxLTFppczl2YmozVXhDQ1hjWTlqcEIxRWxIZXhjMXhQV0RnMlRCYkZCN2xHSWkyVW1ock5Vb1JTNzlCQkgta3A0OUVPN1J1NG1LYnFuQ1A4TjJFa0x4WmhIQU4zX0E?oc=5",
-     "tarih": "2026-11-12",
-     "kaynak": "Platin Dergisi",
-     "puan": 0
-    },
-    {
      "baslik": "AK Yatırım aracılığıyla 1,74 milyar liralık net alış ; İşte en fazla alım yapılan 10 hisse… - Ekonomim",
      "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNR0lLLWk0RGRTZlVvQnF3M3hKRlhSanVmdTJpNjd3YmFvdDBNaWw3LUViNGptVm1KUEZJSzAwdDNqTVpDWDN6RUpSbTZjcV9ucndxNUlEY20xdFdCODM2M2ZNdEg4Vkc5bGs2TkxmM1RBcmdrTHFnenhVZTRDczd5c3Nxd3hZRTVvNWVmdTNjT05LalU3U0VjR0l0ZnVPZF9UZS1KSE5GRnlZMGVwNmZmNUhReURrYXpCSjhQbnJKby05LTZoVE9zT3pwYnF5MUVLcngxaG1TQm9UaU5YSUNQOVln?oc=5",
      "tarih": "2026-11-18",
@@ -1206,10 +1199,17 @@
      "puan": 1
     },
     {
-     "baslik": "Kupa Voley Dörtlü Final'de yarı final eşleşmeleri belli oldu - Evrensel.net",
-     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPM3lOZVFTNExSN3p0NnBZcV9KeHM0UktDb000dW9Ob3lEVnBWVGpPMUtUdFVBRUh3VG1zOGxkNkQyNl9mc3dUTU5vWVU0TEZpWURlZEtLQU9LU1dLNVV1Yy1wUnJwQjc5MTBKNG9iUjBZSmdLQzU5ekEwcFh0VWg0cnNRbDRTZnJ1NUhHU29BdGdIUnFvMVdjQU5yNjNaenFT?oc=5",
-     "tarih": "2026-11-19",
-     "kaynak": "Evrensel.net",
+     "baslik": "VakıfBank ile KfW arasında 250 milyon Euro'luk yeşil dönüşüm iş birliği - Platin Dergisi",
+     "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNc2loT0cxd0VGTFI2UlVBNEJDV3B1emY4ekZydFJIZUxyb2xGRzQ1bEoyUlZWc3ExcThEZ25Zb2ZwSUMwc3AyTnhEYjlSc1VMN1pqcmFleER3X2hHcmxLTFppczl2YmozVXhDQ1hjWTlqcEIxRWxIZXhjMXhQV0RnMlRCYkZCN2xHSWkyVW1ock5Vb1JTNzlCQkgta3A0OUVPN1J1NG1LYnFuQ1A4TjJFa0x4WmhIQU4zX0E?oc=5",
+     "tarih": "2026-11-12",
+     "kaynak": "Platin Dergisi",
+     "puan": 0
+    },
+    {
+     "baslik": "VAKIF YAT. ORT. (VKFYO) Hisse Senedi - Mynet Finans",
+     "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFA1aTRMakJXd2J0NjlzTDF0SzdFSXkzSUF4Y24xYVBJNVRreXB4ai0xWU9uSklHY3FtTlpxZ1ljQXE5Y1h2dDFYRXpaV3BuSkhtVXpXZU5qUFpWQnR3cVlMcHo5YjEtV2dYWmQwXw?oc=5",
+     "tarih": "2026-11-20",
+     "kaynak": "Mynet Finans",
      "puan": 0
     },
     {
@@ -1220,10 +1220,10 @@
      "puan": 0
     },
     {
-     "baslik": "VAKIF YAT. ORT. (VKFYO) Hisse Senedi - Mynet Finans",
-     "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFA1aTRMakJXd2J0NjlzTDF0SzdFSXkzSUF4Y24xYVBJNVRreXB4ai0xWU9uSklHY3FtTlpxZ1ljQXE5Y1h2dDFYRXpaV3BuSkhtVXpXZU5qUFpWQnR3cVlMcHo5YjEtV2dYWmQwXw?oc=5",
-     "tarih": "2026-11-20",
-     "kaynak": "Mynet Finans",
+     "baslik": "Kupa Voley Dörtlü Final'de yarı final eşleşmeleri belli oldu - Evrensel.net",
+     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPM3lOZVFTNExSN3p0NnBZcV9KeHM0UktDb000dW9Ob3lEVnBWVGpPMUtUdFVBRUh3VG1zOGxkNkQyNl9mc3dUTU5vWVU0TEZpWURlZEtLQU9LU1dLNVV1Yy1wUnJwQjc5MTBKNG9iUjBZSmdLQzU5ekEwcFh0VWg0cnNRbDRTZnJ1NUhHU29BdGdIUnFvMVdjQU5yNjNaenFT?oc=5",
+     "tarih": "2026-11-19",
+     "kaynak": "Evrensel.net",
      "puan": 0
     }
    ],
@@ -1262,13 +1262,6 @@
      "puan": 1
     },
     {
-     "baslik": "Ponzi fonların hisselerini alanlar 10 günde yüzde 7,7 kazandı! - ParaMedya",
-     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQN0F5ejBjSnZBcFlxSjBVQUZDYlVVMVFYTFpjdDJaRmxzemdtS2NKZkJVTm04MTdUUEV0Mkc1Q3RkaEU1bkR3Wkc3ZHVlTnJ4RWoyVlZyRkZhbTlKQmxDR3FOTUxsRldWVjBxOXBjcGtZbjQ3bE5fbU1hejQ2N25WM2hBTzhRY0tvUGhiS1oyaEVkN2g3R2o1OXZyS2dyUTdZRUhF0gGoAUFVX3lxTE0yZnpGRkdaX2xyWGQ4SVducFhxRFZGbkJtZzAyamZSSUc3dy04OXloTTVrZllFbDhDS182a0ZGNjdWdlhDdUxhSE9nU0xmNG5hWFZJemI2Z0tMTS10YWN5QVRxNUhLendndmRTRFk3YmdGZ2VNMFk0VUU1bzZTdGJGZzA2NlROTGZDTVFrQmQ5ODhsTXd4eUp6el9nTFVKaVhYUmlkM3JiSg?oc=5",
-     "tarih": "2026-11-10",
-     "kaynak": "ParaMedya",
-     "puan": -1
-    },
-    {
      "baslik": "Bilançolar tamamlandı, hedefler değişti! İşte hisse hisse yeni fiyat tahminleri - CNBC-e",
      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxORllycHVVU05ac1AzQWN6MEY1NUxJZDMtdGJtYWg3aEZhV09jT3JrclczQjVuM2RrdkJILTVkVk55bkJ1VXhSOFFxcnNPWVQtZU5KYTVCNXUzQzdNWDFzRHZHWnJqTTBpNXM5RzhCaVQtZmphSW5ELUs2V1hGeTVDV2NvWU5OcmlqNFRxX2s2SmhaSm9GOFdzVUstcThrTzZEVXpid1o1SUVoaERHVlhJaGhn?oc=5",
      "tarih": "2026-11-11",
@@ -1288,10 +1281,17 @@
      "tarih": "2026-11-13",
      "kaynak": "Finans Hattı",
      "puan": 0
+    },
+    {
+     "baslik": "BİM, Tüpraş, Migros, THY ve bankalar... Borsada dev hisseler için yeni tahminler - CNBC-e",
+     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNNVJLdmNmbnhwTWhuUk12T0h2OWktQksxcnhlLWVyMXZOal9OUnA3dlNiOFBHMjFtRkd3c1Z5NFRqMUhVOEVkX3ltbThWQWxqX3JQTmhDS1JRZFUwNlFiLUFreEs5cGdqanRsS2lZczZwNmQyWTNwb2w2b0ozZnBsQ1lVMkhlVlVrcjI0SGd3ME1oYzhNdmxOVXVJWC01dWNXdktjSmhxaHJ1dU1mN2c?oc=5",
+     "tarih": "2026-11-10",
+     "kaynak": "CNBC-e",
+     "puan": 0
     }
    ],
    "olumlu": 1,
-   "olumsuz": 1,
+   "olumsuz": 0,
    "bayrak": ""
   },
   "YKBNK": {
@@ -1357,15 +1357,71 @@
    "olumsuz": 0,
    "bayrak": ""
   },
-  "FROTO": {
+  "HALKB": {
    "haberler": [
     {
-     "baslik": "FROTO Hisse Hedef Fiyat: QNB İnvest'ten Yeni Beklenti! - Finans Hattı",
-     "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOV2t3d0txU1hiNGRlMW4wQ2pUazZidGhJdTR2UjhldVhWQmd4SkQtc2Z2ZTVpeFVZMkFUU3dzTDRCYlJ3NzFzUlFONUNsMmt3bTUxcVByVnRWSG94R1VkaHpMR1piZm54NlpyeDU3eW4yWTdqMmQxbS1pNU5FVGJjMVE2SFFGOTg?oc=5",
-     "tarih": "2026-11-17",
+     "baslik": "HALKB Hisse Hedef Fiyat: 6 Kurumdan Güncel Beklentiler - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOck1CLXV6c2E2WnZpbUY5SjZNcVVzZHRWTlEtVURXOWxuUWdnd0pKdi1xdTV3V3lwWmVmaGpQOUVqSUJheVNTMVZmeEVnNkpOR0RURG1QaFozRWNuYVNvWWRmMWhCd1hVUDVWcDRaQVRSRWY3M3FablVQT1hFaGFvSm1TSjNwZmJCNlhUZ094UEw?oc=5",
+     "tarih": "2026-11-09",
      "kaynak": "Finans Hattı",
      "puan": 1
     },
+    {
+     "baslik": "Halkbank 3Ç26 Bilanço Analizi: Marj ve Komisyon Destekli Kâr, Aktif Kalitesinde Bozulma - Midas",
+     "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSzhzMldManR0NkxuUW5BUWdSVkR6MjdmU29TVnI5NjJnWVdzMk1QWDZCSnF2b0staHp2Z25idk9udFJIYUtVTk9pVl9leUlWdG5aTkRacWFOdmNsRlBrVWtpblZYa2NGNjJFQjVkTXB0bThfYUR4bS01M1VQRGdQbEJNaGhMdTlCVEtyRi1mMENlLVVjM3VrZEswSEt6dXZySWdoR2JtOURGa2VNbDdhMG12TVgyMC12OFdERS1pU3ExUnF3ZmVKcVYtR0xhLWVrV1d3?oc=5",
+     "tarih": "2026-11-09",
+     "kaynak": "Midas",
+     "puan": 1
+    },
+    {
+     "baslik": "Halkbank (HALKB), Halk Katılım Bankası'nı 14,8 milyar TL'ye TVF'ye devretti - CNBC-e",
+     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNVWNBejZKdmhRSndqVjVJSTJTcFk5TlUtQkpJNWE4MXNFd0l2SVU4cU11OUZpQjkwaFNibEJ3ZzYwSmppek9iaE10aTlRbUdXbThGcTVodWZJeHozdDNTUlJ3MDdKUVlUZWlKcHp3d2hWYmdtMkJFcmp1Mkg4Z2h2cDRNTnd1X2dLUUZlZndCbE9SY2JJMlA1aTljVkdtUHpSME1vV0Z3?oc=5",
+     "tarih": "2026-11-10",
+     "kaynak": "CNBC-e",
+     "puan": 0
+    },
+    {
+     "baslik": "Halkbank'tan COP31'e özel finansman paketi - Platin Dergisi",
+     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPbTk3V0V6cTJWWER6SWdmYUZCVUY5cUExVVVHakZES2VYRVNyeF9uUlVBNFUxUC1xVThsZUMwbzdiOWIyR1RuaEt5RDlubkVheWw0UWRRck01ZWV6V2FpbWYxTzk3Tjg2aUM2eGg5MjJJQlVCVm9kc29LMGZUYXBzeFJWRFRycFdvOXc?oc=5",
+     "tarih": "2026-11-09",
+     "kaynak": "Platin Dergisi",
+     "puan": 0
+    },
+    {
+     "baslik": "YENİ Parti Gurup Başkanvekili İnanlı: Fon vurgununun kamuya zararı, kamuya açık kaynaklardaki millete faturası 176 milyar - Anka Haber",
+     "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOZUdTeHFIZDNOUFl5eloydWgyS2I3YXV1Z3FBbHV6Y2ZjOV9fUl9HTlZWVGVQVWgxNUE2T3lGcWF5Y3FDVjdEalBta2swMzdTaUhGYjY2aWJ4Q3ZaTXNxdG45RFZ4RGtSVWVPY244aEVJUU5KejRjTkFSaDlTX09kTi1PLUhqaXNnc0kyR3d4OXBsbENMeXVZZTRTYjFBelgybENTcm56cF9KbW9FcG52WWc0T0xsNTBtNDdTX0kwZmVWbUh3Y056YVBmVzVJZXV4Yy00TkJCdGlyNE4xVl82RTROWi1SREFOd3FfSQ?oc=5",
+     "tarih": "2026-11-21",
+     "kaynak": "Anka Haber",
+     "puan": -1
+    },
+    {
+     "baslik": "(ANALİZ- Günlük Analizler (IKON Menkul)) - Bigpara",
+     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOS3N0UHFIa2hUNHJnTWtzclVIRzh6T3pQRUFnMlRwRF8wNFh1N0dYYm1mWjlTcElJTmdZOU9qRXBDOUwxU0tVZGNSdlB5MV9BSUFMb05FY1BEQWNRcklDY3hBR0JJaDhMQVZLS2tqR1NrbTRxN25ldG1CNkh5ejd3T0lNUUpMMmdQM2t5RnBZOUp6SGg0UDV3WTZfUjVlRWk4akVOUTUyclcyYU92MVpDQQ?oc=5",
+     "tarih": "2026-11-20",
+     "kaynak": "Bigpara",
+     "puan": 0
+    },
+    {
+     "baslik": "HALKB Haber: Halk Katılım Bankası Devri Tamamlandı - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOMnRoV1BWR0VwTFdxTjJ3ZXBpNzhjRFJjajFQelgtUVh3dk83R2YyTDlfUnBIaTBqS3h3Z0d6Zi1MMU83aVFMeGZqOEE0cHVWcXV4ekNyU0FPcnhTRFNlQzltMWdEaVB1eDVSTFp5M3B1dWllbVZYQmJtbnVXRktMZ3dsWjJkS196S1ZFMVBKbw?oc=5",
+     "tarih": "2026-11-10",
+     "kaynak": "Finans Hattı",
+     "puan": 0
+    },
+    {
+     "baslik": "Halkbank Esnaf Kredisi: 25 Milyar TL Kaynak Ve Yeni Düzenleme - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOYVdpakhsR19XVnV0Ykx4Q1h0VXdIa0E3ZTN6eFNfdFJQN2NuXzBrelJDV2pfRThNcVZ2RWNUTVU1SV9rNWI2SGhibG9wQkFRdTlUR2NId2ZKMWtZRTFOdHNYR0NudnpVdEJTR1RJV29HblRUNjdvMF9oWlRQUzVyOUV2WjV2TDhDbnpLUW9FQ3I4a2M?oc=5",
+     "tarih": "2026-11-21",
+     "kaynak": "Finans Hattı",
+     "puan": 0
+    }
+   ],
+   "olumlu": 2,
+   "olumsuz": 1,
+   "bayrak": "HABER+"
+  },
+  "FROTO": {
+   "haberler": [
     {
      "baslik": "BİST'te dört kriterde performansı yüksek 10 hisse haberi - Borsanın Gündemi",
      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQdFdLQmdFeUtvSXlpREZpQ2NCM0FsOEFoMndja1h3WnBXc3dJTWNRR3FUX0M1amxBdU5VS3hmbjZIaHBLNElpN3RuRGhyRWJYY3FDeklYcTJ2bjlxMUVRVVBSQ2owbHhha3Voc3YtNmFwcVNuZ0pNUjFsSTBiWE9xSDhiZHZnR2FRVEdmVFFqMGJ6V2pVLWZ1aWN3?oc=5",
@@ -1379,6 +1435,20 @@
      "tarih": "2026-11-19",
      "kaynak": "Paratic Haber",
      "puan": 0
+    },
+    {
+     "baslik": "FROTO Temettü Ödemesi: 3,07 TL Temettü Tarihi Belli Oldu - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPTF8ydVEyQWxKT1BmOGRISGxzUDMwdklxVW45Rm9IQnQ0ZG1wckVaUUVsZWxzaWttWW4xc3JtOXJrS3l4VGVrOVNOU0puNkx3MjJ5NzRDaEVXVXJvRFNldXVwUTZaVzJjTWcxWDJySFNKLTBwVEF5UDBSX1V2QmFweW9KRWtsQXl5bWZ4QTh3?oc=5",
+     "tarih": "2026-11-21",
+     "kaynak": "Finans Hattı",
+     "puan": 1
+    },
+    {
+     "baslik": "Borsa İstanbul’da temettü haftası başlıyor: 5 şirketin ödeme takvimi belli oldu - Yeni Şafak",
+     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPeVdRcDZnWk8wSGlRTTRZUnpmZENtQkRVUTloeF92R0pkWHFsODhQdGFGVl93YXZEMTU1UGtJNU1odV9OSmVBaWRLNEtoVTE1N2Q5YVNsYS0ybzU2Q3lreHh6aWg1RE5zZVBIOVc0ZFphSmQ4ZHJ6VkN4U2thNHNpQ0g1blVGaVI2T2l0Y2Nkbmh6a1pHLURoaTVja2J5b2poc0dBRlM4Q2lHbHY3T0dqZVZLUUc0dHF1UnZ0WFdwaGtOV1pU?oc=5",
+     "tarih": "2026-11-22",
+     "kaynak": "Yeni Şafak",
+     "puan": 1
     },
     {
      "baslik": "Borsa İstanbul'da 5 şirket temettü dağıtacak - Borsa Gundem",
@@ -1395,13 +1465,6 @@
      "puan": 1
     },
     {
-     "baslik": "FROTO Temettü Ödemesi: 3,07 TL Temettü Tarihi Belli Oldu - Finans Hattı",
-     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPTF8ydVEyQWxKT1BmOGRISGxzUDMwdklxVW45Rm9IQnQ0ZG1wckVaUUVsZWxzaWttWW4xc3JtOXJrS3l4VGVrOVNOU0puNkx3MjJ5NzRDaEVXVXJvRFNldXVwUTZaVzJjTWcxWDJySFNKLTBwVEF5UDBSX1V2QmFweW9KRWtsQXl5bWZ4QTh3?oc=5",
-     "tarih": "2026-11-21",
-     "kaynak": "Finans Hattı",
-     "puan": 1
-    },
-    {
      "baslik": "Yapı Kredi Yatırım’dan FROTO hissesi için “Al” önerisi - Paratic Haber",
      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5EME9DV1BQTWlnQ0VPa1R2RGw2b2tqdWF4bV82QTBCcDJZZWJWZDhOR0M2VGJIZW05WDdRNkltU1FLdjd1YkRqQmFlZjBCV19RVUw1T2h4azlha0hwMTZDTmNBdm1sazhDZjJ6OFgwWmpmVzBoakFyVjBYTjE?oc=5",
      "tarih": "2026-11-18",
@@ -1409,10 +1472,10 @@
      "puan": 1
     },
     {
-     "baslik": "BIST 30 Şirketlerinin Yatırımları 5 Yılda Katlandı: Zirvede Hangi Hisseler Var? - Borsa Gundem",
-     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQaExGTDlSaTJ6NTkzNGNNVzRlTDhFYXRaU3g4X3cxVENmWVViQUFIQnd6bGdySThYSG5XenBaRGc2bXhNd0xVZmxDSTRFSE0xNVB0UHJRamFXV3hKRkE4dXpRZVh4UGNKaXVFUFEzdnVFQ0tlOEhoZmV4X25HZzFFeHNaeldCdG5nU2lqdDQzMDZkM19DaHJIbC01N1lLSFAyRWFEQWpCRGVaLXVZ?oc=5",
-     "tarih": "2026-11-20",
-     "kaynak": "Borsa Gundem",
+     "baslik": "FROTO, ASTOR Ve SAHOL İçin Yeni Hedef Fiyatlar Açıklandı - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQaHVyQk9yMWxrNDJfV0lnbGppQlFaVGhya3hiRkFfcDQ2eFpIQ2lNOWJrb0Z1NlhKcWl5X3JHUXBRalA0TjgtRXFUbHRMaXBRYUlhSnIweE8tVFRzdjlLdU9yUDJFWWxxM1hIUmI5ajlZRDFHaXoxSmZWNVFyUWdjamFwRXdwX1E?oc=5",
+     "tarih": "2026-11-17",
+     "kaynak": "Finans Hattı",
      "puan": 1
     }
    ],
@@ -1535,10 +1598,10 @@
      "puan": 0
     },
     {
-     "baslik": "EREGL Hisse Yorumları (EREGLI DEMIR CELIK Güncel Yorumlar) - Mynet Finans",
-     "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE82cURiaXlzNThuVUNhdUl5LXNTOHdUNHVsZ2tEVVJTV2ItRHczY3BLMnI0SkNfNWtQR2JkUFhJRmdxNEpuRVZ5SVJ1aUVlOEIzZ2hXcWo2WW5nQ3BHSXZpMWtrY0NVSzZoV2tsUm9ra3ZaUWFFMkM0ZVp6eVFsRm8?oc=5",
-     "tarih": "2026-11-16",
-     "kaynak": "Mynet Finans",
+     "baslik": "EREGL Alacahan Altın Projesi Rezervleri Güncellendi - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPd1EyNl9ndDExSTJUclZvbk9fdVdIUThRZnNzcS1JYTd0TXFsaEZ4cHU1UXhOVEVXVlFyX09ZczdyX2x1ZTEzcmZuTkhQYndSMXcxOVVEVHNPQWVDbldmREJGNlRZQzlBTWYxQzRMalY0VXBlMC1acVl3eWNPWUZ5Zk9DYUl1RWZubEsxWVRjdVJWdDZJ?oc=5",
+     "tarih": "2026-11-10",
+     "kaynak": "Finans Hattı",
      "puan": 0
     }
    ],
@@ -1577,17 +1640,17 @@
      "puan": 0
     },
     {
+     "baslik": "Turkcell %6 Fırladı: Yapay Zekâ Hisseyi Bilançodan Önce Temettü Listesine Almıştı - Investing.com Türkiye",
+     "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOal9lZzFLazd2eXJDNXFWbUZoaVp0NUpnWHBqRHlXSV8zaXhXUThzdG93TWt0ZF9mb1ZDZFpvXzNtUzVlemZMdVo3SUx1cnI1ZDNUQTQxd21nc2xRMTNrSHp3Q0tydTQ4dlRRaEJndnR4aklWcFQ1X0dvYXk1TmNjdTJ1dDNwdFRNYVZ5enBnbTFUWW1sYTJDaHBKbkE4Q0xGMlZEbERjd2RSbGxrd0Y1M3NicEpoZFNveUIwa21vM2I0N1ZHNzlNSmYxTQ?oc=5",
+     "tarih": "2026-11-10",
+     "kaynak": "Investing.com Türkiye",
+     "puan": 1
+    },
+    {
      "baslik": "Turkcell (TCELL) 3. çeyrekte beklentileri aştı: İşte dev şirketin net karı - CNBC-e",
      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQanJYanFhWkItVXVKYW1DSlh2T2kzeDRvajJ1bTFrR2wyS2paRnZPOC1PV0RGcGltWkxnY3dTMVRPQ05SWEU5Q2dGdlYyYlR2c3J1ZDB4OTBLMTVRekhqc2pTaTVUNG1RT3JhM3dOdDV5YmFRdlVZd3k4ZTdKV0RRXzRrR3E1S09BOHZjbmFxZGQ0N29BM3NBeE9qNG1Ub1hVZFJtM1F2RkR0U3kxMmFnX1pjUUlsMUc5aEE?oc=5",
      "tarih": "2026-11-09",
      "kaynak": "CNBC-e",
-     "puan": 0
-    },
-    {
-     "baslik": "Midas ile gün sonu: CRWV, TCELL, COST, DESA, TDG, YKBNK - Midas",
-     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcWJ4elBnMW1LRmVUaWRUcU5EUS14VlNsTkdLenc1bkhKeklNSXhGdVF4ZW5XVzVYZ0pEUEtYcDl3TzBOSjhnTWx6ZloyaElHWGtvTXVCZWkyTnRvQmhCaTNkSU1qRUVzTVFnSnpwM29POTlvT2I5WVRlS1U1ZnV3a2gzb2kxUmZSOGdfQ2xWN2ZzaGh0SmZGOF8wMnhTLTJIZG1z?oc=5",
-     "tarih": "2026-11-11",
-     "kaynak": "Midas",
      "puan": 0
     },
     {
@@ -1598,14 +1661,14 @@
      "puan": 0
     },
     {
-     "baslik": "Hissede geri alım desteği sınırlı kaldı - Ekonomi Gazetesi",
-     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOcFEweTBTQ1Fva3VYX1pYWjBkOGFVdHVGbGtTWXJTU2RCOWdvdWdsMTZQSEFYbVcwa1NIRUVLMkhYVlFxeWFOR1hxaWJHdjVURTBpUWJyNURlZE5renRmYnlUT1NpX1l3YUVPWUNtZWVRQlhqd2RNTzM4bEZfbjlUZmFuNlliNm5mbFBncA?oc=5",
+     "baslik": "TCELL Hisse Hedef Fiyat: 11 Kurumdan Kritik Rapor - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMlVoUnFENGgwOEZYTWtuWW5aOVhRVnliOXdnX294OXpLeGdLUnlVRElpRVhfVGswbXl1ZVhmTXMxOU1PMUZOaU1YTjZ4YW5vbHhvYXRDaWZnNUVNY19sN09aamdlZ1U0ekRYM3BEQ1luSEdXRDJRbkZ4ZWdJN0liUG5KNEZxbnJKSnJR?oc=5",
      "tarih": "2026-11-10",
-     "kaynak": "Ekonomi Gazetesi",
+     "kaynak": "Finans Hattı",
      "puan": 1
     }
    ],
-   "olumlu": 3,
+   "olumlu": 4,
    "olumsuz": 0,
    "bayrak": "HABER+"
   },
@@ -1619,17 +1682,17 @@
      "puan": 0
     },
     {
-     "baslik": "\"11. Kısa'dan Hisse Kısa Film Festivali\", 21 Kasım'da başlayacak - Anadolu Ajansı",
-     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNT3ZkTVFLUkpkak00c3lFRWVQQjBZQmg3TWtPUHZBdUhjVmxCSWxDblZ4MmduSTBkRzA4NFZrZVUzb2RQNE9Rb0F3SkN2aTVOcFptRFlIMGlNUW1sSDBJM2I4RzkycUNod3N2VkJlTjl2SkVpWDJHUDVvYWRRdmp3TUlWb3F0OGwtRnkxMnZfZzRIT19kblliOG5EdVdEREE?oc=5",
-     "tarih": "2026-11-11",
-     "kaynak": "Anadolu Ajansı",
-     "puan": 0
-    },
-    {
      "baslik": "Yeni Partili Murat Emir: Fon soyguncuları yurt dışına kaçırabilsin diye 50 bin Türk Telekom işçisinin birikimi devreye sokulmuş - Evrensel.net",
      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPT1JuaXU3bFhVQmxPb1NYUjF1U2JJajBJY1ZIUTFza3p4NGdLZ1MzVEliRmg2dHptOGNpME8zSzNCSm5UeUMtcnZ6c05vamNETmt1VlN5eEE5NkRyeXB6TWpVTU9kbDZKVXZodlVBZFpsSEZIRGlYYzdhOVBqX2FIWm1Hd0xKNFhDbTljeURtLWY2NlY1LVp4SUtORGFKTU1fWmZaVjBnWU0zWDd2R1pXZ2pUSk9Rd0otYzZfRHAxc2tvSjdIUEUwekZqYTFmMEI3MzNveHZfWjhiby11NW50VnNWbUprUVY3ODlXbmFpLTlxVlo4UDZCZg?oc=5",
      "tarih": "2026-11-19",
      "kaynak": "Evrensel.net",
+     "puan": 0
+    },
+    {
+     "baslik": "\"11. Kısa'dan Hisse Kısa Film Festivali\", 21 Kasım'da başlayacak - Anadolu Ajansı",
+     "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNT3ZkTVFLUkpkak00c3lFRWVQQjBZQmg3TWtPUHZBdUhjVmxCSWxDblZ4MmduSTBkRzA4NFZrZVUzb2RQNE9Rb0F3SkN2aTVOcFptRFlIMGlNUW1sSDBJM2I4RzkycUNod3N2VkJlTjl2SkVpWDJHUDVvYWRRdmp3TUlWb3F0OGwtRnkxMnZfZzRIT19kblliOG5EdVdEREE?oc=5",
+     "tarih": "2026-11-11",
+     "kaynak": "Anadolu Ajansı",
      "puan": 0
     },
     {
@@ -1654,18 +1717,18 @@
      "puan": 0
     },
     {
-     "baslik": "YENİ Partili Emir duyurdu : \"Fon soyguncuları yurt dışına kaçırabilsin diye 50 bin Türk Telekom işçisinin birikimi devreye sokulmuş\" - BirGün Gazetesi",
-     "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQSHN3bmZoX01PU0RMY29MclJzZ0N5UGN0WXpwSWFMeXpDOUZleGR6OFl4bElrLTQ5YnBYUTgyRUY0WVU1eXZYbUJWeFBUOGkxRnd4aWJHVXhJM3BMckFUYy1Ka0I3dnJKYzlwX2hnbU16bWVrUUt3SGR0R2JPOUE3cTlaTmRaWnRUbFE1Xy1qNFVZMmg2VDBGMFRWcmxDUzg2ZG5UYXJ2RlVrZU8xQTcwN1gxMGt0akhJY05OUll3NndiNjIwaXp2S1N5RTlmQ2xrVlpoS1E1b2RnYXdCZnYwclkwYmJ6Zi1NSFJ6NmRKQjFUZlM5QTY4?oc=5",
-     "tarih": "2026-11-19",
-     "kaynak": "BirGün Gazetesi",
-     "puan": 0
-    },
-    {
      "baslik": "Yabancı Yatırımcı BIST 100'de Günlük Bazda En Çok Alım-Satım Yaptığı Hisseler - Borsa Gundem",
      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTm8yWmgxcWxoQVppa0pBdlYtNHNhbURaT0RLYi12bmo2dHJJUzB2Wk5XZV9ldy13dlhuNktfbTZ1SExlQ2Y4TUt4WVVvYlNNNlhrODhKZ3VMdFNrbW1oNUdSdWUwRm94LWxEb2JqaVRSX0hPejRkTGpURUZqVHYzTDUzVjRrZHJ6dUktajlqTW92RF9zZEkyUVhMNkxkejBzYW1TTnU0aDZCdFE?oc=5",
      "tarih": "2026-11-18",
      "kaynak": "Borsa Gundem",
      "puan": 1
+    },
+    {
+     "baslik": "YENİ Partili Emir duyurdu : \"Fon soyguncuları yurt dışına kaçırabilsin diye 50 bin Türk Telekom işçisinin birikimi devreye sokulmuş\" - BirGün Gazetesi",
+     "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQSHN3bmZoX01PU0RMY29MclJzZ0N5UGN0WXpwSWFMeXpDOUZleGR6OFl4bElrLTQ5YnBYUTgyRUY0WVU1eXZYbUJWeFBUOGkxRnd4aWJHVXhJM3BMckFUYy1Ka0I3dnJKYzlwX2hnbU16bWVrUUt3SGR0R2JPOUE3cTlaTmRaWnRUbFE1Xy1qNFVZMmg2VDBGMFRWcmxDUzg2ZG5UYXJ2RlVrZU8xQTcwN1gxMGt0akhJY05OUll3NndiNjIwaXp2S1N5RTlmQ2xrVlpoS1E1b2RnYXdCZnYwclkwYmJ6Zi1NSFJ6NmRKQjFUZlM5QTY4?oc=5",
+     "tarih": "2026-11-19",
+     "kaynak": "BirGün Gazetesi",
+     "puan": 0
     }
    ],
    "olumlu": 1,
@@ -1823,7 +1886,7 @@
     },
     {
      "baslik": "Bilançosunda kârı artarken faaliyet nakdi azalan 26 BIST... - Hisse.net",
-     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYnZHcklaYzk4d3l1b3U5d2RLb3dlUXFhckw2S2lrTW5OM0tCQ0RXZldITUY2dmhYMzN6eXJmNG1YVWU5Z0pXQmlreEh1Zm1YOW1IM0JoVmRxZ01iVWNRTHR2TEFhanp4WndUTHc2U0FKRjVkRTZ5ZjAweS1BTWdlVTM2aEcyckotUWFZV0lYWDM5QlJZNWdCbkJ1UjFIa2NXdWtpQ3B30gGmAUFVX3lxTE9idkdySVpjOTh3eXVvdTl3ZEtvd2VRcWFyTDZLaWtNbk4zS0JDRFdmV0hNRjZ2aFgzM3p5cmY0bVhVZTlnSldCaWt4SHVmbVg5bUgzQmhWZHFnTWJVY1FMdHZMQWFqenhad1RMdzZTQUpGNWRFNnlmMDB5LUFNZ2VVMzZoRzJySi1RYVlXSVhYMzlCUlk1Z0JuQnVSMUhrY1d1a2lDcHc?oc=5",
+     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQbTRFUmpVSjNTdFZVQ0NCNENMS3Iyc0Z4b2t4VmR5U2pwWDVjYTBETDhXSU9qTEkwd3l0NGw2cFBvVVhKY3U5RlNXT3NVNkh2WTdpUC1JeldxcHlfUFFwOW43czJwVUxUZ1gzZ1B0T3hFdjJGQl9qOXB3ZDROVFAyck5sTHpkc2RMWTRvM210WlRORVdmMk1WSHIxV2JHOWht0gGmAUFVX3lxTE9idkdySVpjOTh3eXVvdTl3ZEtvd2VRcWFyTDZLaWtNbk4zS0JDRFdmV0hNRjZ2aFgzM3p5cmY0bVhVZTlnSldCaWt4SHVmbVg5bUgzQmhWZHFnTWJVY1FMdHZMQWFqenhad1RMdzZTQUpGNWRFNnlmMDB5LUFNZ2VVMzZoRzJySi1RYVlXSVhYMzlCUlk1Z0JuQnVSMUhrY1d1a2lDcHc?oc=5",
      "tarih": "2026-11-19",
      "kaynak": "Hisse.net",
      "puan": 1
@@ -1871,6 +1934,13 @@
      "puan": 0
     },
     {
+     "baslik": "ENERJISA ENERJI - KAP Haberleri - 2026-11-21 tarihli - Bloomberght",
+     "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1vY25mNkFVRS1rWlRuaFdtenRmOUxMQ0FXTTJ5cl83YnVyRDBCSDNYUDAxeW9TWkt5WnpmUnNNa3ZXSU0tR3JHWjdEQjNQUVRJTjAzNHltaGhjVUhTUVFJMGV3SHViUG93dkFIZUlYZjFPVWNDUUZud0phbk5uQQ?oc=5",
+     "tarih": "2026-11-19",
+     "kaynak": "Bloomberght",
+     "puan": 0
+    },
+    {
      "baslik": "ENJSA Bilanço Analizi: Beklentileri Aşan Kâr Ve Temettü Verimi - Finans Hattı",
      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOdFVlbjhIVEFZZklnNm1ycWRTX2kwXzllUExxd25HUjRsQ1Z3alB3RThLNTVuUFZJRkFyOWxOSEhsTU1tWldxcTJtbXhBakZEbUt1WTZua2wxb2R6c2Q5QVFzdTBTejNLd3FUbmc3N2JXTGV5QnNKQ0ZlT2tPSjZzbnVvbDZ0Yk9idGJLcGxqaw?oc=5",
      "tarih": "2026-11-19",
@@ -1885,9 +1955,9 @@
      "puan": -1
     },
     {
-     "baslik": "Enerjide 3 hisse haftalık yüzde 40’ı aştı haberi - Borsanın Gündemi",
-     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQMjhBU2xLcVZOOGF3M004cFZpc2U4RFY1ajVNcko2aDRBSWNSbFBUVjhsREU0Mmwzbnp0NzZ2aUpnZ2J5SnZsUXR3R1ZCYU9CXzR3SmVqbEJnMTJoTWVyZzRzU1FHX0ZyZkNmdHVMVHg0TWR0S0JKZFZRbHdmOFI4UXdsV2VkbDk2LW12WmpoQQ?oc=5",
-     "tarih": "2026-11-19",
+     "baslik": "10 Hissede CCI AL, CVK Maden 44,25 Puanla Lider haberi - Borsanın Gündemi",
+     "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPRHlXZ3IxdVVQT2NoalBuemhaQlJQNjkwSmVmMWxSV1BBLVdBeU02ZE5jZW1VV2hYM0VhRFVkVmJHbjhZUURJT0otNXBKRDdabUxUM21Bd1FfNDFSODdzSDJNTC1VVVlyRkQxaG1fcm44aUx3TTBsVW4wVFlGTEVGbkloRUZCR09DX1h5d19FR1E3T1NuQlE?oc=5",
+     "tarih": "2026-11-09",
      "kaynak": "Borsanın Gündemi",
      "puan": 0
     },
@@ -1904,13 +1974,6 @@
      "tarih": "2026-11-12",
      "kaynak": "Ekovitrin Haber",
      "puan": 1
-    },
-    {
-     "baslik": "10 Hissede CCI AL, CVK Maden 44,25 Puanla Lider haberi - Borsanın Gündemi",
-     "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPRHlXZ3IxdVVQT2NoalBuemhaQlJQNjkwSmVmMWxSV1BBLVdBeU02ZE5jZW1VV2hYM0VhRFVkVmJHbjhZUURJT0otNXBKRDdabUxUM21Bd1FfNDFSODdzSDJNTC1VVVlyRkQxaG1fcm44aUx3TTBsVW4wVFlGTEVGbkloRUZCR09DX1h5d19FR1E3T1NuQlE?oc=5",
-     "tarih": "2026-11-09",
-     "kaynak": "Borsanın Gündemi",
-     "puan": 0
     }
    ],
    "olumlu": 2,
@@ -1948,13 +2011,6 @@
      "puan": -1
     },
     {
-     "baslik": "News by Matriks on TradingView, 2026-11-13 - TradingView",
-     "link": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBqSmtyTUhQV25yaTJLb0xTcjRGUklleG02cWZWQVhMd19UYlhGRDRiMERfRTZmTWpUNlN1N1dTdVFMLTg4ZGFsZmRPMjVSYjlxS2NTZWFaS3pZbzdGQjZoSQ?oc=5",
-     "tarih": "2026-11-13",
-     "kaynak": "TradingView",
-     "puan": 0
-    },
-    {
      "baslik": "BIST’teki şirketin bağlı ortaklığından halka arz başvurusu - Borsa Gundem",
      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxObGZKTHFKdjZtRkplbndDMWdPOXh5TG1ER3RFekV2c0tWTm94c2xIcXVLbXdNbmYzTXd2Nzd0cndITmFhTkJxS0N0bnNZT0lNMDZuTEl0em1QZW5pTzN1a0xGeENJdDYxRnBqWm9rWnJxaTFYNG5weTYzV1A0a2RKUnBzSmdhcTZjdDhsUFNwQWw1UQ?oc=5",
      "tarih": "2026-11-12",
@@ -1974,6 +2030,13 @@
      "tarih": "2026-11-19",
      "kaynak": "Borsanın Gündemi",
      "puan": -1
+    },
+    {
+     "baslik": "Investco Holding REM GSYO için halka arz başvurusu yaptı - Para Ajansı",
+     "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOcmNJZWZBY3RhR0VDTkpFRS1sMFlnUW8wejd4eVVaeUlYMG1qOEM0dFVfMFp1X0pSeHd3VkNHNnhnSXQxQ2otOGl2U1BKQ0NWTklJYkgwSHZzckhVTGZXTVZYMG1zUzk3bDJJQU1MelZfR1NlUXpLTmhhNzhGaHZPUXZtckFjbkNQZTFsSk9QLXhKUllrOGJBOWNyeWVoZ0xZbkF0LQ?oc=5",
+     "tarih": "2026-11-12",
+     "kaynak": "Para Ajansı",
+     "puan": 0
     }
    ],
    "olumlu": 0,
@@ -2032,10 +2095,10 @@
      "puan": -1
     },
     {
-     "baslik": "74 şirketten geri alım hamlesi geldi! Geri alınan lot sayıları belli oldu. - Ekonomim",
-     "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNZjdJWDZsbFMzWXJ5NW91OXdkUUI3aEtiZ2hhUk9sbFJhVXRIUHl0TV9jTzZlWGo0MlJiZEhxRGgyX1FaajhwQjJuakVjRTVTSGwyWndYTUdIcGRsN1RWeUpqT1FvUWRQU3h3Z0pxdWJoU09RRzdnRzVKNVhHcTBFQkt2RkVmTER0UURYeHRxcVJMLWNnVlUzSVVQMFF5LW9QaFhraUxIbm5rT09XSm1FclA5MTNNOXczOU5SUi1Kd3BhUlpvRmgwR0VzbEl4Zw?oc=5",
-     "tarih": "2026-11-08",
-     "kaynak": "Ekonomim",
+     "baslik": "Yabancı Yatırımcı BIST 100'de Günlük Bazda En Çok Alım-Satım Yaptığı Hisseler - Borsa Gundem",
+     "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOTm8yWmgxcWxoQVppa0pBdlYtNHNhbURaT0RLYi12bmo2dHJJUzB2Wk5XZV9ldy13dlhuNktfbTZ1SExlQ2Y4TUt4WVVvYlNNNlhrODhKZ3VMdFNrbW1oNUdSdWUwRm94LWxEb2JqaVRSX0hPejRkTGpURUZqVHYzTDUzVjRrZHJ6dUktajlqTW92RF9zZEkyUVhMNkxkejBzYW1TTnU0aDZCdFE?oc=5",
+     "tarih": "2026-11-18",
+     "kaynak": "Borsa Gundem",
      "puan": 1
     }
    ],
@@ -2060,8 +2123,8 @@
      "puan": 0
     },
     {
-     "baslik": "BIST 100'de sert ayrışma: Bir hisse yüzde 14 yükseldi, diğeri yüzde 15 düştü - CNBC-e",
-     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQS3hWdDhnalZ1Vlp6Yk9jSU52VnJCa20zX3E5X1YwWEtBZlJwaDk0WGNjSGxNOFZyTmRDeEFLUXpEYU1scXFpTlZ1dlFubFp5OE1XamtBc01zdzFSaHA4aFdzMTJ4MThjdXFUdEowZGN2YWVDZHdaczZ0dk5mcnozc2xhSF92clYtZWoxbEhva3BaNThmdUJpaXJqRW12amZaVHU2WWlkQWlGd1RL?oc=5",
+     "baslik": "Borsa yüzde 6 eridi, bu hisseler ters köşe yaptı - CNBC-e",
+     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOd1RzWVdMU3pOMENrZi1hZWh3RDFkMHUwcVhiSG4tVjFVSlJOa1hUM0x4aUZaeHczU2ZUaEtwU3ktTWYzMkREOUdGUUF3Qzl1RHZhb1locVBhaGw0QmR2T0gyMXdzWFJjSmJ0Y1Q4Q0RCVnZkR3VIWGN2SDlCQnJGX2d4MkgzZWdVSnc?oc=5",
      "tarih": "2026-11-21",
      "kaynak": "CNBC-e",
      "puan": 0
@@ -2081,13 +2144,6 @@
      "puan": 1
     },
     {
-     "baslik": "ASELS ve KCHOL’de yüksek çıkış: Toplamda 370 milyon TL’lik hareket - Paratic Haber",
-     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNWmVRT3J4SXh2SnViWHRZOU95c0thejQwU1BHQUxxdm5VbkI3V1NlcDVZaUR5QkcyZVhlTVNkOW5FRHdCeWVmZGFCUEJUTDYwZDN5ejBSc3U3ZFl5cEZCdWgzSnVQRXRBeEVJWXQweHIzM3dWTXlWSm96bzFLQW1EMTZxejJyeDFtV05tTA?oc=5",
-     "tarih": "2026-11-19",
-     "kaynak": "Paratic Haber",
-     "puan": 0
-    },
-    {
      "baslik": "Toyota Corolla Deck Hibrit Pickup: Yeni Pazar Stratejisi - Finans Hattı",
      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNWWpwMTBDVDlOU3BDS2h4VkJjTDdMUnQ4UnNFM0k4TXZ1RTc5bU1fRHpUUzFFbExlcUNTb2JhT0ZjVW16TDdwa2lfMWJkcExHcWRvWUktZFNkbHZrR0xCMnJ5MGtUMUxCVG1KdG5vTmdsSjZwSkh4cnpIdVVESUY4LUxfSlN1RUVPZVE?oc=5",
      "tarih": "2026-11-19",
@@ -2100,6 +2156,13 @@
      "tarih": "2026-11-17",
      "kaynak": "Borsa Gundem",
      "puan": 1
+    },
+    {
+     "baslik": "BIST 30'da negatif seyir hakim - hibya.com",
+     "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5YM1ZIMFB0T0JINFM2dGZJeEptVG9NN1ozMHozVFJJZEdoVGNjUWNoUGFKTHh6NU5HdlN4Q1hQWDRnREV4QkU0TFNPeVNGZXZuNk1ETm40Y1VBdlp2WHJtSlhqNGVTQQ?oc=5",
+     "tarih": "2026-11-20",
+     "kaynak": "hibya.com",
+     "puan": 0
     }
    ],
    "olumlu": 2,
@@ -2130,10 +2193,10 @@
      "puan": 0
     },
     {
-     "baslik": "MSCI'dan Türkiye kararı: Sabancı Holding ve Astor'un endeksi değişti, 18 hisse listeden silindi - Ekonomim",
-     "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQd2U3VzdTYzdBeW1MQzIwUFpjVVp2WjdVTk1HcmtLU2p3X3YwYXc1eGFUQ3dzUDNVN3BGYVdkbWVMNlZmaW00VHF6VzdRMGQ0LXMwRUsxR2ZCX2xqS1BHQWRXTkQtNjhoWWNsUG82c1k2THZWSTI3M0dLMlJYTUpWZlRMMG1MNm5pQ25DWE4yQXY1VVF2UEVhTVhYX0FnTTkyS3AzUWVZUDN6SnQ5TGZVQmtLbmVwX1l5MDdPNm8yWjljdGZOV1JfQlQteXNiTS1YT2s5bGtIVFozTzVCR09INHBlTjhiUWM?oc=5",
+     "baslik": "MSCI'dan Türkiye kararı: 18 hisse listeden silindi - Tek Referans",
+     "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOR2twaWlaTHgtckpWdGRuMkNmM0VWZHRCTGhmUWxzUUp2MzNOOFB4REh5c3g4NUxKVjNzeVYtdFRYV1U1SFNnb0loUER0YTdUWEdIWTljRXJSNlNlUndOUWFtZjRHVnJXUmlnYzBjaEZjX2NQdWM1SGw1QTE0dklmU1huOTNIZw?oc=5",
      "tarih": "2026-11-12",
-     "kaynak": "Ekonomim",
+     "kaynak": "Tek Referans",
      "puan": 0
     },
     {
@@ -2158,14 +2221,14 @@
      "puan": 0
     },
     {
-     "baslik": "MSCI Türkiye endekslerini değiştirdi: 18 hisse listeden çıkarıldı - Bursa Saati Gazetesi",
-     "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxONWh1cWltbmlHbjB4Znd2LWwyT1QwQms3cXVnUFlsQ0dkRVUtTm5xY0thck0zdlB2eHRpM2pVd2tDMkcyQnFaNlhTY1l1WkN0VklXVFZOaFZyNG1hRkN0SG1ZVVNEaEVHaW12cFBUREZMN1JsOWJ0TUZ0cTNhMld6REdwcFZ5MURGVnphdldLVXl5eG8xUlQwYTN3?oc=5",
-     "tarih": "2026-11-12",
-     "kaynak": "Bursa Saati Gazetesi",
-     "puan": 0
+     "baslik": "Çorum’dan borsaya: AHGAZ ve Enerya’da dikkat çeken yükseliş - Çorum Haber Gazetesi",
+     "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNVGltRFNqaEE3SFd1TFI0VC1udVZUSHJqUjN0QnFCem5KTXZKdFR3b3Bmb2VYV0YwZzBtcUhWZmY2UHdZcTcxLXFMcjZyZFFXVk1rVnVKM1dvWXZMMFloa1VENWgzRlpOcDZjLWdVZWpibV9hMG5pNmtTTEZtenpSazdKMTlqdw?oc=5",
+     "tarih": "2026-11-16",
+     "kaynak": "Çorum Haber Gazetesi",
+     "puan": 1
     }
    ],
-   "olumlu": 0,
+   "olumlu": 1,
    "olumsuz": 0,
    "bayrak": ""
   },
@@ -2186,16 +2249,16 @@
      "puan": 1
     },
     {
-     "baslik": "BIST 30 Şirketlerinin Yatırımları 5 Yılda Katlandı: Zirvede Hangi Hisseler Var? - Borsa Gundem",
-     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQaExGTDlSaTJ6NTkzNGNNVzRlTDhFYXRaU3g4X3cxVENmWVViQUFIQnd6bGdySThYSG5XenBaRGc2bXhNd0xVZmxDSTRFSE0xNVB0UHJRamFXV3hKRkE4dXpRZVh4UGNKaXVFUFEzdnVFQ0tlOEhoZmV4X25HZzFFeHNaeldCdG5nU2lqdDQzMDZkM19DaHJIbC01N1lLSFAyRWFEQWpCRGVaLXVZ?oc=5",
-     "tarih": "2026-11-20",
-     "kaynak": "Borsa Gundem",
-     "puan": 1
-    },
-    {
      "baslik": "TRALT Hissesinde BofA Satışı: Yüzde 3 Sınırı Geçildi - Finans Hattı",
      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNeHYwOWo5LWpmTTV3US1sbWdQXzJGdktsUUNCSGNpTjVsck9zZkNJVmF5ZmFYWm5GdC1GNlhIRE5YLVo3cE8tdmlkS0gzSlkyN3BTX3hxZW1mUjY0MF9jdzNxN0M5SmZzMXh2YjVJSERIWVRPZW1Uc3NLckxpZlVib3BtaVJ1Rldv?oc=5",
      "tarih": "2026-11-20",
+     "kaynak": "Finans Hattı",
+     "puan": 0
+    },
+    {
+     "baslik": "BofA'dan INFO, MANAS Ve TRALT'ta Pay Değişikliği Bildirimi - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNM0VyYll3bFNESk5XT2VaU2VNZFQzZlpGcVRJdXFxNHA2QmswRTQwNlpEQU9TN3M3eGJGYXZUdUtOUWtsSm1hUFo1Q3BrZTFqRl9KWGVDYmJLbDF5cVo2VzRSVDN2anVGQTc0Z01kMTZHX0tvRWhVQkxsdDJnTEJTd3lEank5djQ0ejNLQg?oc=5",
+     "tarih": "2026-11-17",
      "kaynak": "Finans Hattı",
      "puan": 0
     },
@@ -2221,14 +2284,14 @@
      "puan": 0
     },
     {
-     "baslik": "THY, Aselsan ve Tüpraş dahil 34 hissede yasaklı pay dönüşümü - Hisse.net",
-     "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNTnpFY3RhRFFNZG1TNzlUdWQzelZtVmlwbFJMTnQyZXpHQ01MWmk5azh1TkJtZm5rb1RZTkw2WHlUa1NPZUlCaDlHN19zV2xIb1B3M0V5YkpNUmhpTzBfcWVfUFRnMU02Zkt3YnBvclQ3VVR2TXJLeFZoYnVBaTI0Q2otb3otakpDaHlIRVNDRXc1LVU3d1dILUJ30gGfAUFVX3lxTE1oTzJvWnQwUkxvbDZEZmNuNEFfRlNLSWRUSERFanFVTFNQZzRsb2lpR2NWS2s4NF9jRHpOYW9ITF8zXzVCQUxYOS1sd01iQzNFdUxhbzY2MEs5YVR3TDliN19FTXUxYjRLZlV5OFJ1UXBHUHFIM3NMaXZkRmpUamhsOVJCeGl2LVBodlc3Q3k1WndheEVVNHlzck5XY2x4Zw?oc=5",
-     "tarih": "2026-11-19",
-     "kaynak": "Hisse.net",
+     "baslik": "Günlük Hisse Önerileri – (20.11.2026) - Para & Borsa",
+     "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5ESnZYQzNZTXg4YkthNkhILTFQalBqanlXY21oZ3plcW9CQV9rU3RBdUpwZVRDdkdmX0Z6TjY3Zk5VNVd0VWFmR2gxVVhnazQ4YXk4NnJteklLVC1qc0JkUU81MnRQNmJvcTB3RnJtZw?oc=5",
+     "tarih": "2026-11-20",
+     "kaynak": "Para & Borsa",
      "puan": 0
     }
    ],
-   "olumlu": 5,
+   "olumlu": 4,
    "olumsuz": 0,
    "bayrak": "HABER+"
   },
@@ -2368,11 +2431,11 @@
      "puan": 0
     },
     {
-     "baslik": "Gıdada 7 şirket kârını artırdı 9 şirket düşürdü haberi - Borsanın Gündemi",
-     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOMjQ4UnNPdDVDQW0yMVl0cUNCNGlBSW5rZGdneHFOcWNucUZaTjRFWkIyWkFHTzRwRVVfQ09WMktWSl9LT3ZCbk5LR3Jicm9zSXR2c1lPTXBvVVVlcWZDY3Q3RzFBMW0zcU5rTWV6NDY2YWZHSzBPTjZfd2lmanBfRGpGd05ZZ2FJR0drZk5oTGRMSldJdGpURw?oc=5",
+     "baslik": "Dört göstergede hangi hisseler öne çıktı? 519 milyonlu işlem gerçekleşen o bist hissesi haberi - Borsanın Gündemi",
+     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNUDVKOG1MUnotN2YzU09zbDV4ZEduaHFWVVhlUy16V1lSM1U2UURHdUIxNVVWRVJzaG5xS29CY21SZGZHdm5wX3gxMUFNelBkelZHQTVDWEdFLU9QbkdXMnptMDMwSW9uM3hUREd2bXFqR01wcnpPYW5IWWEtWWh2akwxaGtEVXVkTkRReDZpdGdST0U4eVZfZkhGSlVGdHJrOXJvTWhnaDkxQ1JvR2FLRnR1RmtvTVNnN1NsMEwyM0RiVS1mcW95VzFrUXM?oc=5",
      "tarih": "2026-11-13",
      "kaynak": "Borsanın Gündemi",
-     "puan": 1
+     "puan": 0
     },
     {
      "baslik": "ASELS, FROTO, TUPRS ve 7 hisse için destek ve direnç seviyeleri - Paratic Haber",
@@ -2382,11 +2445,25 @@
      "puan": 0
     },
     {
+     "baslik": "Gıdada 7 şirket kârını artırdı 9 şirket düşürdü haberi - Borsanın Gündemi",
+     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOMjQ4UnNPdDVDQW0yMVl0cUNCNGlBSW5rZGdneHFOcWNucUZaTjRFWkIyWkFHTzRwRVVfQ09WMktWSl9LT3ZCbk5LR3Jicm9zSXR2c1lPTXBvVVVlcWZDY3Q3RzFBMW0zcU5rTWV6NDY2YWZHSzBPTjZfd2lmanBfRGpGd05ZZ2FJR0drZk5oTGRMSldJdGpURw?oc=5",
+     "tarih": "2026-11-13",
+     "kaynak": "Borsanın Gündemi",
+     "puan": 1
+    },
+    {
      "baslik": "Anadolu Grubu'nda 6 bilanço, tek kâr artışı! 2 şirket... - Hisse.net",
      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxObE9HMXoyZ3g0S1gwNXJoSl9JN1dxS0Jwd2lET1djMU1ZOFM2UnlSWjBKTzZqZ080R3pYTUIzM05hUWlWUXhBRmxOV1VfVFk2dXc4aE5fZkdPVkVjNXkwLVZneVZxdmN1aEVHS0NvWlNhOFNHNjN2engwSkNyS3RERldRcWNFeGl0U3ZFV3lVSmZNVlhYRG04RExR0gGfAUFVX3lxTE1BUnpJQjAwZTJjV0RhVDZoYlNFdkROVXVqMG5xN05FclM0UVk4OHdWRzVPbk5zLTlKMFpIVl80VTlXQU16akRnMmN0U3BGYWZUV0hfTWRYNlJCZG5nNnlwcFVoQUg2dmVsbkI1ajdIZFg2aUpDNDl4bHprdU9sTW42WVRza1dXeko5c0ZyUUZ2UmJPcWcxWkxqZmw5QzQtWQ?oc=5",
      "tarih": "2026-11-09",
      "kaynak": "Hisse.net",
      "puan": 2
+    },
+    {
+     "baslik": "Garanti BBVA, QNB Yatırım ve HSBC’nin en fazla alım satım yaptığı hisseler (20 Kasım 2026) - SuperHaber",
+     "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNa3VjbDZkdWJsRVZpbmx0V0FmNDJpa3Z6MlMyV1dYSWRBeVRpVktQbjhmY09FR3N6MjVQVnc2WHlhUHRKQlZPUUs0cmdQckp4aVZfMVl3UUZlcE9BQTI3NldyUWpUU0EwcVR2Z2xiek02OERYdV9lU252U0VZdkhSWWlPZUh6NkEzS0dVclRlRkRyMWZVWDJMTlRraE9LaXJQeUNsME84UGpGeGFTaTZtRTVhQkFEdlFYcU5BYWJjV2stUdIBwgFBVV95cUxNa3VjbDZkdWJsRVZpbmx0V0FmNDJpa3Z6MlMyV1dYSWRBeVRpVktQbjhmY09FR3N6MjVQVnc2WHlhUHRKQlZPUUs0cmdQckp4aVZfMVl3UUZlcE9BQTI3NldyUWpUU0EwcVR2Z2xiek02OERYdV9lU252U0VZdkhSWWlPZUh6NkEzS0dVclRlRkRyMWZVWDJMTlRraE9LaXJQeUNsME84UGpGeGFTaTZtRTVhQkFEdlFYcU5BYWJjV2stUQ?oc=5",
+     "tarih": "2026-11-21",
+     "kaynak": "SuperHaber",
+     "puan": 1
     },
     {
      "baslik": "Fitch Ratings, Anadolu Efes (AEFES) kredi derecelendirme notunu açıkladı - Rota Borsa",
@@ -2396,21 +2473,14 @@
      "puan": 0
     },
     {
-     "baslik": "Borsa İstanbul'da Hareketlenen 10 Hisse: Akfen Grubu ve GYO'lar Zirvede - YatırımX",
-     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNYXZyMElLUUJvSmpiT09jczZwZUNzZERnS2hYNG1QdjFiUXotdnNZTG9RMnlSVl9WQnRQWWk1QndmWExXb2p1TExrZUNwLWd1OF9aOXhpcGJDSU1oRVpDbWRMOXFySlVBYUQwWDhRTkZ0LXhoeHFyWEhLM3ZRSlA2U09uOEpmVGo0ak12WE5JdWRwRU5SalY2Y1pjU1gyT2E2Mm4ya0xJZXlmaWl5SkE?oc=5",
-     "tarih": "2026-11-13",
-     "kaynak": "YatırımX",
-     "puan": 1
-    },
-    {
-     "baslik": "İş Yatırım üzerinden en fazla alım satım yapılan hisseler (16.11.2026) - Rota Borsa",
-     "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQYWlGTEJTNTBmQXBuRXgxVnVZRjF3aV9ZckUwQWxYRVp2eFZrRzhaS3k1WHJQcVBTRGNDOHBSdlVzMnRYU3JMbmRGWlpqUlVvRU1ZMmRkclQ3WVZaWkkwTmwtaDc0bFBBNzdkTjVEdDA2OUVlTTloZW1nRjBnOWJYUjFzczBXUEFFdS1oZjd1enNrNDdGVEE?oc=5",
-     "tarih": "2026-11-16",
-     "kaynak": "Rota Borsa",
-     "puan": 1
+     "baslik": "Patronu bir taşla iki kuş vururken Fonzede seyretti - Haber Hürriyeti",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPWU1UWmJGUi1VRDJtLXl3WjkwN3JoNmI4U3V1eHV5LXNsWmJHUHBUSlhjdnZ3OGduSDJkWTZfUUVBUUtBcjVtZ1p3ZFlWOVR1ZnU1UzBDaDB1WGMwM19mSWxsc0ZueEoyQkdIbkJpb3lXQXlQUjRwSzQzXzI3SDNmTlNWajgxWVhjMXlXeFFmN0ZnNWxUMm1UUjQzVnFrQdIBowFBVV95cUxOOG9pUzlYVVRCNEpCYU55ODZCZWx1MFRIRUY0WHQ3MWJ1QUhOQ2V5QUd0cWJMZy13eHhFTElQVWFzd2h1a2xId2NwbVlScU94X3hEUlRNSzViN0tzUC1UZUtnd1hnYTdib25PUjFsc0psZjBmVm5pWWJtSG5kSW4wNVBtd0FJWWI3STlQelFELUh6MURGUkJiOEdoa040Q3gtM25n?oc=5",
+     "tarih": "2026-11-15",
+     "kaynak": "Haber Hürriyeti",
+     "puan": 0
     }
    ],
-   "olumlu": 4,
+   "olumlu": 3,
    "olumsuz": 0,
    "bayrak": "HABER+"
   },
@@ -2451,17 +2521,17 @@
      "puan": 1
     },
     {
-     "baslik": "Ziraat Yatırım Günlük Hisse Takas Verileri | 20 Kasım 2026 - Finans Hattı",
-     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQYzd5QTdIWmFIbm4tUlhLYllsa2I2eUJpNnVTTzE4MTVia0RHQjV5MnZvWlQySEtONjRFNWpDU0Y1Rzg5eERQTjdHTFV6RnF0M3FtRkV4MkkyTzZab2NmYVVQdGY3bXdnZTJsTmVpTzViUW5NbWViQVRweWZiTGNKaVpaN0x5T2xoUHlfNkRkT3BEUQ?oc=5",
-     "tarih": "2026-11-20",
-     "kaynak": "Finans Hattı",
-     "puan": 1
-    },
-    {
      "baslik": "Ziraat Yatırım İşlem Verileri: Hangi Hisselerde Satış Var? - Finans Hattı",
      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOaHQyZDFxVmhGalFSRkJDb09hZGVCLVJiNy1OYk1KYXp4amFvTEdES3VmbE1hejFrNDM3SHBKanVXUHpwRU1BYWV0VFFwS2FpdXVBaDF4blF1SWlpRnIxRkZUNkw0REZWTWppZVRMODFJVUlQcHFiZjRpU0dsTFR6MVNkV2VyLWR6?oc=5",
      "tarih": "2026-11-21",
      "kaynak": "Finans Hattı",
+     "puan": 1
+    },
+    {
+     "baslik": "Borsa İstanbul'da 32 şirket pay geri alımı yaptı - Haber.com",
+     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNdzdyUGx5LVh5MVlYQ0R6VGZmVkM1WmRCNnVSUlFuMUl2Y3JLbEhwMlhlT0hfaTVUZWpLcFdrTHpXTVJFYjJmaHg3XzJVNTExTHB2Q3lMNlBERWlVY19UUTBYR2hmU0NDdHU0UWs1c0VyUlBOdzdxLUVPYldQMTdQcGVlN3JSeE9zdHQ5bg?oc=5",
+     "tarih": "2026-11-18",
+     "kaynak": "Haber.com",
      "puan": 1
     },
     {
@@ -2500,13 +2570,6 @@
      "puan": 1
     },
     {
-     "baslik": "Borsa devinden 2,43 milyar TL'lik temettü hamlesi: Tarih belli oldu - CNBC-e",
-     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOWkI1LW9Ud1JxY2tIM0MyZURGdU5NSjJ4bzNsUDVIVmpPclBWaTJOSHcwYWlEZkY4dTFUMjdTa2hIVzktY3FfN3BaelFOMGU0NXh5eGdnWTVrQ1h3c1VDSUtqRlgxdFczOXhGdUtpeGNIVkMxZDVnOXh3aG1Cdk5jdmdsY296ajFfVkJPN3NMaEUwWmNRbEdXOEZPQXphZDJk?oc=5",
-     "tarih": "2026-11-08",
-     "kaynak": "CNBC-e",
-     "puan": 1
-    },
-    {
      "baslik": "OYAK YATIRIM MENKUL (OYYAT) Hisse Senedi - Mynet Finans",
      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE44WnVmdVlWSXlpVFRRTER6MzRjYnN6RkI1VE82LXZTaUVycktHM04xRmV4MmducGJmSTNkUkxWbktHNDR2MHBjaExHT21OV1cyQVhYTFlpWGZsZUpQY1JxVk5aSy1PQy13ZGNDVmpJUXVGNF92?oc=5",
      "tarih": "2026-11-20",
@@ -2540,6 +2603,13 @@
      "tarih": "2026-11-09",
      "kaynak": "Finans Hattı",
      "puan": 0
+    },
+    {
+     "baslik": "GARAN Pay Geri Alımı: Garanti Bankası'ndan 278 Milyon TL'lik Adım - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOQ25BRTE5eWxkbm5GbVBpYUtFd05WbzJtSWtvdG90Y1IwZDNKOWUzQlpzZUxKY1hobUxfcWoxMThFNWVFZG5vZFVRYXNQa0VzM25mMy1sbklCYlpCTHVoY0RsSHZ3MC1vYS1KelNmdko1dlYxV2RoMkxXVE5KcGQ0b3dNVQ?oc=5",
+     "tarih": "2026-11-19",
+     "kaynak": "Finans Hattı",
+     "puan": 1
     }
    ],
    "olumlu": 4,
@@ -2631,13 +2701,6 @@
      "tarih": "2026-11-20",
      "kaynak": "Mynet Finans",
      "puan": 0
-    },
-    {
-     "baslik": "Fon oranı en yüksek olan hisseler - Rota Borsa",
-     "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1ZZUdyMzdPcHRnX1N0WmVsRjJIM0IwaGJtUVBnQmVVdmxSWkp4N1l3Y1h4akx0NDA0ZkRJTjRpSTRHbzFteWY0TTQ0ME1QR1NRMFE3S2Rod0NoWHd1YUstRlRZYWt3ZlhON0E?oc=5",
-     "tarih": "2026-11-08",
-     "kaynak": "Rota Borsa",
-     "puan": 0
     }
    ],
    "olumlu": 0,
@@ -2710,18 +2773,18 @@
      "puan": -1
     },
     {
-     "baslik": "BIST 100’de 6 hisse yükselişini korudu haberi - Borsanın Gündemi",
-     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQRnktY2MtNTE1VnEyc2hBeVBRYnJpbkhBQ3N4N1prWWtOSUJpeFpOcG13blYzZnB2NW5JejVfWU1QTWw1TnpnOGNvemVmbTR4Mk5LSk1JTUxyQ3ZWbkhWczNuZ0hxM05yTHpsamNBYm10OElsRUpvdmtzMDJCdUpuTmpDdnhTa1NrRFpZ?oc=5",
-     "tarih": "2026-11-16",
-     "kaynak": "Borsanın Gündemi",
-     "puan": 1
-    },
-    {
      "baslik": "Borsada 8 göstergede AL veren 4 hisse haberi - Borsanın Gündemi",
      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNRUctc210bDFZYUExSW82RVQ3QV9JeHNYSndka29vcUdLVi1jZklUb1JtWkZaUDB4VXRzOGpzMExOYy1Bc2tTNVNrTzhROUNZdFRGYTBlSldpbjllemQ5UnZ6bk03YlZkTXdnYWZSNDhleGVXWHRjOGhlMzhiZjlxLU1LekVJa2RySERz?oc=5",
      "tarih": "2026-11-13",
      "kaynak": "Borsanın Gündemi",
      "puan": 0
+    },
+    {
+     "baslik": "Borsada teknik göstergeleri güçlü hisseler haberi - Borsanın Gündemi",
+     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPREZuSEU3NEpZOXZ6OXE0TVNBMjNPNGVYZkZJRFp1UDRfZlBBUXZoRGNSRzhVTXdzTThlNzNEaGh3V3BFRU5PN2xJeElGQURsY2s1WnYwUTZISVVIQTQ0eDVrSldxM1k2Z0g3S09JMGFiM1llbHRmWEFTRjV5MTNhVG41SWpxbDFxa0JvVGNTa0l2Zw?oc=5",
+     "tarih": "2026-11-12",
+     "kaynak": "Borsanın Gündemi",
+     "puan": 1
     }
    ],
    "olumlu": 1,
@@ -2822,25 +2885,11 @@
      "puan": 1
     },
     {
-     "baslik": "PGSUS1! Vadeli Fiyatı Grafiği— BIST:PGSUS1! - TradingView",
-     "link": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBaRHBmcy1yWmxPLXhuMWwxUFVIWVJtRnlaN2ZKaVRyb0xVbnZDUktGMUxRaFh2eElaNzJubC1vMUliWnhHWUJ5T0pINE5Vc082bGVzT1c2djZhZFhH?oc=5",
-     "tarih": "2026-11-17",
-     "kaynak": "TradingView",
-     "puan": 0
-    },
-    {
      "baslik": "Pegasus'un (PGSUS) 3. çeyrekte beklentileri aştı: İşte bilanço detayları! - CNBC-e",
      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNekpKcDF0RVJxOVJ0YnhvOVAzamVNaFhlREVhbHFNTnlKYVdkbHMtblhWSTJ2M2JSeUJSRmRuanE2NDJiZFgxV0c0MENoUFhFRmk4TjZmMHVpY012S2JxUzdUeFo2c1dVNHhYb2hXVG5sUWNCemNUU3h0Wi1rNGtpcTcwZ3hmZnIzVVpZQmYxWWloZF8zY0xrYTBLcEpETWtuRmRyT2JkWTdHcER3MTlyQnNPdjduQQ?oc=5",
      "tarih": "2026-11-09",
      "kaynak": "CNBC-e",
      "puan": 0
-    },
-    {
-     "baslik": "Borsada en çok kazandıran ve kaybettiren hisseler - Diken",
-     "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQMDQtdGVQRzlZMW5tX1BybUZYTWRzcHFZd0gtWllMcHJFUjFDTHF1MDJpbmYxRjNMWkdSZFJtNTlkZmVDX1hFVEc3dms0bmMtZnhGd1NrYVFXMjZGZGhfVXVEY3lvYzc5OWpDY09LUDdfb0xCVnQ5eTJFS2xaVk9RUU9XVWx0QQ?oc=5",
-     "tarih": "2026-11-14",
-     "kaynak": "Diken",
-     "puan": -1
     },
     {
      "baslik": "İş Yatırım, Pegasus için hedef fiyatını yükseltti - Doviz.com",
@@ -2850,23 +2899,37 @@
      "puan": 2
     },
     {
-     "baslik": "Borsada bir haftada kim kazandırdı, kim kaybettirdi? - Ekonomim",
-     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxORUZnaGE2WkZ1a3lmRGFWOUNydDQzaEl0T0Vfd2w4OGxxM21OMFlEdkJRWGMyVVNDYTZacDBzaFJYamk2T3R6dnJHWjBqb2ctWml2UVQ5WWJWNFBmXzdlSnM1dTNxU3pGQnZhcGlaUElRRUdMSURvY0hrSjIzVzJCUVdQSEd0SFF2eVJWNWxsNXNfVi02T3JRYlk2aVYzRnJfeWl4bFBlQTNEaklCX05GQg?oc=5",
-     "tarih": "2026-11-14",
-     "kaynak": "Ekonomim",
-     "puan": -1
-    },
-    {
      "baslik": "BIST 100'de bu ay en çok yükselen hisseler: Defter değerine göre iskontoları dikkat çekiyor - Borsa Gundem",
      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQdDZCcG9wRFdvQ0xaVy1MNFp3VjczRFdrQ3k0QWJ2VmJwT3h3ZnpEcWJ4cDBnOEF0RExqc3dqWlJnc0R3a0s5UWVZLWtvdmtrRG94d080a0E1aTdTaWRIYU9HTFJWU0RkMHZUdE5FcnFpNzk1TXBFNjlSY2h0UmUtY3ZlQ1d6cDRJQWV1YWN5MjhDck1fcmM2V25QbVVhaFdhS3BDQl9aM2Utc1dCY2JkcWdPNTFYU2RuLTlRRw?oc=5",
      "tarih": "2026-11-19",
      "kaynak": "Borsa Gundem",
      "puan": 0
+    },
+    {
+     "baslik": "Aracı kurumlar DOAS, PGSUS ve AYGAZ için hedef fiyatını açıkladı - Paratic Haber",
+     "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNUnBvd0NxbDc1LVIxOGdFQ3B1aUxmVkJadmQ4MHFIZ1NmdW9sR1lYNGZzaXBvSGdoNXBISV9EYldVNEhJZU94ZlZhTGlqc1pDc05yTXFmVzBadmF4dl9YNDRJUUNrbXA0TklhRVI5NE1oNEpjQUF1UW1waUxwd1NoRmRYVHkzRTI5RU5mcw?oc=5",
+     "tarih": "2026-11-12",
+     "kaynak": "Paratic Haber",
+     "puan": 1
+    },
+    {
+     "baslik": "THYAO Ve PGSUS Için Kritik Anlaşma: Uçuş Kapasitesi Artıyor - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQS1p3ZGRkR2hsS2swMGtqT2pnbnltYmlFcWhXeGNHUWtWSGRHbC1XN0pkQloyQUR2RC1Ca3h3ak5ONGFaVncwdllNZXVJOGYzNWVaZmNUZDBabTc5WXpkR3dnRzVoeFRFWjV2ZlFycHZvd0R0WnZsRFJUYVh3UVdyampVSlVHSnlRTGJwWk9RU3c?oc=5",
+     "tarih": "2026-11-19",
+     "kaynak": "Finans Hattı",
+     "puan": 1
+    },
+    {
+     "baslik": "TUPRS Ve PGSUS İçin Yeni Hedef Fiyatlar: Beklentiler Arttı - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPUldkSGd4bUQ5SGh1cHNTY0xLM1lyMUJFTDJMV0F3ZFV4QTg0TGdPaXdSY2tIQk0wdks1R2xhUnJSaEhhR0hJdUVfVktwS1BDbC1fU19WWlBTTXdLTWJlYk16VlFjSTJoUGVUWjIzWVNtS0Z1eHc1eE1HOU1ZeFIzNlc5aW8xWldqclJIWHVGV3c0UQ?oc=5",
+     "tarih": "2026-11-13",
+     "kaynak": "Finans Hattı",
+     "puan": 2
     }
    ],
-   "olumlu": 2,
-   "olumsuz": 2,
-   "bayrak": ""
+   "olumlu": 5,
+   "olumsuz": 0,
+   "bayrak": "HABER+"
   },
   "AKSEN": {
    "haberler": [
@@ -2878,13 +2941,6 @@
      "puan": 1
     },
     {
-     "baslik": "Borsada 8 göstergede AL veren 4 hisse haberi - Borsanın Gündemi",
-     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNRUctc210bDFZYUExSW82RVQ3QV9JeHNYSndka29vcUdLVi1jZklUb1JtWkZaUDB4VXRzOGpzMExOYy1Bc2tTNVNrTzhROUNZdFRGYTBlSldpbjllemQ5UnZ6bk03YlZkTXdnYWZSNDhleGVXWHRjOGhlMzhiZjlxLU1LekVJa2RySERz?oc=5",
-     "tarih": "2026-11-13",
-     "kaynak": "Borsanın Gündemi",
-     "puan": 0
-    },
-    {
      "baslik": "Borsada en çok kazandıran ve kaybettiren hisseler - Diken",
      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOVmM5UzZrSkM0ZjhnMjB0cWtlOTQybjZaUHVlWXp4SU5SSTF2eVZxcG1KN3hZTFd0c1Z1dWFzRDFST0tPQ3MwelBDaWtOZDBIbU5XRGFLUDJPWnNKNEhjRG5CRlpERFpjOXNJV213b0pGbjNxYk84N0o0SUZwQW1NUWRyTlZSUQ?oc=5",
      "tarih": "2026-11-21",
@@ -2892,8 +2948,15 @@
      "puan": -1
     },
     {
-     "baslik": "BIST 100'de sert ayrışma: Bir hisse yüzde 14 yükseldi, diğeri yüzde 15 düştü - CNBC-e",
-     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQS3hWdDhnalZ1Vlp6Yk9jSU52VnJCa20zX3E5X1YwWEtBZlJwaDk0WGNjSGxNOFZyTmRDeEFLUXpEYU1scXFpTlZ1dlFubFp5OE1XamtBc01zdzFSaHA4aFdzMTJ4MThjdXFUdEowZGN2YWVDZHdaczZ0dk5mcnozc2xhSF92clYtZWoxbEhva3BaNThmdUJpaXJqRW12amZaVHU2WWlkQWlGd1RL?oc=5",
+     "baslik": "Borsada 8 göstergede AL veren 4 hisse haberi - Borsanın Gündemi",
+     "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNRUctc210bDFZYUExSW82RVQ3QV9JeHNYSndka29vcUdLVi1jZklUb1JtWkZaUDB4VXRzOGpzMExOYy1Bc2tTNVNrTzhROUNZdFRGYTBlSldpbjllemQ5UnZ6bk03YlZkTXdnYWZSNDhleGVXWHRjOGhlMzhiZjlxLU1LekVJa2RySERz?oc=5",
+     "tarih": "2026-11-13",
+     "kaynak": "Borsanın Gündemi",
+     "puan": 0
+    },
+    {
+     "baslik": "Borsa yüzde 6 eridi, bu hisseler ters köşe yaptı - CNBC-e",
+     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOd1RzWVdMU3pOMENrZi1hZWh3RDFkMHUwcVhiSG4tVjFVSlJOa1hUM0x4aUZaeHczU2ZUaEtwU3ktTWYzMkREOUdGUUF3Qzl1RHZhb1locVBhaGw0QmR2T0gyMXdzWFJjSmJ0Y1Q4Q0RCVnZkR3VIWGN2SDlCQnJGX2d4MkgzZWdVSnc?oc=5",
      "tarih": "2026-11-21",
      "kaynak": "CNBC-e",
      "puan": 0
@@ -2934,17 +2997,17 @@
   "KENT": {
    "haberler": [
     {
-     "baslik": "III.Çevre ve Kent Hukuku Kurultayı - Türkiye Barolar Birliği",
-     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPTXRBeGdKdTFqT2x1NUdxazh3NUJpX3djQk9NMXFpaEs0ck1GRld5SVZNcVVWWlY3S3pWSHhqMS0tMmluVmlvejVQVEFrWVdNSlhuZXRfYVg0V0J4bVFoUXFmTHNEZEpob3lGQVFXVXlhNG91WWk0emFVcmsxTldWTg?oc=5",
-     "tarih": "2026-11-17",
-     "kaynak": "Türkiye Barolar Birliği",
-     "puan": 0
-    },
-    {
      "baslik": "Kingsway CFO’su Kent Hansen 1.561 dolar değerinde hisse aldı - Investing.com Türkiye",
      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSERQUjA5eXYtQ0o2TUdHV2E2UUgxMV80cGtpMzNmOWF4UTFUM21sM3ZSaWM5V3paQjhfcjN1V25VM1VqQzV6SVZvR2ZCQjhWa25KYzZ0QS1MdkIzNFpsZ2NxQmpTRmRmOW83bTJmaW84bnFCUV9tTmwwMlF4b3ZHbnlMc1FvMTNEUWUzQ3ZLVjUyeU9LR0RXLWVqWDdLZ3hmc01CNzdKanRFN2w5enNsUjFKWGVIcDRTMEQtWGhR?oc=5",
      "tarih": "2026-11-17",
      "kaynak": "Investing.com Türkiye",
+     "puan": 0
+    },
+    {
+     "baslik": "III.Çevre ve Kent Hukuku Kurultayı - Türkiye Barolar Birliği",
+     "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPTXRBeGdKdTFqT2x1NUdxazh3NUJpX3djQk9NMXFpaEs0ck1GRld5SVZNcVVWWlY3S3pWSHhqMS0tMmluVmlvejVQVEFrWVdNSlhuZXRfYVg0V0J4bVFoUXFmTHNEZEpob3lGQVFXVXlhNG91WWk0emFVcmsxTldWTg?oc=5",
+     "tarih": "2026-11-17",
+     "kaynak": "Türkiye Barolar Birliği",
      "puan": 0
     },
     {
@@ -2955,10 +3018,24 @@
      "puan": 0
     },
     {
+     "baslik": "Borsa | Canlı Borsa | Bist 100 Endeksi, Hisse Senetleri ve Günün Özeti - Mynet Finans",
+     "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE4wYlhiZHNEU1FWd0xvWm5yVkpkdU90WTNQY1kzM0t0WnpLeERsVWZwWHJpRTFsSDJUSi1ReHlkQVV2dkEyMGc?oc=5",
+     "tarih": "2026-11-20",
+     "kaynak": "Mynet Finans",
+     "puan": 0
+    },
+    {
      "baslik": "Balıkesir’de 377 kilo 200 gram uyuşturucu madde ele geçirildi - Canlı Gaste",
      "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxObDJTdVJpV0d0ekpTUFd5ZUhqT3RxdVFIbzhOR0JEVTNGRzFPQ2EwSjM3NkptSTN2aVJDcDluM2NGdG9XeGlnWlNISE4tSF9zbTZObUd1Q2tkWHYzMlZ1RUtScUJMRlV2dUtQOWF5aWNLMUJTdkYxYTk0ZUN3clljeE5yc2FNMmFmNXFSM1ZST2JxUE5PRlpVcVNqZUY?oc=5",
      "tarih": "2026-11-18",
      "kaynak": "Canlı Gaste",
+     "puan": 0
+    },
+    {
+     "baslik": "Fatma Betül Sayan Kaya tutuklandı - Kent Gazetesi",
+     "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5KTzZXeFJpaDJwS3V3b3lGbXE1V29NaVlXNDR3dzhOQ1VEQ0huYnpOcjNoVTMxVmsxeU9SeVEzZno4clNzdElSLUNoYXVpc2Fwdk9ZdWpjLVZhakMtMXZ4Vk5lclF6TkpkR3dJc25kSWxRU3c?oc=5",
+     "tarih": "2026-11-18",
+     "kaynak": "Kent Gazetesi",
      "puan": 0
     },
     {
@@ -2974,20 +3051,6 @@
      "tarih": "2026-11-21",
      "kaynak": "Kent Gazetesi",
      "puan": -1
-    },
-    {
-     "baslik": "Avrupa’da 40 kentten 37’si AB kirlilik sınırını aşamadı - https://www.ensondakika.com.tr/",
-     "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQbGhJcEF2aWhnSFkweDJQNEVtdVJsWTI2c1JoOU03dGpxZXNtZFl4SV9nbjQtVVZJWHpURDNTRTNRQnNab3ZLOUl1MnhMaUFFVUFPTFBSRUQ5eXpXREEydk5vZ2ltV2cwY3VaVlM1UWdlSWV3VlJ0MS1GMy1JUnJ1dmJCc0VCakJ5eXZWTnZjSlRHT1VQSE5RWnpR?oc=5",
-     "tarih": "2026-11-18",
-     "kaynak": "https://www.ensondakika.com.tr/",
-     "puan": 0
-    },
-    {
-     "baslik": "Lot sayısı az olan hisseler – Güncel Liste - Rota Borsa",
-     "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9uVGtuLVo0aXhyMGdxaXdnNU0xY2JyWV9pR3BDR2o2STdfQnljd0RsT1o5OXZmbThSMEpoUHZqZ0p6MGxQQ21ZbW4wbWJDdjQ1SkFZUmF1WXZEYTVKNHhOb21jQQ?oc=5",
-     "tarih": "2026-11-15",
-     "kaynak": "Rota Borsa",
-     "puan": 0
     }
    ],
    "olumlu": 0,
@@ -3004,25 +3067,25 @@
      "puan": 0
     },
     {
+     "baslik": "Borsada 47 hissede özel emir hareketliliği: SASA, ASTOR, TUPRS, HEKTS ve KTLEV de listede - CNBC-e",
+     "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQR1drNjhDd3Zhc1hwMk90bDA0UGpYZjRyQ2d1Rk9UcU5sR3lFTjFqUTFHaThFV29Ed3RfU0dpOUZBdE03dWdYUlFjcU9YYV9ZeDVrUktrMk1JN2kweEdJNVpiOXlHc29kb0tnYUVSSkhuSGdoOG85WVNWdjJGRE04QkZMVjhQbjdUcUF5YlFPaVJFQ2RydjBBN0VlRHhkS1pMZVRkajZwbGtnb1lvcmJjWG1pNUlyYl91VE9pZw?oc=5",
+     "tarih": "2026-11-12",
+     "kaynak": "CNBC-e",
+     "puan": 0
+    },
+    {
+     "baslik": "Borsa İstanbul'dan kapalı hisse kararı! İşlemler 16 Kasım'da yeniden başlıyor - CNBC-e",
+     "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOSVpuOTkxMHEwTTI0TVQyZ0Z1ekFrd2ktSUV1RGUwZDVET3F3YUh6cG1mWGUyR0VudGxBMjN4X2pkLUhORjJ4OUZYWWRQckxDVmE3THZhcmhZd08wQ1p2RnFjZ1B4dEpqX3lNSjFHb2ZBOE1FcnQtaGtlRzFqbkRpR0NDal9xbll3VnpSZXZ5LVd5cGlOaXVpODF3R241N2hfVU5VbHJhY0NhNjJ2VHc?oc=5",
+     "tarih": "2026-11-13",
+     "kaynak": "CNBC-e",
+     "puan": 0
+    },
+    {
      "baslik": "Alıma geçen İş Yatırım'ın en çok elden çıkardığı hisse SASA... - Hisse.net",
      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOM1B0MUdNeW9COElESUNLV0ZrU2Q3enBDM3BSa2F4SnFDblVRdmx1TXdrUlJPX0F0VnZ4VEhpbHZCck8wcUhxRGtzQURvczVNQ3RvTEVfeG9DMWZHb2JSR05rUkdKb1lkR0NIWlJ0cE5Yc1JheW54a0VacDl1aW5JNm1wOXV5c0trbWpjWF9UMV9VOU1jdGo3TUpLMV9ReFhE0gGmAUFVX3lxTE1Ud1hyYlh1UXBnaWRuTW1DT2tXYjlaUl94OEVMemFLdjFmc3Y2UG5od2p6NjN3ZTJINXVURktnQ1d4RWFqUUpwWXdCVEF4YkpCQnpKZWVfMVBsc2VpMFIwRE83VEk3TmhvTk1DOU55NmhZcWFSYUNXVXg4ZWQ4Zi16Rjgyd1ktSXMtUkEzQ1VSZTRuN0dVYWZ4TW5tM1d5V09UZTFlZmc?oc=5",
      "tarih": "2026-11-12",
      "kaynak": "Hisse.net",
      "puan": 1
-    },
-    {
-     "baslik": "THYAO, TUPRS, SASA ve ASELS zirvede! İşte yatırımcı sayısı en yüksek hisseler - Rota Borsa",
-     "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQUXFNcjJNbUg3LTM4VG5oX1ZoQlA2SV9qU2xjRjQzYlBSVG5jczhnRmpsLS0ta3JYQU9sdWQ0WTBmVXU0THJveHV3Uk0zTzRvd2s4aG5EVWdURm1Sam9aUlRNN3FOdFRJVmlQeXlnaFl0Q2xfbWdSbWRMRTNkOWNxaFhFY3dNWDcwMmoyWjdlM2tVS2NURVV2UWpSVlVmZHR5?oc=5",
-     "tarih": "2026-11-08",
-     "kaynak": "Rota Borsa",
-     "puan": 1
-    },
-    {
-     "baslik": "TEB alım satım listesi: SASA'dan milyonluk satış! - Hisse.net",
-     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPRGNJY0tfelM1X240cUlWRUhYaFZ4cmdlYnBCZXlnVDk3RnFoRVNDZlZabWZ4WTYzUDVmWkhNdnoycnVtdmpoX2tlLVN2aTZQNlpZSm16Tmd6dWFXLU85aDl2N1B2bFltdF8xeUNmWXlyVlVvUXN1MkZtelh3TU14R3RyOWtjTURubVHSAY8BQVVfeXFMT192ZTJDQ19qZjBnZENOUDhiMjVFUmlINFloSmVCMUVwUEt3elgyV1FsV1JfczFBeDJzNllEVHNRQklLVnVGcWtpUGd3RFVzUmRkSTlDY005NEJnY3g1eWhxRmc4LWdxclB3a3dscEg2UDdPMGpHNk5rcVdxRjdCdlFDTXdxcGpyd2E2WlBKY0k?oc=5",
-     "tarih": "2026-11-13",
-     "kaynak": "Hisse.net",
-     "puan": 0
     },
     {
      "baslik": "SASA Polyester (SASA) hisselerinde 2 kurum üzerinden yüklü alım - Rota Borsa",
@@ -3032,24 +3095,24 @@
      "puan": 0
     },
     {
-     "baslik": "ASELS, SASA ve SISE dahil 17 hissede özel emir işlemi... - Hisse.net",
-     "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNSVNSY3BHUklWNzRzeVRFcDNTbWkwZFNEeFdFOWEzbTdmRXZSRGY4NGY3aUkxeUJBRGYzTmw1ZDVsT1E2TWFvZ0llTTh0TEZJVkM1WVF4NHEwb0RLS2ZNeDU5Z3pPNkpsb0M3eV9UdzVnNGZvbUJraFFabEFLUEpDUEVrSHQwSE5GclJCZ1hEZ2xLY1VPYkRTX1lrTE81YmFrcndfRVlhU0xVUnZp0gGyAUFVX3lxTFA1SVZSV2c0dG9BRUJTN2lnTW1IZXlXUVZ2S3U1ZDUzQXdReDhtX0wyOWdldVFrZzZ2cVMxeklycm5CajkwSDZ3QWlyeWdTT2c0cC1ZMGZVWlJPRTQ3b2d2R1JVanF1bDYta09EOE1LeDBqRldRaTJ4dmdwZ3lRem9HWjNFRV93R3JQQi1YNG0tZmhUY25pV1ktWDEzZldHcVVIdWIzWWJneGxKUTZrbEgydFE?oc=5",
-     "tarih": "2026-11-08",
+     "baslik": "TEB alım satım listesi: SASA'dan milyonluk satış! - Hisse.net",
+     "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPRGNJY0tfelM1X240cUlWRUhYaFZ4cmdlYnBCZXlnVDk3RnFoRVNDZlZabWZ4WTYzUDVmWkhNdnoycnVtdmpoX2tlLVN2aTZQNlpZSm16Tmd6dWFXLU85aDl2N1B2bFltdF8xeUNmWXlyVlVvUXN1MkZtelh3TU14R3RyOWtjTURubVHSAY8BQVVfeXFMT192ZTJDQ19qZjBnZENOUDhiMjVFUmlINFloSmVCMUVwUEt3elgyV1FsV1JfczFBeDJzNllEVHNRQklLVnVGcWtpUGd3RFVzUmRkSTlDY005NEJnY3g1eWhxRmc4LWdxclB3a3dscEg2UDdPMGpHNk5rcVdxRjdCdlFDTXdxcGpyd2E2WlBKY0k?oc=5",
+     "tarih": "2026-11-13",
      "kaynak": "Hisse.net",
      "puan": 0
     },
     {
-     "baslik": "BofA'nın aldığı ve sattığı hisseler: SASA ve TURSG topluyor - Hisse.net",
-     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQNHIxemI3RXB5ZVMwZjJsbXBHMHF0bHk4c1BGdzBablMweld0VTFLY29iZXBGOUg5OG9wT3hHdkJsdkRHN0xNSldVTmstbVgzU2U2bG5DQzFNSnpZM2ZqRklSZ3IwVHZyZ1ZqS3lsQ2Vtd1l5ZFNUeDdERDdyY2E1dkEyYzVCeEUxaktwR1c2RTFBZDJGLVRfYtIBngFBVV95cUxNUWRfZzhfdS1DWGhad2YzV2VIRU83UVRYM3pHcnJXTzZwNFZMZE1Ib2ROSU55aFFzUF93NWFwT1ZSb0llN0VocFVaMWNJRDFYRHhvVzRPSTFHOGo5UHZjd3owalVEN3Y5MXlsQVVwbThoZkdOeGhPTTF2LVZaNGVlX2VLMXV1ZXRBOEhFdFZOWFVZMnRLUVh1RVpqbkM2dw?oc=5",
-     "tarih": "2026-11-12",
-     "kaynak": "Hisse.net",
-     "puan": 0
-    },
-    {
-     "baslik": "SASA Polyester 2026 3. çeyrek bilanço yorumu - Rota Borsa",
-     "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBaVWYtRzVCZ1BtelNxeDU3RC1VNm5mY2dTVlFyalE4dGNaaTF3c2pfZEFBNkdoMjNGLXpVVlRVVHZUTDZMOUwwM1J4ZVFXSVl1aUZqZEltZElScmstSnNyWE9Oam1ySFJ4NlcydnhTclhWcHcz?oc=5",
-     "tarih": "2026-11-11",
+     "baslik": "THYAO, TUPRS, SASA ve ASELS zirvede! İşte yatırımcı sayısı en yüksek hisseler - Rota Borsa",
+     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQMzhCV1VBYVdlZzBCM0JhdUtnTHdSMGttR2ZUaDM0UFR1Tlo0TmZEMjZEb3ktdjYyZHNGLTBaUHpDekM5eHB3N0xrcGRIM3dEbWJ3Z0x4Z1F2UElaZFN4Q1VNQ1ZoMXBWN0w5ZFZaSkpNRFdaWXhpWjBoUkNaLVloZTRjdE5FR3NOZGl4anlSVGZYQzNfR0VJM2o0N1lwOVE0UGc?oc=5",
+     "tarih": "2026-11-15",
      "kaynak": "Rota Borsa",
+     "puan": 1
+    },
+    {
+     "baslik": "HSBC SASA ve ASTOR aldı, EFOR sattı - Hisse.net",
+     "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1ZNVlnU3R3dlYtZ0c0cXEzMkVCZnRFRUVPZlJtTzhLcTJRR3M5WkRiRDVEdHRNUWVuVlZFR1dJYW9YZGc5MmhVMDZWRE9tUjFHOF92VXhqYXVXVWlMLTJ1VVFPVWFXSEswZEc2RTVoLUxfcElxaXVldtIBfkFVX3lxTFBGbldVN2lvYjRKTXhjdGZoTEhIaGp4ZVpzdVBLcXZEY19CYm5qSXE2TEhnNmR0UU04dlFtWTRJSFVuQUUtLTJuWE5zbDZid25JWmFWRXBaZzVyQnAxZTJRcDdOYThQeHFURm9XV1dmV3RlVXFZX3hKVG9zNkZlZw?oc=5",
+     "tarih": "2026-11-19",
+     "kaynak": "Hisse.net",
      "puan": 0
     }
    ],
@@ -3102,13 +3165,6 @@
      "puan": 0
     },
     {
-     "baslik": "BIST 100 ortalamasından %9 uzakta, 76 hisse geride; en güçlü ve zayıf hisseler hangileri? - Borsa Gundem",
-     "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPZ1pWd1RFWGd1Rnd5QWh5dU94VzR4SnRBRE5oX2xVbUJJRUpxU3ZFOHFTREtMS1pPd3hPSWRoczl3SXZWUjg5d01QOWRna2J3b3g5MEw2QWRTMnpxb0RPMWtKNUNsSDlKNmZvTS1zb0ZkemdNN0kwdVdlNTM1ZzI5Sk9kMVJSYTlTV3psak9iTzcxZjEyalRWaGVRUi1QMFhpZ20yMDU4S0pSbHNRTllUOUUtYU1MR0U?oc=5",
-     "tarih": "2026-11-18",
-     "kaynak": "Borsa Gundem",
-     "puan": 1
-    },
-    {
      "baslik": "ODAS, TKFEN ve BTCIM güçlü yükseldi, BIST 100 yatay kaldı - Paratic Haber",
      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPdDZJcGszQXpNTHFMQTcxc3BOQy1WUU5zY2JjWWJaV3pMQlFUMVIxNGhKalg2UVI4VjIxdDRZTHpOcXEydlYzQzd5Ty0tN3lTT3p2ZnZadUowVzRVWXphR3FpOHl1RjhlbHdzc3VNRzhlUC00RzdrMFhpczBNbUFKTVpn?oc=5",
      "tarih": "2026-11-11",
@@ -3128,11 +3184,18 @@
      "tarih": "2026-11-11",
      "kaynak": "Borsanın Gündemi",
      "puan": -1
+    },
+    {
+     "baslik": "Borsa İstanbul'da Bilançoların Ardından Zarardan Kara Geçenler ve Zararını Azaltanlar - Borsa Gundem",
+     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNTnFUUHQ4VnBRa1Q1MUp0MWpSZUZLX1lNV0JaWkdmMDdLYll3WFJZdXd0UXkxdGxjTVh5czNSN0w0cFBSeDA1TVBmS1ZMU2V2ZkdkT0JydnRFVVJMdEpLZFNVOFNpekJyQVdKSVVOam0wc3NuamxBMlM1ZjBOd25FVml2RHpEY2dOMnNQUksxMTdpYmc2eWdqUEJQWkFyTm5aZUM4T21WY09EeDlWaXhTNDBydFdKUQ?oc=5",
+     "tarih": "2026-11-17",
+     "kaynak": "Borsa Gundem",
+     "puan": -1
     }
    ],
-   "olumlu": 3,
-   "olumsuz": 2,
-   "bayrak": "HABER+"
+   "olumlu": 2,
+   "olumsuz": 3,
+   "bayrak": "HABER-"
   },
   "EKGYO": {
    "haberler": [
@@ -3291,10 +3354,10 @@
      "puan": 0
     },
     {
-     "baslik": "SELEC 3. Çeyrek Bilanço Analizi: Beklentileri Aştı! - Finans Hattı",
-     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdjZqb3BYVVRlMHZuQ0did3VyWGJLaXN0dEFPMFFmQ1lvbWVkU2M2a2tIMW5hZWVhNmFPVk9XWUZRMmxSVTdjZDVDLU9xdTNDc0hPTUI1R3JsNEtXelk5dURqMy1xOFpEQks0Q2Y1eS1nVHlDUVhMS1B5VTMtZWR6T2Zab2VsRVFocmJ1RmFjNA?oc=5",
-     "tarih": "2026-11-09",
-     "kaynak": "Finans Hattı",
+     "baslik": "MSCI kararı: Sabancı ve Astor küçük ölçekli endekse indi, 18 hisse listeden çıktı - Investing.com Türkiye",
+     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNE9JalVQWUM0bG44RTZyLS00cWdjZndLLTlhOTVJZ0ZNOGQxN0JEcDhKc2pHVG0wRERSMVJ2cHJNRm9XUzU3U19mOGlTYmUtUnJCOEZrZU9WMGxwTXRuTEZ5SHpmaGY3azduOWhIZUctNkRIN3pKajV0YWtXUjR2d29mOUw5Tkk2bWRJMzQzM3JZLUFSenN6S2d3YW50WGxXWmpsQmUydGpRZWM2OGFCeGhya2tWREtwa3dELUdNMkpYdjNu?oc=5",
+     "tarih": "2026-11-12",
+     "kaynak": "Investing.com Türkiye",
      "puan": 0
     },
     {
@@ -3305,17 +3368,17 @@
      "puan": 0
     },
     {
-     "baslik": "MSCI kararı: Sabancı ve Astor küçük ölçekli endekse indi, 18 hisse listeden çıktı - Investing.com Türkiye",
-     "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNE9JalVQWUM0bG44RTZyLS00cWdjZndLLTlhOTVJZ0ZNOGQxN0JEcDhKc2pHVG0wRERSMVJ2cHJNRm9XUzU3U19mOGlTYmUtUnJCOEZrZU9WMGxwTXRuTEZ5SHpmaGY3azduOWhIZUctNkRIN3pKajV0YWtXUjR2d29mOUw5Tkk2bWRJMzQzM3JZLUFSenN6S2d3YW50WGxXWmpsQmUydGpRZWM2OGFCeGhya2tWREtwa3dELUdNMkpYdjNu?oc=5",
-     "tarih": "2026-11-12",
-     "kaynak": "Investing.com Türkiye",
-     "puan": 0
-    },
-    {
      "baslik": "KAP *** SELÇUK ECZA DEPOSU TİCARET VE SANAYİ A.Ş. *** SELEC *** Payların Geri Alınmasına İlişkin Bildirim - Yeni Şafak",
      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPNTFidEdUSWpIZ1BVbk1iTU9kdlJJdHRhQWFndkdOekdFNTBNRFRtQmgtamY3X0g4RF9EOWpILWhFRTl1OGsyVEdWUnVYMUl1bGJZNkxWTm9HMmgydXhRYy1uNGZUOGVCY0sycElIcVF5MlFFRjluSzVTOXpfOEhoZ09fV2RZblJidVpUNE5POXhZcjhVc1ViMlBhT0hha0pVZ3RmWE4tYTNnTUxIZjRveWNFS0FuZUFwRTJpR2YyZEFBTjZqZ3o0Uld5UUJmLTlnZlh2em51eGsxcGQzb0laVQ?oc=5",
      "tarih": "2026-11-12",
      "kaynak": "Yeni Şafak",
+     "puan": 0
+    },
+    {
+     "baslik": "SELEC 3. Çeyrek Bilanço Analizi: Beklentileri Aştı! - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdjZqb3BYVVRlMHZuQ0did3VyWGJLaXN0dEFPMFFmQ1lvbWVkU2M2a2tIMW5hZWVhNmFPVk9XWUZRMmxSVTdjZDVDLU9xdTNDc0hPTUI1R3JsNEtXelk5dURqMy1xOFpEQks0Q2Y1eS1nVHlDUVhMS1B5VTMtZWR6T2Zab2VsRVFocmJ1RmFjNA?oc=5",
+     "tarih": "2026-11-09",
+     "kaynak": "Finans Hattı",
      "puan": 0
     }
    ],
@@ -3326,25 +3389,18 @@
   "AKFIS": {
    "haberler": [
     {
+     "baslik": "Dört göstergede hangi hisseler öne çıktı? 519 milyonlu işlem gerçekleşen o bist hissesi haberi - Borsanın Gündemi",
+     "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNUDVKOG1MUnotN2YzU09zbDV4ZEduaHFWVVhlUy16V1lSM1U2UURHdUIxNVVWRVJzaG5xS29CY21SZGZHdm5wX3gxMUFNelBkelZHQTVDWEdFLU9QbkdXMnptMDMwSW9uM3hUREd2bXFqR01wcnpPYW5IWWEtWWh2akwxaGtEVXVkTkRReDZpdGdST0U4eVZfZkhGSlVGdHJrOXJvTWhnaDkxQ1JvR2FLRnR1RmtvTVNnN1NsMEwyM0RiVS1mcW95VzFrUXM?oc=5",
+     "tarih": "2026-11-13",
+     "kaynak": "Borsanın Gündemi",
+     "puan": 0
+    },
+    {
      "baslik": "Borsada 33 şirket hisselerini topladı: Dev şirket tek başına 9 milyon lot geri aldı - CNBC-e",
      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNOTBCeFNsdm9Lem9kY0Q5bmh6dENkMFdZV0g0dk8xUS1nY3doZVF1a1MxOTRYNnV4eWc3MVhORnRIUlFsU0gyMlQ3R3JLY3ZBTkwwWmZwTFUzYUc4VnZlbUxqMDJ5OFZYQ01JUnFiV2ZHRERhQU9icG1IUVUzVUZEV2hwZ1BFWHVRTkhheXEwVUV0QUlqUWdsWEZmd0o0NjFJUTRYWkFfMGdHTEFvbVRMbW4ycXdOajg5?oc=5",
      "tarih": "2026-11-17",
      "kaynak": "CNBC-e",
      "puan": 0
-    },
-    {
-     "baslik": "KAP *** AKFEN İNŞAAT TURİZM VE TİCARET A.Ş. *** AKFIS *** Payların Geri Alınmasına İlişkin Bildirim - Yeni Şafak",
-     "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOalF6RWd0N0p2QkdFamZQREx5bTM0VzBXQ2ZZNzdibGxDRjhtUHpuel9MZ0VVN2ZjMWpPMG5UY3hBRHFmX1dDeW5qV3Zhb0MzN3ZjMWQ1SE5TYV9XakQ2TmhRWUVKM3FWaURrR0VfUjlYbVlMSlVZdVBpcnQ4TFZNTHJxSmJFSW5LdVloUmU5UlhaVEhDWVEyQi1RVG1hREFuUjdsREVIcjJ0cHJFamJNZjkxYU5fZl9la2VtbXlFMmNHS1RBYmRaMHR0RkZOcHRiMDJKclVCbEs?oc=5",
-     "tarih": "2026-11-16",
-     "kaynak": "Yeni Şafak",
-     "puan": 0
-    },
-    {
-     "baslik": "Son 1 Yılda En Çok Kazandıran Borsa Hisseleri (Güncel) - Finans Hattı",
-     "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOUEpEcDhwdl9yRUJlQU1udkZLdkZuMUZPNjVFVVItQlRDWmdYOHEwYk5sSkFoU0pCZ1hCR3BjaF85UUhJaVJlaW1jV2xkRl9mdTZMQUJGQW5QMGpNbU9PNDB5MThRcDJsX2sxZVFMSldUZlRUZGl5dEk3djJHZmZveS1VZ250RmtUaEsxRnBub3UwVHpO?oc=5",
-     "tarih": "2026-11-15",
-     "kaynak": "Finans Hattı",
-     "puan": -1
     },
     {
      "baslik": "Borsada 25 şirket hisselerini topladı: Devler de listede! 18,4 milyon lotluk hareket - CNBC-e",
@@ -3380,10 +3436,17 @@
      "tarih": "2026-11-17",
      "kaynak": "Memur 365",
      "puan": 1
+    },
+    {
+     "baslik": "Halka arzlar ralli başlattı: 56 hissenin 51’i artıda - Hisse.net",
+     "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPR0xENkVLWExEdWRwdVoxNTNJU211Vm9USnFSVWpmTmxZZWEtOEtVdVNSd3FqN1RQZW1HQ1FyNlUtejN5ZURCaFVVV292QTRrbWc1X25BZnVpRHk2LUlxQ2pRMVRUamxQSGVDM2ZFekJJQnJjdjFNbktHeTE5d2Y3d1RfR3RMVnRzOEM5WWZyY9IBlAFBVV95cUxPZExIdkdSWkJRM0lySlB1WkhteVZSVGVQLWREeF9yRlI2QXFXSXV3ME03aFNXSFY5X3VfX2hTblozRUtCdXdaTWFQN1M4dnBBYjdHOGJidkhiRmpkZUtnX1ktbGwyMzFNMV9iZ2V5TzFlVEhUaDN1U1lmMWdCaEx2djA2U01Nc0QwYkJVczdrYUFNUWVh?oc=5",
+     "tarih": "2026-11-09",
+     "kaynak": "Hisse.net",
+     "puan": 0
     }
    ],
    "olumlu": 4,
-   "olumsuz": 1,
+   "olumsuz": 0,
    "bayrak": "HABER+"
   },
   "TURSG": {
@@ -3438,15 +3501,15 @@
      "puan": 0
     },
     {
-     "baslik": "Erdin Özel’in ek ifadesi ortaya çıktı! İtirafçı oldu haberi - Borsanın Gündemi",
-     "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPbzU4Mk9NZ1FuYUxtNktiVUY4UzNwZXBtdkRZRk1MQy1FQ2NOTWJ6WXVJMzJKUG1zQVpGYTkzTnVJZENMQ3VDeWhldGg4bG9TTktZRHM5Y0FrS0U3dmZOU3JVM2pqQkJISV9nWTNTMXlfdEdJdU83ZTQ2dmk2RWpOOVFTR2UwUTRsUlZtS1FxTV9MRDNYSFRoMDEtUE0?oc=5",
-     "tarih": "2026-11-15",
-     "kaynak": "Borsanın Gündemi",
-     "puan": 0
+     "baslik": "BIST 100 Hisselerinde Haftalık Performans Tablosu: Kazananlar Zirvesinde Kim Var? - Para Analiz",
+     "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUVNsaGxpSTdYWEwtcmY3VEZPNzl5c3FJM25ZVmtWaEtxcjE4WlR6N2hOZUhWWFkzTGJUZlFUS1ktWUxnLWh4azdzQmNrSXVXbkM3Uno2ak5iaVZ5QzItODlUbjhtcEp5a01YbHJ4LVBiUW9BLVRlMTJRZDlNeFRsczRtamxCQ180dlN6dnM2SU9IQ0UyLUdrWTFVV0p4VXVCN09sWXR1eDF5YUtOV2REZEVqQzBYQQ?oc=5",
+     "tarih": "2026-11-20",
+     "kaynak": "Para Analiz",
+     "puan": -1
     }
    ],
    "olumlu": 3,
-   "olumsuz": 1,
+   "olumsuz": 2,
    "bayrak": "HABER+"
   },
   "AYGAZ": {
@@ -3463,13 +3526,6 @@
      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQcURnaXc0UG5hbXJHQnp2anhxdGpPVkpxZDN1U3QxRklsZ0xZYVN2ZGJhNXhiS0Etb0Q5YzktR0hHcFJyaEhDZTVUTmU0djYwX25RWXJwNzgya3JiYS1DRVNFanN2dDhMTU04RmZzNnFZbXB2ejhXVG9wVnBnMzhmRl9nOEtyZzJtQV9RTWIxelowQVJaWkNrUHk1NjVjNnRPZU9CMDMxV1p0Y0RnWXZDTVpMVFNSRDli?oc=5",
      "tarih": "2026-11-19",
      "kaynak": "Investing.com Türkiye",
-     "puan": 1
-    },
-    {
-     "baslik": "Aygaz 1,02 milyar TL temettü dağıtım önerisi - Foreks.com",
-     "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNUmRSTXkyeGdDSDJaby1UaFIxV21nRnFIZVlyZ291R19BRlkzdG9qLVV2SnpRU2kyeGdPWXdVbVp2VmpSZWtkZTN2YmsycTJTU2JiOVF0elQzUkthUEIzaEZPMjdxRk0xVllxX3pVT1kxejVVZkY3Z0pocGhrdGJrR0xyMWVSVFVKVlF3THJ4bUtHRVJSTi1UcTRHbUJLQWxYakFmbDZDTVNHcXhsUjNLRV9QeWUwcWRZVnR4OGNrMmtWOFk?oc=5",
-     "tarih": "2026-11-19",
-     "kaynak": "Foreks.com",
      "puan": 1
     },
     {
@@ -3506,26 +3562,33 @@
      "tarih": "2026-11-19",
      "kaynak": "TradingView",
      "puan": 0
+    },
+    {
+     "baslik": "AYGAZ Ve BRSAN: Bugün Hareketli Olması Beklenen Hisseler - Finans Hattı",
+     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPaXNCbmVOX2VWM2tpVWo1SjQ0NGZiVUxUM0RaWFNzaE1VRGtZVGFZSXlBdUN1dDhNWGtPbzQ1WkswdTQxVUdLbHdJdDFJX21QcXVDYzYxVXU1U2loUkczTDc5N1FFQUxEVnh4cEN5NExTTlFGdnU2Y3dBM3Y1cTRlNENoU3BWcU9YMkl6WGMzVC02bEdIVXhPb19OVQ?oc=5",
+     "tarih": "2026-11-09",
+     "kaynak": "Finans Hattı",
+     "puan": 0
     }
    ],
-   "olumlu": 5,
+   "olumlu": 4,
    "olumsuz": 0,
    "bayrak": "HABER+"
   },
   "RGYAS": {
    "haberler": [
     {
-     "baslik": "Beş kriterde büyüyenler arasında yıllık getiride %156 ile ilk sırada - Ekonomim",
-     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNOFVHMEgxMHJjMXVIWVRrVTJsUnlRRUxQbW9yN2RXRnRheGdOZmItNC1RNFlrQUxnREFaUGlqZTJEN1QzR0NIMFN6V0ZwcmFkdFVwRWtSU3czTTNGSHBESlZUbWx1N05nWWRsUW8xdVdkckF2SkxLVnZ4a00tZVFRR3Y1ZXNfakNwNG5JVzlnVGM5MnZsenM0cm4zU3U5eFFhcU5nUFNmOXlSbTk4cGFzTg?oc=5",
-     "tarih": "2026-11-18",
-     "kaynak": "Ekonomim",
-     "puan": 0
-    },
-    {
      "baslik": "Borsa İstanbul'da 5 kriterde büyüyen 11 şirket belli oldu haberi - Borsanın Gündemi",
      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPM2ZlVlJSbGZGTmdKaHRpTlpXNEZiaHVDY3ZjNlh2bG1SWURMX3hEb2JINERlbGI0aE1PN1oySE0yRi1vSE5JaGRFSTJKRk83bVNFdjZfaE0yZGZFN0JEVnMzV2FzN014LVE1Q3lWdEdid3FfUDVuS0FEN01XcFIzeHdRVGZqQlp5Q3c1ckdRM2FhVE5ZYlBCTFFSdEZTNWN0eUp2Wg?oc=5",
      "tarih": "2026-11-18",
      "kaynak": "Borsanın Gündemi",
+     "puan": 0
+    },
+    {
+     "baslik": "Beş kriterde büyüyenler arasında yıllık getiride %156 ile ilk sırada - Ekonomim",
+     "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNOFVHMEgxMHJjMXVIWVRrVTJsUnlRRUxQbW9yN2RXRnRheGdOZmItNC1RNFlrQUxnREFaUGlqZTJEN1QzR0NIMFN6V0ZwcmFkdFVwRWtSU3czTTNGSHBESlZUbWx1N05nWWRsUW8xdVdkckF2SkxLVnZ4a00tZVFRR3Y1ZXNfakNwNG5JVzlnVGM5MnZsenM0cm4zU3U5eFFhcU5nUFNmOXlSbTk4cGFzTg?oc=5",
+     "tarih": "2026-11-18",
+     "kaynak": "Ekonomim",
      "puan": 0
     },
     {
@@ -3536,16 +3599,16 @@
      "puan": 0
     },
     {
-     "baslik": "Bugün en fazla para girişi olan hisseler (18.11.2026) - Rota Borsa",
-     "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1KZ2FZWnh4YzdqVmdQdDAxRjlva0x6Zmd6THNBSzQ3RkJDalJCRE5vYmhEZHRQMXRweGRYSUF1U3NMdkxhQ1huTUFSZ2tfQ2ZjWGtpemt2MWdUdWlFS1lyNXZCa2VMc2tZSXhiRWVJakp4cXF3UWI1dms2cTNlUEk?oc=5",
-     "tarih": "2026-11-18",
+     "baslik": "HSBC üzerinden en fazla alım satım yapılan hisseler (19.11.2026) - Rota Borsa",
+     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQN1dQel8tdi1wcEZCTEtsN1BCZlRKTzE1TUhZbjZDZE5na2xiSHptZGtacy1vYWNISFZEXzV0V1VyaDJocnVUZ3pSOXVzRDhYNTBlWlBEa014ZDIyZGlBQXVpV01rWEJlX3dfaDBnbGFmTEhBS1lRdDA5d2kzZjd6UzRmeW4xT1YxdWhNcVVn?oc=5",
+     "tarih": "2026-11-19",
      "kaynak": "Rota Borsa",
      "puan": 0
     },
     {
-     "baslik": "HSBC üzerinden en fazla alım satım yapılan hisseler (19.11.2026) - Rota Borsa",
-     "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQN1dQel8tdi1wcEZCTEtsN1BCZlRKTzE1TUhZbjZDZE5na2xiSHptZGtacy1vYWNISFZEXzV0V1VyaDJocnVUZ3pSOXVzRDhYNTBlWlBEa014ZDIyZGlBQXVpV01rWEJlX3dfaDBnbGFmTEhBS1lRdDA5d2kzZjd6UzRmeW4xT1YxdWhNcVVn?oc=5",
-     "tarih": "2026-11-19",
+     "baslik": "Bugün en fazla para girişi olan hisseler (18.11.2026) - Rota Borsa",
+     "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1KZ2FZWnh4YzdqVmdQdDAxRjlva0x6Zmd6THNBSzQ3RkJDalJCRE5vYmhEZHRQMXRweGRYSUF1U3NMdkxhQ1huTUFSZ2tfQ2ZjWGtpemt2MWdUdWlFS1lyNXZCa2VMc2tZSXhiRWVJakp4cXF3UWI1dms2cTNlUEk?oc=5",
+     "tarih": "2026-11-18",
      "kaynak": "Rota Borsa",
      "puan": 0
     }
@@ -3557,24 +3620,10 @@
   "KTLEV": {
    "haberler": [
     {
-     "baslik": "KATILIMEVIM TAS. FIN. Hisse Senedi Canlı Grafik - Mynet Finans",
-     "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE12OHV6ZlI3cHFGV09CMTE5VFdTOTB2RGk4U3B1Q1FZOFNHU19pUW16X3lEQWtscWYxRHZncjlmUzJjVE9XczBsaXhfTHhJQmZQX2tGSmFnRHNXTWZFY3JMNjRRUUM2cU5HdW1uWThmdFhsaDVH?oc=5",
-     "tarih": "2026-11-20",
-     "kaynak": "Mynet Finans",
-     "puan": 0
-    },
-    {
      "baslik": "Borsada 47 hissede özel emir hareketliliği: SASA, ASTOR, TUPRS, HEKTS ve KTLEV de listede - CNBC-e",
      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQR1drNjhDd3Zhc1hwMk90bDA0UGpYZjRyQ2d1Rk9UcU5sR3lFTjFqUTFHaThFV29Ed3RfU0dpOUZBdE03dWdYUlFjcU9YYV9ZeDVrUktrMk1JN2kweEdJNVpiOXlHc29kb0tnYUVSSkhuSGdoOG85WVNWdjJGRE04QkZMVjhQbjdUcUF5YlFPaVJFQ2RydjBBN0VlRHhkS1pMZVRkajZwbGtnb1lvcmJjWG1pNUlyYl91VE9pZw?oc=5",
      "tarih": "2026-11-12",
      "kaynak": "CNBC-e",
-     "puan": 0
-    },
-    {
-     "baslik": "Rivayet Muhtelif (45) | Fon vurgunu: Şahap Kavcıoğlu Pusula’yı neden kurtarmak istedi? - Medyascope",
-     "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQaTRpblBSeVo5ZEg5LXpURnNQUURxUkFYS0N4LUpIeWp0a0FnVUxHZGlnczdqTFNXY0FXNW9vSTJaWUlfajBNbDFtT1VzdWY4aXdZc3Jyd1dBRkt0RVB0eVZCT1JxRk9OOWlNVnEwaGh3MnRSb1lGdUxEQmRuMm9yUzVJNWNyM1FRN3RodmlfMUlwX0FNZ01UWVU2TVE3WGRHTXFNTmZqSEhYcHIwZkRPcmlsMA?oc=5",
-     "tarih": "2026-11-20",
-     "kaynak": "Medyascope",
      "puan": 0
     },
     {
@@ -3592,13 +3641,6 @@
      "puan": 1
     },
     {
-     "baslik": "2023’ten Bugüne Halka Arzlarda Yatırımcısına En Çok Kazandıran 10 Hisse - Borsa Gundem",
-     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNb1lYN1Y0ZFdGYWJsaHdwNHo3cFNlOWNKUEx0ZjVLblpFaTVaT0kwMW8waXZqYjI5SGZSNVJQQXV6YmtLTnRTaXI0d2ZlLUdDdnh4LTd2QTBQWlN3YUdUdVVTRmd6dzJPOGVVUUw0UWYwczRhVDVRZVpPb3lReFZWTG9pX1QyUlIzbEJ1eXgtTUdVQlE0cl9SUExpVGN5RU1FYUVv?oc=5",
-     "tarih": "2026-11-17",
-     "kaynak": "Borsa Gundem",
-     "puan": 0
-    },
-    {
      "baslik": "KTLEV Hisselerinde Devir Süreci Tamamlandı - Finans Hattı",
      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOX191RWdrRm5oT2VWR3o2ODlZYTh3ZFlRU2sxOEhxeUJLcWJoU0lBRG1fQ0Q2bUU5VUlrZHd6WWtPcndzLUpzNnJwN3l6RmlUTzVOLXRPV0ZpZ0toaEdKdmJmaHQ2TFBFaFQwb2xlY0hXVlN1WmxoRzBHaklVdzdPR0FCeVgwY0Rr?oc=5",
      "tarih": "2026-11-10",
@@ -3606,16 +3648,37 @@
      "puan": 0
     },
     {
-     "baslik": "İş Yatırım ve HSBC üzerinden en fazla alım satım yapılan hisseler belli oldu (18.11.2026) - Ekonomim",
-     "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQM3EyZXBxODRPcVZfWVpuekV1bnB0bEthdU1YeDR6ZmpLbkF1cGVkSTFxYjJ0Z25OcEFBcko5X1lzeUJQc2wwSGhSLVBXTTBLd2s5Z3c4RElhRXZTWlkwVXJSR0Z1em1TSmJvSERGUks1VWZDT01FbXhVdk55TDBpZXctWU5qZHUxTWNZZURtbVd5LVU5T0JORjZDVHYtcE5oSTRSWmF4OGFLemRmdHJuemdLbUxaWmxTTXYyZkpHM042SFJVM3Zad0xHbEU0S3R1Ymh1NG92dnlyVE5nTUtN?oc=5",
-     "tarih": "2026-11-19",
-     "kaynak": "Ekonomim",
-     "puan": 1
+     "baslik": "2023’ten Bugüne Halka Arzlarda Yatırımcısına En Çok Kazandıran 10 Hisse - Borsa Gundem",
+     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNb1lYN1Y0ZFdGYWJsaHdwNHo3cFNlOWNKUEx0ZjVLblpFaTVaT0kwMW8waXZqYjI5SGZSNVJQQXV6YmtLTnRTaXI0d2ZlLUdDdnh4LTd2QTBQWlN3YUdUdVVTRmd6dzJPOGVVUUw0UWYwczRhVDVRZVpPb3lReFZWTG9pX1QyUlIzbEJ1eXgtTUdVQlE0cl9SUExpVGN5RU1FYUVv?oc=5",
+     "tarih": "2026-11-17",
+     "kaynak": "Borsa Gundem",
+     "puan": 0
+    },
+    {
+     "baslik": "Fon krizi hisseleri tavanda, borsa düşüyor: GUNDG, ISVEA, TRHOL, DSTKF öne çıktı - Paratic Haber",
+     "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQY29NcmduYXUyTGM0Rng0OGNYRzZJR05BWlZubktaaW8wY3FKUXdIajNYMWlWaEVta2JvNHgtLVZMNUlLTE9sSVZrVFpTcXdFVE9zZzVjZWpTYXhvNWctbk5MZFJ6WmYwbW1wTi1rX0RJRmQtbE9NeWp4SDVDTlNwM3lSTnNmbWFiTXhqcW1MTmVzS2Rzcjk5bDVRODA?oc=5",
+     "tarih": "2026-11-17",
+     "kaynak": "Paratic Haber",
+     "puan": 0
+    },
+    {
+     "baslik": "KTLEV tavan oldu, para girişi 90 milyon TL’yi aştı: ASELS’te 334 milyon TL çıkış - Paratic Haber",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPekRCUG5qcUVpMm9GbV9aNlA5Zkp3MHlzLXhFcEtnMU9CNVhGX19jQThTdU5rRlhqMWtNMFl2dHJWUTctdlV1d2dIV0ZBQ0YycFlsbEJwc05jbEk0VTBSSVk1b3NxOGlueTlJQ3hlZFZpa0R6VnRsRlZiTWxDakFzQ29YczVSNXZ3eUxjdFNsaTAtQVN6SEtpSVN2OVU2QQ?oc=5",
+     "tarih": "2026-11-17",
+     "kaynak": "Paratic Haber",
+     "puan": 0
+    },
+    {
+     "baslik": "İki hissede tablo değişmiyor: KTLEV’e 36 milyon giriş, ASELS’te 148 milyon çıkış - Paratic Haber",
+     "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQVy03a0NQdTl4TlpzaDdGM0xCcFh5VC1hRl9WVVBKVGNvMjE3R3pRZDRtZFV3a3hYdVNYeTd5Y2JGS1d5Q3IxZ19XNUxVS21XYTNUcldZZkVxbE5MRmU5c1JnWl9PMGhBWWxIRnhEcS1RTVJMRU5EbWhUN3UwUV85SUlNY05JZ0dJVnZQckt1bmRoS2poTDRNU3hpOXdyZw?oc=5",
+     "tarih": "2026-11-20",
+     "kaynak": "Paratic Haber",
+     "puan": 0
     }
    ],
-   "olumlu": 2,
+   "olumlu": 1,
    "olumsuz": 0,
-   "bayrak": "HABER+"
+   "bayrak": ""
   },
   "KARCL": {
    "haberler": [
@@ -3631,6 +3694,13 @@
      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQTHVkVmdPTzlzNG96RkNCUWNTSUpBa0pBLXRfWEVWeC1XR1pLNDl6c0JVZGdUSThkVGMwcTVEV0J1VEJWUEFTZ0QtdFdKdHVGSUQyLU4yTFpXcVkycTNTOGtkVTZ3LWhPQkQ4bkp6QmFadWNlaGZvQWg3NXg2VUhXSkdZNS1FdXNleGNua3lkLURQcVlmQXRVQVNNS2R2NVVD?oc=5",
      "tarih": "2026-11-15",
      "kaynak": "CNBC-e",
+     "puan": 0
+    },
+    {
+     "baslik": "SPK'den 3 hissede 65 kişi hakkında suç duyurusu: 2 yıl işlem yasağı geldi - Cumhuriyet",
+     "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOVdvOVk0MU1XNy1pdVlHMTFNaVRDY080am9scXVBV0NMeTlFWW1oa2YzLXE3U0VzYXZaLV8yRHNRTjMxaDJrbTJLZ0dIN01qa3lWOTFpSG53ZkIxOFI3T3lqYU1CZ1hnbEVFMHVkLXI0U1d1eTAtazZmUW5qc0hGb1lLckhHWDNhN1lzQWlaRS1uLUNGVndLYU10dlExV09IdUd5ZWJIV2dDQlo0NHVUdXVaZXFBVXpwZmc?oc=5",
+     "tarih": "2026-11-14",
+     "kaynak": "Cumhuriyet",
      "puan": 0
     },
     {
@@ -3667,17 +3737,10 @@
      "tarih": "2026-11-14",
      "kaynak": "Yeni Şafak",
      "puan": 0
-    },
-    {
-     "baslik": "Borsada dikkat çeken hisse: Yüzde 90 düştü, 4 gün tavan serisi yaptı - CNBC-e",
-     "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOMEtnT0xRbVdKZlJNUHFRYXdWaG9tR2ZiZ0F6Y3lzdGxUbHVsYU1lbGdxdHdZOE9qTDJ1enhVM0p0bTcwOWlBZUdnTGhOQWgtMXNubHo3cDFlNzRwV1V2S3lJNFd1SnJJWnhqbWZiYWhyQmk0ZFpNYTU1MUdkVk1FQkFzVlpMTXJPQ2ZJOFJrQ0phYm9vRlQ0TS01ZlRpa2N2N0RB?oc=5",
-     "tarih": "2026-11-10",
-     "kaynak": "CNBC-e",
-     "puan": -1
     }
    ],
    "olumlu": 0,
-   "olumsuz": 1,
+   "olumsuz": 0,
    "bayrak": ""
   },
   "RYSAS": {
@@ -3695,13 +3758,6 @@
      "tarih": "2026-11-17",
      "kaynak": "Paranın Yönü",
      "puan": -1
-    },
-    {
-     "baslik": "BIST 100'de en yüksek para çıkışı ASELS'te - hibya.com",
-     "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5fLW1QUW9wdURVSnlPNE16eEg1YkZUNEhoMnhCOEc5Wi1YN0VuQ1BXMkVHcTFTb0RiUmhNNXBrV0FBYXZwd3ZTQkRITktGVnl2OW9DT1I2elJuaWJxYlVFRU55ZW1NZnRWM1p1NXhMcktRZHk3?oc=5",
-     "tarih": "2026-11-18",
-     "kaynak": "hibya.com",
-     "puan": 0
     }
    ],
    "olumlu": 0,
@@ -3722,13 +3778,6 @@
      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOR291aEdjcC1QZGlpc25zbEVOeWxSNmxOa3NobWVocHBzOGxxc0wxZVBTdmtaZWtXMG1fT1ZNUEoxX0NBMTNfSno2a200U1BXWEJ1ZnF4d2p5d3d4VUZod3hWTWxzNWFuZkZxbTVWLXZzaFdkOFhIVEtrUmlXaFI1WWEtblJnaGppS1VFUlpObmRfX0JTN0g4TzdZYnRvX1hK?oc=5",
      "tarih": "2026-11-20",
      "kaynak": "Borsanın Gündemi",
-     "puan": 1
-    },
-    {
-     "baslik": "74 şirketten geri alım hamlesi geldi! Geri alınan lot sayıları belli oldu. - Ekonomim",
-     "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNZjdJWDZsbFMzWXJ5NW91OXdkUUI3aEtiZ2hhUk9sbFJhVXRIUHl0TV9jTzZlWGo0MlJiZEhxRGgyX1FaajhwQjJuakVjRTVTSGwyWndYTUdIcGRsN1RWeUpqT1FvUWRQU3h3Z0pxdWJoU09RRzdnRzVKNVhHcTBFQkt2RkVmTER0UURYeHRxcVJMLWNnVlUzSVVQMFF5LW9QaFhraUxIbm5rT09XSm1FclA5MTNNOXczOU5SUi1Kd3BhUlpvRmgwR0VzbEl4Zw?oc=5",
-     "tarih": "2026-11-08",
-     "kaynak": "Ekonomim",
      "puan": 1
     },
     {
@@ -3765,6 +3814,13 @@
      "tarih": "2026-11-09",
      "kaynak": "CNBC-e",
      "puan": 0
+    },
+    {
+     "baslik": "Borsa İstanbul'da 27 şirket pay geri alımı gerçekleştirdi - Haber.com",
+     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNQ25BV19JcDRVZERUdUZhMGFEd1NXclN4S3hpUTlHWUx2NTNoemtBZ3pBNGp2M1U3VzRrMmxRaFBpeVJsNUxsRUZjbVlJV1RJR0pFUjBQbjFzWGgzTWFJZzhJcWpuVUFma2JjNmotZU1zdnpWMWtxZ1hENzRzZTZHcUthSEhPT2FBY2F6aFYyQ0xTVTNaRGpXdQ?oc=5",
+     "tarih": "2026-11-09",
+     "kaynak": "Haber.com",
+     "puan": 1
     }
    ],
    "olumlu": 5,
@@ -3816,18 +3872,18 @@
      "puan": -1
     },
     {
-     "baslik": "Borsa İstanbul 3 hissede tedbir uygulanacağını duyurdu haberi - Borsanın Gündemi",
-     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPTm4wbVFWWlpMa0FremJJcTlBN2VhUmExMURmaXBWczdldi1xamMyWjNBeEs4TkExeHMzQ1Ytc1k0UjBhaUo0NlpVU0ZoSGV1OXcySE1JbFJPU1duOE4xcm5YNUhqejdkWF93X3JEcVM0ckRxWEZTa2lxRV9sUXlJWnpGVmFLb1hyYWZxTmUzbGRyanBiZDhDVEpZR3d4WGZsV2c?oc=5",
-     "tarih": "2026-11-19",
-     "kaynak": "Borsanın Gündemi",
-     "puan": -1
-    },
-    {
      "baslik": "Tera bağlantılı hisselerde sert dönüş: TRHOL, DSTKF, OZATD dahil 9 hissede tavan - Paratic Haber",
      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQNVJUNFdSWnJkWmNQQ28xZWt3NUYwaGpwd2ZUZGM4VkdpWDc3YVBNdDRpVXFlcHRyZFhxTGE0UnZ4dlJfWGFtbGNOSGRtVXBaU084Q1dpQW9ydVdJU3g0blM4V0NpSjl0NVM2U3oyMzFjbnVxZjVMZC02QWpfbllMbndaaWhvWU9KZF9EM3E2NVUyNk5SY0tNRHhmREUwVm8?oc=5",
      "tarih": "2026-11-17",
      "kaynak": "Paratic Haber",
      "puan": 0
+    },
+    {
+     "baslik": "Borsa İstanbul 3 hissede tedbir uygulanacağını duyurdu haberi - Borsanın Gündemi",
+     "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPTm4wbVFWWlpMa0FremJJcTlBN2VhUmExMURmaXBWczdldi1xamMyWjNBeEs4TkExeHMzQ1Ytc1k0UjBhaUo0NlpVU0ZoSGV1OXcySE1JbFJPU1duOE4xcm5YNUhqejdkWF93X3JEcVM0ckRxWEZTa2lxRV9sUXlJWnpGVmFLb1hyYWZxTmUzbGRyanBiZDhDVEpZR3d4WGZsV2c?oc=5",
+     "tarih": "2026-11-19",
+     "kaynak": "Borsanın Gündemi",
+     "puan": -1
     }
    ],
    "olumlu": 0,
@@ -3891,7 +3947,5 @@
    "bayrak": "HABER+"
   }
  },
- "hatalar": [
-  "HALKB: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=%22Halkbank%22%20OR%20HALKB%20hisse%20when%3A14d&hl=tr&gl=TR&ceid=TR:tr"
- ]
+ "hatalar": []
 }
