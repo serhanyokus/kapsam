@@ -6,8 +6,9 @@ Sanayi şirketleri: reel FCFF İNA (valuation.dcf). Girdiler son 12 ay TMS 29 d�
   - reel AOSM: özkaynak maliyeti (reel risksiz %4 + beta × %6) ile vergi sonrası reel borç maliyetinin (%6) ağırlıklı ortalaması, %8–%16
   - net borç: son bilanço; azınlık payı: toplam özkaynak × (1 − ana ortaklık kârı / toplam kâr)
   - değer baz tarih TL'sinden bugünün TL'sine son aylık TÜFE ile taşınır
-Banka ve sigorta: kalıntı gelir (gerekçeli PD/DD) = (ÖK kârlılığı − g) / (özkaynak maliyeti − g), 0,3–4 aralığı;
-  nominal özkaynak maliyeti = (1 + reel %4 + beta × %6) × (1 + %15) − 1; g = uzun vadeli enflasyon varsayımı %15.
+Banka ve sigorta: kalıntı gelir (gerekçeli PD/DD) = (reel ÖK kârlılığı − %2) / (reel özkaynak maliyeti − %2), 0,3–4 aralığı;
+  reel ÖK kârlılığı = (1 + nominal) / (1 + 12 ay sonrası beklenen TÜFE, TCMB anketi) − 1 — sanayi İNA ile aynı reel çerçeve.
+Potansiyeli %100'ün üstündeki değerler "düşük güven" sayılır.
 12 aylık nominal hedef = bugünkü değer × (1 + son 12 ay TÜFE): fiyatın değere 12 ayda yakınsadığı varsayımı.
 Bu bir model çıktısıdır; varsayımlar değişince değer değişir. Yatırım tavsiyesi değildir.
 """
@@ -26,8 +27,13 @@ from .normalize import tms29
 
 RF_REAL, ERP = 0.04, 0.06
 KD_REAL = 0.06               # reel borçlanma maliyeti (vergi öncesi)
-UZUN_ENF = 0.15
-HOLDING_ISKONTO = 0.30       # hasılatı olmayan holding/yatırım şirketlerinde defter değerine uygulanan iskonto              # bankalar için uzun vadeli yıllık enflasyon varsayımı (sürekli nominal büyüme)
+UZUN_ENF = 0.15             # enflasyon verisi yoksa yedek varsayım
+FIN_G_REAL = 0.02           # banka/sigorta: sürekli reel büyüme
+# Banka/sigorta reel ÖK kârlılığında kullanılan ileriye dönük enflasyon: TCMB Piyasa Katılımcıları Anketi, 12 ay sonrası yıllık TÜFE
+# beklentisi (%23,95). config/takip.json "enflasyon_beklentisi_12a" ile güncellenebilir; yoksa son 12 ay TÜFE kullanılır.
+BEKLENEN_ENF = 0.2395
+HOLDING_ISKONTO = 0.30       # hasılatı olmayan holding/yatırım şirketlerinde defter değerine uygulanan iskonto
+UC_POTANSIYEL = 1.0          # potansiyel bunun üstündeyse model şirketi iyi temsil etmiyor olabilir: güven "düşük"
 WACC_MIN, WACC_MAX = 0.08, 0.16
 G_MIN, G_MAX, MARGIN_MAX = 0.0, 0.15, 0.40
 
@@ -74,14 +80,17 @@ def value_one(t: str, a, price: float, mcap: float, beta: float, k_today: float,
         except Exception as e:  # noqa: BLE001
             out["deger_not"] = f"veri yok ({e})"
             return out
-        g = UZUN_ENF
-        coe = (1 + coe_real) * (1 + g) - 1
-        roe = ni / eq if eq > 0 else np.nan
-        if not (pd.notna(roe) and eq > 0):
+        # Reel ve tutarlı: nominal ÖK kârlılığı son 12 ay enflasyonundan arındırılır; özkaynak maliyeti de reel (sanayi İNA ile aynı çerçeve)
+        roe_nom = ni / eq if eq > 0 else np.nan
+        if not (pd.notna(roe_nom) and eq > 0):
             out["deger_not"] = "özkaynak/kâr yok"
             return out
-        pb = float(np.clip((roe - g) / (coe - g), 0.3, 4.0))
-        out.update(deger=pb * eq / shares, aosm_reel=coe_real, buyume=g, marj=roe)
+        pi = BEKLENEN_ENF if pd.notna(BEKLENEN_ENF) else (infl if pd.notna(infl) else UZUN_ENF)
+        roe = (1 + roe_nom) / (1 + pi) - 1
+        g = FIN_G_REAL
+        pb = float(np.clip((roe - g) / (coe_real - g), 0.3, 4.0))
+        out.update(deger=pb * eq / shares, aosm_reel=coe_real, buyume=g, marj=roe,
+                   deger_not=f"reel ÖK kârlılığı %{roe*100:.0f} (nominal %{roe_nom*100:.0f}, beklenen enflasyon %{pi*100:.1f})")
     else:
         out["yontem"] = "reel FCFF İNA"
         try:
@@ -153,7 +162,7 @@ def value_one(t: str, a, price: float, mcap: float, beta: float, k_today: float,
             out["guven"] = "negatif"
         elif out.pop("_zayif", False):
             out["guven"] = "düşük"
-        elif p > 2 or p < -0.8 or (pd.notna(out["tv_payi"]) and out["tv_payi"] > 0.85):
+        elif p > UC_POTANSIYEL or p < -0.8 or (pd.notna(out["tv_payi"]) and out["tv_payi"] > 0.85):
             out["guven"] = "düşük"
         elif abs(p) > 1:
             out["guven"] = "orta"
@@ -168,6 +177,14 @@ def build(root: Path, sc: pd.DataFrame, prices: dict[str, float]) -> pd.DataFram
     root = Path(root)
     data = root / "data" / "gercek"
     cpi, fx = pipeline.load_macro_csv(data / "makro_ceyrek.csv")
+    global BEKLENEN_ENF
+    try:
+        import json as _json
+        v = _json.loads((root / "config" / "takip.json").read_text(encoding="utf-8")).get("enflasyon_beklentisi_12a")
+        if v is not None:
+            BEKLENEN_ENF = float(v)
+    except Exception:  # noqa: BLE001
+        pass
     try:
         from .gundem import load as _gload
         erp = ERP + float(_gload(root).get("erp_ek", 0.0) or 0.0)
@@ -222,7 +239,8 @@ def update_history(root: Path, sc: pd.DataFrame, stamp: str) -> pd.DataFrame:
     f = Path(root) / "data" / "gercek" / "seviye_gecmis.csv"
     h = pd.read_csv(f, dtype=str) if f.exists() else pd.DataFrame(columns=["tarih", "kod", "seviye"])
     h = h[h["tarih"] != stamp]
-    new = pd.DataFrame({"tarih": stamp, "kod": sc.index.astype(str), "seviye": sc["seviye"].astype(str).values})
+    new = pd.DataFrame({"tarih": stamp, "kod": sc.index.astype(str), "seviye": sc["seviye"].astype(str).values,
+                        "kural": sc["kural"].astype(str).values if "kural" in sc else "v1"})
     h = pd.concat([h, new], ignore_index=True).sort_values(["tarih", "kod"])
     h.to_csv(f, index=False)
     return changes(h)

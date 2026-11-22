@@ -298,6 +298,10 @@ JS_EN = {"Sonuç yok": "No results", "${n} hisse": "${n} stocks", "${pct(Math.ma
 
 # değişken cümleler (sayı dönüştürmeden ÖNCE uygulanır)
 PATTERNS = [
+    (r"temel %(\d+) \+ gündem eki %(\d+)", r"base %\1 + agenda add-on %\2"),
+    (r"VIX (\d+) > 25: küresel risk iştahı zayıf \(\+1 puan\)", r"VIX \1 > 25: weak global risk appetite (+1 pt)"),
+    (r"dolar/TL son 1 ayda (%[\d,]+) arttı \(\+1 puan\)", r"USD/TRY rose \1 in a month (+1 pt)"),
+    (r"son 14 gün (\d+) olumlu / (\d+) olumsuz başlık", r"last 14 days: \1 positive / \2 negative headlines"),
     (r"^(\s*[A-Z0-9]{3,6}) ve\s*$", r"\1 vs "), (r"^\s*medyanı \((\d+) şirket\)\s*$", r" median (\1 companies)"),
     (r"değerleme: ", "valuation: "), (r"\((\d+) hisse,", r"(\1 stocks,"), (r"(\d+/\d+) geçti", r"\1 passed"),
     (r"Reel seriler (\S+) TL'sidir\.", r"Real series are in \1 TRY."),
