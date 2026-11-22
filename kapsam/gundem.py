@@ -254,9 +254,9 @@ def page(g: dict, stamp: str) -> str:
     erp = g.get("erp_ek", 0.0)
     return f"""<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><title>Gündem · KAPSAM (gizli)</title><style></style></head><body>
-<div class="eyebrow">Gizli sürüm · Gündem · her iş günü yenilenir</div><h1>Türkiye ve dünya, bugün.</h1>
-<p class="lead">Piyasa göstergeleri, makro ve küresel başlıklar, {len(comp)} şirketin son 14 günlük haberleri. Bu veriler İNA iskonto oranına ve
-seviyelere açık kurallarla girer.</p>
+<div class="eyebrow">Gündem · her iş günü yenilenir</div><h1>Türkiye ve dünya, bugün.</h1>
+<p class="lead">Piyasa göstergeleri, makro ve küresel başlıklar, {len(comp)} şirketin son 14 günlük haberleri. Bu veriler şirket notlarındaki İNA
+iskonto oranına ve kalite bayraklarına açık kurallarla girer.</p>
 <div class="kpis"><div class="kpi"><span>Hisse risk primi</span><b>%{(ERP_BASE+erp)*100:.0f}</b><span>temel %6 + gündem eki %{erp*100:.0f}</span></div>
 <div class="kpi"><span>Olumsuz haber bayrağı</span><b>{len(neg)}</b><span>HABER- (hafif bayrak)</span></div>
 <div class="kpi"><span>Olumlu haber akışı</span><b>{len(pos)}</b><span>bilgi amaçlı</span></div>
