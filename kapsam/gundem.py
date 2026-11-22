@@ -197,13 +197,8 @@ def focus_list(out_root: Path, universe: pd.DataFrame | None, n_big: int = 60) -
 # ------------------------------------------------------------------ sayfa
 
 def _p(v):
-    try:
-        v = float(v)
-    except (TypeError, ValueError):
-        return "–"
-    if not np.isfinite(v):
-        return "–"
-    return ("+" if v > 0 else "−" if v < 0 else "") + f"%{abs(v)*100:.1f}".replace(".", ",")
+    from .theme import pct
+    return pct(v, 1, True)
 
 
 def _news(items: list[dict], n: int = 12) -> str:
@@ -221,9 +216,10 @@ def section(g: dict) -> str:
     """Seviyeler sayfasına gömülen gündem bölümü (göstergeler + makro/küresel başlıklar + şirket haber akışı özeti)."""
     e = html.escape
     ind = g.get("gostergeler", {})
-    irows = "".join(f"<tr><td class='l'>{e(v.get('ad',''))}</td><td>{float(v.get('son',0)):,.2f}</td><td>{_p(v.get('gun'))}</td>"
+    from .theme import num
+    irows = "".join(f"<tr><td class='l'>{e(v.get('ad',''))}</td><td>{num(v.get('son'))}</td><td>{_p(v.get('gun'))}</td>"
                     f"<td>{_p(v.get('ay'))}</td><td>{_p(v.get('yil'))}</td></tr>"
-                    for v in ind.values()).replace(",", "X").replace(".", ",").replace("X", ".")
+                    for v in ind.values())
     comp = g.get("sirket", {})
     neg = sorted([(t, d) for t, d in comp.items() if d.get("bayrak") == "HABER-"], key=lambda z: -z[1]["olumsuz"])
     pos = sorted([(t, d) for t, d in comp.items() if d.get("bayrak") == "HABER+"], key=lambda z: -z[1]["olumlu"])
@@ -241,9 +237,10 @@ def section(g: dict) -> str:
 def page(g: dict, stamp: str) -> str:
     e = html.escape
     ind = g.get("gostergeler", {})
-    irows = "".join(f"<tr><td class='l'>{e(v.get('ad',''))}</td><td>{float(v.get('son',0)):,.2f}</td><td>{_p(v.get('gun'))}</td>"
+    from .theme import num
+    irows = "".join(f"<tr><td class='l'>{e(v.get('ad',''))}</td><td>{num(v.get('son'))}</td><td>{_p(v.get('gun'))}</td>"
                     f"<td>{_p(v.get('ay'))}</td><td>{_p(v.get('yil'))}</td><td class='l'>{e(str(v.get('tarih','')))}</td></tr>"
-                    for v in ind.values()).replace(",", "X").replace(".", ",").replace("X", ".")
+                    for v in ind.values())
     comp = g.get("sirket", {})
     neg = sorted([(t, d) for t, d in comp.items() if d.get("bayrak") == "HABER-"], key=lambda z: -z[1]["olumsuz"])
     pos = sorted([(t, d) for t, d in comp.items() if d.get("bayrak") == "HABER+"], key=lambda z: -z[1]["olumlu"])

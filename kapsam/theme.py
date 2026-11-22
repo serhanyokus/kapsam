@@ -81,15 +81,101 @@ footer{max-width:1080px;margin:0 auto;padding:28px 22px 60px;color:var(--muted);
 .lvl.al{background:#248a3d}.lvl.tut{background:#8e8e93}.lvl.azalt{background:#ff9f0a}.lvl.sat{background:#d70015}.lvl.yok{background:#e5e5ea;color:#1d1d1f}
 .lvl.big{font-size:15px;padding:6px 16px;vertical-align:middle;margin-left:10px}
 .kpi span.lvl{display:inline-block;color:#fff;font-size:13px;line-height:1.4}.kpi span.lvl.yok{color:#1d1d1f}
+.wrap{background:linear-gradient(to right,var(--card) 30%,rgba(255,255,255,0)) left/40px 100% no-repeat local,
+linear-gradient(to left,var(--card) 30%,rgba(255,255,255,0)) right/40px 100% no-repeat local,
+radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.12),transparent) left/12px 100% no-repeat scroll,
+radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.12),transparent) right/12px 100% no-repeat scroll,var(--card)}
+.wrap td.l{white-space:normal;min-width:110px;max-width:420px}.wrap td:first-child{white-space:nowrap;min-width:0}
+.tw td.l{max-width:520px}
+footer a{color:var(--muted);text-decoration:underline}footer .links{margin-bottom:8px;display:flex;flex-wrap:wrap;gap:14px}
 @media print{.nav,footer{display:none}body{background:#fff}table,.kpi,.card{box-shadow:none}}
 """
 
 NAV = {"tr": [("index.html", "Genel bakış"), ("tarama.html", "Tarama"), ("sektor/index.html", "Sektörler"), ("risk/index.html", "Risk")],
        "en": [("index.html", "Overview"), ("tarama.html", "Screener"), ("sektor/index.html", "Sectors"), ("risk/index.html", "Risk")]}
+SITE = "https://serhanyokus.github.io/kapsam/"
+REPO = "https://github.com/serhanyokus/kapsam"
 FOOT = {"tr": ("KAPSAM · TMS 29 farkındalıklı BIST araştırma asistanı · Veri: KAP, TCMB EVDS, Yahoo Finance (gecikmeli). "
                "Bu sayfalar bir araştırma aracının çıktısıdır; yatırım tavsiyesi değildir."),
         "en": ("KAPSAM · IAS 29-aware Borsa Istanbul research assistant · Data: KAP, CBRT EVDS, Yahoo Finance (delayed). "
                "These pages are the output of a research tool; not investment advice.")}
+
+
+FOOT_LINKS = {"tr": [("yontem.html", "Yöntem"), ("durum.html", "Sistem durumu"), (REPO, "Kaynak kod (GitHub)"),
+                      (REPO + "/issues", "Geri bildirim")],
+              "en": [("yontem.html", "Methodology"), ("durum.html", "System status"), (REPO, "Source code (GitHub)"),
+                      (REPO + "/issues", "Feedback")]}
+FOOT_NOTE = {"tr": "Şirket sayıları sayfaya göre değişir: tarama ve notlar finansal tablosu olan şirketleri, risk sayfası fiyat serisi olan "
+                   "hisseleri, evren İş Yatırım'ın tüm BIST listesini kapsar.",
+             "en": "Company counts differ by page: the screener and notes cover companies with financial statements, the risk page covers "
+                   "stocks with price series, and the universe is the full BIST list from İş Yatırım."}
+
+
+def foot_html(lang: str = "tr", root: str = "") -> str:
+    gizli = os.environ.get("KAPSAM_GIZLI") == "1"
+    links = "" if gizli else "<div class='links'>" + "".join(
+        f"<a href='{h if h.startswith('http') else root + h}'>{lab}</a>" for h, lab in FOOT_LINKS[lang]) + "</div>"
+    return f"<footer>{links}{FOOT[lang]}<br>{FOOT_NOTE[lang]}</footer>"
+
+
+def seo_head(title: str, lang: str = "tr", here: str = "") -> str:
+    """Arama motoru ve paylaşım etiketleri. Gizli sürümde yalnızca noindex."""
+    import html as _h
+    if os.environ.get("KAPSAM_GIZLI") == "1":
+        return "<!--seo--><meta name='robots' content='noindex,nofollow'><!--/seo-->"
+    here = here or "index.html"
+    tr_url, en_url = SITE + here, SITE + "en/" + here
+    url = tr_url if lang == "tr" else en_url
+    t = _h.escape(re.sub(r"\s+", " ", title).strip() or "KAPSAM")
+    desc = ({"tr": f"{t} — TMS 29'a göre düzeltilmiş çeyrekler, temel kâr, İNA (DCF) değerlemesi, kâr kalitesi ve risk göstergeleri. "
+                   "Borsa İstanbul, her iş günü güncellenir.",
+             "en": f"{t} — IAS 29-adjusted quarters, core earnings, DCF valuation, earnings quality and risk metrics. "
+                   "Borsa Istanbul, updated every business day."})[lang]
+    img = SITE + "og.png"
+    return ("<!--seo-->"
+            f"<meta name='description' content='{desc}'><link rel='canonical' href='{url}'>"
+            f"<link rel='alternate' hreflang='tr' href='{tr_url}'><link rel='alternate' hreflang='en' href='{en_url}'>"
+            f"<link rel='alternate' hreflang='x-default' href='{tr_url}'>"
+            f"<meta property='og:type' content='website'><meta property='og:site_name' content='KAPSAM'>"
+            f"<meta property='og:title' content='{t}'><meta property='og:description' content='{desc}'>"
+            f"<meta property='og:url' content='{url}'><meta property='og:image' content='{img}'>"
+            f"<meta property='og:locale' content='{'tr_TR' if lang == 'tr' else 'en_US'}'>"
+            f"<meta name='twitter:card' content='summary_large_image'><meta name='twitter:image' content='{img}'>"
+            "<!--/seo-->")
+
+
+def _title_of(page: str) -> str:
+    m = re.search(r"<title>(.*?)</title>", page, flags=re.S)
+    import html as _h
+    return _h.unescape(m.group(1)) if m else "KAPSAM"
+
+
+def pct(v, d: int = 1, sign: bool = False) -> str:
+    """Türkçe yüzde: %18,6 (işaretli: +%2,4 / −%2,4). Geçersizse –."""
+    try:
+        v = float(v)
+    except (TypeError, ValueError):
+        return "–"
+    if v != v or v in (float("inf"), float("-inf")):
+        return "–"
+    s = ("+" if v > 0 else "−" if v < 0 else "") if sign else ("−" if v < 0 else "")
+    return s + "%" + f"{abs(v) * 100:,.{d}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+
+
+def num(v, d: int = 2) -> str:
+    """Türkçe sayı: 11.131,30."""
+    try:
+        v = float(v)
+    except (TypeError, ValueError):
+        return "–"
+    if v != v or v in (float("inf"), float("-inf")):
+        return "–"
+    return ("−" if v < 0 else "") + f"{abs(v):,.{d}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+
+
+def mult(v, d: int = 1) -> str:
+    s = num(v, d)
+    return s if s == "–" else s + "x"
 
 
 def nav_html(active: str, root: str, lang: str = "tr", here: str = "") -> str:
@@ -108,7 +194,9 @@ def restyle(page: str, active: str = "", root: str = "", lang: str = "tr", here:
     if "<style>" not in page:
         page = page.replace("</head>", "<style>" + CSS + "</style></head>", 1)
     nav = nav_html(active, root, lang, here) + "<main>"
-    foot = f"</main><footer>{FOOT[lang]}</footer>"
+    foot = "</main>" + foot_html(lang, root)
+    if "<!--seo-->" not in page:
+        page = page.replace("</head>", seo_head(_title_of(page), lang, here) + "</head>", 1)
     page = re.sub(r"<body[^>]*>", lambda m: m.group(0) + nav, page, count=1)
     parts = re.split(r"(<script.*?</script>)", page, flags=re.S)          # betiklerin içine dokunma
     page = "".join(x if x.startswith("<script") else

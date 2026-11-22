@@ -308,7 +308,7 @@ def risk_page(tab: pd.DataFrame, wcorr: pd.DataFrame, sec: pd.DataFrame | None, 
             return "<td data-v=''>–</td>"
         if kind == "n":
             return f"<td data-v='{v}'>{int(v)}</td>"
-        return f"<td data-v='{v:.6f}'>{v*100:.1f}%</td>" if kind == "p" else f"<td data-v='{v:.6f}'>{v:.2f}</td>"
+        return f"<td data-v='{v:.6f}'>{theme.pct(v)}</td>" if kind == "p" else f"<td data-v='{v:.6f}'>{theme.num(v)}</td>"
     head = "<th class='l'>Kod</th>" + "".join(f"<th{' class=l' if k == 't' else ''}>{e(lab)}</th>" for _, lab, k in cols)
     body = "".join(f"<tr><td class='l'><b>{e(t)}</b></td>" + "".join(cell(r.get(c), k) for c, _, k in cols) + "</tr>"
                    for t, r in tab.iterrows())
@@ -507,9 +507,53 @@ def step_tamamla(p: Paths, st: Status, universe_df: pd.DataFrame | None, today: 
                 done.append(t)
         except Exception as e:  # noqa: BLE001
             fail.append(f"{t}: {str(e)[:60]}")
+    if done:                                                  # veri karantinası için tamamlanma tarihleri
+        tf = p.data / "tamamlanan.json"
+        rec = json.loads(tf.read_text()) if tf.exists() else {}
+        rec.update({t: str(today.date()) for t in done})
+        tf.write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")
     left = isyatirim.incomplete(p.kap, todo)
     st.ok("tamamla", f"{len(todo)} eksik şirket denendi, {len(done)} tamamlandı (İş Yatırım), {len(left)} hâlâ eksik"
           + (f"; {len(fail)} hata" if fail else ""))
+
+
+def write_seo_files(out: Path) -> int:
+    """sitemap.xml, robots.txt ve paylaşım görseli (og.png)."""
+    today = pd.Timestamp.today().strftime("%Y-%m-%d")
+    urls = sorted(f.relative_to(out).as_posix() for f in out.rglob("*.html"))
+    body = "".join(f"<url><loc>{theme.SITE}{html.escape(u)}</loc><lastmod>{today}</lastmod>"
+                   f"<changefreq>{'daily' if u.count('/') <= 1 else 'weekly'}</changefreq></url>" for u in urls)
+    (out / "sitemap.xml").write_text("<?xml version='1.0' encoding='UTF-8'?><urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>"
+                                     + body + "</urlset>", encoding="utf-8")
+    (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {theme.SITE}sitemap.xml\n", encoding="utf-8")
+    if not (out / "og.png").exists():
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+        fig = plt.figure(figsize=(12, 6.3), dpi=100)
+        fig.patch.set_facecolor("#f5f5f7")
+        fig.text(0.07, 0.62, "KAPSAM", fontsize=64, fontweight="bold", color="#1d1d1f")
+        fig.text(0.07, 0.46, "Borsa İstanbul, enflasyondan arındırılmış.", fontsize=28, color="#1d1d1f")
+        fig.text(0.07, 0.30, "TMS 29 düzeltmeli çeyrekler · temel kâr · İNA · kâr kalitesi · risk", fontsize=18, color="#6e6e73")
+        fig.text(0.07, 0.12, "serhanyokus.github.io/kapsam", fontsize=18, color="#0071e3")
+        fig.savefig(out / "og.png", facecolor=fig.get_facecolor())
+        plt.close(fig)
+    return len(urls)
+
+
+def _turnover(tickers: list[str], days: int = 60) -> dict[str, float]:
+    """Son `days` iş gününde ortalama günlük işlem hacmi (TL = kapanış × adet), Yahoo Finance."""
+    if not tickers:
+        return {}
+    import yfinance as yf
+    from .data.market import yahoo_symbol
+    syms = {yahoo_symbol(t): t for t in tickers}
+    d = yf.download(list(syms), period="6mo", auto_adjust=False, progress=False, group_by="column")
+    close, vol = d["Close"], d["Volume"]
+    if isinstance(close, pd.Series):
+        close, vol = close.to_frame(list(syms)[0]), vol.to_frame(list(syms)[0])
+    tv = (close * vol).tail(days).mean()
+    return {syms[s]: float(v) for s, v in tv.items() if s in syms and pd.notna(v)}
 
 
 def step_gundem(p: Paths, st: Status, universe_df: pd.DataFrame | None) -> None:
@@ -731,7 +775,7 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
         head = "".join(f"<th>{lab[c]}</th>" for c in cols)
         col = lambda v: "var(--pos)" if v > 0 else "var(--neg)"  # noqa: E731
         body = "".join(f"<tr><td><a href='{e(t)}.html'><b>{e(t)}</b></a></td>" + "".join(
-            f"<td>{v:,.2f}</td>" if c == "son_fiyat" else f"<td style='color:{col(v)}'>{v*100:+.1f}%</td>"
+            f"<td>{theme.num(v)}</td>" if c == "son_fiyat" else f"<td style='color:{col(v)}'>{theme.pct(v, 1, True)}</td>"
             for c, v in row[cols].items()) + "</tr>"
             for t, row in sm.iterrows() if t != "XU100")
         blocks.append(f"<h2>Takip listesi: piyasa</h2><table><tr><th>Hisse</th>{head}</tr>{body}</table>"
@@ -740,8 +784,8 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
         f2 = lambda v, fmt: "–" if v is None or pd.isna(v) else format(v, fmt)  # noqa: E731
         shown = [r for r in reports if r.get("takip", True)]
         body = "".join(f"<tr><td><a href='{e(r['hisse'])}.html'>{e(r['hisse'])}</a></td><td>{e(r['son_ceyrek'])}</td><td>{e(r.get('tur', ''))}</td>"
-                       f"<td>{f2(r.get('fiyat'), ',.2f')}</td><td>{f2(r.get('ima_edilen_marj'), '.1%')}</td>"
-                       f"<td>{f2(r.get('temel_net_marj'), '.1%')}</td><td><a href='{e(r['hisse'])}_model.xlsx'>Excel</a></td></tr>"
+                       f"<td>{theme.num(r.get('fiyat'))}</td><td>{theme.pct(r.get('ima_edilen_marj'))}</td>"
+                       f"<td>{theme.pct(r.get('temel_net_marj'))}</td><td><a href='{e(r['hisse'])}_model.xlsx'>Excel</a></td></tr>"
                        for r in shown)
         blocks.append(f"<h2>Şirket notları ({len(reports)} şirket; burada takip listesi, tümü <a href='tarama.html'>taramada</a>)</h2>"
                       "<table><tr><th>Hisse</th><th>Son çeyrek</th><th>Tür</th><th>Fiyat</th>"
@@ -749,7 +793,7 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
                       "<p class='m'>sanayi: TMS 29 düzeltmeli reel İNA ve formüllü model · finansal: banka/sigorta, nominal tablolar, PD/DD, F/K, "
                       "özkaynak kârlılığı · temel: İNA'ya uygun olmayan (hasılatsız holding/GYO), TMS 29 analizi ve çarpanlar. Hepsinde piyasa riski bölümü vardır.</p>")
     if screen is not None and not screen.empty:
-        pct = lambda v: "–" if v is None or pd.isna(v) else f"{float(v)*100:.1f}%"  # noqa: E731
+        pct = theme.pct
         screen = screen.sort_values("duz_fark_hatasi_hasilat", ascending=False, na_position="last") if "duz_fark_hatasi_hasilat" in screen else screen
         body = "".join(
             f"<tr><td>{e(t)}</td><td>{e(str(r.get('son_ceyrek', '–')))}</td><td>{pct(r.get('duz_fark_hatasi_net_kar'))}</td>"
@@ -771,7 +815,7 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
         ev_sorted = events.sort_values(["tarih", "rol"], ascending=[False, False])
         body = "".join(f"<tr><td class='l'>{e(str(r.olay))} {_src(getattr(r, 'kaynak', ''))}</td><td>{e(str(r.tarih))}</td><td>{e(r.hisse)}</td>"
                        f"<td>{e(r.rol)}</td><td>{'–' if pd.isna(getattr(r, 'beklenen', float('nan'))) else format(r.beklenen, '+.2f')}</td>"
-                       f"<td>{r.CAR*100:+.2f}%</td><td>{r.t:+.2f}</td><td>{_dir(getattr(r, 'beklenen', float('nan')), r.CAR)}</td></tr>"
+                       f"<td>{theme.pct(r.CAR, 2, True)}</td><td>{theme.num(r.t)}</td><td>{_dir(getattr(r, 'beklenen', float('nan')), r.CAR)}</td></tr>"
                        for r in ev_sorted.itertuples())
         blocks.append("<h2>Olay çalışması: KAP açıklamaları ve gerçek fiyat tepkisi</h2><table><tr><th class='l'>Olay</th><th>0. gün</th><th>Hisse</th>"
                       f"<th>Rol</th><th>Beklenen</th><th>CAR [-1,+3]</th><th>t</th><th>Yön</th></tr>{body}</table>"
@@ -781,10 +825,10 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
     rf = p.out / "risk" / "risk_ozet.csv"
     if rf.exists():
         rt = pd.read_csv(rf, index_col=0)
-        top = lambda col, asc: ", ".join(f"{t} {v*100:.0f}%" for t, v in rt[col].dropna().sort_values(ascending=asc).head(5).items())  # noqa: E731
+        top = lambda col, asc: ", ".join(f"{t} {theme.pct(v, 0, True)}" for t, v in rt[col].dropna().sort_values(ascending=asc).head(5).items())  # noqa: E731
         blocks.append(f"<h2>Risk ve korelasyon ({len(rt)} hisse, <a href='risk/index.html'>tümü ve matrisler</a>)</h2>"
-                      f"<p>Medyan yıllık oynaklık %{rt['oynaklik_yillik'].median()*100:.0f} · medyan beta {rt['beta'].median():.2f}"
-                      + (f" · ortalama korelasyon {rt['ort_korelasyon'].median():.2f}" if "ort_korelasyon" in rt else "") + "</p>"
+                      f"<p>Medyan yıllık oynaklık {theme.pct(rt['oynaklik_yillik'].median(), 0)} · medyan beta {theme.num(rt['beta'].median())}"
+                      + (f" · ortalama korelasyon {theme.num(rt['ort_korelasyon'].median())}" if "ort_korelasyon" in rt else "") + "</p>"
                       + (f"<p class='m'>Son 1 yılda en yüksek reel getiri: {e(top('reel_getiri_yillik', False))}<br>"
                          f"En düşük reel getiri: {e(top('reel_getiri_yillik', True))}</p>" if "reel_getiri_yillik" in rt else "")
                       + "<p class='m'>Korelasyon ve kovaryans matrisleri (örnek ve Ledoit–Wolf), sektör korelasyonu ve takip listesi ısı haritası risk sayfasındadır.</p>")
@@ -825,7 +869,8 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
              "kendi portföyünüzün oynaklığını hesaplayan araç.</p><a class='more' href='risk/index.html'>Risk sayfasını aç →</a></div>"
              "<div class='card'><div class='eyebrow'>Yöntem</div>"
              "<h3 style='margin:0 0 6px'>Neden düzeltme gerekli?</h3><p class='muted' style='margin:0'>TMS 29 altında her rapor kendi tarihinin TL'siyle yazılır. "
-             "Kümülatif rakamları düz çıkarmak son çeyrek hasılatını şişirir; KAPSAM önceki dönemi TÜFE ile taşıyarak doğru çeyreği bulur.</p></div></div>")
+             "Kümülatif rakamları düz çıkarmak son çeyrek hasılatını şişirir; KAPSAM önceki dönemi TÜFE ile taşıyarak doğru çeyreği bulur.</p>"
+             "<a class='more' href='yontem.html'>Yöntemi aç →</a></div></div>")
     comp = []
     if screen is not None and not screen.empty:
         for t, r in screen.iterrows():
@@ -852,11 +897,23 @@ def build_status_page(p: Paths, st: Status, reports: list[dict], events: pd.Data
 <div class="kpis">{tiles}</div>
 {cards}
 {''.join(blocks)}
-<h2>Sistem durumu</h2><table>{srows}</table>
-<p class="m">Kaynaklar: KAP finansal tabloları, TCMB EVDS (TÜFE, kur), İş Yatırım (hisse listesi), Yahoo Finance (gecikmeli fiyatlar).</p></body></html>"""
+<p class="muted">{'<span style="color:var(--pos)">●</span> Tüm sistemler çalışıyor' if ok_all else '<span style="color:var(--neg)">●</span> Bazı adımlarda hata var'} ·
+<a href='durum.html'>Sistem durumu</a> · <a href='yontem.html'>Yöntem</a></p>
+<p class="m">Kaynaklar: KAP finansal tabloları, TCMB EVDS (TÜFE, kur), İş Yatırım (hisse listesi, eksik tablolar), Yahoo Finance (gecikmeli fiyatlar),
+Google Haberler (başlıklar).</p></body></html>"""
     page = theme.restyle(page, "index.html", "", "tr", "index.html")
     out = p.out / "index.html"
     out.write_text(page, encoding="utf-8")
+    durum = f"""<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sistem durumu · KAPSAM</title><style></style></head><body>
+<div class="eyebrow">Sistem durumu</div><h1>{'Tüm sistemler çalışıyor.' if ok_all else 'Bazı adımlarda hata var.'}</h1>
+<p class="lead">Son güncelleme {e(st.started[:16].replace('T', ' '))} UTC. Güncelleme hafta içi her gün 18:40'ta (İstanbul) otomatik çalışır.</p>
+<table>{srows}</table>
+<p class="m">Kaynaklar: KAP finansal tabloları, TCMB EVDS (TÜFE, kur), İş Yatırım (hisse listesi, eksik tablolar), Yahoo Finance (gecikmeli fiyatlar),
+Google Haberler (başlıklar).</p></body></html>"""
+    (p.out / "durum.html").write_text(theme.restyle(durum, "", "", "tr", "durum.html"), encoding="utf-8")
+    from . import yontem as _yontem
+    (p.out / "yontem.html").write_text(theme.restyle(_yontem.page("tr"), "", "", "tr", "yontem.html"), encoding="utf-8")
     (p.out / "durum.json").write_text(json.dumps({"guncelleme": st.started, "adimlar": st.steps}, ensure_ascii=False, indent=1),
                                       encoding="utf-8")
     return out
@@ -908,7 +965,21 @@ def step_screen(p: Paths, st: Status, universe_df: pd.DataFrame | None = None,
         from . import gundem as _gd2
         gd_now = _gd2.load(p.root)
         rg = _gd2.regime(gd_now)
+        try:                                                  # veri karantinası: son 7 günde İş Yatırım'dan tamamlanan şirketler
+            tf = p.data / "tamamlanan.json"
+            rec = json.loads(tf.read_text()) if tf.exists() else {}
+            lim = pd.Timestamp.today().normalize() - pd.Timedelta(days=siniflar.KARANTINA_GUN)
+            sc["karantina"] = pd.Series({t: d for t, d in rec.items() if pd.Timestamp(d) > lim})
+        except Exception:  # noqa: BLE001
+            pass
+        on = siniflar.build(sc, rg["al_esik"])                # ön sınıflama → yalnız AL adayları için likidite verisi
+        try:
+            cand = list(on.index[on["seviye"] == "AL"])
+            sc["islem_hacmi_tl"] = pd.Series(_turnover(cand))
+        except Exception as e:  # noqa: BLE001
+            st.fail("likidite", e)
         sc = siniflar.build(sc, rg["al_esik"])
+        sc["kural"] = siniflar.KURAL_SURUM
         sc["azaltma"] = [deger.azaltma_orani(r.get("seviye"), r.get("bayraklar"), pd.to_numeric(r.get("potansiyel"), errors="coerce"))
                          for _, r in sc.iterrows()]
         ch = pd.DataFrame()
@@ -923,7 +994,8 @@ def step_screen(p: Paths, st: Status, universe_df: pd.DataFrame | None = None,
                                                            "tr", "siniflar.html"), encoding="utf-8")
         (p.out / "deger.html").write_text("<!doctype html><meta charset='utf-8'><meta http-equiv='refresh' content='0;url=siniflar.html'>"
                                           "<a href='siniflar.html'>Seviyeler ve değerleme</a>", encoding="utf-8")
-        cols = ["ad", "sektor", "seviye", "gerekce", "fiyat", "deger", "potansiyel", "hedef_12a", "guven", "azaltma", "bayraklar", "yontem", "deger_not"]
+        cols = ["ad", "sektor", "seviye", "gerekce", "fiyat", "deger", "potansiyel", "hedef_12a", "guven", "azaltma", "bayraklar", "yontem",
+                "deger_not", "islem_hacmi_tl", "karantina", "kural"]
         sc[[c for c in cols if c in sc]].to_csv(p.out / "siniflar.csv")
         siniflar.model_portfolio(sc).to_csv(p.out / "model_portfoy.csv")
     else:                                                     # herkese açık sürüm: yalnızca nötr kalite bayrakları (seviye/öneri yok)
@@ -934,6 +1006,7 @@ def step_screen(p: Paths, st: Status, universe_df: pd.DataFrame | None = None,
             sc["haber_ozet"] = pd.Series({t: f"son 14 gün {d.get('olumlu', 0)} olumlu / {d.get('olumsuz', 0)} olumsuz başlık" for t, d in comp.items()})
             q = siniflar.build(sc)
             sc["bayraklar"] = q["bayraklar"]
+            sc["bayrak_metin"] = q["bayraklar"].fillna("").map(siniflar.bayrak_metin)
             (p.out / "kalite.html").write_text(theme.restyle(siniflar.kalite_page(q, st.started), "kalite.html", "", "tr", "kalite.html"),
                                                encoding="utf-8")
             q.reindex(columns=["ad", "sektor", "bayraklar"]).to_csv(p.out / "kalite.csv")
@@ -956,7 +1029,7 @@ def step_screen(p: Paths, st: Status, universe_df: pd.DataFrame | None = None,
 def screen_page(sc: pd.DataFrame, stamp: str, notes: set[str] | None = None) -> str:
     """Tüm şirketler için sıralanabilir, aranabilir tarama sayfası (tek dosya, dış bağımlılık yok)."""
     e = html.escape
-    cols = [("ad", "Şirket", "t"), ("sektor", "Sektör", "t"), ("seviye", "Seviye", "t"), ("bayraklar", "Bayraklar", "t"), ("deger", "İNA değeri (TL)", "n"),
+    cols = [("ad", "Şirket", "t"), ("sektor", "Sektör", "t"), ("seviye", "Seviye", "t"), ("bayrak_metin", "Kalite bayrakları", "t"), ("deger", "İNA değeri (TL)", "n"),
             ("potansiyel", "Potansiyel", "p"), ("azaltma", "Azaltma oranı", "p"), ("tur", "Tür", "t"), ("son_ceyrek", "Son çeyrek", "t"),
             ("duz_fark_hatasi_hasilat", "Düz fark hatası: hasılat", "p"), ("duz_fark_hatasi_net_kar", "Düz fark hatası: net kâr", "p"),
             ("parasal_kazanc_net_kar_ytd", "Parasal kazanç / net kâr (YB)", "p"), ("raporlanan_net_marj", "Net marj", "p"),
@@ -969,15 +1042,13 @@ def screen_page(sc: pd.DataFrame, stamp: str, notes: set[str] | None = None) -> 
     def cell(v, kind):
         if v is None or (isinstance(v, float) and pd.isna(v)) or v == "":
             return "<td data-v=''>–</td>"
-        if kind == "p":
-            return f"<td data-v='{float(v):.6f}'>{float(v)*100:.1f}%</td>"
-        if kind == "x":
-            return f"<td data-v='{float(v):.6f}'>{float(v):.1f}x</td>"
-        if kind == "n":
+        if kind in ("p", "x", "n"):
             try:
-                return f"<td data-v='{float(v):.6f}'>{float(v):,.2f}</td>".replace(",", "X").replace(".", ",").replace("X", ".")
+                fv = float(v)
             except (TypeError, ValueError):
                 return "<td data-v=''>–</td>"
+            txt = theme.pct(fv) if kind == "p" else theme.mult(fv) if kind == "x" else theme.num(fv)
+            return f"<td data-v='{fv:.6f}'>{txt}</td>"
         return f"<td data-v='{e(str(v))}' class='l'>{e(str(v))}</td>"
     head = "<th class='l'>Kod</th>" + "".join(f"<th{' class=l' if k == 't' else ''}>{e(lab)}</th>" for _, lab, k in cols)
     notes = notes or set()
@@ -1047,7 +1118,15 @@ def run(root: Path = ROOT, evds_client=None, market: Market | None = None, sourc
     build_status_page(p, st, reports, events, sc)
     try:
         n = i18n.build_site(p.out)
+        from . import yontem as _yontem
+        (p.out / "en" / "yontem.html").write_text(theme.restyle(_yontem.page("en"), "", "", "en", "yontem.html"), encoding="utf-8")
         st.ok("ingilizce", f"{n} sayfa (/en/)")
     except Exception as e:  # noqa: BLE001
         st.fail("ingilizce", e)
+    if not gizli():
+        try:
+            n = write_seo_files(p.out)
+            st.ok("seo", f"sitemap.xml ({n} adres), robots.txt, paylaşım görseli")
+        except Exception as e:  # noqa: BLE001
+            st.fail("seo", e)
     return st

@@ -64,7 +64,7 @@ def test_full_update_pipeline(root):
     assert {k: v["durum"] for k, v in st.steps.items()} == {"makro": "tamam", "fiyat": "tamam", "tablo": "atlandı",
                                                             "rapor": "tamam", "olay": "tamam", "risk": "tamam",
                                                             "tarama": "tamam", "sektor": "atlandı",
-                                                            "ingilizce": "tamam", "kalite": "tamam"}
+                                                            "ingilizce": "tamam", "kalite": "tamam", "seo": "tamam"}
     sc = pd.read_csv(root / "docs" / "rapor" / "tarama.csv", index_col=0)
     assert "DEMO" in sc.index and sc.loc["DEMO", "duz_fark_hatasi_hasilat"] > 0.05
     assert "TMS 29 taraması" in (root / "docs" / "rapor" / "index.html").read_text(encoding="utf-8")

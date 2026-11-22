@@ -43,12 +43,12 @@ def cell(v, kind: str) -> str:
     if pd.isna(v) or not np.isfinite(v):
         return "<td data-v=''>–</td>"
     if kind == "p":
-        return f"<td data-v='{v:.6f}'>{v*100:.1f}%</td>"
+        return f"<td data-v='{v:.6f}'>{theme.pct(v)}</td>"
     if kind == "x":
-        return f"<td data-v='{v:.6f}'>{v:.1f}x</td>"
+        return f"<td data-v='{v:.6f}'>{theme.mult(v)}</td>"
     if kind == "i":
-        return f"<td data-v='{v:.6f}'>{v:,.0f}</td>".replace(",", ".")
-    return f"<td data-v='{v:.6f}'>{v:.2f}</td>"
+        return f"<td data-v='{v:.6f}'>{theme.num(v, 0)}</td>"
+    return f"<td data-v='{v:.6f}'>{theme.num(v)}</td>"
 
 
 def sortable_table(df: pd.DataFrame, cols: list[tuple], link: str | None = "{}.html", key_label: str = "Kod") -> str:

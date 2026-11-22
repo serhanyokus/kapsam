@@ -15,6 +15,52 @@ from pathlib import Path
 from . import theme
 
 PHRASES: dict[str, str] = {
+    # --- kalite, gündem, durum (yeni sayfalar)
+    "Kâr kalitesi, tek bakışta.": "Earnings quality at a glance.", "Kalite bayrakları · KAPSAM": "Quality flags · KAPSAM",
+    "Bayraklar yalnızca finansal tablolardaki örüntüleri gösterir; al/sat önerisi, hedef fiyat ya da seviye içermez. Yatırım tavsiyesi değildir.":
+        "Flags only show patterns in financial statements; they contain no buy/sell calls, price targets or ratings. Not investment advice.",
+    "Kod, şirket, sektör ya da bayrak ara": "Search ticker, company, sector or flag", "Kurallar": "Rules", "Bayrak": "Flag", "Ağırlık": "Weight",
+    "Anlamı": "Meaning", "ağır": "severe", "hafif": "minor", "ağır bayrak": "severe flag", "hafif bayrak": "minor flag",
+    "Bayraklar": "Flags", "Sayı": "Count", "Parasal / net kâr": "Monetary / net income", "İşl. NA / net kâr": "Op. CF / net income",
+    "Net kâr / esas faal.": "Net income / op. profit", "Net borç / FAVÖK": "Net debt / EBITDA", "Reel hasılat 9A": "Real revenue 9M",
+    "İşl. NA − capex (mn)": "Op. CF − capex (mn)", "Haber akışı": "News flow", "Kalite bayrakları": "Quality flags",
+    "Tablo yatay kaydırılabilir.": "The table scrolls horizontally.",
+    "Akış ve kâr rakamları son 12 ay, TMS 29 düzeltmeli.": "Flow and profit figures are trailing 12 months, IAS 29-adjusted.",
+    "İşletme nakit akışı − yatırım harcaması serbest nakit akışı (FCFF) değildir.": "Operating cash flow − capex is not free cash flow (FCFF).",
+    "Haber akışı: son 14 günün başlıkları, kelime tabanlı otomatik ton; hatalı olabilir.": "News flow: last 14 days of headlines, keyword-based automatic tone; may be wrong.",
+    "Bayrak yok": "No flags", "Zarar": "Loss", "Parasal kazanç olmasa zarar": "Loss without monetary gain", "Negatif nakit akışı": "Negative cash flow",
+    "Yüksek borç": "High leverage", "Kâr parasal kazanca dayalı": "Monetary-gain-driven profit", "Zayıf nakit dönüşümü": "Weak cash conversion",
+    "Faaliyet dışı kâr": "Non-operating profit", "Reel küçülme": "Real contraction", "Capex > nakit akışı": "Capex > cash flow",
+    "Sektöre göre pahalı F/K": "Expensive P/E vs sector", "Olumsuz haber akışı": "Negative news flow",
+    "son 12 ay zarar": "loss over the last 12 months", "parasal kazanç olmasa zarar": "loss without monetary gain",
+    "işletme nakit akışı negatif": "negative operating cash flow", "borç yüksek": "high leverage",
+    "kârın büyük kısmı parasal kazanç": "most of profit is monetary gain", "kâr nakde zayıf dönüşüyor": "profit converts poorly to cash",
+    "kâr ağırlıkla faaliyet dışı": "profit mostly non-operating", "reel hasılat küçülüyor": "real revenue shrinking",
+    "yatırım harcaması nakit akışını aşıyor": "capex exceeds operating cash flow", "F/K sektörüne göre yüksek": "P/E high vs sector",
+    "son 14 günde olumsuz haber akışı": "negative news flow in the last 14 days",
+    "Türkiye ve dünya, bugün.": "Turkey and the world, today.", "Gündem · her iş günü yenilenir": "Agenda · refreshed every business day",
+    "Piyasa göstergeleri": "Market indicators", "Türkiye": "Turkey", "Dünya": "World", "Şirket haberleri": "Company news",
+    "Gösterge": "Indicator", "Son": "Last", "1 gün": "1 day", "Tarih": "Date", "Başlık": "Headline", "Kaynak": "Source", "Ton": "Tone",
+    "Hisse risk primi": "Equity risk premium", "Olumsuz haber bayrağı": "Negative news flag", "Olumlu haber akışı": "Positive news flow",
+    "Taranan şirket": "Companies scanned", "son 14 gün": "last 14 days", "bilgi amaçlı": "informational",
+    "Başlık bulunamadı.": "No headlines found.", "Olumsuz akış (HABER-):": "Negative flow (HABER-):", "Olumlu akış (HABER+):": "Positive flow (HABER+):",
+    "Kaynaklar: Yahoo Finance (göstergeler, gecikmeli), Google Haberler RSS (başlık ve bağlantı). Haber metinleri saklanmaz.":
+        "Sources: Yahoo Finance (indicators, delayed), Google News RSS (headline and link). Article text is not stored.",
+    "Piyasa göstergeleri, makro ve küresel başlıklar,": "Market indicators, macro and global headlines,",
+    "şirketin son 14 günlük haberleri.": "companies' news from the last 14 days.",
+    "Bu veriler şirket notlarındaki İNA\niskonto oranına ve kalite bayraklarına açık kurallarla girer.":
+        "These feed the DCF discount rate in company notes and the quality flags through explicit rules.",
+    "Haber tonu başlıktaki kelimelerden otomatik çıkarılır ve hatalı olabilir; başlığa tıklayıp\nkaynağı okuyun.":
+        "News tone is inferred automatically from headline words and may be wrong; click the headline to read the source.",
+    "Gündem eki:": "Agenda add-on:", "olağan koşullar: ek risk primi yok": "normal conditions: no extra risk premium",
+    "Sistem durumu · KAPSAM": "System status · KAPSAM", "Tüm sistemler çalışıyor.": "All systems operational.",
+    "Bazı adımlarda hata var.": "Some steps reported errors.", "Son güncelleme": "Last update",
+    "Güncelleme hafta içi her gün 18:40'ta (İstanbul) otomatik çalışır.": "The update runs automatically at 18:40 (Istanbul) every business day.",
+    "Yöntemi aç →": "Open methodology →", "Yöntem": "Methodology",
+    "Kaynaklar: KAP finansal tabloları, TCMB EVDS (TÜFE, kur), İş Yatırım (hisse listesi, eksik tablolar), Yahoo Finance (gecikmeli fiyatlar),\nGoogle Haberler (başlıklar).":
+        "Sources: KAP financial statements, CBRT EVDS (CPI, FX), İş Yatırım (stock list, missing statements), Yahoo Finance (delayed prices), Google News (headlines).",
+    "Eksik veri tamamlama": "Missing-data completion", "Gündem (gösterge ve haber)": "Agenda (indicators and news)", "Kalite bayrakları": "Quality flags",
+    "seo": "SEO",
     # --- gezinme, ana sayfa
     "KAPSAM · BIST araştırma asistanı": "KAPSAM · Borsa Istanbul research assistant",
     "Tüm sistemler çalışıyor": "All systems operational", "Bazı adımlarda hata var": "Some steps reported errors",
@@ -332,7 +378,7 @@ def to_english(page: str, depth: int, here: str) -> str:
     # gezinme ve altbilgi
     active = re.search(r"<a href='(?:\.\./)*([^']+)' class=on>", page)
     page = re.sub(r"<nav class='nav'>.*?</nav>", theme.nav_html(active.group(1) if active else "", root, "en", here), page, count=1, flags=re.S)
-    page = re.sub(r"<footer>.*?</footer>", f"<footer>{theme.FOOT['en']}</footer>", page, count=1, flags=re.S)
+    page = re.sub(r"<footer>.*?</footer>", lambda m: theme.foot_html("en", root), page, count=1, flags=re.S)
     page = page.replace('<html lang="tr">', '<html lang="en">', 1)
     # metin, öznitelik ve betik içindeki sabit ifadeler; sayılar yalnızca metin düğümlerinde
     parts = re.split(r"(<style>.*?</style>|<script.*?</script>|<[^>]+>)", page, flags=re.S)
@@ -356,6 +402,8 @@ def to_english(page: str, depth: int, here: str) -> str:
             t = _translate_text(_html.unescape(x))
             out.append(_html.escape(_convert_numbers(t), quote=False))
     page = "".join(out)
+    # arama motoru etiketleri: İngilizce başlık ve adres
+    page = re.sub(r"<!--seo-->.*?<!--/seo-->", lambda m: theme.seo_head(theme._title_of(page), "en", here), page, count=1, flags=re.S)
     # dosyalar Türkçe sayfaların yanında durur
     up = "../" * (depth + 1)
     page = re.sub(r"href='([^'/:]+_model\.xlsx)'", lambda m: f"href='{'../' * (depth + 1)}{m.group(1)}'", page)

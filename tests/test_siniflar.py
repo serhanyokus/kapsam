@@ -45,7 +45,7 @@ def test_model_portfolio_caps():
     rows.update({f"S{i}": row(sektor=f"S{i}", oynaklik_yillik=0.3 + i / 10) for i in range(6)})
     df = siniflar.build(pd.DataFrame(rows).T)
     mp = siniflar.model_portfolio(df)
-    assert abs(mp["agirlik"].sum() - 1) < 1e-9
+    assert abs(mp["agirlik"].sum() + mp.attrs["nakit"] - 1) < 1e-9
     assert mp["agirlik"].max() <= 0.15 + 1e-9
     assert mp.groupby("sektor")["agirlik"].sum().max() <= 0.30 + 1e-9
     assert "Model portföy" in siniflar.page(df, "2026-11-22T00:00")
@@ -74,6 +74,26 @@ def test_ina_blocks_al_and_explains():
 def test_public_quality_page_has_no_levels():
     df = siniflar.build(pd.DataFrame({"A": row(), "B": row(nakit_donusumu=0.1)}).T)
     h = siniflar.kalite_page(df, "2026-11-22T00:00")
-    assert "kâr nakde zayıf dönüşüyor" in h and "bayrak yok" in h
+    assert "Zayıf nakit dönüşümü" in h and "Bayrak yok" in h
     for w in ("lvl al", "Kademeli", "AZALT", "Model portföy", "12 ay hedef"):
         assert w not in h
+
+
+def test_v2_rules():
+    rows = {"B1": row(sektor="Bankacılık"), "B2": row(sektor="Bankacılık"), "S1": row(sektor="Sigorta"), "S2": row(sektor="Sigorta"),
+            "V1": row(sektor="Varlık Yönetim"), "T1": row(sektor="Teknoloji"), "E1": row(sektor="Elektrik"),
+            "L": row(sektor="Gıda", islem_hacmi_tl=5e6), "K": row(sektor="Kimya", karantina="2026-11-22")}
+    df = siniflar.build(pd.DataFrame(rows).T)
+    assert df.at["L", "seviye"] == "TUT" and "likidite" in df.at["L", "gerekce"]
+    assert df.at["K", "seviye"] == "TUT" and "veri yeni tamamlandı" in df.at["K", "gerekce"]
+    mp = siniflar.model_portfolio(df)
+    fin = mp[mp["ust_sektor"] == "Finans"]["agirlik"].sum()
+    assert fin <= 0.35 + 1e-9 and mp["agirlik"].max() <= 0.15 + 1e-9
+    assert abs(mp["agirlik"].sum() + mp.attrs["nakit"] - 1) < 1e-9
+    assert siniflar.ust_sektor("Varlık Yönetim") == "Finans" and siniflar.ust_sektor("Sigorta") == "Finans"
+
+
+def test_single_al_stays_capped():
+    df = siniflar.build(pd.DataFrame({"A": row()}).T)
+    mp = siniflar.model_portfolio(df)
+    assert abs(mp["agirlik"].iloc[0] - 0.15) < 1e-9 and abs(mp.attrs["nakit"] - 0.85) < 1e-9

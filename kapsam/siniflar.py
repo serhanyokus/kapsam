@@ -37,8 +37,8 @@ SINIFLAR = ["Kademeli Al", "Seçici İzle", "Temkinli İzle", "Uzak Dur", "Veri 
 # Sınıftan renkli seviyeye: AL yeşil, TUT gri, AZALT turuncu, SAT kırmızı, VERİ YOK açık gri
 SEVIYE = {"Kademeli Al": ("AL", "al"), "Seçici İzle": ("TUT", "tut"), "Temkinli İzle": ("AZALT", "azalt"),
           "Uzak Dur": ("SAT", "sat"), "Veri Eksik": ("VERİ YOK", "yok")}
-SEVIYE_ACIKLAMA = {"AL": "kalite bayrağı yok, F/K sektör medyanının ve 15'in altında, temel ÖK kârlılığı ≥ %15 ve İNA değeri fiyatın en az %15 "
-                         "üstünde (güveni orta/yüksek)",
+SEVIYE_ACIKLAMA = {"AL": "kalite bayrağı yok, F/K sektör medyanının ve 15'in altında, temel ÖK kârlılığı ≥ %15, İNA değeri fiyatın en az %15 "
+                         "(riskten kaçışta %25) üstünde ve güveni orta/yüksek, günlük işlem hacmi ≥ 20 mn TL, verisi son 7 günde tamamlanmamış",
                    "TUT": "1–2 hafif bayrak; ya da kalite iyi ama çarpanlar veya İNA değeri alımı desteklemiyor",
                    "AZALT": "1 ağır ya da ≥ 3 hafif bayrak", "SAT": "son 12 ay zarar, parasal kazanç olmasa zarar ya da ≥ 2 ağır bayrak",
                    "VERİ YOK": "F/K, işletme nakit akışı ya da en az 4 rapor yok"}
@@ -68,6 +68,15 @@ ACIKLAMA = {"ZARAR": "son 12 ay zarar", "PARASAL0": "parasal kazanç olmasa zara
             "PAHALI": "F/K sektörüne göre yüksek", "INA-": "İNA değeri fiyatın %30'dan fazla altında",
             "INA0": "İNA değeri negatif (borç, işletme değerini aşıyor)", "HABER-": "son 14 günde olumsuz haber akışı"}
 INA = {"al_min": 0.15, "pahali": -0.30}
+KISA = {"ZARAR": "Zarar", "PARASAL0": "Parasal kazanç olmasa zarar", "NAKIT-": "Negatif nakit akışı", "BORC": "Yüksek borç",
+        "PARASAL": "Kâr parasal kazanca dayalı", "NAKIT": "Zayıf nakit dönüşümü", "FDISI": "Faaliyet dışı kâr", "KUCULME": "Reel küçülme",
+        "SERBEST": "Capex > nakit akışı", "PAHALI": "Sektöre göre pahalı F/K", "HABER-": "Olumsuz haber akışı",
+        "INA-": "İNA değeri fiyatın altında", "INA0": "Negatif İNA"}
+
+
+def bayrak_metin(codes: str) -> str:
+    """Bayrak kodlarını okunur metne çevirir: 'PARASAL0 KUCULME' → 'Parasal kazanç olmasa zarar · Reel küçülme'."""
+    return " · ".join(KISA.get(c, c) for c in str(codes or "").split()) or "Bayrak yok"
 AGIR = {"ZARAR", "PARASAL0", "NAKIT-", "BORC"}
 
 
@@ -134,7 +143,9 @@ def classify(r: pd.Series, fl: list[str], sektor_fk: float = np.nan) -> str:
     fk, roe = _f(r.get("fk_ttm")), _f(r.get("ozkaynak_karliligi_yillik"))
     ucuz = fk <= SINIR["fk_max"] and (pd.isna(sektor_fk) or fk <= sektor_fk)
     ina_ok = str(r.get("guven") or "") in ("yüksek", "orta") and _f(r.get("potansiyel")) >= INA["al_min"]  # rejime göre %15/%25
-    return "Kademeli Al" if ucuz and roe >= SINIR["roe_min"] and ina_ok else "Seçici İzle"
+    likit = not (_f(r.get("islem_hacmi_tl")) < LIKIDITE_MIN)            # bilinmiyorsa engellemez
+    karantina = str(r.get("karantina") or "") not in ("", "nan", "False")
+    return "Kademeli Al" if ucuz and roe >= SINIR["roe_min"] and ina_ok and likit and not karantina else "Seçici İzle"
 
 
 def _pct(v, sign=True) -> str:
@@ -178,6 +189,10 @@ def gerekce(r: pd.Series, fl: list[str], sinif: str, sektor_fk: float = np.nan) 
                 why.append("F/K sektörüne veya 15'e göre yüksek")
             if not (roe >= SINIR["roe_min"]):
                 why.append("temel ÖK kârlılığı %15'in altında")
+            if _f(r.get("islem_hacmi_tl")) < LIKIDITE_MIN:
+                why.append(f"likidite düşük (günlük ort. {_f(r.get('islem_hacmi_tl'))/1e6:.1f} mn TL < {LIKIDITE_MIN/1e6:.0f} mn TL)")
+            if str(r.get("karantina") or "") not in ("", "nan", "False"):
+                why.append(f"veri yeni tamamlandı ({r.get('karantina')}); {KARANTINA_GUN} gün doğrulama bekleniyor")
             if not (guv in ("yüksek", "orta") and pot >= INA["al_min"]):
                 why.append(f"İNA potansiyeli AL eşiğinin (%{INA['al_min']*100:.0f}) altında" if pd.notna(pot) and guv in ("yüksek", "orta")
                            else "İNA değeri güvenilir değil")
@@ -208,7 +223,7 @@ def build(sc: pd.DataFrame, al_esik: float = 0.15) -> pd.DataFrame:
         if c not in df:
             df[c] = ""
     for c in df.columns:
-        if c not in ("ad", "sektor", "tur", "son_ceyrek", "not", "parasal_kazanc_olmadan_zarar", "tms29", "guven", "yontem", "deger_not", "haber_bayrak", "haber_ozet"):
+        if c not in ("ad", "sektor", "tur", "son_ceyrek", "not", "parasal_kazanc_olmadan_zarar", "tms29", "guven", "yontem", "deger_not", "haber_bayrak", "haber_ozet", "karantina"):
             df[c] = pd.to_numeric(df[c], errors="coerce")
     df["_net_borc_ok"] = df.get("net_borc_mn", np.nan) / (df["piyasa_degeri_mn_tl"] / df["pd_dd"]) if "pd_dd" in df else np.nan
     med = df.groupby("sektor")["fk_ttm"].median() if "sektor" in df else pd.Series(dtype=float)
@@ -237,12 +252,37 @@ COLS = [("seviye", "Seviye", "t"), ("ad", "Şirket", "t"), ("gerekce", "Gerekçe
         ("oynaklik_yillik", "Oynaklık", "p"), ("risk_notu", "Risk notu", "t"), ("deger_not", "İNA notu", "t")]
 
 
-MP = {"hisse_tavan": 0.15, "sektor_tavan": 0.30}
+MP = {"hisse_tavan": 0.15, "sektor_tavan": 0.30, "ust_sektor_tavan": 0.35}
+KURAL_SURUM = "v2"   # v1: 21.11.2026 öncesi; v2: üst sektör tavanı, reel finansal değerleme, likidite, veri karantinası, uç potansiyel
+UST_SEKTOR = [("Finans", ["banka", "sigorta", "varlık yönetim", "aracı kurum", "faktoring", "finansal kiralama", "girişim sermayesi",
+                          "menkul kıymet yatırım", "yatırım ortaklı", "finansman", "katılım"]),
+              ("Gayrimenkul", ["gayrimenkul", "gyo", "inşaat"]),
+              ("Enerji", ["enerji", "elektrik", "petrol", "doğalgaz", "doğal gaz"]),
+              ("Sanayi", ["metal", "kimya", "otomotiv", "makine", "çimento", "cam", "kağıt", "tekstil", "plastik", "demir", "çelik", "savunma"]),
+              ("Tüketim", ["gıda", "içecek", "perakende", "ticaret", "dayanıklı tüketim", "turizm", "sağlık", "tarım"]),
+              ("Teknoloji ve iletişim", ["teknoloji", "yazılım", "bilişim", "iletişim", "telekom"]),
+              ("Ulaştırma", ["havayol", "ulaştırma", "lojistik", "liman"])]
+LIKIDITE_MIN = 20e6   # AL için en az ortalama günlük işlem hacmi (TL, son 60 iş günü)
+KARANTINA_GUN = 7     # verisi yeni tamamlanan şirket bu kadar gün AL alamaz
+
+
+def ust_sektor(sektor: str) -> str:
+    s = str(sektor or "").lower()
+    for name, keys in UST_SEKTOR:
+        if any(k in s for k in keys):
+            return name
+    return str(sektor or "Diğer")                         # eşleşmeyen sektör kendi grubudur (alakasız sektörler birleştirilmez)
+
+
+def grp_full(w: pd.Series, grp: pd.Series, cap: float) -> pd.Series:
+    ss = w.groupby(grp).sum()
+    return grp.map(lambda k: ss.get(k, 0) >= cap - 1e-9)
 
 
 def model_portfolio(df: pd.DataFrame) -> pd.DataFrame:
     """Kurala dayalı model portföy: yalnızca AL seviyesindeki hisseler, ters oynaklık ağırlığı (düşük oynaklık → yüksek ağırlık),
-    hisse başına en fazla %15, sektör başına en fazla %30. Oynaklık yoksa medyan oynaklık kullanılır.
+    hisse başına en fazla %15, sektör başına en fazla %30, üst sektör (ör. Finans: banka+sigorta+varlık yönetimi) başına en fazla %35;
+    tavanlar nedeniyle dağıtılamayan kısım nakitte kalır. Oynaklık yoksa medyan oynaklık kullanılır.
     Kişiye özel değildir; kullanıcının birikimini, vadesini ve risk toleransını bilmez."""
     g = df[df["seviye"] == "AL"].copy() if "seviye" in df else df.iloc[0:0].copy()
     if g.empty:
@@ -250,34 +290,34 @@ def model_portfolio(df: pd.DataFrame) -> pd.DataFrame:
     vol = pd.to_numeric(g["oynaklik_yillik"], errors="coerce") if "oynaklik_yillik" in g else pd.Series(np.nan, index=g.index)
     vol = vol.fillna(vol.median() if vol.notna().any() else 0.4).clip(lower=0.10)
     w = (1 / vol) / (1 / vol).sum()
-    sec = g["sektor"].fillna("Diğer")
-    nsec = sec.nunique()
-    scap = max(MP["sektor_tavan"], 1.0 / nsec)              # az sektör varsa tavan yükselir (uygulanabilirlik)
-    hcap = max(MP["hisse_tavan"], 1.0 / len(g))
-    for _ in range(200):
+    sec = g["sektor"].fillna("Diğer") if "sektor" in g else pd.Series("Diğer", index=g.index)
+    ust = sec.map(ust_sektor)
+    scap, ucap, hcap = MP["sektor_tavan"], MP["ust_sektor_tavan"], MP["hisse_tavan"]   # tavanlar gevşetilmez; artan kısım nakit
+    nakit = 0.0
+    for _ in range(300):
         changed = False
         over = w > hcap + 1e-12
         if over.any():
-            ex = (w[over] - hcap).sum(); w[over] = hcap
-            free = ~over & (w < hcap - 1e-12)
-            if free.any():
-                w[free] += ex * w[free] / w[free].sum()
+            w[over] = hcap
             changed = True
-        ss = w.groupby(sec).sum()
-        big = ss[ss > scap + 1e-12]
-        for k, v in big.items():
-            m = sec == k
-            w[m] *= scap / v
-            ex = v - scap
-            free = ~sec.isin(ss[ss >= scap - 1e-12].index)
-            if free.any():
-                w[free] += ex * w[free] / w[free].sum()
-            changed = True
-        w = w / w.sum()
+        for grp, cap in ((sec, scap), (ust, ucap)):
+            ss = w.groupby(grp).sum()
+            for k, v in ss[ss > cap + 1e-12].items():
+                w[grp == k] *= cap / v
+                changed = True
+        tot = w.sum()
+        if tot < 1 - 1e-9:                                   # kesilen ağırlığı tavanı dolmamış hisselere dağıt
+            room = (w < hcap - 1e-12) & ~grp_full(w, sec, scap) & ~grp_full(w, ust, ucap)
+            if room.any():
+                w[room] += (1 - tot) * w[room] / w[room].sum()
+                changed = True
         if not changed:
             break
+    nakit = max(0.0, 1 - float(w.sum()))                    # tavanlar nedeniyle dağıtılamayan kısım nakitte kalır
     out = g.reindex(columns=["ad", "sektor"]).copy()
+    out["ust_sektor"] = ust
     out["agirlik"], out["oynaklik_yillik"] = w, vol
+    out.attrs["nakit"] = nakit
     return out.sort_values("agirlik", ascending=False)
 
 
@@ -288,14 +328,17 @@ def portfolio_section(mp: pd.DataFrame) -> str:
     rows = "".join(f"<tr><td class='l'><a href='{e(t)}.html'><b>{e(t)}</b></a></td><td class='l'>{badge('AL')}</td><td class='l'>{e(str(r['ad']))}</td>"
                    f"<td class='l'>{e(str(r['sektor']))}</td><td><b>%{r['agirlik']*100:.1f}</b></td><td>%{r['oynaklik_yillik']*100:.0f}</td></tr>"
                    for t, r in mp.iterrows())
-    sec = mp.groupby("sektor")["agirlik"].sum().sort_values(ascending=False)
+    sec = mp.groupby("ust_sektor" if "ust_sektor" in mp else "sektor")["agirlik"].sum().sort_values(ascending=False)
+    nak = float(mp.attrs.get("nakit", 0.0) or 0.0)
     srows = "".join(f"<tr><td class='l'>{e(str(k))}</td><td>%{v*100:.1f}</td></tr>" for k, v in sec.items())
+    if nak > 1e-4:
+        srows += f"<tr><td class='l'>Nakit (tavanlar nedeniyle)</td><td>%{nak*100:.1f}</td></tr>"
     return f"""<h2 id='model-portfoy'>Model portföy</h2>
 <p class='muted'>Kurala dayalı: yalnızca {badge('AL')} hisseler, ters oynaklık ağırlığı (oynaklığı düşük olana daha fazla), hisse başına en fazla
-%{MP['hisse_tavan']*100:.0f}, sektör başına en fazla %{MP['sektor_tavan']*100:.0f}. Her güncellemede yeniden hesaplanır. Kişiye özel değildir;
+%{MP['hisse_tavan']*100:.0f}, sektör başına en fazla %{MP['sektor_tavan']*100:.0f}, üst sektör (ör. Finans) başına en fazla %{MP['ust_sektor_tavan']*100:.0f}. Her güncellemede yeniden hesaplanır. Kişiye özel değildir;
 birikim, vade ve risk toleransını bilmez. Yatırım tavsiyesi değildir.</p>
 <div class='grid2'><div><table><tr><th class='l'>Kod</th><th class='l'>Seviye</th><th class='l'>Şirket</th><th class='l'>Sektör</th><th>Ağırlık</th><th>Oynaklık</th></tr>{rows}</table></div>
-<div><table><tr><th class='l'>Sektör</th><th>Toplam ağırlık</th></tr>{srows}</table></div></div>"""
+<div><table><tr><th class='l'>Üst sektör</th><th>Toplam ağırlık</th></tr>{srows}</table></div></div>"""
 
 
 def yorum(df: pd.DataFrame, g: dict, ch: pd.DataFrame | None, infl: float = np.nan) -> str:
@@ -442,7 +485,7 @@ def badge_pages(out_root, df: pd.DataFrame) -> int:
     return n
 
 
-KALITE_COLS = [("ad", "Şirket", "t"), ("sektor", "Sektör", "t"), ("bayraklar", "Bayraklar", "t"), ("kalite_aciklama", "Açıklama", "t"),
+KALITE_COLS = [("ad", "Şirket", "t"), ("sektor", "Sektör", "t"), ("bayrak_metin", "Bayraklar", "t"), ("bayrak_sayisi", "Sayı", "i"),
                ("parasal_kazanc_net_kar_ytd", "Parasal / net kâr", "p"), ("nakit_donusumu", "İşl. NA / net kâr", "n"),
                ("faaliyet_disi_pay", "Net kâr / esas faal.", "n"), ("net_borc_favok", "Net borç / FAVÖK", "n"),
                ("reel_hasilat_9a", "Reel hasılat 9A", "p"), ("serbest_nakit_ttm_mn", "İşl. NA − capex (mn)", "i"),
@@ -456,9 +499,10 @@ def kalite_page(df: pd.DataFrame, stamp: str) -> str:
     for c in ("ad", "sektor", "bayraklar"):
         if c not in d:
             d[c] = ""
-    d["kalite_aciklama"] = d["bayraklar"].fillna("").map(
-        lambda b: "; ".join(ACIKLAMA.get(f, f) for f in b.split() if f not in ("INA-", "INA0")) or "bayrak yok")
-    d["_n"] = d["bayraklar"].fillna("").str.split().map(len)
+    d["bayraklar"] = d["bayraklar"].fillna("").map(lambda b: " ".join(f for f in b.split() if f not in ("INA-", "INA0")))
+    d["bayrak_metin"] = d["bayraklar"].map(bayrak_metin)
+    d["_n"] = d["bayraklar"].str.split().map(len)
+    d["bayrak_sayisi"] = d["_n"]
     d = d.sort_values(["_n", "ad"])
     from collections import Counter
     cnt = Counter(f for b in d["bayraklar"].fillna("") for f in b.split() if f not in ("INA-", "INA0"))
@@ -477,6 +521,6 @@ def kalite_page(df: pd.DataFrame, stamp: str) -> str:
 <input id="q" placeholder="Kod, şirket, sektör ya da bayrak ara" oninput="f()">
 {tbl}
 <h2>Kurallar</h2><table><tr><th class='l'>Bayrak</th><th class='l'>Ağırlık</th><th class='l'>Anlamı</th></tr>{rules}</table>
-<p class="m">Akış ve kâr rakamları son 12 ay, TMS 29 düzeltmeli. İşletme nakit akışı − yatırım harcaması serbest nakit akışı (FCFF) değildir.
+<p class="m">Tablo yatay kaydırılabilir. Akış ve kâr rakamları son 12 ay, TMS 29 düzeltmeli. İşletme nakit akışı − yatırım harcaması serbest nakit akışı (FCFF) değildir.
 Haber akışı: son 14 günün başlıkları, kelime tabanlı otomatik ton; hatalı olabilir.</p>
 {SORT_JS}</body></html>"""
