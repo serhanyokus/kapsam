@@ -95,6 +95,7 @@ NAV = {"tr": [("index.html", "Genel bakış"), ("tarama.html", "Tarama"), ("sekt
        "en": [("index.html", "Overview"), ("tarama.html", "Screener"), ("sektor/index.html", "Sectors"), ("risk/index.html", "Risk")]}
 SITE = "https://serhanyokus.github.io/kapsam/"
 REPO = "https://github.com/serhanyokus/kapsam"
+GSC_VERIFY = "m1HmCEtdRpV9c6KnBaNNnEVRQq2Z4N7As5znHe2d05o"   # Google Search Console doğrulaması (herkese açık etiket)
 FOOT = {"tr": ("KAPSAM · TMS 29 farkındalıklı BIST araştırma asistanı · Veri: KAP, TCMB EVDS, Yahoo Finance (gecikmeli). "
                "Bu sayfalar bir araştırma aracının çıktısıdır; yatırım tavsiyesi değildir."),
         "en": ("KAPSAM · IAS 29-aware Borsa Istanbul research assistant · Data: KAP, CBRT EVDS, Yahoo Finance (delayed). "
@@ -133,6 +134,7 @@ def seo_head(title: str, lang: str = "tr", here: str = "") -> str:
                    "Borsa Istanbul, updated every business day."})[lang]
     img = SITE + "og.png"
     return ("<!--seo-->"
+            f"<meta name='google-site-verification' content='{GSC_VERIFY}'>"
             f"<meta name='description' content='{desc}'><link rel='canonical' href='{url}'>"
             f"<link rel='alternate' hreflang='tr' href='{tr_url}'><link rel='alternate' hreflang='en' href='{en_url}'>"
             f"<link rel='alternate' hreflang='x-default' href='{tr_url}'>"
