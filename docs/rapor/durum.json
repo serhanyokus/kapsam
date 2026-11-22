@@ -1,5 +1,5 @@
 {
- "guncelleme": "2026-11-22T00:40:55+00:00",
+ "guncelleme": "2026-11-22T01:01:14+00:00",
  "adimlar": {
   "makro": {
    "durum": "tamam",
@@ -19,7 +19,7 @@
   },
   "tamamla": {
    "durum": "tamam",
-   "detay": "67 eksik şirket denendi, 55 tamamlandı (İş Yatırım), 12 hâlâ eksik"
+   "detay": "12 eksik şirket denendi, 0 tamamlandı (İş Yatırım), 12 hâlâ eksik"
   },
   "risk": {
    "durum": "tamam",
@@ -27,7 +27,7 @@
   },
   "gundem": {
    "durum": "tamam",
-   "detay": "12 gösterge, 60 makro başlık, 60 şirketin haberleri; risk primi eki %1"
+   "detay": "12 gösterge, 60 makro başlık, 59 şirketin haberleri; risk primi eki %1; 1 uyarı"
   },
   "kalite": {
    "durum": "tamam",
