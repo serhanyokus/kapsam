@@ -1,9 +1,9 @@
 {
- "guncelleme": "2026-11-22T13:47:54+00:00",
+ "guncelleme": "2026-11-24T02:32:50+00:00",
  "adimlar": {
   "makro": {
    "durum": "tamam",
-   "detay": "TÜFE son: 2026-10 (resmi 2003=100 son: 2026-01; 2025=100 serisiyle zincirlendi, son: 2026-10; 2025=100 kodu: TP.TUKFIY2025.GENEL), kur son: 2026-11-20"
+   "detay": "TÜFE son: 2026-10 (resmi 2003=100 son: 2026-01; 2025=100 serisiyle zincirlendi, son: 2026-10; 2025=100 kodu: TP.TUKFIY2025.GENEL), kur son: 2026-11-24"
   },
   "evren": {
    "durum": "tamam",
@@ -11,11 +11,11 @@
   },
   "fiyat": {
    "durum": "tamam",
-   "detay": "629/629 hisse (takip listesi 32/32), son tarih 2026-11-20"
+   "detay": "629/629 hisse (takip listesi 32/32), son tarih 2026-11-23"
   },
   "tablo": {
    "durum": "tamam",
-   "detay": "Yeni rapor beklenen hisse yok (tüm kayıtlar güncel)"
+   "detay": "35 hisse kontrol edildi, 0 yeni rapor kaydedildi; MARTI: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; MRGYO: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir."
   },
   "tamamla": {
    "durum": "tamam",
@@ -27,7 +27,7 @@
   },
   "oranlar": {
    "durum": "tamam",
-   "detay": "politika_faizi: %36.00 (2026-10-22, haber: Anadolu Ajansı); enflasyon_beklentisi_12a: %23.89 (2026-10-23, haber: Anka Haber)"
+   "detay": "politika_faizi: %36.00 (2026-10-22, haber: Alomaliye); enflasyon_beklentisi_12a: %23.89 (2026-10-23, haber: Anka Haber)"
   },
   "gundem": {
    "durum": "tamam",

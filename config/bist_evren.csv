@@ -1,630 +1,630 @@
 kod,ad,sektor,kapanis,piyasa_degeri_mn_tl,sermaye_mn_tl,tur
-A1CAP,A1 Capital,Aracı Kurumlar,2.64,1782.0,675.0,sanayi
-A1YEN,Kartal Yenilenebili Enerji,Elektrik Üretim,1.41,846.0,600.0,sanayi
-AAGYO,Ağaoğlu GYO,GYO,7.36,5159.4,701.0,sanayi
-ACSEL,Acıselsan Acıpayam Selüloz,Kimyasal Ürün,80.45,862.6,10.7,sanayi
-ADEL,Adel Kalemcilik,Kırtasiye,19.42,5046.8,259.9,sanayi
+A1CAP,A1 Capital,Aracı Kurumlar,2.56,1728.0,675.0,sanayi
+A1YEN,Kartal Yenilenebili Enerji,Elektrik Üretim,1.36,816.0,600.0,sanayi
+AAGYO,Ağaoğlu GYO,GYO,7.24,5075.2,701.0,sanayi
+ACSEL,Acıselsan Acıpayam Selüloz,Kimyasal Ürün,79.15,848.6,10.7,sanayi
+ADEL,Adel Kalemcilik,Kırtasiye,19.32,5020.8,259.9,sanayi
 ADESE,Adese AVM,GYO,0.49,2469.6,5040.0,sanayi
-ADGYO,Adra GYO,GYO,46.68,25480.5,545.9,sanayi
-AEFES,Anadolu Efes,Meşrubat / İçecek,16.04,94973.7,5921.1,sanayi
-AFYON,Afyon Çimento,Çimento,11.33,4532.0,400.0,sanayi
-AGESA,Agesa Hayat ve Emeklilik,Sigorta,205.6,37008.0,180.0,sigorta
-AGHOL,Anadolu Grubu Holding,Holdingler,25.0,60883.6,2435.3,sanayi
-AGROT,Agrotech Yüksek Teknoloji,Diğer,1.12,2688.0,2400.0,sanayi
-AGYO,Atakule GYO,GYO,5.64,1485.2,263.3,sanayi
-AHGAZ,Ahlatçı Doğalgaz,Elektrik - Doğalgaz Dağıtım,43.8,113880.0,2600.0,sanayi
-AHSGY,Ahes GYO,GYO,8.25,5952.4,721.5,sanayi
-AKBNK,Akbank,Bankacılık,65.15,338780.0,5200.0,banka
-AKCNS,Akçansa,Çimento,173.0,33120.3,191.4,sanayi
-AKENR,Akenerji,Elektrik Üretim,6.14,4477.1,729.2,sanayi
-AKFGY,Akfen GYO,GYO,2.35,9165.0,3900.0,sanayi
-AKFIS,Akfen İnşaat,İnşaat- Taahhüt,15.35,58629.4,3819.5,sanayi
-AKFYE,Akfen Yenilenebilir Enerji,Elektrik Üretim,2.77,19893.5,7181.8,sanayi
-AKGRT,Aksigorta,Sigorta,4.43,7141.2,1612.0,sigorta
-AKHAN,Akhan Un,Gıda,25.0,6833.8,273.4,sanayi
-AKMGY,Akmerkez GYO,GYO,183.3,6830.5,37.3,sanayi
-AKSA,Aksa,Endüstriyel Tekstil,10.65,41375.3,3885.0,sanayi
-AKSEN,Aksa Enerji,Elektrik Üretim,63.8,78240.4,1226.3,sanayi
-AKSGY,Akis GYO,GYO,8.57,20696.6,2415.0,sanayi
-AKSUE,Aksu Enerji,Elektrik Üretim,12.67,836.2,66.0,sanayi
-AKYHO,Akdeniz Yatırım Holding,Holdingler,1.54,382.2,248.2,sanayi
-ALARK,Alarko Holding,Holdingler,102.7,42825.9,417.0,sanayi
-ALBRK,Albaraka Türk,Bankacılık,8.24,20600.0,2500.0,banka
+ADGYO,Adra GYO,GYO,45.7,24945.5,545.9,sanayi
+AEFES,Anadolu Efes,Meşrubat / İçecek,15.96,94500.0,5921.1,sanayi
+AFYON,Afyon Çimento,Çimento,11.28,4512.0,400.0,sanayi
+AGESA,Agesa Hayat ve Emeklilik,Sigorta,206.0,37080.0,180.0,sigorta
+AGHOL,Anadolu Grubu Holding,Holdingler,24.94,60737.5,2435.3,sanayi
+AGROT,Agrotech Yüksek Teknoloji,Diğer,1.09,2616.0,2400.0,sanayi
+AGYO,Atakule GYO,GYO,5.72,1506.3,263.3,sanayi
+AHGAZ,Ahlatçı Doğalgaz,Elektrik - Doğalgaz Dağıtım,42.24,109824.0,2600.0,sanayi
+AHSGY,Ahes GYO,GYO,7.73,5577.2,721.5,sanayi
+AKBNK,Akbank,Bankacılık,65.2,339040.0,5200.0,banka
+AKCNS,Akçansa,Çimento,174.5,33407.5,191.4,sanayi
+AKENR,Akenerji,Elektrik Üretim,5.98,4360.4,729.2,sanayi
+AKFGY,Akfen GYO,GYO,2.28,8892.0,3900.0,sanayi
+AKFIS,Akfen İnşaat,İnşaat- Taahhüt,15.52,59278.7,3819.5,sanayi
+AKFYE,Akfen Yenilenebilir Enerji,Elektrik Üretim,2.71,19462.6,7181.8,sanayi
+AKGRT,Aksigorta,Sigorta,4.38,7060.6,1612.0,sigorta
+AKHAN,Akhan Un,Gıda,24.9,6806.4,273.4,sanayi
+AKMGY,Akmerkez GYO,GYO,184.0,6856.6,37.3,sanayi
+AKSA,Aksa,Endüstriyel Tekstil,10.66,41414.1,3885.0,sanayi
+AKSEN,Aksa Enerji,Elektrik Üretim,63.6,77995.1,1226.3,sanayi
+AKSGY,Akis GYO,GYO,8.37,20213.6,2415.0,sanayi
+AKSUE,Aksu Enerji,Elektrik Üretim,12.25,808.5,66.0,sanayi
+AKYHO,Akdeniz Yatırım Holding,Holdingler,1.61,399.6,248.2,sanayi
+ALARK,Alarko Holding,Holdingler,101.5,42325.5,417.0,sanayi
+ALBRK,Albaraka Türk,Bankacılık,8.16,20400.0,2500.0,banka
 ALBTN,Albayrak Hazır Beton,Çimento,20.3,5075.0,250.0,sanayi
-ALCAR,Alarko Carrier,Dayanıklı Tüketim,567.0,6123.6,10.8,sanayi
-ALCTL,Alcatel Teletaş,İletişim Cihazları,65.05,2517.5,38.7,sanayi
-ALFAS,Alfa Solar,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,21.52,7919.4,368.0,sanayi
-ALGYO,Alarko GYO,GYO,2.49,5051.2,2028.6,sanayi
-ALKA,Alkim Kağıt,Kağıt Ürünleri,4.76,3498.6,735.0,sanayi
-ALKIM,Alkim,Kimyasal Ürün,10.69,3207.0,300.0,sanayi
-ALKLC,Altınkılıç Gıda,Gıda,45.58,5105.0,112.0,sanayi
-ALTNY,Altınay Savunma,Savunma,10.53,10530.0,1000.0,sanayi
-ALVES,Alves Kablo,Kablo,0.51,816.0,1600.0,sanayi
-ANELE,Anel Elektrik,İnşaat Malzemeleri,12.79,3389.4,265.0,sanayi
-ANGEN,Anatolia Biyoteknoloji,Sağlık ve İlaç,5.72,1258.4,220.0,sanayi
-ANHYT,Anadolu Hayat Emeklilik A.Ş.,Sigorta,87.75,37732.5,430.0,sigorta
-ANSGR,Anadolu Sigorta,Sigorta,22.04,44080.0,2000.0,sigorta
-ARASE,Doğu Aras Enerji,Elektrik - Doğalgaz Dağıtım,54.1,13525.0,250.0,sanayi
-ARCLK,Arçelik,Dayanıklı Tüketim,63.75,43077.7,675.7,sanayi
-ARDYZ,ARD Grup Bilişim,Teknoloji,45.78,14753.7,322.3,sanayi
-ARENA,Arena Bilgisayar,Bilgisayar Toptancılığı,10.37,1037.0,100.0,sanayi
-ARFYE,Arf Bio Enerji,Elektrik Üretim,11.51,2104.5,182.8,sanayi
-ARMGD,Armada Gıda,Gıda,108.9,28747.5,264.0,sanayi
-ARSAN,Arsan Holding,Tekstil Entegre,2.93,5162.7,1762.0,sanayi
-ARTMS,Artemis Halı,Tekstil Entegre,21.74,1521.8,70.0,sanayi
-ARZUM,Arzum Ev Aletleri,Dayanıklı Tüketim,0.91,546.0,600.0,sanayi
-ASELS,Aselsan,Savunma,327.0,1491120.0,4560.0,sanayi
-ASGYO,Asce GYO,GYO,8.8,5799.2,659.0,sanayi
-ASTOR,Astor Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,145.6,145308.8,998.0,sanayi
-ASUZU,Anadolu Isuzu,Otomotiv,37.14,9359.3,252.0,sanayi
-ATAGY,Ata GYO,GYO,6.9,327.8,47.5,sanayi
-ATAKP,Atakey Patates,Gıda,34.62,4804.1,138.8,sanayi
-ATATP,ATP Bilgisayar,Teknoloji,173.2,16237.5,93.8,sanayi
-ATATR,Ata Turizm,Turizm,4.89,3925.9,802.8,sanayi
-ATEKS,Akın Tekstil,Tekstil Entegre,70.0,1764.0,25.2,sanayi
-ATLAS,Atlas YO,Yatırım Ortaklıkları,4.43,265.8,60.0,sanayi
-ATSYH,Atlantis YO,Holdingler,67.45,539.6,8.0,sanayi
-AVGYO,Avrasya YO,GYO,14.87,1659.5,111.6,sanayi
-AVHOL,Avrupa Yatırım Holding,Holdingler,26.74,996.1,37.3,sanayi
-AVOD,Avod Kurutulmuş Gıda,Gıda,1.96,529.2,270.0,sanayi
-AVPGY,Avrupakent GYO,GYO,47.18,18872.0,400.0,sanayi
-AVTUR,Avrasya Petrol&Turistik Tesis,Turizm,8.0,360.0,45.0,sanayi
-AYCES,Altınyunus Çesme,Turizm,304.0,7600.0,25.0,sanayi
-AYDEM,Aydem Enerji,Elektrik Üretim,19.44,13705.2,705.0,sanayi
-AYEN,Ayen Enerji,Elektrik Üretim,22.7,6299.3,277.5,sanayi
-AYES,Ayes Çelik Hasır & Çit,İnşaat Malzemeleri,6.35,3175.0,500.0,sanayi
-AYGAZ,Aygaz,Petrol,248.6,54642.5,219.8,sanayi
-AZTEK,Aztek Teknoloji,Teknoloji,2.35,2350.0,1000.0,sanayi
-BAGFS,Bandırma Gübre Fabrikaları A.Ş,Tarım Kimyasalları,15.27,2061.5,135.0,sanayi
-BAHKM,Bahadır Kimya,Kimyasal Ürün,186.6,10263.0,55.0,sanayi
-BAKAB,Bak Ambalaj,Kağıt Ürünleri,27.78,2000.2,72.0,sanayi
-BALAT,Balatacılar Balatacılık,Otomotiv Parçası,50.0,693.9,13.9,sanayi
-BALSU,Balsu Gıda,Gıda,6.08,6761.0,1112.0,sanayi
-BANVT,Banvit,Hayvancılık,102.2,10222.4,100.0,sanayi
-BARMA,Barem Ambalaj,Kağıt Ürünleri,4.5,1181.3,262.5,sanayi
-BASCM,Baştaş Başkent Çimento Sanayi,Çimento,9.9,6534.0,660.0,sanayi
-BASGZ,Başkent Doğalgaz,Elektrik - Doğalgaz Dağıtım,34.56,24192.0,700.0,sanayi
-BAYRK,Bayrak EBT Taban,Tekstil Entegre,2.73,682.5,250.0,sanayi
-BEGYO,Batı Ege GYO,GYO,2.71,2208.7,815.0,sanayi
-BERA,Bera Holding,Holdingler,9.81,6702.2,683.2,sanayi
-BESLR,Besler Gıda,Gıda,9.03,5977.9,662.0,sanayi
-BESTE,Best Brands Grup,Elektrik Üretim,15.35,2888.9,188.2,sanayi
-BETAE,Beta Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,44.3,17941.5,405.0,sanayi
+ALCAR,Alarko Carrier,Dayanıklı Tüketim,574.5,6204.6,10.8,sanayi
+ALCTL,Alcatel Teletaş,İletişim Cihazları,65.85,2548.4,38.7,sanayi
+ALFAS,Alfa Solar,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,21.6,7948.8,368.0,sanayi
+ALGYO,Alarko GYO,GYO,2.5,5071.5,2028.6,sanayi
+ALKA,Alkim Kağıt,Kağıt Ürünleri,4.68,3439.8,735.0,sanayi
+ALKIM,Alkim,Kimyasal Ürün,10.53,3159.0,300.0,sanayi
+ALKLC,Altınkılıç Gıda,Gıda,41.04,4596.5,112.0,sanayi
+ALTNY,Altınay Savunma,Savunma,10.25,10250.0,1000.0,sanayi
+ALVES,Alves Kablo,Kablo,0.48,768.0,1600.0,sanayi
+ANELE,Anel Elektrik,İnşaat Malzemeleri,11.52,3052.8,265.0,sanayi
+ANGEN,Anatolia Biyoteknoloji,Sağlık ve İlaç,5.6,1232.0,220.0,sanayi
+ANHYT,Anadolu Hayat Emeklilik A.Ş.,Sigorta,86.05,37001.5,430.0,sigorta
+ANSGR,Anadolu Sigorta,Sigorta,21.48,42960.0,2000.0,sigorta
+ARASE,Doğu Aras Enerji,Elektrik - Doğalgaz Dağıtım,52.85,13212.5,250.0,sanayi
+ARCLK,Arçelik,Dayanıklı Tüketim,61.9,41827.6,675.7,sanayi
+ARDYZ,ARD Grup Bilişim,Teknoloji,48.6,15662.5,322.3,sanayi
+ARENA,Arena Bilgisayar,Bilgisayar Toptancılığı,10.38,1038.0,100.0,sanayi
+ARFYE,Arf Bio Enerji,Elektrik Üretim,10.95,2002.1,182.8,sanayi
+ARMGD,Armada Gıda,Gıda,98.05,25883.3,264.0,sanayi
+ARSAN,Arsan Holding,Tekstil Entegre,2.89,5092.2,1762.0,sanayi
+ARTMS,Artemis Halı,Tekstil Entegre,21.9,1533.0,70.0,sanayi
+ARZUM,Arzum Ev Aletleri,Dayanıklı Tüketim,0.87,522.0,600.0,sanayi
+ASELS,Aselsan,Savunma,325.5,1484280.0,4560.0,sanayi
+ASGYO,Asce GYO,GYO,8.63,5687.2,659.0,sanayi
+ASTOR,Astor Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,145.9,145608.2,998.0,sanayi
+ASUZU,Anadolu Isuzu,Otomotiv,37.42,9429.8,252.0,sanayi
+ATAGY,Ata GYO,GYO,6.87,326.3,47.5,sanayi
+ATAKP,Atakey Patates,Gıda,34.3,4759.7,138.8,sanayi
+ATATP,ATP Bilgisayar,Teknoloji,179.2,16800.0,93.8,sanayi
+ATATR,Ata Turizm,Turizm,4.54,3644.9,802.8,sanayi
+ATEKS,Akın Tekstil,Tekstil Entegre,68.7,1731.2,25.2,sanayi
+ATLAS,Atlas YO,Yatırım Ortaklıkları,4.36,261.6,60.0,sanayi
+ATSYH,Atlantis YO,Holdingler,65.85,526.8,8.0,sanayi
+AVGYO,Avrasya YO,GYO,14.9,1662.8,111.6,sanayi
+AVHOL,Avrupa Yatırım Holding,Holdingler,25.2,938.7,37.3,sanayi
+AVOD,Avod Kurutulmuş Gıda,Gıda,1.92,518.4,270.0,sanayi
+AVPGY,Avrupakent GYO,GYO,45.32,18128.0,400.0,sanayi
+AVTUR,Avrasya Petrol&Turistik Tesis,Turizm,7.94,357.3,45.0,sanayi
+AYCES,Altınyunus Çesme,Turizm,297.75,7443.8,25.0,sanayi
+AYDEM,Aydem Enerji,Elektrik Üretim,20.26,14283.3,705.0,sanayi
+AYEN,Ayen Enerji,Elektrik Üretim,23.0,6382.5,277.5,sanayi
+AYES,Ayes Çelik Hasır & Çit,İnşaat Malzemeleri,6.6,3300.0,500.0,sanayi
+AYGAZ,Aygaz,Petrol,248.4,54598.5,219.8,sanayi
+AZTEK,Aztek Teknoloji,Teknoloji,2.26,2260.0,1000.0,sanayi
+BAGFS,Bandırma Gübre Fabrikaları A.Ş,Tarım Kimyasalları,14.79,1996.7,135.0,sanayi
+BAHKM,Bahadır Kimya,Kimyasal Ürün,179.8,9889.0,55.0,sanayi
+BAKAB,Bak Ambalaj,Kağıt Ürünleri,27.6,1987.2,72.0,sanayi
+BALAT,Balatacılar Balatacılık,Otomotiv Parçası,49.0,680.0,13.9,sanayi
+BALSU,Balsu Gıda,Gıda,6.24,6938.9,1112.0,sanayi
+BANVT,Banvit,Hayvancılık,100.1,10012.4,100.0,sanayi
+BARMA,Barem Ambalaj,Kağıt Ürünleri,4.45,1168.1,262.5,sanayi
+BASCM,Baştaş Başkent Çimento Sanayi,Çimento,9.79,6461.4,660.0,sanayi
+BASGZ,Başkent Doğalgaz,Elektrik - Doğalgaz Dağıtım,35.1,24570.0,700.0,sanayi
+BAYRK,Bayrak EBT Taban,Tekstil Entegre,2.66,665.0,250.0,sanayi
+BEGYO,Batı Ege GYO,GYO,2.6,2119.0,815.0,sanayi
+BERA,Bera Holding,Holdingler,9.57,6538.2,683.2,sanayi
+BESLR,Besler Gıda,Gıda,9.05,5991.1,662.0,sanayi
+BESTE,Best Brands Grup,Elektrik Üretim,15.45,2907.8,188.2,sanayi
+BETAE,Beta Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,44.78,18135.9,405.0,sanayi
 BEYAZ,Beyaz Filo,Ulaştırma-Lojistik,13.25,1320.9,99.7,sanayi
-BFREN,Bosch Fren,Otomotiv Parçası,92.3,11308.9,122.5,sanayi
-BIENY,Bien Yapı,Seramik,11.62,4194.8,361.0,sanayi
-BIGCH,BigChefs,Gıda,2.29,1225.2,535.0,sanayi
-BIGEN,Birleşim Grup Enerji,Elektrik Üretim,15.99,9226.2,577.0,sanayi
-BIGTK,Big Medya,Medya,51.25,1732.9,33.8,sanayi
-BIMAS,Bim Birleşik Mağazalar A.Ş,Perakande - Ticaret,374.25,449100.0,1200.0,sanayi
-BINBN,BinBin,Ulaştırma-Lojistik,39.24,4394.9,112.0,sanayi
-BINHO,1000 Yatırımlar,Holdingler,3.8,4902.6,1290.2,sanayi
-BIOEN,Biotrend Enerji,Elektrik Üretim,14.24,7120.0,500.0,sanayi
-BIZIM,Bizim Toptan,Perakande - Ticaret,14.22,1144.4,80.5,sanayi
+BFREN,Bosch Fren,Otomotiv Parçası,90.05,11033.2,122.5,sanayi
+BIENY,Bien Yapı,Seramik,11.42,4122.6,361.0,sanayi
+BIGCH,BigChefs,Gıda,2.26,1209.1,535.0,sanayi
+BIGEN,Birleşim Grup Enerji,Elektrik Üretim,14.4,8308.8,577.0,sanayi
+BIGTK,Big Medya,Medya,47.14,1593.9,33.8,sanayi
+BIMAS,Bim Birleşik Mağazalar A.Ş,Perakande - Ticaret,370.25,444300.0,1200.0,sanayi
+BINBN,BinBin,Ulaştırma-Lojistik,35.64,3991.7,112.0,sanayi
+BINHO,1000 Yatırımlar,Holdingler,3.67,4734.9,1290.2,sanayi
+BIOEN,Biotrend Enerji,Elektrik Üretim,13.85,6925.0,500.0,sanayi
+BIZIM,Bizim Toptan,Perakande - Ticaret,14.14,1137.9,80.5,sanayi
 BJKAS,Beşiktaş,Spor,1.15,5019.3,4364.6,sanayi
-BKRGY,Bakırcı GYO,GYO,4.1,2738.8,668.0,sanayi
-BLCYT,Bilici Yatırım,Tekstil Entegre,1.47,1470.0,1000.0,sanayi
-BLUME,Blume Metal Kimya,Turizm,30.02,5244.8,174.7,sanayi
+BKRGY,Bakırcı GYO,GYO,3.95,2638.6,668.0,sanayi
+BLCYT,Bilici Yatırım,Tekstil Entegre,1.44,1440.0,1000.0,sanayi
+BLUME,Blume Metal Kimya,Turizm,29.66,5181.9,174.7,sanayi
 BMSCH,BMS Çelik Hasır,Demir-Çelik Döküm,8.18,818.0,100.0,sanayi
-BMSTL,BMS Birleşik Metal,Demir-Çelik Döküm,32.34,9702.0,300.0,sanayi
-BNTAS,Bantaş Bandırma Ambalaj,Kimyasal Ürün,5.02,1214.2,241.9,sanayi
-BOBET,Boğaziçi Beton,Çimento,14.94,5677.2,380.0,sanayi
-BORLS,Borlease Otomotiv,Ulaştırma-Lojistik,1.73,1211.0,700.0,sanayi
-BORSK,Bor Şeker,Gıda,4.53,4348.8,960.0,sanayi
-BOSSA,Bossa,Tekstil Entegre,4.8,6240.0,1300.0,sanayi
-BRISA,Brisa,Otomotiv Lastiği,67.4,20564.9,305.1,sanayi
-BRKO,Birko Mensucat,Tekstil Entegre,6.81,953.4,140.0,sanayi
-BRKSN,Berkosan Yalıtım,İnşaat Malzemeleri,5.59,523.2,93.6,sanayi
-BRKVY,Birikim Varlık,Varlık Yönetim,32.74,1833.4,56.0,sanayi
-BRLSM,Birlesim Mühendislik,İnşaat Malzemeleri,8.21,1839.0,224.0,sanayi
-BRMEN,Birlik Mensucat,Tekstil Entegre,6.06,540.9,89.3,sanayi
-BRSAN,Borusan Birleşik Boru Fab.,Demir-Çelik Temel,616.0,87331.3,141.8,sanayi
-BRYAT,Borusan Yatırım,Holdingler,1147.0,32259.4,28.1,sanayi
-BSOKE,Batıçim Çimento,Çimento,7.56,12096.0,1600.0,sanayi
-BTCIM,Batıçim,Çimento,1.86,10378.8,5580.0,sanayi
-BUCIM,Bursa Çimento,Çimento,3.86,5790.0,1500.0,sanayi
-BULGS,Bulls GSYO,Yatırım Ortaklıkları,6.77,1814.4,268.0,sanayi
-BURCE,Burçelik,Demir-Çelik Döküm,16.4,1381.5,84.2,sanayi
-BURVA,Burçelik Vana Sanayii,İnşaat Malzemeleri,237.6,1745.8,7.3,sanayi
-BVSAN,Bülbüloğlu Vinç,İnşaat Malzemeleri,56.75,2133.8,37.6,sanayi
-BYDNR,Baydöner,Gıda,15.4,1293.6,84.0,sanayi
+BMSTL,BMS Birleşik Metal,Demir-Çelik Döküm,31.94,9582.0,300.0,sanayi
+BNTAS,Bantaş Bandırma Ambalaj,Kimyasal Ürün,5.01,1211.8,241.9,sanayi
+BOBET,Boğaziçi Beton,Çimento,14.98,5692.4,380.0,sanayi
+BORLS,Borlease Otomotiv,Ulaştırma-Lojistik,1.74,1218.0,700.0,sanayi
+BORSK,Bor Şeker,Gıda,4.57,4387.2,960.0,sanayi
+BOSSA,Bossa,Tekstil Entegre,4.78,6214.0,1300.0,sanayi
+BRISA,Brisa,Otomotiv Lastiği,67.05,20458.1,305.1,sanayi
+BRKO,Birko Mensucat,Tekstil Entegre,6.33,886.2,140.0,sanayi
+BRKSN,Berkosan Yalıtım,İnşaat Malzemeleri,5.48,512.9,93.6,sanayi
+BRKVY,Birikim Varlık,Varlık Yönetim,30.06,1683.4,56.0,sanayi
+BRLSM,Birlesim Mühendislik,İnşaat Malzemeleri,7.77,1740.5,224.0,sanayi
+BRMEN,Birlik Mensucat,Tekstil Entegre,5.46,487.3,89.3,sanayi
+BRSAN,Borusan Birleşik Boru Fab.,Demir-Çelik Temel,642.0,91017.4,141.8,sanayi
+BRYAT,Borusan Yatırım,Holdingler,1135.0,31921.9,28.1,sanayi
+BSOKE,Batıçim Çimento,Çimento,6.81,10896.0,1600.0,sanayi
+BTCIM,Batıçim,Çimento,1.71,9541.8,5580.0,sanayi
+BUCIM,Bursa Çimento,Çimento,3.94,5910.0,1500.0,sanayi
+BULGS,Bulls GSYO,Yatırım Ortaklıkları,6.1,1634.8,268.0,sanayi
+BURCE,Burçelik,Demir-Çelik Döküm,15.8,1331.0,84.2,sanayi
+BURVA,Burçelik Vana Sanayii,İnşaat Malzemeleri,239.8,1762.0,7.3,sanayi
+BVSAN,Bülbüloğlu Vinç,İnşaat Malzemeleri,56.1,2109.4,37.6,sanayi
+BYDNR,Baydöner,Gıda,14.97,1257.5,84.0,sanayi
 CANTE,Çan2 Termik A.S,Elektrik Üretim,0.93,9300.0,10000.0,sanayi
-CASA,Casa Emtia Petrol Kim.Tür.AŞ,Perakande - Ticaret,37.14,182.0,4.9,sanayi
-CATES,Çates Elektrik,Elektrik Üretim,32.6,5385.5,165.2,sanayi
-CCOLA,Coca-Cola İçecek A.Ş,Meşrubat / İçecek,78.55,219789.1,2798.1,sanayi
-CELHA,Çelik Halat,Demir-Çelik Temel,33.4,12875.7,385.5,sanayi
-CEMAS,Çemaş Döküm,Demir-Çelik Döküm,2.01,1589.9,791.0,sanayi
-CEMTS,Çemtas,Demir-Çelik Temel,5.86,2930.0,500.0,sanayi
-CEMZY,Cem Zeytin,Gıda,7.14,16422.0,2300.0,sanayi
-CEOEM,CEO Event Medya,Medya,16.95,745.8,44.0,sanayi
-CGCAM,Çağdaş Cam,Cam,22.0,3696.0,168.0,sanayi
-CIMSA,Çimsa,Çimento,38.9,36783.5,945.6,sanayi
-CITAS,Çitlekçi Gıda,Gıda,119.3,21474.0,180.0,sanayi
-CLEBI,Çelebi,Havayolları ve Hizm.,1240.0,30132.0,24.3,sanayi
-CMBTN,Çimbeton,Çimento,959.0,1697.4,1.8,sanayi
-CMENT,Çimentaş,Çimento,223.0,19426.1,87.1,sanayi
-CONSE,Consus Enerji,Elektrik Üretim,1.33,1025.4,771.0,sanayi
-COSMO,Cosmos Yatırım Holding,Holdingler,75.6,523.0,6.9,sanayi
-CRDFA,Creditwest Faktoring,Fin.Kiralama ve Faktoring,7.77,2331.0,300.0,sanayi
-CRFSA,Carrefoursa,Perakande - Ticaret,140.5,17952.2,127.8,sanayi
-CUSAN,Çuhadaroğlu Metal,Demir-Çelik Döküm,16.01,1140.7,71.3,sanayi
-CVKMD,Cvk Maden,Madencilik,11.22,42411.6,3780.0,sanayi
-CWENE,Cw Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,16.71,18018.2,1078.3,sanayi
-DAGI,Dagi Giyim,Tekstil Entegre,5.49,2196.0,400.0,sanayi
-DAPGM,Dap Gayrimenkul,GYO,2.69,7128.5,2650.0,sanayi
+CASA,Casa Emtia Petrol Kim.Tür.AŞ,Perakande - Ticaret,36.0,176.4,4.9,sanayi
+CATES,Çates Elektrik,Elektrik Üretim,31.3,5170.8,165.2,sanayi
+CCOLA,Coca-Cola İçecek A.Ş,Meşrubat / İçecek,78.05,218390.0,2798.1,sanayi
+CELHA,Çelik Halat,Demir-Çelik Temel,32.82,12652.1,385.5,sanayi
+CEMAS,Çemaş Döküm,Demir-Çelik Döküm,1.94,1534.5,791.0,sanayi
+CEMTS,Çemtas,Demir-Çelik Temel,5.77,2885.0,500.0,sanayi
+CEMZY,Cem Zeytin,Gıda,7.05,16215.0,2300.0,sanayi
+CEOEM,CEO Event Medya,Medya,16.7,734.8,44.0,sanayi
+CGCAM,Çağdaş Cam,Cam,21.64,3635.5,168.0,sanayi
+CIMSA,Çimsa,Çimento,38.56,36462.0,945.6,sanayi
+CITAS,Çitlekçi Gıda,Gıda,107.4,19332.0,180.0,sanayi
+CLEBI,Çelebi,Havayolları ve Hizm.,1251.0,30399.3,24.3,sanayi
+CMBTN,Çimbeton,Çimento,947.5,1677.1,1.8,sanayi
+CMENT,Çimentaş,Çimento,222.6,19391.2,87.1,sanayi
+CONSE,Consus Enerji,Elektrik Üretim,1.3,1002.3,771.0,sanayi
+COSMO,Cosmos Yatırım Holding,Holdingler,73.3,507.1,6.9,sanayi
+CRDFA,Creditwest Faktoring,Fin.Kiralama ve Faktoring,7.3,2190.0,300.0,sanayi
+CRFSA,Carrefoursa,Perakande - Ticaret,154.5,19741.0,127.8,sanayi
+CUSAN,Çuhadaroğlu Metal,Demir-Çelik Döküm,16.8,1197.0,71.3,sanayi
+CVKMD,Cvk Maden,Madencilik,11.46,43318.8,3780.0,sanayi
+CWENE,Cw Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,18.03,19441.6,1078.3,sanayi
+DAGI,Dagi Giyim,Tekstil Entegre,5.14,2056.0,400.0,sanayi
+DAPGM,Dap Gayrimenkul,GYO,2.59,6863.5,2650.0,sanayi
 DARDL,Dardanel,Gıda,0.89,2086.5,2344.4,sanayi
-DCTTR,Dct Trading,Diğer,3.44,1341.6,390.0,sanayi
-DENGE,Denge Holding,Holdingler,1.27,762.0,600.0,sanayi
-DERHL,Derlüks Yatırım Holding,Deri Giyim,1.23,1216.7,989.2,sanayi
-DERIM,Derimod,Deri Giyim,20.84,1125.4,54.0,sanayi
-DESA,Desa Deri Sanayii,Deri Giyim,7.34,3596.6,490.0,sanayi
-DESPC,Despec Bilgisayar,Bilgisayar Toptancılığı,21.68,498.6,23.0,sanayi
-DEVA,Deva Holding,Sağlık ve İlaç,70.0,14001.4,200.0,sanayi
-DGATE,Datagate,Bilgisayar Toptancılığı,41.68,1250.4,30.0,sanayi
-DGGYO,Doğuş GYO,GYO,20.52,6812.8,332.0,sanayi
-DGNMO,Doğanlar Mobilya,Mobilya,6.41,2243.5,350.0,sanayi
-DIRIT,Diriteks Diriliş Tekstil,Tekstil Entegre,14.6,155.5,10.7,sanayi
-DITAS,Ditaş BDY,Otomotiv Parçası,6.52,1108.4,170.0,sanayi
-DMRGD,DMR Unlu Mamüller,Gıda,7.33,10866.0,1482.4,sanayi
-DMSAS,Demisaş,Demir-Çelik Döküm,5.83,1166.0,200.0,sanayi
-DNISI,Dinamik Isı Yalıtım,İnşaat Malzemeleri,3.73,1939.6,520.0,sanayi
-DOAS,Doğuş Otomotiv,Otomotiv,111.2,24464.0,220.0,sanayi
-DOCO,DO & CO Aktiengesellschaft,Ulaştırma-Lojistik,12547.5,137814.9,11.0,sanayi
-DOFER,Dofer Yapı,Demir-Çelik Temel,18.97,1057.6,55.8,sanayi
-DOFRB,Dof Robotik,Teknoloji,55.1,8540.5,155.0,sanayi
-DOGUB,Doğusan,İnşaat Malzemeleri,36.24,1413.4,39.0,sanayi
-DOHOL,Doğan Holding,Holdingler,15.9,41610.2,2617.0,sanayi
-DOKTA,Döktaş Dökümcülük,Otomotiv Parçası,14.35,4649.4,324.0,sanayi
-DSTKF,Destek Finans Faktoring,Fin.Kiralama ve Faktoring,134.7,44900.0,333.3,sanayi
-DUNYH,Dünya Holding,Gıda,15.15,556.5,36.7,sanayi
-DURDO,Duran Doğan Basım,Kağıt Ürünleri,5.76,2880.0,500.0,sanayi
-DURKN,Durukan Şekerleme,Gıda,7.51,995.1,132.5,sanayi
-DYOBY,DYO Boya,Boya,7.97,2391.0,300.0,sanayi
-DZGYO,Deniz GYO,GYO,7.06,2824.0,400.0,sanayi
-EBEBK,Ebebek,Perakande - Ticaret,68.7,10992.0,160.0,sanayi
-ECILC,Eczacıbaşı İlaç,Sağlık ve İlaç,45.44,31138.2,685.3,sanayi
-ECOGR,Ecogreen,Elektrik Üretim,18.6,10044.0,540.0,sanayi
-ECZYT,Eczacıbaşı Yatırım,Holdingler,147.4,15477.0,105.0,sanayi
-EDATA,E-Data Teknoloji,Teknoloji,3.76,1512.2,402.2,sanayi
-EDIP,Edip Gayrimenkul Yat. San.,GYO,21.8,1417.0,65.0,sanayi
-EFOR,Efor Yat. San.,Gıda,9.56,20821.7,2178.0,sanayi
-EGEEN,Ege Endüstri,Otomotiv Parçası,4450.0,14017.5,3.2,sanayi
-EGEGY,Egeyapı GYO,GYO,18.19,3638.0,200.0,sanayi
-EGEPO,Egepol Hastanesi,Sağlık ve İlaç,4.18,2090.0,500.0,sanayi
-EGGUB,Ege Gübre,Tarım Kimyasalları,91.0,9100.0,100.0,sanayi
-EGPRO,Ege Profil,İnşaat Malzemeleri,31.66,17254.7,545.0,sanayi
-EGSER,Ege Seramik,Seramik,1.94,1396.8,720.0,sanayi
-EKDMR,Ekinciler,Demir-Çelik Temel,22.08,7065.6,320.0,sanayi
-EKGYO,Emlak Konut GYO,GYO,17.42,66196.0,3800.0,sanayi
-EKIM,Ekim Turizm,Ulaştırma-Lojistik,14.7,12230.4,832.0,sanayi
-EKIZ,Ekiz Yağ ve Sabun,Gıda,35.74,331.8,9.3,sanayi
-EKOS,Ekos Teknoloji,Endüstriyel Makine -Teçhizat Üretim,2.37,2654.4,1120.0,sanayi
-EKSUN,Eksun Gıda,Gıda,3.89,2334.0,600.0,sanayi
-ELITE,Elite Organik Gıda,Gıda,16.72,2166.9,129.6,sanayi
-EMKEL,Emek Elektrik,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,6.07,910.5,150.0,sanayi
-EMNIS,Eminiş Ambalaj,Boya,135.7,841.3,6.2,sanayi
-EMPAE,Empa Elektronik,Teknoloji,33.8,5746.0,170.0,sanayi
-ENDAE,Enda Enerji,Elektrik Üretim,9.07,3965.4,437.2,sanayi
-ENERY,Enerya Enerji,Elektrik - Doğalgaz Dağıtım,14.45,130050.0,9000.0,sanayi
-ENJSA,Enerjisa Enerji,Elektrik - Doğalgaz Dağıtım,111.6,131807.3,1181.1,sanayi
-ENKAI,Enka İnşaat,İnşaat- Taahhüt,77.25,463500.0,6000.0,sanayi
+DCTTR,Dct Trading,Diğer,3.26,1271.4,390.0,sanayi
+DENGE,Denge Holding,Holdingler,1.21,726.0,600.0,sanayi
+DERHL,Derlüks Yatırım Holding,Deri Giyim,1.16,1147.4,989.2,sanayi
+DERIM,Derimod,Deri Giyim,21.0,1134.0,54.0,sanayi
+DESA,Desa Deri Sanayii,Deri Giyim,7.19,3523.1,490.0,sanayi
+DESPC,Despec Bilgisayar,Bilgisayar Toptancılığı,21.42,492.7,23.0,sanayi
+DEVA,Deva Holding,Sağlık ve İlaç,69.95,13991.3,200.0,sanayi
+DGATE,Datagate,Bilgisayar Toptancılığı,42.04,1261.2,30.0,sanayi
+DGGYO,Doğuş GYO,GYO,20.4,6773.0,332.0,sanayi
+DGNMO,Doğanlar Mobilya,Mobilya,6.25,2187.5,350.0,sanayi
+DIRIT,Diriteks Diriliş Tekstil,Tekstil Entegre,15.8,168.3,10.7,sanayi
+DITAS,Ditaş BDY,Otomotiv Parçası,6.25,1062.5,170.0,sanayi
+DMRGD,DMR Unlu Mamüller,Gıda,7.0,10376.8,1482.4,sanayi
+DMSAS,Demisaş,Demir-Çelik Döküm,5.58,1116.0,200.0,sanayi
+DNISI,Dinamik Isı Yalıtım,İnşaat Malzemeleri,3.8,1976.0,520.0,sanayi
+DOAS,Doğuş Otomotiv,Otomotiv,113.9,25058.0,220.0,sanayi
+DOCO,DO & CO Aktiengesellschaft,Ulaştırma-Lojistik,12540.0,137732.6,11.0,sanayi
+DOFER,Dofer Yapı,Demir-Çelik Temel,18.66,1040.3,55.8,sanayi
+DOFRB,Dof Robotik,Teknoloji,54.95,8517.3,155.0,sanayi
+DOGUB,Doğusan,İnşaat Malzemeleri,39.86,1554.5,39.0,sanayi
+DOHOL,Doğan Holding,Holdingler,15.66,40982.2,2617.0,sanayi
+DOKTA,Döktaş Dökümcülük,Otomotiv Parçası,14.2,4600.8,324.0,sanayi
+DSTKF,Destek Finans Faktoring,Fin.Kiralama ve Faktoring,121.3,40433.3,333.3,sanayi
+DUNYH,Dünya Holding,Gıda,13.64,501.0,36.7,sanayi
+DURDO,Duran Doğan Basım,Kağıt Ürünleri,5.62,2810.0,500.0,sanayi
+DURKN,Durukan Şekerleme,Gıda,7.45,987.1,132.5,sanayi
+DYOBY,DYO Boya,Boya,7.9,2370.0,300.0,sanayi
+DZGYO,Deniz GYO,GYO,7.16,2864.0,400.0,sanayi
+EBEBK,Ebebek,Perakande - Ticaret,67.35,10776.0,160.0,sanayi
+ECILC,Eczacıbaşı İlaç,Sağlık ve İlaç,45.98,31508.3,685.3,sanayi
+ECOGR,Ecogreen,Elektrik Üretim,18.65,10071.0,540.0,sanayi
+ECZYT,Eczacıbaşı Yatırım,Holdingler,146.5,15382.5,105.0,sanayi
+EDATA,E-Data Teknoloji,Teknoloji,3.39,1363.4,402.2,sanayi
+EDIP,Edip Gayrimenkul Yat. San.,GYO,21.58,1402.7,65.0,sanayi
+EFOR,Efor Yat. San.,Gıda,9.3,20255.4,2178.0,sanayi
+EGEEN,Ege Endüstri,Otomotiv Parçası,4420.0,13923.0,3.2,sanayi
+EGEGY,Egeyapı GYO,GYO,17.97,3594.0,200.0,sanayi
+EGEPO,Egepol Hastanesi,Sağlık ve İlaç,3.97,1985.0,500.0,sanayi
+EGGUB,Ege Gübre,Tarım Kimyasalları,93.0,9300.0,100.0,sanayi
+EGPRO,Ege Profil,İnşaat Malzemeleri,32.14,17516.3,545.0,sanayi
+EGSER,Ege Seramik,Seramik,1.87,1346.4,720.0,sanayi
+EKDMR,Ekinciler,Demir-Çelik Temel,21.64,6924.8,320.0,sanayi
+EKGYO,Emlak Konut GYO,GYO,17.58,66804.0,3800.0,sanayi
+EKIM,Ekim Turizm,Ulaştırma-Lojistik,14.87,12371.8,832.0,sanayi
+EKIZ,Ekiz Yağ ve Sabun,Gıda,35.68,331.3,9.3,sanayi
+EKOS,Ekos Teknoloji,Endüstriyel Makine -Teçhizat Üretim,2.33,2609.6,1120.0,sanayi
+EKSUN,Eksun Gıda,Gıda,3.83,2298.0,600.0,sanayi
+ELITE,Elite Organik Gıda,Gıda,16.97,2199.3,129.6,sanayi
+EMKEL,Emek Elektrik,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,5.47,820.5,150.0,sanayi
+EMNIS,Eminiş Ambalaj,Boya,134.5,833.9,6.2,sanayi
+EMPAE,Empa Elektronik,Teknoloji,34.64,5888.8,170.0,sanayi
+ENDAE,Enda Enerji,Elektrik Üretim,8.46,3698.7,437.2,sanayi
+ENERY,Enerya Enerji,Elektrik - Doğalgaz Dağıtım,14.28,128520.0,9000.0,sanayi
+ENJSA,Enerjisa Enerji,Elektrik - Doğalgaz Dağıtım,109.9,129799.5,1181.1,sanayi
+ENKAI,Enka İnşaat,İnşaat- Taahhüt,77.7,466200.0,6000.0,sanayi
 ENPRA,Enpara,Bankacılık,37.54,468322.4,12475.3,banka
-ENSRI,Ensari Deri,Deri Giyim,2.42,1321.3,546.0,sanayi
-ENTRA,Ic Enterra Yenilenebilir,Elektrik Üretim,4.49,18142.1,4040.6,sanayi
+ENSRI,Ensari Deri,Deri Giyim,2.34,1277.6,546.0,sanayi
+ENTRA,Ic Enterra Yenilenebilir,Elektrik Üretim,4.54,18344.1,4040.6,sanayi
 EPLAS,Egeplast,İnşaat Malzemeleri,4.47,852.1,190.6,sanayi
-ERBOS,Erbosan,Demir-Çelik Döküm,90.0,1800.0,20.0,sanayi
-ERCB,Erciyas Çelik Boru,Demir-Çelik Temel,27.6,2146.5,77.8,sanayi
-EREGL,Ereğli Demir Çelik,Demir-Çelik Temel,30.26,211820.0,7000.0,sanayi
-ERSU,Ersu Gıda,Meşrubat / İçecek,16.02,576.7,36.0,sanayi
-ESCAR,Escar Filo,Ulaştırma-Lojistik,12.68,6340.0,500.0,sanayi
-ESCOM,Escort Teknoloji,Teknoloji,3.3,2326.0,704.8,sanayi
-ESEN,Esenboğa Elektrik,Elektrik Üretim,1.98,3603.6,1820.0,sanayi
-ETILR,Etiler Gıda,Gıda,5.58,1396.6,250.3,sanayi
-ETYAT,Euro Trend Yatırım,Yatırım Ortaklıkları,7.82,469.2,60.0,sanayi
-EUHOL,Euro Yatırım,Holdingler,6.02,903.0,150.0,sanayi
-EUKYO,Euro Kapital Yatırım Ortaklığı,Yatırım Ortaklıkları,8.86,531.6,60.0,sanayi
-EUPWR,Europower Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,32.36,21357.6,660.0,sanayi
-EUREN,Europen Endüstri,Demir-Çelik Döküm,2.35,4935.0,2100.0,sanayi
-EUYO,Euro Menkul,Yatırım Ortaklıkları,3.19,191.4,60.0,sanayi
-EYGYO,EYG Gayrimenkul,GYO,1.77,1239.0,700.0,sanayi
-FADE,Fade Gıda Yatırım,Gıda,9.5,797.0,83.9,sanayi
-FENER,Fenerbahce Futbol A.Ş.,Spor,2.07,12937.5,6250.0,sanayi
-FLAP,Flap Kongre Hiz.Oto.Tur.A.Ş,Diğer,10.59,992.8,93.8,sanayi
-FMIZP,F-M İzmit Piston,Otomotiv Parçası,207.2,2958.2,14.3,sanayi
-FONET,Fonet Bilgi Teknolojileri,Teknoloji,3.95,3697.2,936.0,sanayi
-FORMT,Formet Metal ve Cam Sanayii,İnşaat Malzemeleri,0.92,1049.3,1140.6,sanayi
-FORTE,Forte Bilgi İletişim,Teknoloji,85.05,5698.4,67.0,sanayi
-FRIGO,Frigo Pak Gıda,Gıda,2.15,1827.5,850.0,sanayi
-FRMPL,Formül Plastik,Kimyasal Ürün,17.84,2854.4,160.0,sanayi
-FROTO,Ford Otosan,Otomotiv,70.2,246338.8,3509.1,sanayi
-FZLGY,Fuzul Gayrimenkul,GYO,6.55,8187.5,1250.0,sanayi
-GARAN,Garanti Bankası,Bankacılık,144.2,605640.0,4200.0,banka
-GARFA,Garanti BBVA Faktoring,Fin.Kiralama ve Faktoring,20.7,8228.3,397.5,sanayi
-GATEG,Gate Group,Medya,87.0,984.9,11.3,sanayi
-GEDIK,Gedik Yatırım,Aracı Kurumlar,4.76,9520.0,2000.0,sanayi
-GEDZA,Gediz Ambalaj Sanayi,Kimyasal Ürün,17.7,825.8,46.7,sanayi
-GENIL,Gen İlaç,Sağlık ve İlaç,4.25,19125.0,4500.0,sanayi
-GENKM,Gentaş Kimya,Kimyasal Ürün,6.0,3654.0,609.0,sanayi
-GENTS,Gentaş,Mobilya,2.89,2167.5,750.0,sanayi
-GEREL,Gersan Elektrik,Kablo,20.0,7449.5,372.5,sanayi
-GESAN,Girişim Elektrik,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,31.04,14278.4,460.0,sanayi
-GIPTA,Gıpta,Kırtasiye,26.0,3432.0,132.0,sanayi
-GLBMD,Global Menkul Değerler,Aracı Kurumlar,6.67,787.1,118.0,sanayi
-GLCVY,Gelecek Varlık Yön.,Varlık Yönetim,31.76,4436.9,139.7,sanayi
-GLRMK,Gülermak Ağır Sanayi,İnşaat- Taahhüt,113.8,36711.9,322.6,sanayi
-GLRYH,Güler Yatırım Holding,Holdingler,1.25,750.0,600.0,sanayi
-GLYHO,Global Yatırım Holding,Holdingler,15.18,29601.0,1950.0,sanayi
-GMTAS,Gimat Mağazacılık,Perakande - Ticaret,44.26,13278.0,300.0,sanayi
-GOKNR,Göknur Gıda,Gıda,11.4,3990.0,350.0,sanayi
-GOLDA,Golda Gıda,Gıda,5.75,1437.5,250.0,sanayi
-GOLTS,Göltaş Çimento,Çimento,218.8,3938.4,18.0,sanayi
-GOODY,Goodyear,Otomotiv Lastiği,1.79,2720.8,1520.0,sanayi
+ERBOS,Erbosan,Demir-Çelik Döküm,88.05,1761.0,20.0,sanayi
+ERCB,Erciyas Çelik Boru,Demir-Çelik Temel,27.38,2129.4,77.8,sanayi
+EREGL,Ereğli Demir Çelik,Demir-Çelik Temel,30.24,211680.0,7000.0,sanayi
+ERSU,Ersu Gıda,Meşrubat / İçecek,15.8,568.8,36.0,sanayi
+ESCAR,Escar Filo,Ulaştırma-Lojistik,11.42,5710.0,500.0,sanayi
+ESCOM,Escort Teknoloji,Teknoloji,3.25,2290.7,704.8,sanayi
+ESEN,Esenboğa Elektrik,Elektrik Üretim,1.93,3512.6,1820.0,sanayi
+ETILR,Etiler Gıda,Gıda,5.39,1349.1,250.3,sanayi
+ETYAT,Euro Trend Yatırım,Yatırım Ortaklıkları,7.95,477.0,60.0,sanayi
+EUHOL,Euro Yatırım,Holdingler,6.0,900.0,150.0,sanayi
+EUKYO,Euro Kapital Yatırım Ortaklığı,Yatırım Ortaklıkları,8.64,518.4,60.0,sanayi
+EUPWR,Europower Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,32.44,21410.4,660.0,sanayi
+EUREN,Europen Endüstri,Demir-Çelik Döküm,2.31,4851.0,2100.0,sanayi
+EUYO,Euro Menkul,Yatırım Ortaklıkları,3.08,184.8,60.0,sanayi
+EYGYO,EYG Gayrimenkul,GYO,1.79,1253.0,700.0,sanayi
+FADE,Fade Gıda Yatırım,Gıda,9.3,780.2,83.9,sanayi
+FENER,Fenerbahce Futbol A.Ş.,Spor,1.96,12250.0,6250.0,sanayi
+FLAP,Flap Kongre Hiz.Oto.Tur.A.Ş,Diğer,2.55,1020.0,400.0,sanayi
+FMIZP,F-M İzmit Piston,Otomotiv Parçası,205.8,2938.2,14.3,sanayi
+FONET,Fonet Bilgi Teknolojileri,Teknoloji,3.91,3659.8,936.0,sanayi
+FORMT,Formet Metal ve Cam Sanayii,İnşaat Malzemeleri,0.9,1026.5,1140.6,sanayi
+FORTE,Forte Bilgi İletişim,Teknoloji,85.9,5755.3,67.0,sanayi
+FRIGO,Frigo Pak Gıda,Gıda,2.26,1921.0,850.0,sanayi
+FRMPL,Formül Plastik,Kimyasal Ürün,17.71,2833.6,160.0,sanayi
+FROTO,Ford Otosan,Otomotiv,71.15,249672.5,3509.1,sanayi
+FZLGY,Fuzul Gayrimenkul,GYO,6.6,8250.0,1250.0,sanayi
+GARAN,Garanti Bankası,Bankacılık,145.7,611940.0,4200.0,banka
+GARFA,Garanti BBVA Faktoring,Fin.Kiralama ve Faktoring,20.66,8212.4,397.5,sanayi
+GATEG,Gate Group,Medya,88.95,1006.9,11.3,sanayi
+GEDIK,Gedik Yatırım,Aracı Kurumlar,4.54,9080.0,2000.0,sanayi
+GEDZA,Gediz Ambalaj Sanayi,Kimyasal Ürün,17.63,822.5,46.7,sanayi
+GENIL,Gen İlaç,Sağlık ve İlaç,4.2,18900.0,4500.0,sanayi
+GENKM,Gentaş Kimya,Kimyasal Ürün,5.93,3611.4,609.0,sanayi
+GENTS,Gentaş,Mobilya,2.87,2152.5,750.0,sanayi
+GEREL,Gersan Elektrik,Kablo,19.0,7077.0,372.5,sanayi
+GESAN,Girişim Elektrik,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,31.14,14324.4,460.0,sanayi
+GIPTA,Gıpta,Kırtasiye,24.2,3194.4,132.0,sanayi
+GLBMD,Global Menkul Değerler,Aracı Kurumlar,6.54,771.7,118.0,sanayi
+GLCVY,Gelecek Varlık Yön.,Varlık Yönetim,31.5,4400.6,139.7,sanayi
+GLRMK,Gülermak Ağır Sanayi,İnşaat- Taahhüt,116.3,37518.4,322.6,sanayi
+GLRYH,Güler Yatırım Holding,Holdingler,1.15,690.0,600.0,sanayi
+GLYHO,Global Yatırım Holding,Holdingler,15.04,29328.0,1950.0,sanayi
+GMTAS,Gimat Mağazacılık,Perakande - Ticaret,42.92,12876.0,300.0,sanayi
+GOKNR,Göknur Gıda,Gıda,11.44,4004.0,350.0,sanayi
+GOLDA,Golda Gıda,Gıda,5.57,1392.5,250.0,sanayi
+GOLTS,Göltaş Çimento,Çimento,215.9,3886.2,18.0,sanayi
+GOODY,Goodyear,Otomotiv Lastiği,1.76,2675.2,1520.0,sanayi
 GOZDE,Gözde Girisim Sermayesi,Yatırım Ortaklıkları,15.09,5809.7,385.0,sanayi
-GRNYO,Garanti YO,Yatırım Ortaklıkları,7.73,289.9,37.5,sanayi
-GRSEL,Gürsel Taşımacılık,Ulaştırma-Lojistik,237.3,24204.6,102.0,sanayi
-GRTHO,GrainTurk Tarım,Perakande - Ticaret,68.6,8575.0,125.0,sanayi
-GSDDE,GSD Denizcilik Gayrimenkul İnş,Ulaştırma-Lojistik,9.81,1471.5,150.0,sanayi
+GRNYO,Garanti YO,Yatırım Ortaklıkları,7.49,280.9,37.5,sanayi
+GRSEL,Gürsel Taşımacılık,Ulaştırma-Lojistik,240.1,24490.2,102.0,sanayi
+GRTHO,GrainTurk Tarım,Perakande - Ticaret,61.75,7718.8,125.0,sanayi
+GSDDE,GSD Denizcilik Gayrimenkul İnş,Ulaştırma-Lojistik,9.67,1450.5,150.0,sanayi
 GSDHO,GSD Holding A.Ş.,Holdingler,3.94,3940.0,1000.0,sanayi
-GSRAY,Galatasaray Sportif A.Ş,Spor,0.71,9585.0,13500.0,sanayi
-GUBRF,Gübre Fabrikaları,Tarım Kimyasalları,268.75,89762.5,334.0,sanayi
+GSRAY,Galatasaray Sportif A.Ş,Spor,0.7,9450.0,13500.0,sanayi
+GUBRF,Gübre Fabrikaları,Tarım Kimyasalları,277.0,92518.0,334.0,sanayi
 GUNDG,Gündoğdu Gıda,Gıda,186.6,7277.4,39.0,sanayi
-GWIND,Galata Wind Enerji,Elektrik Üretim,18.46,9968.4,540.0,sanayi
-GZNMI,Gezinomi Seyahat,Turizm,19.02,1236.3,65.0,sanayi
-HALKB,Halkbank,Bankacılık,38.66,277763.5,7184.8,banka
-HATEK,Hateks Hatay Tekstil,Tekstil Entegre,6.28,395.6,63.0,sanayi
-HATSN,Hat-San,Ulaştırma-Lojistik,22.4,4961.6,221.5,sanayi
-HDFGS,Hedef Girişim Sermayesi,Yatırım Ortaklıkları,1.14,1288.2,1130.0,sanayi
-HEDEF,Hedef Holding,Holdingler,5.69,17070.0,3000.0,sanayi
-HEKTS,Hektaş,Tarım Kimyasalları,1.51,13789.4,9132.1,sanayi
-HKTM,Hidropar,Endüstriyel Makine -Teçhizat Üretim,12.69,1332.5,105.0,sanayi
+GWIND,Galata Wind Enerji,Elektrik Üretim,18.2,9828.0,540.0,sanayi
+GZNMI,Gezinomi Seyahat,Turizm,18.2,1183.0,65.0,sanayi
+HALKB,Halkbank,Bankacılık,39.7,285235.7,7184.8,banka
+HATEK,Hateks Hatay Tekstil,Tekstil Entegre,6.1,384.3,63.0,sanayi
+HATSN,Hat-San,Ulaştırma-Lojistik,22.42,4966.0,221.5,sanayi
+HDFGS,Hedef Girişim Sermayesi,Yatırım Ortaklıkları,1.11,1254.3,1130.0,sanayi
+HEDEF,Hedef Holding,Holdingler,5.49,16470.0,3000.0,sanayi
+HEKTS,Hektaş,Tarım Kimyasalları,1.5,13698.1,9132.1,sanayi
+HKTM,Hidropar,Endüstriyel Makine -Teçhizat Üretim,12.96,1360.8,105.0,sanayi
 HLGYO,Halk GYO,GYO,3.41,13094.4,3840.0,sanayi
-HOROZ,Horoz Lojistik,Ulaştırma-Lojistik,33.42,3024.1,90.5,sanayi
-HRKET,Hareket Proje,Endüstriyel Makine -Teçhizat Üretim,6.44,10386.4,1612.8,sanayi
-HTTBT,Hitit Bilgisayar,Teknoloji,30.0,9000.0,300.0,sanayi
-HUBVC,Hub Girişim Ser. Y.O.,Yatırım Ortaklıkları,2.07,579.6,280.0,sanayi
-HUNER,Hun Enerji,Elektrik Üretim,3.69,3690.0,1000.0,sanayi
-HURGZ,Hürriyet,Medya,3.54,2095.7,592.0,sanayi
-ICBCT,ICBC Turkey Bank,Bankacılık,11.67,10036.2,860.0,banka
-ICUGS,Icu Girişim Ser. Y.O.,Yatırım Ortaklıkları,1.2,417.0,347.5,sanayi
-IDGYO,İdealist GYO,GYO,3.56,534.0,150.0,sanayi
-IEYHO,Işıklar Enerji ve Yapı Holding,Holdingler,15.65,8507.3,543.6,sanayi
-IHAAS,İhlas Haber Ajansı,Medya,12.25,1996.8,163.0,sanayi
-IHEVA,İhlas Ev Aletleri,Dayanıklı Tüketim,1.71,599.4,350.5,sanayi
-IHGZT,İhlas Gazetecilik,Medya,0.9,720.0,800.0,sanayi
-IHLAS,İhlas Holding,Holdingler,0.87,2610.0,3000.0,sanayi
-IHLGM,İhlas Gayrimenkul,GYO,1.6,1600.0,1000.0,sanayi
-IHYAY,İhlas Yayın Holding,Medya,0.96,432.0,450.0,sanayi
-IMASM,İmaş Makine,Endüstriyel Makine -Teçhizat Üretim,1.26,1165.5,925.0,sanayi
-INDES,İndeks Bilgisayar,Bilgisayar Toptancılığı,8.44,6330.0,750.0,sanayi
-INFO,İnfo Yatırım,Aracı Kurumlar,0.88,1690.2,1920.7,sanayi
-INGRM,İngram Bilişim,Bilgisayar Toptancılığı,192.9,4629.6,24.0,sanayi
-INTEK,Innosa Teknoloji,Teknoloji,142.8,1142.4,8.0,sanayi
-INTEM,İntema,İnşaat Malzemeleri,161.2,3133.7,19.4,sanayi
-INTET,Intetra Teknoloji,Teknoloji,39.04,6246.4,160.0,sanayi
-INVEO,İnveo Yatırım Holding,Holdingler,3.81,3810.0,1000.0,sanayi
-INVES,Investco Holding,Holdingler,695.0,130312.5,187.5,sanayi
+HOROZ,Horoz Lojistik,Ulaştırma-Lojistik,34.74,3143.6,90.5,sanayi
+HRKET,Hareket Proje,Endüstriyel Makine -Teçhizat Üretim,6.62,10676.7,1612.8,sanayi
+HTTBT,Hitit Bilgisayar,Teknoloji,30.12,9036.0,300.0,sanayi
+HUBVC,Hub Girişim Ser. Y.O.,Yatırım Ortaklıkları,2.08,582.4,280.0,sanayi
+HUNER,Hun Enerji,Elektrik Üretim,3.33,3330.0,1000.0,sanayi
+HURGZ,Hürriyet,Medya,3.42,2024.6,592.0,sanayi
+ICBCT,ICBC Turkey Bank,Bankacılık,11.41,9812.6,860.0,banka
+ICUGS,Icu Girişim Ser. Y.O.,Yatırım Ortaklıkları,1.15,399.6,347.5,sanayi
+IDGYO,İdealist GYO,GYO,3.9,585.0,150.0,sanayi
+IEYHO,Işıklar Enerji ve Yapı Holding,Holdingler,14.09,7659.3,543.6,sanayi
+IHAAS,İhlas Haber Ajansı,Medya,11.77,1918.5,163.0,sanayi
+IHEVA,İhlas Ev Aletleri,Dayanıklı Tüketim,1.86,651.9,350.5,sanayi
+IHGZT,İhlas Gazetecilik,Medya,0.86,688.0,800.0,sanayi
+IHLAS,İhlas Holding,Holdingler,0.85,2550.0,3000.0,sanayi
+IHLGM,İhlas Gayrimenkul,GYO,1.76,1760.0,1000.0,sanayi
+IHYAY,İhlas Yayın Holding,Medya,1.05,472.5,450.0,sanayi
+IMASM,İmaş Makine,Endüstriyel Makine -Teçhizat Üretim,1.23,1137.8,925.0,sanayi
+INDES,İndeks Bilgisayar,Bilgisayar Toptancılığı,8.64,6480.0,750.0,sanayi
+INFO,İnfo Yatırım,Aracı Kurumlar,0.8,1536.5,1920.7,sanayi
+INGRM,İngram Bilişim,Bilgisayar Toptancılığı,192.0,4608.0,24.0,sanayi
+INTEK,Innosa Teknoloji,Teknoloji,141.9,1135.2,8.0,sanayi
+INTEM,İntema,İnşaat Malzemeleri,155.9,3030.7,19.4,sanayi
+INTET,Intetra Teknoloji,Teknoloji,38.18,6108.8,160.0,sanayi
+INVEO,İnveo Yatırım Holding,Holdingler,3.73,3730.0,1000.0,sanayi
+INVES,Investco Holding,Holdingler,678.0,127125.0,187.5,sanayi
 ISATR,İş Bankası (A),Bankacılık,4950000.0,4950.0,0.0,banka
-ISBIR,İşbir Holding,Holdingler,50.0,1619.4,32.4,sanayi
+ISBIR,İşbir Holding,Holdingler,49.98,1618.7,32.4,sanayi
 ISBTR,İş Bankası (B),Bankacılık,372187.5,10793.4,0.0,banka
-ISCTR,İş Bankası (C),Bankacılık,12.56,313999.6,25000.0,banka
-ISDMR,İskenderun Demir Çelik,Demir-Çelik Temel,48.92,141868.0,2900.0,sanayi
-ISFIN,İş Finansal Kiralama,Fin.Kiralama ve Faktoring,14.26,9915.0,695.3,sanayi
-ISGSY,İş Girişim,Yatırım Ortaklıkları,10.08,5040.0,500.0,sanayi
-ISGYO,İş GYO,GYO,18.1,17353.4,958.8,sanayi
-ISKPL,Işıklar Plastik,Kimyasal Ürün,2.93,4395.0,1500.0,sanayi
+ISCTR,İş Bankası (C),Bankacılık,12.53,313249.6,25000.0,banka
+ISDMR,İskenderun Demir Çelik,Demir-Çelik Temel,49.04,142216.0,2900.0,sanayi
+ISFIN,İş Finansal Kiralama,Fin.Kiralama ve Faktoring,15.0,10429.5,695.3,sanayi
+ISGSY,İş Girişim,Yatırım Ortaklıkları,11.08,5540.0,500.0,sanayi
+ISGYO,İş GYO,GYO,18.13,17382.1,958.8,sanayi
+ISKPL,Işıklar Plastik,Kimyasal Ürün,2.8,4200.0,1500.0,sanayi
 ISKUR,İş Bankası Kurucu,Bankacılık,4125000.0,0.0,0.0,banka
-ISMEN,İş Yatırım,Aracı Kurumlar,25.8,38700.0,1500.0,sanayi
-ISSEN,İşbir Sentetik,Tekstil Entegre,4.69,1990.4,424.4,sanayi
-ISVEA,İsvea Seramik,Seramik,25.64,7179.2,280.0,sanayi
-ISYAT,İs YO,Yatırım Ortaklıkları,5.64,905.8,160.6,sanayi
-IZENR,İzdemir Enerji,Elektrik Üretim,3.84,9384.0,2443.8,sanayi
-IZFAS,İzmir Fırça,Boya,11.94,2115.6,177.2,sanayi
-IZINV,İz Yatırım Holding,Gıda,25.92,453.9,17.5,sanayi
-IZMDC,İzmir Demir Çelik,Demir-Çelik Temel,6.01,9015.0,1500.0,sanayi
-JANTS,Jantsa Jant,Otomotiv Parçası,10.34,7238.0,700.0,sanayi
-KAPLM,Kaplamin,Kağıt Ürünleri,113.3,2266.0,20.0,sanayi
-KARCL,Kardemir Çelik Sanayi,Demir-Çelik Temel,62.45,51833.5,830.0,sanayi
-KAREL,Karel Elektronik,İletişim Cihazları,3.83,3086.5,805.9,sanayi
-KARSN,Karsan Otomotiv,Otomotiv,7.05,6345.0,900.0,sanayi
-KARTN,Kartonsan,Kağıt Ürünleri,92.4,6930.0,75.0,sanayi
-KATMR,Katmerciler Araç Üstü Ekipman,Otomotiv Parçası,1.1,2368.6,2153.3,sanayi
-KAYSE,Kayseri Şeker,Gıda,2.19,6570.0,3000.0,sanayi
-KBORU,Kuzey Boru,İnşaat Malzemeleri,10.01,6006.0,600.0,sanayi
-KCAER,Kocaer Çelik Sanayi,Demir-Çelik Temel,9.77,18709.6,1915.0,sanayi
-KCHOL,Koç Holding,Holdingler,187.2,474720.1,2535.9,sanayi
-KENT,Kent Gıda,Gıda,230.5,76065.0,330.0,sanayi
-KERVN,Kervansaray Yat. Holding,Holdingler,6.3,3707.6,588.5,sanayi
-KFEIN,Kafein Yazılım,Teknoloji,4.83,953.9,197.5,sanayi
-KGYO,Koray GYO,GYO,7.31,7310.0,1000.0,sanayi
-KIMMR,Ersan Alışveriş Hizmetleri,Perakande - Ticaret,10.63,2551.2,240.0,sanayi
-KLGYO,Kiler GYO,GYO,3.46,4826.7,1395.0,sanayi
-KLKIM,Kalekim Kimyevi Maddeler,Seramik,18.72,8611.2,460.0,sanayi
-KLMSN,Klimasan,Dayanıklı Tüketim,16.88,1336.9,79.2,sanayi
-KLNMA,T. Kalkınma Bankası,Bankacılık,6.98,69800.0,10000.0,banka
-KLRHO,Kiler Holding,Holdingler,10.74,31414.5,2925.0,sanayi
-KLSER,Kaleseramik,Seramik,14.17,7294.4,514.8,sanayi
-KLSYN,Koleksiyon Mobilya,Mobilya,13.95,6018.3,431.4,sanayi
-KLYPV,Kalyon Güneş Teknolojileri,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,48.8,22451.8,460.1,sanayi
-KMPUR,Kimteks Poliüretan,Kimyasal Ürün,11.53,5605.9,486.2,sanayi
-KNFRT,Konfrut Gıda,Meşrubat / İçecek,6.69,1766.2,264.0,sanayi
-KOCMT,Koç Metalurji,Demir-Çelik Temel,2.36,5900.0,2500.0,sanayi
-KONKA,Konya Kağıt,Kağıt Ürünleri,6.42,2503.8,390.0,sanayi
-KONTR,Kontrolmatik Teknoloji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,2.52,3276.0,1300.0,sanayi
-KONYA,Konya Çimento,Çimento,2852.5,13901.5,4.9,sanayi
-KOPOL,Koza Polyester,Endüstriyel Tekstil,2.84,3683.4,1297.0,sanayi
-KORDS,Kordsa Teknik Tekstil,Endüstriyel Tekstil,2.29,8463.5,3695.9,sanayi
-KOTON,Koton,Tekstil Entegre,8.03,6662.1,829.7,sanayi
-KPEKS,Kapeks Kimya,Kimyasal Ürün,51.3,6417.6,125.1,sanayi
-KRDMA,Kardemir (A),Demir-Çelik Temel,32.98,7925.2,240.3,sanayi
-KRDMB,Kardemir (B),Demir-Çelik Temel,42.62,5091.8,119.5,sanayi
-KRDMD,Kardemir (D),Demir-Çelik Temel,37.58,29320.9,780.2,sanayi
+ISMEN,İş Yatırım,Aracı Kurumlar,25.72,38580.0,1500.0,sanayi
+ISSEN,İşbir Sentetik,Tekstil Entegre,4.55,1931.0,424.4,sanayi
+ISVEA,İsvea Seramik,Seramik,23.08,6462.4,280.0,sanayi
+ISYAT,İs YO,Yatırım Ortaklıkları,5.69,913.8,160.6,sanayi
+IZENR,İzdemir Enerji,Elektrik Üretim,3.57,8724.2,2443.8,sanayi
+IZFAS,İzmir Fırça,Boya,10.75,1904.8,177.2,sanayi
+IZINV,İz Yatırım Holding,Gıda,24.94,436.8,17.5,sanayi
+IZMDC,İzmir Demir Çelik,Demir-Çelik Temel,5.53,8295.0,1500.0,sanayi
+JANTS,Jantsa Jant,Otomotiv Parçası,10.09,7063.0,700.0,sanayi
+KAPLM,Kaplamin,Kağıt Ürünleri,108.0,2160.0,20.0,sanayi
+KARCL,Kardemir Çelik Sanayi,Demir-Çelik Temel,56.25,46687.5,830.0,sanayi
+KAREL,Karel Elektronik,İletişim Cihazları,3.85,3102.7,805.9,sanayi
+KARSN,Karsan Otomotiv,Otomotiv,7.13,6417.0,900.0,sanayi
+KARTN,Kartonsan,Kağıt Ürünleri,93.15,6986.3,75.0,sanayi
+KATMR,Katmerciler Araç Üstü Ekipman,Otomotiv Parçası,1.09,2347.0,2153.3,sanayi
+KAYSE,Kayseri Şeker,Gıda,2.18,6540.0,3000.0,sanayi
+KBORU,Kuzey Boru,İnşaat Malzemeleri,10.45,6270.0,600.0,sanayi
+KCAER,Kocaer Çelik Sanayi,Demir-Çelik Temel,10.0,19150.0,1915.0,sanayi
+KCHOL,Koç Holding,Holdingler,190.9,484102.9,2535.9,sanayi
+KENT,Kent Gıda,Gıda,243.0,80190.0,330.0,sanayi
+KERVN,Kervansaray Yat. Holding,Holdingler,6.2,3648.7,588.5,sanayi
+KFEIN,Kafein Yazılım,Teknoloji,4.82,952.0,197.5,sanayi
+KGYO,Koray GYO,GYO,6.58,6580.0,1000.0,sanayi
+KIMMR,Ersan Alışveriş Hizmetleri,Perakande - Ticaret,10.48,2515.2,240.0,sanayi
+KLGYO,Kiler GYO,GYO,3.38,4715.1,1395.0,sanayi
+KLKIM,Kalekim Kimyevi Maddeler,Seramik,18.52,8519.2,460.0,sanayi
+KLMSN,Klimasan,Dayanıklı Tüketim,16.59,1313.9,79.2,sanayi
+KLNMA,T. Kalkınma Bankası,Bankacılık,6.89,68900.0,10000.0,banka
+KLRHO,Kiler Holding,Holdingler,10.6,31005.0,2925.0,sanayi
+KLSER,Kaleseramik,Seramik,13.54,6970.1,514.8,sanayi
+KLSYN,Koleksiyon Mobilya,Mobilya,13.6,5867.3,431.4,sanayi
+KLYPV,Kalyon Güneş Teknolojileri,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,49.3,22681.9,460.1,sanayi
+KMPUR,Kimteks Poliüretan,Kimyasal Ürün,10.93,5314.2,486.2,sanayi
+KNFRT,Konfrut Gıda,Meşrubat / İçecek,6.47,1708.1,264.0,sanayi
+KOCMT,Koç Metalurji,Demir-Çelik Temel,2.23,5575.0,2500.0,sanayi
+KONKA,Konya Kağıt,Kağıt Ürünleri,6.25,2437.5,390.0,sanayi
+KONTR,Kontrolmatik Teknoloji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,2.37,3081.0,1300.0,sanayi
+KONYA,Konya Çimento,Çimento,2767.5,13487.2,4.9,sanayi
+KOPOL,Koza Polyester,Endüstriyel Tekstil,2.8,3631.5,1297.0,sanayi
+KORDS,Kordsa Teknik Tekstil,Endüstriyel Tekstil,2.27,8389.6,3695.9,sanayi
+KOTON,Koton,Tekstil Entegre,7.87,6529.3,829.7,sanayi
+KPEKS,Kapeks Kimya,Kimyasal Ürün,49.4,6179.9,125.1,sanayi
+KRDMA,Kardemir (A),Demir-Çelik Temel,31.84,7651.3,240.3,sanayi
+KRDMB,Kardemir (B),Demir-Çelik Temel,42.2,5041.6,119.5,sanayi
+KRDMD,Kardemir (D),Demir-Çelik Temel,36.9,28790.3,780.2,sanayi
 KRGYO,Korfez GYO,GYO,3.24,3207.6,990.0,sanayi
-KRONT,Kron Teknoloji,Teknoloji,16.3,2790.9,171.2,sanayi
-KRPLS,Koroplast Temizlik Ambalaj,Kağıt Ürünleri,9.88,1725.0,174.6,sanayi
-KRSTL,Kristal Kola,Meşrubat / İçecek,5.33,1023.4,192.0,sanayi
-KRTEK,Karsu Tekstil,Tekstil Entegre,4.9,676.1,138.0,sanayi
-KRVGD,Kervan Gıda,Gıda,1.7,3672.0,2160.0,sanayi
-KSTUR,Kuştur Turizm,Turizm,1300.0,5518.0,4.2,sanayi
-KTLEV,Katılımevim,Diğer,7.43,52010.0,7000.0,sanayi
-KTSKR,Kütahya Şeker,Gıda,49.14,2260.4,46.0,sanayi
-KUTPO,Kütahya Porselen,Seramik,53.85,2149.5,39.9,sanayi
-KUVVA,Kuvva Gıda,Gıda,64.0,1986.7,31.0,sanayi
-KUYAS,Kuyas Yatırım AŞ,İnşaat- Taahhüt,10.5,4200.0,400.0,sanayi
-KZBGY,Kızılbük GYO,GYO,1.13,4520.0,4000.0,sanayi
-KZGYO,Kuzugrup GYO,GYO,16.27,3254.0,200.0,sanayi
-LIDER,Lider Turizm,Ulaştırma-Lojistik,8.35,6888.8,825.0,sanayi
-LIDFA,Lider Faktoring,Fin.Kiralama ve Faktoring,1.56,2574.0,1650.0,sanayi
+KRONT,Kron Teknoloji,Teknoloji,15.78,2701.9,171.2,sanayi
+KRPLS,Koroplast Temizlik Ambalaj,Kağıt Ürünleri,10.1,1763.5,174.6,sanayi
+KRSTL,Kristal Kola,Meşrubat / İçecek,5.27,1011.8,192.0,sanayi
+KRTEK,Karsu Tekstil,Tekstil Entegre,4.83,666.5,138.0,sanayi
+KRVGD,Kervan Gıda,Gıda,1.66,3585.6,2160.0,sanayi
+KSTUR,Kuştur Turizm,Turizm,1310.0,5560.4,4.2,sanayi
+KTLEV,Katılımevim,Diğer,6.69,46830.0,7000.0,sanayi
+KTSKR,Kütahya Şeker,Gıda,49.4,2272.4,46.0,sanayi
+KUTPO,Kütahya Porselen,Seramik,53.35,2129.6,39.9,sanayi
+KUVVA,Kuvva Gıda,Gıda,60.05,1864.1,31.0,sanayi
+KUYAS,Kuyas Yatırım AŞ,İnşaat- Taahhüt,10.75,4300.0,400.0,sanayi
+KZBGY,Kızılbük GYO,GYO,1.09,4360.0,4000.0,sanayi
+KZGYO,Kuzugrup GYO,GYO,15.98,3196.0,200.0,sanayi
+LIDER,Lider Turizm,Ulaştırma-Lojistik,7.6,6270.0,825.0,sanayi
+LIDFA,Lider Faktoring,Fin.Kiralama ve Faktoring,1.59,2623.5,1650.0,sanayi
 LILAK,Lila Kağıt,Kağıt Ürünleri,18.18,10726.2,590.0,sanayi
-LINK,Link Bilgisayar,Teknoloji,2.57,2291.8,891.8,sanayi
-LKMNH,Lokman Hekim Engurusag,Sağlık ve İlaç,10.02,2164.3,216.0,sanayi
-LMKDC,Limak Doğu Anadolu Çimento,Çimento,20.72,10695.2,516.2,sanayi
-LOGO,Logo Yazılım,Teknoloji,115.6,10982.0,95.0,sanayi
-LRSHO,Loras Holding,Holdingler,1.55,1190.4,768.0,sanayi
-LUKSK,Lüks Kadife,Tekstil Entegre,49.52,1386.6,28.0,sanayi
-LXGYO,Luxera GYO,GYO,5.2,1716.0,330.0,sanayi
-LYDHO,Lydia Holding,Holdingler,20.24,7124.3,352.0,sanayi
-LYDYE,Lydia Yeşil Enerji,Gıda,2902.5,5488.8,1.9,sanayi
-MAALT,Marmaris Altınyunus,Turizm,707.0,6108.5,8.6,sanayi
-MACKO,Maçkolik,Eğlence Hizmetleri,23.0,2300.0,100.0,sanayi
-MAGEN,Margün Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,4.62,13629.0,2950.0,sanayi
-MAKIM,Makim Makina,Endüstriyel Makine -Teçhizat Üretim,11.8,1321.6,112.0,sanayi
-MAKTK,Makina Takım,İnşaat Malzemeleri,5.03,1006.0,200.0,sanayi
-MANAS,Manas Enerji Yönetimi,Teknoloji,5.72,1893.6,331.1,sanayi
-MARBL,Tureks Turunç,Madencilik,8.16,1865.4,228.6,sanayi
-MARMR,Marmara Holding,Kimyasal Ürün,1.18,3559.2,3016.3,sanayi
-MARTI,Martı Otel İşletmeleri,Turizm,1.19,1785.0,1500.0,sanayi
-MASFN,Masfen Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,31.04,17227.2,555.0,sanayi
-MAVI,Mavi Giyim Sanayi Tic.A.S,Tekstil Entegre,33.22,26393.7,794.5,sanayi
-MCARD,MetropolCard,Teknoloji,107.2,9926.7,92.6,sanayi
-MEDTR,Meditera Tıbbi Malzeme,Sağlık ve İlaç,17.46,2077.7,119.0,sanayi
-MEGAP,Mega Polietilen Köpük,Tekstil Entegre,1.0,275.0,275.0,sanayi
-MEGMT,Mega Metal,İnşaat Malzemeleri,3.4,8649.6,2544.0,sanayi
-MEKAG,Meka Beton,İnşaat Malzemeleri,1.5,1200.0,800.0,sanayi
-MEPET,MEPET Metro,Petrol,15.2,1145.3,75.4,sanayi
-MERCN,Mercan Kimya,Kimyasal Ürün,3.17,1810.4,571.1,sanayi
-MERIT,Merit Turizm Yatırım,Turizm,11.36,3823.8,336.6,sanayi
-MERKO,Merko Gıda,Gıda,0.87,739.5,850.0,sanayi
-METEN,Metgün Enerji,Elektrik Üretim,20.18,12814.3,635.0,sanayi
-METRO,Metro Tic. Mali Yat.,Holdingler,9.09,4908.6,540.0,sanayi
-MEYSU,Meysu Gıda,Gıda,7.02,6107.4,870.0,sanayi
-MGROS,Migros,Perakande - Ticaret,435.25,78803.9,181.1,sanayi
-MHRGY,Mhr GYO,GYO,1.74,3237.7,1860.8,sanayi
-MIATK,Mia Teknoloji,Teknoloji,23.1,11411.4,494.0,sanayi
-MMCAS,MMC San.ve Tic. Yatırımlar A.Ş,Holdingler,17.02,227.0,13.3,sanayi
-MNDRS,Menderes Tekstil,Tekstil Entegre,8.66,2401.4,277.3,sanayi
-MNDTR,Mondi Tire,Kağıt Ürünleri,3.02,3168.1,1049.0,sanayi
-MOBTL,Mobitel İletişim,İletişim,9.66,9901.5,1025.0,sanayi
-MOGAN,Mogan Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,8.31,20277.3,2440.1,sanayi
-MOPAS,Mopaş,Perakande - Ticaret,14.71,4015.8,273.0,sanayi
-MPARK,MLP Sağlık Hizmetleri,Sağlık ve İlaç,440.0,84045.4,191.0,sanayi
-MRGYO,Martı GYO,GYO,1.06,2544.2,2400.2,sanayi
-MRSHL,Marshall,Boya,1118.0,12291.4,11.0,sanayi
-MSGYO,Mistral GYO,GYO,4.08,1916.7,469.8,sanayi
-MTRKS,Matriks Finansal Teknolojiler,Teknoloji,13.09,1315.5,100.5,sanayi
-MTRYO,Metro YO,Yatırım Ortaklıkları,6.84,287.3,42.0,sanayi
-MZHLD,Mazhar Zorlu Holding,İnşaat Malzemeleri,3.65,396.2,108.6,sanayi
-NATEN,Naturel Yenilenebilir Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,2.9,2392.5,825.0,sanayi
-NETAS,Netaş,İletişim Cihazları,47.04,3051.2,64.9,sanayi
-NETCD,Netcad Yazılım,Teknoloji,85.6,11727.2,137.0,sanayi
-NETGL,Net Global,Kimyasal Ürün,12.18,3806.3,312.5,sanayi
-NIBAS,Niğde Beton Sanayi,Çimento,2.24,725.8,324.0,sanayi
-NTGAZ,Naturel Gaz,Petrol,8.11,5595.9,690.0,sanayi
-NTHOL,Net Holding,Holdingler,34.42,17210.0,500.0,sanayi
-NUGYO,Nurol GYO,GYO,6.83,2290.4,335.3,sanayi
-NUHCM,Nuh Çimento,Çimento,165.4,24845.3,150.2,sanayi
-OBAMS,Oba Makarnacılık,Gıda,3.3,9492.6,2876.5,sanayi
-OBASE,Obase Bilgisayar Danışmanlık,Teknoloji,17.61,801.3,45.5,sanayi
-ODAS,Odaş Elektrik Üretim,Elektrik Üretim,4.35,6090.0,1400.0,sanayi
-ODINE,Odine Solutions,Teknoloji,75.3,8320.7,110.5,sanayi
-OFSYM,Ofis Yem,Gıda,41.64,6089.9,146.3,sanayi
-ONCSM,Oncosem,Sağlık ve İlaç,95.9,2287.2,23.9,sanayi
-ONRYT,Onur Yüksek Teknoloji,Savunma,7.54,1895.0,251.3,sanayi
-ORCAY,Ortaköy Çay Sanayi,Meşrubat / İçecek,1.68,403.2,240.0,sanayi
-ORGE,ORGE Enerji Elektrik,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,18.0,7200.0,400.0,sanayi
-ORMA,Orma Orman Mahsulleri,Kağıt Ürünleri,120.0,3264.0,27.2,sanayi
-ORZAX,Orzaks İlaç,Sağlık ve İlaç,67.6,22882.6,338.5,sanayi
-OSMEN,Osmanlı Menkul Değ.,Aracı Kurumlar,4.58,1838.5,401.4,sanayi
-OSTIM,Ostim Endüst. Yatırımlar,Diğer,0.99,788.5,796.5,sanayi
-OTKAR,Otokar,Otomotiv,317.0,38040.0,120.0,sanayi
-OTTO,Otto Holding,Gıda,76.25,582.2,7.6,sanayi
-OYAKC,Oyak Çimento,Çimento,18.26,88773.8,4861.7,sanayi
-OYAYO,Oyak Yatırım Ortaklığı,Yatırım Ortaklıkları,29.76,595.2,20.0,sanayi
-OYLUM,Oylum Sınai Yatırımlar,Gıda,6.02,511.7,85.0,sanayi
-OYYAT,Oyak Yatırım,Aracı Kurumlar,22.82,6846.0,300.0,sanayi
-OZATD,Özata Denizcilik,Endüstriyel Makine -Teçhizat Üretim,144.9,10338.6,71.4,sanayi
-OZGYO,Özderici GYO,GYO,1.46,1460.0,1000.0,sanayi
-OZKGY,Özak GYO,GYO,11.92,17355.5,1456.0,sanayi
-OZRDN,Özerden Plastik,Kimyasal Ürün,14.0,1029.0,73.5,sanayi
-OZSUB,Özsu Balık,Hayvancılık,28.96,3475.2,120.0,sanayi
-OZYSR,Özyaşar Tel,Demir-Çelik Temel,13.86,5864.4,423.1,sanayi
-PAGYO,Panora GYO,GYO,110.9,9648.3,87.0,sanayi
-PAHOL,Pasifik Holding,Holdingler,0.77,15400.0,20000.0,sanayi
-PAMEL,Pamel Yenilenebilir Elekt.,Elektrik Üretim,38.52,1197.8,31.1,sanayi
-PAPIL,Papilon Savunma,Teknoloji,5.66,1167.4,206.3,sanayi
-PARSN,Parsan,Otomotiv Parçası,47.82,4150.2,86.8,sanayi
-PASEU,Pasifik Eurasia,Ulaştırma-Lojistik,35.16,23627.5,672.0,sanayi
-PATEK,Pasifik Teknoloji,Teknoloji,8.78,5925.9,674.9,sanayi
-PCILT,PC İletişim ve Medya,Medya,26.46,3131.5,118.4,sanayi
+LINK,Link Bilgisayar,Teknoloji,2.53,2256.1,891.8,sanayi
+LKMNH,Lokman Hekim Engurusag,Sağlık ve İlaç,9.98,2155.7,216.0,sanayi
+LMKDC,Limak Doğu Anadolu Çimento,Çimento,20.9,10788.2,516.2,sanayi
+LOGO,Logo Yazılım,Teknoloji,113.1,10744.5,95.0,sanayi
+LRSHO,Loras Holding,Holdingler,1.5,1152.0,768.0,sanayi
+LUKSK,Lüks Kadife,Tekstil Entegre,49.2,1377.6,28.0,sanayi
+LXGYO,Luxera GYO,GYO,5.14,1696.2,330.0,sanayi
+LYDHO,Lydia Holding,Holdingler,18.22,6413.3,352.0,sanayi
+LYDYE,Lydia Yeşil Enerji,Gıda,2612.5,4940.4,1.9,sanayi
+MAALT,Marmaris Altınyunus,Turizm,690.0,5961.6,8.6,sanayi
+MACKO,Maçkolik,Eğlence Hizmetleri,21.52,2152.0,100.0,sanayi
+MAGEN,Margün Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,5.08,14986.0,2950.0,sanayi
+MAKIM,Makim Makina,Endüstriyel Makine -Teçhizat Üretim,11.67,1307.0,112.0,sanayi
+MAKTK,Makina Takım,İnşaat Malzemeleri,5.0,1000.0,200.0,sanayi
+MANAS,Manas Enerji Yönetimi,Teknoloji,5.15,1704.9,331.1,sanayi
+MARBL,Tureks Turunç,Madencilik,8.13,1858.5,228.6,sanayi
+MARMR,Marmara Holding,Kimyasal Ürün,1.15,3468.7,3016.3,sanayi
+MARTI,Martı Otel İşletmeleri,Turizm,1.08,1620.0,1500.0,sanayi
+MASFN,Masfen Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,30.2,16761.0,555.0,sanayi
+MAVI,Mavi Giyim Sanayi Tic.A.S,Tekstil Entegre,32.44,25774.0,794.5,sanayi
+MCARD,MetropolCard,Teknoloji,117.9,10917.5,92.6,sanayi
+MEDTR,Meditera Tıbbi Malzeme,Sağlık ve İlaç,17.28,2056.3,119.0,sanayi
+MEGAP,Mega Polietilen Köpük,Tekstil Entegre,0.95,261.3,275.0,sanayi
+MEGMT,Mega Metal,İnşaat Malzemeleri,3.5,8904.0,2544.0,sanayi
+MEKAG,Meka Beton,İnşaat Malzemeleri,1.47,1176.0,800.0,sanayi
+MEPET,MEPET Metro,Petrol,14.99,1129.5,75.4,sanayi
+MERCN,Mercan Kimya,Kimyasal Ürün,3.08,1759.0,571.1,sanayi
+MERIT,Merit Turizm Yatırım,Turizm,11.06,3722.8,336.6,sanayi
+MERKO,Merko Gıda,Gıda,0.95,807.5,850.0,sanayi
+METEN,Metgün Enerji,Elektrik Üretim,20.34,12915.9,635.0,sanayi
+METRO,Metro Tic. Mali Yat.,Holdingler,9.12,4924.8,540.0,sanayi
+MEYSU,Meysu Gıda,Gıda,7.01,6098.7,870.0,sanayi
+MGROS,Migros,Perakande - Ticaret,427.5,77400.7,181.1,sanayi
+MHRGY,Mhr GYO,GYO,1.7,3163.3,1860.8,sanayi
+MIATK,Mia Teknoloji,Teknoloji,22.84,11283.0,494.0,sanayi
+MMCAS,MMC San.ve Tic. Yatırımlar A.Ş,Holdingler,15.32,204.3,13.3,sanayi
+MNDRS,Menderes Tekstil,Tekstil Entegre,8.61,2387.5,277.3,sanayi
+MNDTR,Mondi Tire,Kağıt Ürünleri,2.99,3136.6,1049.0,sanayi
+MOBTL,Mobitel İletişim,İletişim,8.7,8917.5,1025.0,sanayi
+MOGAN,Mogan Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,8.1,19764.9,2440.1,sanayi
+MOPAS,Mopaş,Perakande - Ticaret,14.25,3890.3,273.0,sanayi
+MPARK,MLP Sağlık Hizmetleri,Sağlık ve İlaç,429.5,82039.7,191.0,sanayi
+MRGYO,Martı GYO,GYO,1.04,2496.2,2400.2,sanayi
+MRSHL,Marshall,Boya,1087.0,11950.6,11.0,sanayi
+MSGYO,Mistral GYO,GYO,4.0,1879.1,469.8,sanayi
+MTRKS,Matriks Finansal Teknolojiler,Teknoloji,12.7,1276.4,100.5,sanayi
+MTRYO,Metro YO,Yatırım Ortaklıkları,6.31,265.0,42.0,sanayi
+MZHLD,Mazhar Zorlu Holding,İnşaat Malzemeleri,3.53,383.2,108.6,sanayi
+NATEN,Naturel Yenilenebilir Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,2.87,2367.8,825.0,sanayi
+NETAS,Netaş,İletişim Cihazları,51.7,3353.5,64.9,sanayi
+NETCD,Netcad Yazılım,Teknoloji,87.55,11994.4,137.0,sanayi
+NETGL,Net Global,Kimyasal Ürün,12.26,3831.3,312.5,sanayi
+NIBAS,Niğde Beton Sanayi,Çimento,2.17,703.1,324.0,sanayi
+NTGAZ,Naturel Gaz,Petrol,8.03,5540.7,690.0,sanayi
+NTHOL,Net Holding,Holdingler,33.96,16980.0,500.0,sanayi
+NUGYO,Nurol GYO,GYO,6.41,2149.6,335.3,sanayi
+NUHCM,Nuh Çimento,Çimento,161.5,24259.5,150.2,sanayi
+OBAMS,Oba Makarnacılık,Gıda,3.2,9204.9,2876.5,sanayi
+OBASE,Obase Bilgisayar Danışmanlık,Teknoloji,17.29,786.7,45.5,sanayi
+ODAS,Odaş Elektrik Üretim,Elektrik Üretim,4.31,6034.0,1400.0,sanayi
+ODINE,Odine Solutions,Teknoloji,72.0,7956.0,110.5,sanayi
+OFSYM,Ofis Yem,Gıda,41.34,6046.0,146.3,sanayi
+ONCSM,Oncosem,Sağlık ve İlaç,92.4,2203.7,23.9,sanayi
+ONRYT,Onur Yüksek Teknoloji,Savunma,7.26,1824.6,251.3,sanayi
+ORCAY,Ortaköy Çay Sanayi,Meşrubat / İçecek,1.63,391.2,240.0,sanayi
+ORGE,ORGE Enerji Elektrik,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,18.03,7212.0,400.0,sanayi
+ORMA,Orma Orman Mahsulleri,Kağıt Ürünleri,118.0,3209.6,27.2,sanayi
+ORZAX,Orzaks İlaç,Sağlık ve İlaç,67.25,22764.1,338.5,sanayi
+OSMEN,Osmanlı Menkul Değ.,Aracı Kurumlar,4.56,1830.4,401.4,sanayi
+OSTIM,Ostim Endüst. Yatırımlar,Diğer,0.97,772.6,796.5,sanayi
+OTKAR,Otokar,Otomotiv,310.25,37230.0,120.0,sanayi
+OTTO,Otto Holding,Gıda,73.9,564.3,7.6,sanayi
+OYAKC,Oyak Çimento,Çimento,18.42,89551.7,4861.7,sanayi
+OYAYO,Oyak Yatırım Ortaklığı,Yatırım Ortaklıkları,28.08,561.6,20.0,sanayi
+OYLUM,Oylum Sınai Yatırımlar,Gıda,5.99,509.2,85.0,sanayi
+OYYAT,Oyak Yatırım,Aracı Kurumlar,22.9,6870.0,300.0,sanayi
+OZATD,Özata Denizcilik,Endüstriyel Makine -Teçhizat Üretim,130.5,9311.2,71.4,sanayi
+OZGYO,Özderici GYO,GYO,1.47,1470.0,1000.0,sanayi
+OZKGY,Özak GYO,GYO,11.77,17137.1,1456.0,sanayi
+OZRDN,Özerden Plastik,Kimyasal Ürün,12.6,926.1,73.5,sanayi
+OZSUB,Özsu Balık,Hayvancılık,29.4,3528.0,120.0,sanayi
+OZYSR,Özyaşar Tel,Demir-Çelik Temel,14.1,5966.0,423.1,sanayi
+PAGYO,Panora GYO,GYO,113.3,9857.1,87.0,sanayi
+PAHOL,Pasifik Holding,Holdingler,0.74,14800.0,20000.0,sanayi
+PAMEL,Pamel Yenilenebilir Elekt.,Elektrik Üretim,38.44,1195.3,31.1,sanayi
+PAPIL,Papilon Savunma,Teknoloji,5.6,1155.0,206.3,sanayi
+PARSN,Parsan,Otomotiv Parçası,46.6,4044.4,86.8,sanayi
+PASEU,Pasifik Eurasia,Ulaştırma-Lojistik,31.66,21275.5,672.0,sanayi
+PATEK,Pasifik Teknoloji,Teknoloji,8.55,5770.7,674.9,sanayi
+PCILT,PC İletişim ve Medya,Medya,26.7,3159.9,118.4,sanayi
 PEKGY,Peker GYO,GYO,2.42,12100.0,5000.0,sanayi
-PENGD,Penguen Gıda,Gıda,6.03,1055.3,175.0,sanayi
-PENTA,Penta Teknoloji,Bilgisayar Toptancılığı,8.23,3238.6,393.5,sanayi
-PETKM,Petkim,Petrol,15.01,38041.3,2534.4,sanayi
-PETUN,Pınar Et ve Un,Gıda,8.76,2657.3,303.3,sanayi
-PGSUS,Pegasus Hava Taşımacılığı,Havayolları ve Hizm.,156.6,78300.0,500.0,sanayi
-PINSU,Pınar Su,Meşrubat / İçecek,6.66,1893.4,284.3,sanayi
-PKART,Plastikkart A.Ş,Teknoloji,86.15,1959.9,22.8,sanayi
-PKENT,Petrokent,Turizm,114.9,2859.1,24.9,sanayi
-PLTUR,Platform Turizm,Ulaştırma-Lojistik,13.87,3394.7,244.8,sanayi
-PNLSN,Panelsan Çatı Cephe,İnşaat Malzemeleri,31.5,2362.5,75.0,sanayi
-PNSUT,Pınar Süt,Meşrubat / İçecek,8.41,2646.3,314.7,sanayi
-POLHO,Polisan Holding,Holdingler,13.6,10315.6,758.5,sanayi
-POLTK,Politeknik Metal,Kimyasal Ürün,2407.0,9026.3,3.8,sanayi
-PRDGS,Pardus Girişim,Yatırım Ortaklıkları,3.65,715.4,196.0,sanayi
-PRKAB,Prysmian Kablo,Kablo,18.04,3909.9,216.7,sanayi
-PRKME,Park Elek. Madencilik,Madencilik,10.52,1566.1,148.9,sanayi
-PRZMA,Prizma Pres Matbaacılık,Kağıt Ürünleri,9.43,730.3,77.4,sanayi
-PSDTC,Pergamon Status,Perakande - Ticaret,69.9,519.0,7.4,sanayi
-PSGYO,Pasifik GYO,GYO,1.34,9247.1,6900.8,sanayi
-QNBFK,QNB Finans Fin. Kir.,Fin.Kiralama ve Faktoring,32.82,82050.0,2500.0,sanayi
-QNBTR,QNB Bank,Bankacılık,137.7,757350.0,5500.0,banka
-QUAGR,QUA Granite,İnşaat Malzemeleri,1.47,3880.8,2640.0,sanayi
-QUICK,Quick Sigorta,Sigorta,43.64,21017.6,481.6,sigorta
-RALYH,Ral Yatırım Holding,Tekstil Entegre,6.97,2321.0,333.0,sanayi
-RAYSG,Ray Sigorta,Sigorta,98.35,16037.9,163.1,sigorta
-REEDR,Reeder,İletişim Cihazları,2.33,2213.5,950.0,sanayi
-RGYAS,Rönesans Gayrimenkul,GYO,157.4,52099.4,331.0,sanayi
-RNPOL,Rainbow Polikarbonat,Kimyasal Ürün,2.04,1224.0,600.0,sanayi
-RODRG,Rodrigo Tekstil,Tekstil Entegre,12.46,353.1,28.3,sanayi
-RTALB,RTA laboratuvarlari,Sağlık ve İlaç,1.86,930.0,500.0,sanayi
-RUBNS,Rubenis Tekstil,Tekstil Entegre,12.5,1024.4,82.0,sanayi
-RUZYE,Ruzy Madencilik ve Enerji,Madencilik,3.82,1050.5,275.0,sanayi
-RYGYO,Reysaş GYO,GYO,45.8,91600.0,2000.0,sanayi
-RYSAS,Reysaş Taşımacılık,Ulaştırma-Lojistik,24.66,49320.0,2000.0,sanayi
-SAFKR,Safkar Ege Soğutmacılık,Dayanıklı Tüketim,11.5,2300.0,200.0,sanayi
-SAHOL,Sabancı Holding,Holdingler,78.5,164879.5,2100.4,sanayi
-SAMAT,Saray Matbaacılık,Kağıt Ürünleri,3.81,428.2,112.4,sanayi
-SANEL,San-El Muhendislik,Endüstriyel Makine -Teçhizat Üretim,30.0,547.7,18.3,sanayi
-SANFM,Sanifoam Sünger Sanayi,Kimyasal Ürün,4.85,1818.8,375.0,sanayi
-SANKO,Sanko Pazarlama,Pazarlama,21.0,3150.0,150.0,sanayi
-SARAE,Şa-Ra Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,36.0,16002.0,444.5,sanayi
-SARKY,Sarkuysan,İnşaat Malzemeleri,14.52,14520.0,1000.0,sanayi
-SASA,Sasa Polyester Sanayi A.Ş.,Endüstriyel Tekstil,1.44,75602.8,52501.9,sanayi
-SAYAS,Say Yenilenebilir Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,42.46,3280.0,77.3,sanayi
-SDTTR,SDT Uzay,Savunma,10.29,6565.0,638.0,sanayi
-SEGMN,Seğmen Gıda,Gıda,16.26,2910.5,179.0,sanayi
-SEGYO,Şeker GYO,GYO,3.24,2635.9,813.6,sanayi
-SEKFK,Şeker Finansal Kiralama A.Ş,Fin.Kiralama ve Faktoring,3.2,640.0,200.0,sanayi
-SEKUR,Sekuro Plastik,Kimyasal Ürün,3.08,577.9,187.6,sanayi
-SELEC,Selçuk Ecza Deposu,Sağlık ve İlaç,96.7,60050.7,621.0,sanayi
-SELVA,Selva Gıda,Gıda,0.9,947.7,1053.0,sanayi
-SERNT,Seranit Granit,İnşaat Malzemeleri,4.91,2027.8,413.0,sanayi
-SEYKM,Seyitler Kimya,Kimyasal Ürün,2.45,490.0,200.0,sanayi
-SILVR,Silverline,Endüstriyel Makine -Teçhizat Üretim,1.48,518.0,350.0,sanayi
-SISE,Şişecam,Cam,32.18,98574.2,3063.2,sanayi
-SKBNK,Şekerbank,Bankacılık,3.41,11935.0,3500.0,banka
-SKTAS,Söktaş,Tekstil Entegre,1.22,610.0,500.0,sanayi
-SKYLP,Skyalp Fin. Tek.ve Danışmanlık,Diğer,66.0,627.0,9.5,sanayi
-SKYMD,Şeker Yatırım,Aracı Kurumlar,10.32,1599.6,155.0,sanayi
-SMART,Smartiks Yazılım,Teknoloji,16.88,537.8,31.9,sanayi
-SMRTG,Smart Güneş Enerjisi,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,4.06,7379.6,1817.6,sanayi
-SMRVA,Sümer Varlık Yönetim,Varlık Yönetim,4.64,2784.0,600.0,sanayi
-SNGYO,Sinpas GYO,GYO,2.48,9920.0,4000.0,sanayi
-SNICA,Sanica Isı Sanayi,Dayanıklı Tüketim,2.09,1254.0,600.0,sanayi
-SNPAM,Sönmez Pamuklu,Tekstil Entegre,15.42,6013.8,390.0,sanayi
-SODSN,Sodaş Sodyum Sanayii,Kimyasal Ürün,6.62,794.4,120.0,sanayi
-SOHOE,Soho Giyim,Tekstil Entegre,7.05,2162.7,306.8,sanayi
-SOKE,Söke Değirmencilik,Gıda,6.8,2628.2,386.5,sanayi
-SOKM,Şok Marketler,Perakande - Ticaret,41.04,24348.6,593.3,sanayi
-SONME,Sönmez Filament,Tekstil Entegre,104.8,7755.2,74.0,sanayi
-SRVGY,Servet GYO,GYO,1.71,5557.5,3250.0,sanayi
-SSAAT,Saat ve Saat,Perakande - Ticaret,20.66,13643.6,660.4,sanayi
-SUMAS,Sumas Mobilya,Mobilya,154.5,961.7,6.2,sanayi
-SUNTK,Sun Tekstil,Tekstil Entegre,15.38,7299.3,474.6,sanayi
-SURGY,Sur GYO,GYO,16.25,2721.9,167.5,sanayi
-SUWEN,Suwen Tekstil,Tekstil Entegre,4.88,2732.8,560.0,sanayi
-SVGYO,Savur GYO,GYO,3.81,4126.2,1083.0,sanayi
-TABGD,Tab Gıda,Gıda,183.4,47921.0,261.3,sanayi
-TARKM,Tarkim,Tarım Kimyasalları,321.75,6756.8,21.0,sanayi
-TATEN,Tatlıpınar Enerji,Elektrik Üretim,3.75,4207.5,1122.0,sanayi
-TATGD,Tat Gıda,Gıda,13.52,3309.7,244.8,sanayi
-TAVHL,TAV Holding,Havayolları ve Hizm.,284.75,103444.3,363.3,sanayi
-TBORG,Tuborg,Meşrubat / İçecek,116.8,37669.0,322.5,sanayi
-TCELL,Turkcell,İletişim,90.85,199870.0,2200.0,sanayi
-TCKRC,Kıraç Galvaniz,Diğer,123.2,20944.0,170.0,sanayi
-TDGYO,Trend GYO,GYO,5.87,405.0,69.0,sanayi
-TEHOL,Tera Holding,Holdingler,2.92,5827.9,1995.8,sanayi
-TEKTU,Tek-Art Turizm,Turizm,3.68,1104.0,300.0,sanayi
-TEZOL,Europap Tezol,Kağıt Ürünleri,7.1,3550.0,500.0,sanayi
-TGSAS,TGS Dış Ticaret,Pazarlama,111.6,1674.0,15.0,sanayi
-THYAO,Türk Hava Yolları,Havayolları ve Hizm.,329.0,454020.0,1380.0,sanayi
-TKFEN,Tekfen Holding,İnşaat- Taahhüt,186.0,68820.0,370.0,sanayi
-TKNKA,Teknika Plastik,Petrol,40.6,5075.0,125.0,sanayi
-TKNSA,Teknosa İç ve Dış Tic.,Perakande - Ticaret,11.01,2213.0,201.0,sanayi
-TLMAN,Trabzon Liman İşletmeciliği,Ulaştırma-Lojistik,48.2,1012.2,21.0,sanayi
-TMPOL,TE-MAPOL Polimer Plastik,Kimyasal Ürün,74.1,1050.4,14.2,sanayi
-TMSN,Tümosan Motor ve Traktör,Otomotiv,47.14,5421.1,115.0,sanayi
+PENGD,Penguen Gıda,Gıda,5.8,1015.0,175.0,sanayi
+PENTA,Penta Teknoloji,Bilgisayar Toptancılığı,8.13,3199.3,393.5,sanayi
+PETKM,Petkim,Petrol,14.76,37407.7,2534.4,sanayi
+PETUN,Pınar Et ve Un,Gıda,8.68,2633.0,303.3,sanayi
+PGSUS,Pegasus Hava Taşımacılığı,Havayolları ve Hizm.,152.4,76200.0,500.0,sanayi
+PINSU,Pınar Su,Meşrubat / İçecek,6.75,1918.9,284.3,sanayi
+PKART,Plastikkart A.Ş,Teknoloji,79.3,1804.1,22.8,sanayi
+PKENT,Petrokent,Turizm,110.7,2754.6,24.9,sanayi
+PLTUR,Platform Turizm,Ulaştırma-Lojistik,14.05,3438.7,244.8,sanayi
+PNLSN,Panelsan Çatı Cephe,İnşaat Malzemeleri,30.78,2308.5,75.0,sanayi
+PNSUT,Pınar Süt,Meşrubat / İçecek,8.4,2643.1,314.7,sanayi
+POLHO,Polisan Holding,Holdingler,13.4,10163.9,758.5,sanayi
+POLTK,Politeknik Metal,Kimyasal Ürün,2408.0,9030.0,3.8,sanayi
+PRDGS,Pardus Girişim,Yatırım Ortaklıkları,3.57,699.7,196.0,sanayi
+PRKAB,Prysmian Kablo,Kablo,17.66,3827.5,216.7,sanayi
+PRKME,Park Elek. Madencilik,Madencilik,10.43,1552.7,148.9,sanayi
+PRZMA,Prizma Pres Matbaacılık,Kağıt Ürünleri,8.49,657.5,77.4,sanayi
+PSDTC,Pergamon Status,Perakande - Ticaret,63.55,471.9,7.4,sanayi
+PSGYO,Pasifik GYO,GYO,1.3,8971.1,6900.8,sanayi
+QNBFK,QNB Finans Fin. Kir.,Fin.Kiralama ve Faktoring,32.5,81250.0,2500.0,sanayi
+QNBTR,QNB Bank,Bankacılık,139.1,765050.0,5500.0,banka
+QUAGR,QUA Granite,İnşaat Malzemeleri,1.42,3748.8,2640.0,sanayi
+QUICK,Quick Sigorta,Sigorta,44.2,21287.3,481.6,sigorta
+RALYH,Ral Yatırım Holding,Tekstil Entegre,6.28,2091.2,333.0,sanayi
+RAYSG,Ray Sigorta,Sigorta,97.9,15964.5,163.1,sigorta
+REEDR,Reeder,İletişim Cihazları,2.23,2118.5,950.0,sanayi
+RGYAS,Rönesans Gayrimenkul,GYO,155.0,51305.0,331.0,sanayi
+RNPOL,Rainbow Polikarbonat,Kimyasal Ürün,2.03,1218.0,600.0,sanayi
+RODRG,Rodrigo Tekstil,Tekstil Entegre,12.13,343.8,28.3,sanayi
+RTALB,RTA laboratuvarlari,Sağlık ve İlaç,1.85,925.0,500.0,sanayi
+RUBNS,Rubenis Tekstil,Tekstil Entegre,12.43,1018.6,82.0,sanayi
+RUZYE,Ruzy Madencilik ve Enerji,Madencilik,3.54,973.5,275.0,sanayi
+RYGYO,Reysaş GYO,GYO,45.38,90760.0,2000.0,sanayi
+RYSAS,Reysaş Taşımacılık,Ulaştırma-Lojistik,25.24,50480.0,2000.0,sanayi
+SAFKR,Safkar Ege Soğutmacılık,Dayanıklı Tüketim,11.31,2262.0,200.0,sanayi
+SAHOL,Sabancı Holding,Holdingler,78.2,164249.4,2100.4,sanayi
+SAMAT,Saray Matbaacılık,Kağıt Ürünleri,3.68,413.6,112.4,sanayi
+SANEL,San-El Muhendislik,Endüstriyel Makine -Teçhizat Üretim,29.1,531.2,18.3,sanayi
+SANFM,Sanifoam Sünger Sanayi,Kimyasal Ürün,5.1,1912.5,375.0,sanayi
+SANKO,Sanko Pazarlama,Pazarlama,20.42,3063.0,150.0,sanayi
+SARAE,Şa-Ra Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,36.02,16010.9,444.5,sanayi
+SARKY,Sarkuysan,İnşaat Malzemeleri,14.45,14450.0,1000.0,sanayi
+SASA,Sasa Polyester Sanayi A.Ş.,Endüstriyel Tekstil,1.45,76127.8,52501.9,sanayi
+SAYAS,Say Yenilenebilir Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,44.66,3450.0,77.3,sanayi
+SDTTR,SDT Uzay,Savunma,10.1,6443.8,638.0,sanayi
+SEGMN,Seğmen Gıda,Gıda,15.1,2702.9,179.0,sanayi
+SEGYO,Şeker GYO,GYO,2.92,2375.6,813.6,sanayi
+SEKFK,Şeker Finansal Kiralama A.Ş,Fin.Kiralama ve Faktoring,2.99,598.0,200.0,sanayi
+SEKUR,Sekuro Plastik,Kimyasal Ürün,2.94,551.7,187.6,sanayi
+SELEC,Selçuk Ecza Deposu,Sağlık ve İlaç,91.2,56635.2,621.0,sanayi
+SELVA,Selva Gıda,Gıda,0.89,937.2,1053.0,sanayi
+SERNT,Seranit Granit,İnşaat Malzemeleri,4.8,1982.4,413.0,sanayi
+SEYKM,Seyitler Kimya,Kimyasal Ürün,2.4,480.0,200.0,sanayi
+SILVR,Silverline,Endüstriyel Makine -Teçhizat Üretim,1.61,563.5,350.0,sanayi
+SISE,Şişecam,Cam,31.84,97532.7,3063.2,sanayi
+SKBNK,Şekerbank,Bankacılık,3.39,11865.0,3500.0,banka
+SKTAS,Söktaş,Tekstil Entegre,1.24,620.0,500.0,sanayi
+SKYLP,Skyalp Fin. Tek.ve Danışmanlık,Diğer,60.5,574.8,9.5,sanayi
+SKYMD,Şeker Yatırım,Aracı Kurumlar,10.08,1562.4,155.0,sanayi
+SMART,Smartiks Yazılım,Teknoloji,16.14,514.3,31.9,sanayi
+SMRTG,Smart Güneş Enerjisi,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,4.08,7416.0,1817.6,sanayi
+SMRVA,Sümer Varlık Yönetim,Varlık Yönetim,4.46,2676.0,600.0,sanayi
+SNGYO,Sinpas GYO,GYO,2.47,9880.0,4000.0,sanayi
+SNICA,Sanica Isı Sanayi,Dayanıklı Tüketim,2.02,1212.0,600.0,sanayi
+SNPAM,Sönmez Pamuklu,Tekstil Entegre,15.49,6041.1,390.0,sanayi
+SODSN,Sodaş Sodyum Sanayii,Kimyasal Ürün,5.96,715.2,120.0,sanayi
+SOHOE,Soho Giyim,Tekstil Entegre,6.72,2061.4,306.8,sanayi
+SOKE,Söke Değirmencilik,Gıda,6.63,2562.5,386.5,sanayi
+SOKM,Şok Marketler,Perakande - Ticaret,40.26,23885.9,593.3,sanayi
+SONME,Sönmez Filament,Tekstil Entegre,101.0,7474.0,74.0,sanayi
+SRVGY,Servet GYO,GYO,1.69,5492.5,3250.0,sanayi
+SSAAT,Saat ve Saat,Perakande - Ticaret,20.28,13392.7,660.4,sanayi
+SUMAS,Sumas Mobilya,Mobilya,156.1,971.6,6.2,sanayi
+SUNTK,Sun Tekstil,Tekstil Entegre,15.44,7327.8,474.6,sanayi
+SURGY,Sur GYO,GYO,15.38,2576.2,167.5,sanayi
+SUWEN,Suwen Tekstil,Tekstil Entegre,4.85,2716.0,560.0,sanayi
+SVGYO,Savur GYO,GYO,3.43,3714.7,1083.0,sanayi
+TABGD,Tab Gıda,Gıda,179.8,46980.3,261.3,sanayi
+TARKM,Tarkim,Tarım Kimyasalları,326.5,6856.5,21.0,sanayi
+TATEN,Tatlıpınar Enerji,Elektrik Üretim,3.66,4106.5,1122.0,sanayi
+TATGD,Tat Gıda,Gıda,13.6,3329.3,244.8,sanayi
+TAVHL,TAV Holding,Havayolları ve Hizm.,288.0,104625.0,363.3,sanayi
+TBORG,Tuborg,Meşrubat / İçecek,116.6,37604.5,322.5,sanayi
+TCELL,Turkcell,İletişim,91.1,200420.0,2200.0,sanayi
+TCKRC,Kıraç Galvaniz,Diğer,118.5,20145.0,170.0,sanayi
+TDGYO,Trend GYO,GYO,5.82,401.6,69.0,sanayi
+TEHOL,Tera Holding,Holdingler,2.63,5249.1,1995.8,sanayi
+TEKTU,Tek-Art Turizm,Turizm,3.57,1071.0,300.0,sanayi
+TEZOL,Europap Tezol,Kağıt Ürünleri,6.84,3420.0,500.0,sanayi
+TGSAS,TGS Dış Ticaret,Pazarlama,102.0,1530.0,15.0,sanayi
+THYAO,Türk Hava Yolları,Havayolları ve Hizm.,321.0,442980.0,1380.0,sanayi
+TKFEN,Tekfen Holding,İnşaat- Taahhüt,187.4,69338.0,370.0,sanayi
+TKNKA,Teknika Plastik,Petrol,36.54,4567.5,125.0,sanayi
+TKNSA,Teknosa İç ve Dış Tic.,Perakande - Ticaret,10.76,2162.8,201.0,sanayi
+TLMAN,Trabzon Liman İşletmeciliği,Ulaştırma-Lojistik,46.58,978.2,21.0,sanayi
+TMPOL,TE-MAPOL Polimer Plastik,Kimyasal Ürün,68.85,975.9,14.2,sanayi
+TMSN,Tümosan Motor ve Traktör,Otomotiv,45.4,5221.0,115.0,sanayi
 TNZTP,Tapdi Oksijen,Sağlık ve İlaç,21.02,8408.0,400.0,sanayi
-TOASO,Tofaş Fabrika,Otomotiv,246.5,123250.0,500.0,sanayi
-TRALT,Türk Altın,Madencilik,35.3,113048.3,3202.5,sanayi
-TRCAS,Turcas Holding,Petrol,42.6,10888.6,255.6,sanayi
-TRENJ,TR Doğal Enerji Kaynakları,Elektrik Üretim,71.05,18457.8,259.8,sanayi
-TRGYO,Torunlar GYO,GYO,84.7,84700.0,1000.0,sanayi
-TRHOL,Tera Finansal Yat. Holding,Holdingler,113.8,3414.0,30.0,sanayi
+TOASO,Tofaş Fabrika,Otomotiv,251.75,125875.0,500.0,sanayi
+TRALT,Türk Altın,Madencilik,35.74,114457.4,3202.5,sanayi
+TRCAS,Turcas Holding,Petrol,41.06,10494.9,255.6,sanayi
+TRENJ,TR Doğal Enerji Kaynakları,Elektrik Üretim,72.3,18782.5,259.8,sanayi
+TRGYO,Torunlar GYO,GYO,80.85,80850.0,1000.0,sanayi
+TRHOL,Tera Finansal Yat. Holding,Holdingler,102.5,3075.0,30.0,sanayi
 TRILC,Turk İlaç ve Serum Sanayi,Sağlık ve İlaç,0.69,715.5,1037.0,sanayi
-TRMET,TR Anadolu Metal,Madencilik,105.3,40864.8,388.1,sanayi
-TSGYO,TSKB GYO,GYO,3.86,2509.0,650.0,sanayi
-TSKB,TSKB,Bankacılık,9.89,27692.0,2800.0,banka
-TSPOR,Trabzonspor A.Ş,Spor,0.75,5625.0,7500.0,sanayi
-TTKOM,Türk Telekom,İletişim,47.48,166180.0,3500.0,sanayi
-TTRAK,Türk Traktör,Otomotiv,326.0,32621.8,100.1,sanayi
-TUCLK,Tuğçelik Alüminyum ve Metal,Otomotiv Parçası,1.99,716.4,360.0,sanayi
-TUKAS,Tukaş,Gıda,1.84,8280.0,4500.0,sanayi
-TUPRS,Tüpraş,Petrol,322.75,621873.3,1926.8,sanayi
-TUREX,Tureks Tur.Taşımacılık,Ulaştırma-Lojistik,4.73,5108.4,1080.0,sanayi
-TURGG,Türker Proje Gay.Gel.,GYO,22.76,2917.2,128.2,sanayi
-TURSG,Türkiye Sigorta,Sigorta,2.93,58600.0,20000.0,sigorta
-UCAYM,Üçay Mühendislik,Diğer,11.12,2502.0,225.0,sanayi
-UFUK,Ufuk Yat.Yön.ve Gay. AŞ.,Fin.Kiralama ve Faktoring,173.1,8109.2,46.8,sanayi
-ULAS,Ulaşlar Turizm Yatırımları,Turizm,11.59,294.2,25.4,sanayi
-ULKER,Ülker Bisküvi,Gıda,65.3,24113.7,369.3,sanayi
+TRMET,TR Anadolu Metal,Madencilik,106.7,41408.1,388.1,sanayi
+TSGYO,TSKB GYO,GYO,3.79,2463.5,650.0,sanayi
+TSKB,TSKB,Bankacılık,9.94,27832.0,2800.0,banka
+TSPOR,Trabzonspor A.Ş,Spor,0.74,5550.0,7500.0,sanayi
+TTKOM,Türk Telekom,İletişim,47.32,165620.0,3500.0,sanayi
+TTRAK,Türk Traktör,Otomotiv,328.75,32897.0,100.1,sanayi
+TUCLK,Tuğçelik Alüminyum ve Metal,Otomotiv Parçası,1.97,709.2,360.0,sanayi
+TUKAS,Tukaş,Gıda,1.8,8100.0,4500.0,sanayi
+TUPRS,Tüpraş,Petrol,324.0,624281.8,1926.8,sanayi
+TUREX,Tureks Tur.Taşımacılık,Ulaştırma-Lojistik,4.64,5011.2,1080.0,sanayi
+TURGG,Türker Proje Gay.Gel.,GYO,23.2,2973.6,128.2,sanayi
+TURSG,Türkiye Sigorta,Sigorta,2.84,56800.0,20000.0,sigorta
+UCAYM,Üçay Mühendislik,Diğer,11.0,2475.0,225.0,sanayi
+UFUK,Ufuk Yat.Yön.ve Gay. AŞ.,Fin.Kiralama ve Faktoring,155.8,7298.7,46.8,sanayi
+ULAS,Ulaşlar Turizm Yatırımları,Turizm,11.16,283.3,25.4,sanayi
+ULKER,Ülker Bisküvi,Gıda,66.05,24390.7,369.3,sanayi
 ULUFA,Ulusal Faktoring,Fin.Kiralama ve Faktoring,1.4,1512.0,1080.0,sanayi
-ULUSE,Ulusoy Elektrik,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,131.4,10512.0,80.0,sanayi
-ULUUN,Ulusoy Un,Gıda,5.58,4185.0,750.0,sanayi
-UNLU,Ünlü Yatırım Holding,Aracı Kurumlar,8.57,1506.1,175.7,sanayi
-USAK,Uşak Seramik,Seramik,0.44,1078.0,2450.0,sanayi
-USHOL,Marka Yatırım Holding,Holdingler,49.36,1036.1,21.0,sanayi
-VAKBN,Vakıfbank,Bankacılık,33.0,327225.4,9915.9,banka
-VAKFA,Vakıf Faktoring,Fin.Kiralama ve Faktoring,8.69,7821.0,900.0,sanayi
-VAKFN,Vakıf Fin. Kir.,Fin.Kiralama ve Faktoring,0.85,5100.0,6000.0,sanayi
-VAKKO,Vakko Tekstil,Perakande - Ticaret,47.46,7593.6,160.0,sanayi
-VANGD,Vanet Gıda Sanayi,Gıda,48.82,1220.5,25.0,sanayi
-VBTYZ,VBT Yazılım,Teknoloji,18.34,2145.8,117.0,sanayi
-VERTU,Verusatürk Girişim Sermayesi,Yatırım Ortaklıkları,24.8,1289.6,52.0,sanayi
-VERUS,Verusa Holding,Holdingler,481.5,33705.0,70.0,sanayi
-VESBE,Vestel Beyaz Esya,Dayanıklı Tüketim,3.51,5616.0,1600.0,sanayi
-VESTL,Vestel Elektronik,Dayanıklı Tüketim,13.0,4360.9,335.5,sanayi
-VEYAS,Vangölü Enerj,Elektrik - Doğalgaz Dağıtım,73.5,41663.8,566.9,sanayi
-VKFYO,Vakıf YO,Yatırım Ortaklıkları,16.11,483.3,30.0,sanayi
+ULUSE,Ulusoy Elektrik,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,129.9,10392.0,80.0,sanayi
+ULUUN,Ulusoy Un,Gıda,5.52,4140.0,750.0,sanayi
+UNLU,Ünlü Yatırım Holding,Aracı Kurumlar,8.41,1478.0,175.7,sanayi
+USAK,Uşak Seramik,Seramik,0.41,1004.5,2450.0,sanayi
+USHOL,Marka Yatırım Holding,Holdingler,44.44,932.8,21.0,sanayi
+VAKBN,Vakıfbank,Bankacılık,33.14,328613.6,9915.9,banka
+VAKFA,Vakıf Faktoring,Fin.Kiralama ve Faktoring,8.53,7677.0,900.0,sanayi
+VAKFN,Vakıf Fin. Kir.,Fin.Kiralama ve Faktoring,0.84,5040.0,6000.0,sanayi
+VAKKO,Vakko Tekstil,Perakande - Ticaret,46.3,7408.0,160.0,sanayi
+VANGD,Vanet Gıda Sanayi,Gıda,46.8,1170.0,25.0,sanayi
+VBTYZ,VBT Yazılım,Teknoloji,18.71,2189.1,117.0,sanayi
+VERTU,Verusatürk Girişim Sermayesi,Yatırım Ortaklıkları,24.26,1261.5,52.0,sanayi
+VERUS,Verusa Holding,Holdingler,474.0,33180.0,70.0,sanayi
+VESBE,Vestel Beyaz Esya,Dayanıklı Tüketim,3.42,5472.0,1600.0,sanayi
+VESTL,Vestel Elektronik,Dayanıklı Tüketim,12.57,4216.7,335.5,sanayi
+VEYAS,Vangölü Enerj,Elektrik - Doğalgaz Dağıtım,68.65,38914.6,566.9,sanayi
+VKFYO,Vakıf YO,Yatırım Ortaklıkları,16.0,480.0,30.0,sanayi
 VKGYO,Vakıf GYO,GYO,1.5,6600.0,4400.0,sanayi
-VKING,Viking Kağıt,Kağıt Ürünleri,11.37,477.5,42.0,sanayi
-VRGYO,Vera GYO,GYO,0.96,787.2,820.0,sanayi
-VSNMD,Vişne Madencilik,Madencilik,20.06,3637.9,181.4,sanayi
-YAPRK,Yaprak Süt & Besi Çiftlikleri,Gıda,7.44,2218.6,298.2,sanayi
-YATAS,Yataş Yatak,Mobilya,19.65,2943.5,149.8,sanayi
-YAYLA,Yayla Enerji Uretim Turizm,Elektrik Üretim,10.07,502.2,49.9,sanayi
-YBTAS,Yibitaş İnş. Malzemeleri,İnşaat Malzemeleri,9.9,2970.0,300.0,sanayi
-YEOTK,YEO Teknoloji,İnşaat- Taahhüt,26.22,21762.6,830.0,sanayi
-YESIL,Yeşil Yatırım Holding,Holdingler,0.77,496.7,645.0,sanayi
-YGGYO,Yeni Gimat GYO,GYO,175.6,42481.2,241.9,sanayi
-YIGIT,Yiğit Akü,Otomotiv Parçası,12.36,3714.2,300.5,sanayi
-YKBNK,Yapı Kredi Bankası,Bankacılık,36.16,305445.4,8447.1,banka
-YKSLN,Yükselen Çelik,Demir-Çelik Temel,1.8,900.0,500.0,sanayi
-YONGA,Yonga Mobilya Sanayi,Mobilya,26.2,440.2,16.8,sanayi
-YUNSA,Yünsa,Tekstil Entegre,6.0,2880.0,480.0,sanayi
-YYAPI,Yesil Yapi,İnşaat- Taahhüt,0.5,852.5,1705.0,sanayi
-YYLGD,Yayla Agro Gıda,Gıda,5.98,6500.1,1087.0,sanayi
-ZEDUR,Zedur Enerji,Elektrik Üretim,4.09,714.7,174.8,sanayi
-ZERGY,Zeray GYO,GYO,4.42,2766.9,626.0,sanayi
-ZGYO,Z GYO,GYO,15.36,3233.2,210.5,sanayi
-ZOREN,Zorlu Enerji,Elektrik Üretim,1.38,6900.0,5000.0,sanayi
-ZRGYO,Ziraat GYO,GYO,18.1,84954.5,4693.6,sanayi
+VKING,Viking Kağıt,Kağıt Ürünleri,10.9,457.8,42.0,sanayi
+VRGYO,Vera GYO,GYO,0.95,779.0,820.0,sanayi
+VSNMD,Vişne Madencilik,Madencilik,19.87,3603.4,181.4,sanayi
+YAPRK,Yaprak Süt & Besi Çiftlikleri,Gıda,7.2,2147.0,298.2,sanayi
+YATAS,Yataş Yatak,Mobilya,19.27,2886.6,149.8,sanayi
+YAYLA,Yayla Enerji Uretim Turizm,Elektrik Üretim,9.6,478.8,49.9,sanayi
+YBTAS,Yibitaş İnş. Malzemeleri,İnşaat Malzemeleri,9.79,2937.0,300.0,sanayi
+YEOTK,YEO Teknoloji,İnşaat- Taahhüt,26.42,21928.6,830.0,sanayi
+YESIL,Yeşil Yatırım Holding,Holdingler,0.74,477.3,645.0,sanayi
+YGGYO,Yeni Gimat GYO,GYO,174.9,42311.8,241.9,sanayi
+YIGIT,Yiğit Akü,Otomotiv Parçası,12.31,3699.2,300.5,sanayi
+YKBNK,Yapı Kredi Bankası,Bankacılık,36.8,310851.5,8447.1,banka
+YKSLN,Yükselen Çelik,Demir-Çelik Temel,1.74,870.0,500.0,sanayi
+YONGA,Yonga Mobilya Sanayi,Mobilya,26.1,438.5,16.8,sanayi
+YUNSA,Yünsa,Tekstil Entegre,6.29,3019.2,480.0,sanayi
+YYAPI,Yesil Yapi,İnşaat- Taahhüt,0.48,818.4,1705.0,sanayi
+YYLGD,Yayla Agro Gıda,Gıda,6.06,6587.1,1087.0,sanayi
+ZEDUR,Zedur Enerji,Elektrik Üretim,4.03,704.2,174.8,sanayi
+ZERGY,Zeray GYO,GYO,4.12,2579.1,626.0,sanayi
+ZGYO,Z GYO,GYO,14.15,2978.5,210.5,sanayi
+ZOREN,Zorlu Enerji,Elektrik Üretim,1.34,6700.0,5000.0,sanayi
+ZRGYO,Ziraat GYO,GYO,18.97,89038.0,4693.6,sanayi
