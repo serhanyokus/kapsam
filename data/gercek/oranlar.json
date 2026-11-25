@@ -1,8 +1,6 @@
 {
- "guncelleme": "2026-11-25T00:11+00:00",
- "hatalar": [
-  "haber enflasyon_beklentisi_12a: 429 Client Error: Too Many Requests for url: https://news.google.com/rss/search?q=piyasa%20kat%C4%B1l%C4%B1mc%C4%B1lar%C4%B1%20anketi%2012%20ay%20sonras%C4%B1%20enflasyon%20beklentisi%20when%3A45d&hl=tr&gl=TR&ceid=TR:tr"
- ],
+ "guncelleme": "2026-11-25T23:51+00:00",
+ "hatalar": [],
  "politika_faizi": {
   "deger": 0.36,
   "tarih": "2026-10-22",
