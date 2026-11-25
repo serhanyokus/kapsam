@@ -23,7 +23,7 @@ AKFYE,Akfen Yenilenebilir Enerji,Elektrik Üretim,PARASAL KUCULME
 AKGRT,Aksigorta,Sigorta,
 AKHAN,Akhan Un,Gıda,ZARAR PARASAL0 NAKIT- BORC PARASAL
 AKMGY,Akmerkez GYO,GYO,KUCULME PAHALI
-AKSA,Aksa,Endüstriyel Tekstil,PARASAL0 PARASAL
+AKSA,Aksa,Endüstriyel Tekstil,PARASAL0 PARASAL HABER-
 AKSEN,Aksa Enerji,Elektrik Üretim,BORC KUCULME SERBEST PAHALI HABER-
 AKSGY,Akis GYO,GYO,KUCULME
 AKSUE,Aksu Enerji,Elektrik Üretim,NAKIT- KUCULME PAHALI
@@ -137,7 +137,7 @@ CEMAS,Çemaş Döküm,Demir-Çelik Döküm,ZARAR PARASAL0 NAKIT- KUCULME
 CEMTS,Çemtas,Demir-Çelik Temel,ZARAR KUCULME SERBEST
 CEMZY,Cem Zeytin,Gıda,ZARAR KUCULME
 CEOEM,CEO Event Medya,Medya,KUCULME PAHALI
-CGCAM,Çağdaş Cam,Cam,KUCULME SERBEST PAHALI
+CGCAM,Çağdaş Cam,Cam,KUCULME SERBEST
 CIMSA,Çimsa,Çimento,PARASAL KUCULME SERBEST
 CITAS,Çitlekçi Gıda,Gıda,PARASAL
 CLEBI,Çelebi,Havayolları ve Hizm.,
