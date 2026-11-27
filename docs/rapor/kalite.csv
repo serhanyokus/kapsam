@@ -63,7 +63,7 @@ ATATP,ATP Bilgisayar,Teknoloji,KUCULME
 ATATR,Ata Turizm,Turizm,BORC KUCULME SERBEST
 ATEKS,Akın Tekstil,Tekstil Entegre,PARASAL0 NAKIT- KUCULME
 ATLAS,Atlas YO,Yatırım Ortaklıkları,ZARAR NAKIT- KUCULME
-ATSYH,Atlantis YO,Holdingler,ZARAR NAKIT-
+ATSYH,Atlantis YO,Holdingler,ZARAR
 AVGYO,Avrasya YO,GYO,NAKIT- KUCULME
 AVHOL,Avrupa Yatırım Holding,Holdingler,ZARAR BORC
 AVOD,Avod Kurutulmuş Gıda,Gıda,ZARAR BORC KUCULME
@@ -296,7 +296,7 @@ INFO,İnfo Yatırım,Aracı Kurumlar,KUCULME
 INGRM,İngram Bilişim,Bilgisayar Toptancılığı,ZARAR NAKIT- BORC
 INTEK,Innosa Teknoloji,Teknoloji,ZARAR PARASAL0 KUCULME
 INTEM,İntema,İnşaat Malzemeleri,KUCULME PAHALI
-INTET,Intetra Teknoloji,Teknoloji,NAKIT-
+INTET,Intetra Teknoloji,Teknoloji,NAKIT- PAHALI
 INVEO,İnveo Yatırım Holding,Holdingler,ZARAR PARASAL0 KUCULME
 INVES,Investco Holding,Holdingler,ZARAR NAKIT- HABER-
 ISATR,İş Bankası (A),Bankacılık,
@@ -327,7 +327,7 @@ KAYSE,Kayseri Şeker,Gıda,ZARAR NAKIT-
 KBORU,Kuzey Boru,İnşaat Malzemeleri,NAKIT-
 KCAER,Kocaer Çelik Sanayi,Demir-Çelik Temel,KUCULME PAHALI
 KCHOL,Koç Holding,Holdingler,SERBEST HABER-
-KENT,Kent Gıda,Gıda,ZARAR KUCULME HABER-
+KENT,Kent Gıda,Gıda,ZARAR KUCULME
 KERVN,Kervansaray Yat. Holding,Holdingler,NAKIT- FDISI KUCULME
 KFEIN,Kafein Yazılım,Teknoloji,KUCULME SERBEST PAHALI
 KGYO,Koray GYO,GYO,ZARAR PARASAL0 NAKIT- BORC
@@ -481,7 +481,7 @@ PSGYO,Pasifik GYO,GYO,PARASAL0 NAKIT- PARASAL
 QNBTR,QNB Bank,Bankacılık,PAHALI
 QUAGR,QUA Granite,İnşaat Malzemeleri,ZARAR PARASAL0 NAKIT- BORC KUCULME
 QUICK,Quick Sigorta,Sigorta,
-RALYH,Ral Yatırım Holding,Tekstil Entegre,PARASAL FDISI
+RALYH,Ral Yatırım Holding,Tekstil Entegre,PARASAL0 PARASAL FDISI KUCULME
 RAYSG,Ray Sigorta,Sigorta,
 REEDR,Reeder,İletişim Cihazları,KUCULME
 RGYAS,Rönesans Gayrimenkul,GYO,PARASAL NAKIT
