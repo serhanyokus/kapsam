@@ -1,9 +1,9 @@
 {
- "guncelleme": "2026-11-26T23:59:16+00:00",
+ "guncelleme": "2026-11-27T23:42:19+00:00",
  "adimlar": {
   "makro": {
    "durum": "tamam",
-   "detay": "TÜFE son: 2026-10 (resmi 2003=100 son: 2026-01; 2025=100 serisiyle zincirlendi, son: 2026-10; 2025=100 kodu: TP.TUKFIY2025.GENEL), kur son: 2026-11-26"
+   "detay": "TÜFE son: 2026-10 (resmi 2003=100 son: 2026-01; 2025=100 serisiyle zincirlendi, son: 2026-10; 2025=100 kodu: TP.TUKFIY2025.GENEL), kur son: 2026-11-27"
   },
   "evren": {
    "durum": "tamam",
@@ -11,11 +11,11 @@
   },
   "fiyat": {
    "durum": "tamam",
-   "detay": "629/629 hisse (takip listesi 32/32), son tarih 2026-11-26"
+   "detay": "629/629 hisse (takip listesi 32/32), son tarih 2026-11-27"
   },
   "tablo": {
    "durum": "tamam",
-   "detay": "35 hisse kontrol edildi, 2 yeni rapor kaydedildi, 1 hata; MARTI: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir.; MRGYO: net parasal pozisyon satırı yok; şirket TMS 29 uygulamıyor olabilir (ör. fonksiyonel para birimi USD). Nominal modda analiz edilir."
+   "detay": "Yeni rapor beklenen hisse yok (tüm kayıtlar güncel)"
   },
   "tamamla": {
    "durum": "tamam",
@@ -31,7 +31,7 @@
   },
   "gundem": {
    "durum": "tamam",
-   "detay": "12 gösterge, 60 makro başlık, 60 şirketin haberleri; risk primi eki %1"
+   "detay": "12 gösterge, 0 makro başlık, 0 şirketin haberleri; risk primi eki %0; 72 uyarı"
   },
   "kalite": {
    "durum": "tamam",

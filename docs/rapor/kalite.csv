@@ -23,8 +23,8 @@ AKFYE,Akfen Yenilenebilir Enerji,Elektrik Üretim,PARASAL KUCULME
 AKGRT,Aksigorta,Sigorta,
 AKHAN,Akhan Un,Gıda,ZARAR PARASAL0 NAKIT- BORC PARASAL
 AKMGY,Akmerkez GYO,GYO,KUCULME PAHALI
-AKSA,Aksa,Endüstriyel Tekstil,PARASAL0 PARASAL HABER-
-AKSEN,Aksa Enerji,Elektrik Üretim,BORC KUCULME SERBEST PAHALI HABER-
+AKSA,Aksa,Endüstriyel Tekstil,PARASAL0 PARASAL
+AKSEN,Aksa Enerji,Elektrik Üretim,BORC KUCULME SERBEST PAHALI
 AKSGY,Akis GYO,GYO,KUCULME
 AKSUE,Aksu Enerji,Elektrik Üretim,NAKIT- KUCULME PAHALI
 AKYHO,Akdeniz Yatırım Holding,Holdingler,ZARAR KUCULME
@@ -137,7 +137,7 @@ CEMAS,Çemaş Döküm,Demir-Çelik Döküm,ZARAR PARASAL0 NAKIT- KUCULME
 CEMTS,Çemtas,Demir-Çelik Temel,ZARAR KUCULME SERBEST
 CEMZY,Cem Zeytin,Gıda,ZARAR KUCULME
 CEOEM,CEO Event Medya,Medya,KUCULME PAHALI
-CGCAM,Çağdaş Cam,Cam,KUCULME SERBEST
+CGCAM,Çağdaş Cam,Cam,KUCULME SERBEST PAHALI
 CIMSA,Çimsa,Çimento,PARASAL KUCULME SERBEST
 CITAS,Çitlekçi Gıda,Gıda,PARASAL
 CLEBI,Çelebi,Havayolları ve Hizm.,
@@ -203,7 +203,7 @@ EMNIS,Eminiş Ambalaj,Boya,NAKIT KUCULME
 EMPAE,Empa Elektronik,Teknoloji,NAKIT- PAHALI
 ENDAE,Enda Enerji,Elektrik Üretim,ZARAR KUCULME
 ENERY,Enerya Enerji,Elektrik - Doğalgaz Dağıtım,PAHALI
-ENJSA,Enerjisa Enerji,Elektrik - Doğalgaz Dağıtım,KUCULME HABER-
+ENJSA,Enerjisa Enerji,Elektrik - Doğalgaz Dağıtım,KUCULME
 ENKAI,Enka İnşaat,İnşaat- Taahhüt,
 ENPRA,Enpara,Bankacılık,PAHALI
 ENSRI,Ensari Deri,Deri Giyim,ZARAR PARASAL0 NAKIT- BORC KUCULME
@@ -276,7 +276,7 @@ HKTM,Hidropar,Endüstriyel Makine -Teçhizat Üretim,ZARAR BORC KUCULME SERBEST
 HLGYO,Halk GYO,GYO,NAKIT- KUCULME
 HOROZ,Horoz Lojistik,Ulaştırma-Lojistik,ZARAR PARASAL0 BORC
 HRKET,Hareket Proje,Endüstriyel Makine -Teçhizat Üretim,ZARAR PARASAL0 PARASAL
-HTTBT,Hitit Bilgisayar,Teknoloji,SERBEST PAHALI
+HTTBT,Hitit Bilgisayar,Teknoloji,SERBEST
 HUBVC,Hub Girişim Ser. Y.O.,Yatırım Ortaklıkları,ZARAR NAKIT-
 HUNER,Hun Enerji,Elektrik Üretim,ZARAR KUCULME SERBEST
 HURGZ,Hürriyet,Medya,ZARAR KUCULME SERBEST
@@ -298,7 +298,7 @@ INTEK,Innosa Teknoloji,Teknoloji,ZARAR PARASAL0 KUCULME
 INTEM,İntema,İnşaat Malzemeleri,KUCULME PAHALI
 INTET,Intetra Teknoloji,Teknoloji,NAKIT- PAHALI
 INVEO,İnveo Yatırım Holding,Holdingler,ZARAR PARASAL0 KUCULME
-INVES,Investco Holding,Holdingler,ZARAR NAKIT- HABER-
+INVES,Investco Holding,Holdingler,ZARAR NAKIT-
 ISATR,İş Bankası (A),Bankacılık,
 ISBIR,İşbir Holding,Holdingler,PARASAL0 PARASAL NAKIT KUCULME SERBEST
 ISBTR,İş Bankası (B),Bankacılık,
@@ -326,7 +326,7 @@ KATMR,Katmerciler Araç Üstü Ekipman,Otomotiv Parçası,NAKIT- KUCULME
 KAYSE,Kayseri Şeker,Gıda,ZARAR NAKIT-
 KBORU,Kuzey Boru,İnşaat Malzemeleri,NAKIT-
 KCAER,Kocaer Çelik Sanayi,Demir-Çelik Temel,KUCULME PAHALI
-KCHOL,Koç Holding,Holdingler,SERBEST HABER-
+KCHOL,Koç Holding,Holdingler,SERBEST
 KENT,Kent Gıda,Gıda,ZARAR KUCULME
 KERVN,Kervansaray Yat. Holding,Holdingler,NAKIT- FDISI KUCULME
 KFEIN,Kafein Yazılım,Teknoloji,KUCULME SERBEST PAHALI
@@ -409,7 +409,7 @@ MNDTR,Mondi Tire,Kağıt Ürünleri,ZARAR PARASAL0 KUCULME
 MOBTL,Mobitel İletişim,İletişim,NAKIT- KUCULME
 MOGAN,Mogan Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,ZARAR PARASAL0 BORC KUCULME
 MOPAS,Mopaş,Perakande - Ticaret,PARASAL0 PARASAL KUCULME
-MPARK,MLP Sağlık Hizmetleri,Sağlık ve İlaç,PARASAL KUCULME HABER-
+MPARK,MLP Sağlık Hizmetleri,Sağlık ve İlaç,PARASAL KUCULME
 MRGYO,Martı GYO,GYO,NAKIT- KUCULME
 MRSHL,Marshall,Boya,ZARAR PARASAL0 PARASAL KUCULME
 MSGYO,Mistral GYO,GYO,ZARAR KUCULME
@@ -503,10 +503,10 @@ SARKY,Sarkuysan,İnşaat Malzemeleri,NAKIT- PARASAL PAHALI
 SASA,Sasa Polyester Sanayi A.Ş.,Endüstriyel Tekstil,ZARAR PARASAL0 NAKIT- BORC
 SAYAS,Say Yenilenebilir Enerji,Elektrik Enerji Ürt.Teçh/Tesis Kurulum,
 SDTTR,SDT Uzay,Savunma,ZARAR BORC KUCULME SERBEST
-SEGMN,Seğmen Gıda,Gıda,KUCULME PAHALI
+SEGMN,Seğmen Gıda,Gıda,KUCULME
 SEGYO,Şeker GYO,GYO,ZARAR PARASAL0 NAKIT-
 SEKUR,Sekuro Plastik,Kimyasal Ürün,ZARAR NAKIT- KUCULME
-SELEC,Selçuk Ecza Deposu,Sağlık ve İlaç,NAKIT- KUCULME HABER-
+SELEC,Selçuk Ecza Deposu,Sağlık ve İlaç,NAKIT- KUCULME
 SELVA,Selva Gıda,Gıda,ZARAR PARASAL0 NAKIT- BORC KUCULME
 SERNT,Seranit Granit,İnşaat Malzemeleri,ZARAR BORC KUCULME
 SEYKM,Seyitler Kimya,Kimyasal Ürün,PAHALI
@@ -548,7 +548,7 @@ TEKTU,Tek-Art Turizm,Turizm,ZARAR PARASAL0 NAKIT-
 TEZOL,Europap Tezol,Kağıt Ürünleri,ZARAR KUCULME
 TGSAS,TGS Dış Ticaret,Pazarlama,NAKIT
 THYAO,Türk Hava Yolları,Havayolları ve Hizm.,BORC FDISI
-TKFEN,Tekfen Holding,İnşaat- Taahhüt,ZARAR PARASAL0 KUCULME HABER-
+TKFEN,Tekfen Holding,İnşaat- Taahhüt,ZARAR PARASAL0 KUCULME
 TKNKA,Teknika Plastik,Petrol,ZARAR PARASAL0 PARASAL KUCULME
 TKNSA,Teknosa İç ve Dış Tic.,Perakande - Ticaret,ZARAR PARASAL0 BORC KUCULME
 TLMAN,Trabzon Liman İşletmeciliği,Ulaştırma-Lojistik,ZARAR NAKIT- KUCULME
