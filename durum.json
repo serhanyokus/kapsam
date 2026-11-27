@@ -1,0 +1,57 @@
+{
+ "guncelleme": "2026-11-27T23:42:19+00:00",
+ "adimlar": {
+  "makro": {
+   "durum": "tamam",
+   "detay": "TÜFE son: 2026-10 (resmi 2003=100 son: 2026-01; 2025=100 serisiyle zincirlendi, son: 2026-10; 2025=100 kodu: TP.TUKFIY2025.GENEL), kur son: 2026-11-27"
+  },
+  "evren": {
+   "durum": "tamam",
+   "detay": "629 hisse (sanayi: 606, banka: 16, sigorta: 7)"
+  },
+  "fiyat": {
+   "durum": "tamam",
+   "detay": "629/629 hisse (takip listesi 32/32), son tarih 2026-11-27"
+  },
+  "tablo": {
+   "durum": "tamam",
+   "detay": "Yeni rapor beklenen hisse yok (tüm kayıtlar güncel)"
+  },
+  "tamamla": {
+   "durum": "tamam",
+   "detay": "12 eksik şirket denendi, 0 tamamlandı (İş Yatırım), 12 hâlâ eksik"
+  },
+  "risk": {
+   "durum": "tamam",
+   "detay": "628 hisse; medyan yıllık oynaklık %53, medyan beta 0.81, ort. korelasyon 0.23; korelasyon, kovaryans ve Ledoit–Wolf matrisleri 628 hisse (az veri: 20)"
+  },
+  "oranlar": {
+   "durum": "tamam",
+   "detay": "politika_faizi: %36.00 (2026-10-22, haber: Anadolu Ajansı); enflasyon_beklentisi_12a: %23.89 (2026-10-23, haber: Anka Haber)"
+  },
+  "gundem": {
+   "durum": "tamam",
+   "detay": "12 gösterge, 0 makro başlık, 0 şirketin haberleri; risk primi eki %0; 72 uyarı"
+  },
+  "kalite": {
+   "durum": "tamam",
+   "detay": "47 şirkette bayrak yok, 570 şirkette en az bir bayrak"
+  },
+  "tarama": {
+   "durum": "tamam",
+   "detay": "617 şirket tarandı"
+  },
+  "rapor": {
+   "durum": "tamam",
+   "detay": "617 şirket notu + Excel (İNA 575, finansal 26, temel 16)"
+  },
+  "olay": {
+   "durum": "tamam",
+   "detay": "25 olay, 104 hisse-olay gözlemi; olay şirketinde yön isabeti %50, |t|>2: 2/24"
+  },
+  "sektor": {
+   "durum": "tamam",
+   "detay": "53 sektör sayfası"
+  }
+ }
+}

@@ -1,0 +1,93 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agenda · KAPSAM</title><style>
+:root{--bg:#f5f5f7;--card:#ffffff;--text:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--accent:#0071e3;--accent-weak:#e8f1fc;
+--pos:#248a3d;--neg:#d70015;--warn:#fff8e6;--warn-line:#f5d48a;--nav:rgba(245,245,247,.72);--shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.04)}
+@media (prefers-color-scheme:dark){:root{--bg:#000;--card:#1c1c1e;--text:#f5f5f7;--muted:#a1a1a6;--line:#2c2c2e;--accent:#2997ff;
+--accent-weak:#0a2a4a;--pos:#30d158;--neg:#ff453a;--warn:#2b2412;--warn-line:#6b5420;--nav:rgba(22,22,23,.72);--shadow:none}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.47 -apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",Inter,system-ui,sans-serif;
+letter-spacing:-.01em;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+.nav{position:sticky;top:0;z-index:10;background:var(--nav);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+border-bottom:1px solid var(--line)}
+.nav .in{max-width:1080px;margin:0 auto;padding:0 22px;height:48px;display:flex;align-items:center;gap:26px;font-size:13px}
+.nav .brand{font-weight:600;font-size:15px;color:var(--text);margin-right:auto;letter-spacing:-.02em}
+.nav a{color:var(--text);opacity:.8}.nav a:hover{opacity:1;text-decoration:none}.nav a.on{opacity:1;font-weight:600}
+main{max-width:1080px;margin:0 auto;padding:56px 22px 40px}
+h1{font-size:clamp(32px,5vw,48px);line-height:1.08;font-weight:700;letter-spacing:-.03em;margin:4px 0 14px}
+h2{font-size:24px;line-height:1.17;font-weight:600;letter-spacing:-.02em;margin:56px 0 16px;border:0;padding:0}
+h3{font-size:19px;font-weight:600;margin:28px 0 10px}
+p{margin:0 0 14px}
+.muted,.m{color:var(--muted);font-size:13px;line-height:1.5}
+.eyebrow{color:var(--muted);font-size:14px;font-weight:500;margin-bottom:6px}
+.lead{font-size:21px;line-height:1.38;color:var(--muted);max-width:760px;margin-bottom:28px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:26px 0}
+.kpi{background:var(--card);border-radius:18px;padding:20px 22px;box-shadow:var(--shadow)}
+.kpi span{display:block;font-size:13px;color:var(--muted);line-height:1.35}
+.kpi b{display:block;font-size:30px;font-weight:600;letter-spacing:-.025em;margin:6px 0 2px;font-variant-numeric:tabular-nums}
+.card{background:var(--card);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow);margin:14px 0}
+.warn{background:var(--warn);border:1px solid var(--warn-line);border-radius:14px;padding:14px 18px;margin:18px 0;font-size:15px}
+.tag{background:var(--accent-weak);color:var(--accent);padding:2px 10px;border-radius:999px;font-size:13px;font-weight:500}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}.grid2>*{min-width:0}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:14px;font-variant-numeric:tabular-nums;background:var(--card);
+border-radius:18px;box-shadow:var(--shadow);overflow:hidden;margin:10px 0 8px}
+th,td{padding:11px 14px;text-align:right;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+th{font-size:12px;font-weight:600;color:var(--muted);text-transform:none;letter-spacing:0;background:var(--card);white-space:nowrap}
+th:first-child,td:first-child,.l{text-align:left}
+.tw{overflow-x:auto;border-radius:18px;box-shadow:var(--shadow);background:var(--card);margin:10px 0 8px}
+.tw>table{box-shadow:none;border-radius:0;margin:0}
+.wrap .tw{box-shadow:none;border-radius:0;margin:0;overflow:visible}
+.wrap{overflow-x:auto;border-radius:18px;box-shadow:var(--shadow);background:var(--card);margin:10px 0}
+.wrap table{box-shadow:none;border-radius:0;margin:0;white-space:nowrap}
+.wrap th{position:sticky;top:0;z-index:1;cursor:pointer;user-select:none}
+input{font:inherit;font-size:15px;padding:11px 16px;width:360px;max-width:100%;border-radius:12px;border:1px solid var(--line);
+background:var(--card);color:var(--text);outline:none;margin:8px 0 10px}
+input:focus{border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-weak)}
+img{max-width:100%;height:auto;display:block;border-radius:14px;background:#fff;margin:10px 0}
+img.narrow{max-width:min(560px,100%)}
+ul{padding-left:20px}
+.more{display:inline-block;margin-top:10px;font-size:15px;font-weight:500}
+.search{position:relative;max-width:520px}
+.search input{width:100%;font-size:17px;padding:14px 18px;border-radius:14px}
+.hits{position:absolute;left:0;right:0;top:58px;background:var(--card);border-radius:14px;box-shadow:0 12px 32px rgba(0,0,0,.12);z-index:5;overflow:hidden}
+.hits a{display:flex;justify-content:space-between;gap:12px;padding:10px 18px;color:var(--text);border-bottom:1px solid var(--line);font-size:15px}
+.hits a:last-child{border-bottom:0}.hits a span{color:var(--muted);font-size:13px}.hits a.sel{background:var(--accent-weak);text-decoration:none}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px;display:inline-flex;gap:8px;align-items:center}
+.chip button{border:0;background:none;color:var(--muted);cursor:pointer;font-size:15px;padding:0}
+.btn{font:inherit;font-size:15px;border:0;border-radius:12px;padding:11px 18px;background:var(--accent);color:#fff;cursor:pointer}
+.btn.sec{background:var(--card);color:var(--accent);border:1px solid var(--line)}
+.lang{border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-size:12px}
+footer{max-width:1080px;margin:0 auto;padding:28px 22px 60px;color:var(--muted);font-size:12px;border-top:1px solid var(--line)}
+@media(max-width:760px){main{padding-top:36px}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.grid2{grid-template-columns:minmax(0,1fr)}
+.nav .in{gap:16px}.kpi b{font-size:24px}h2{margin-top:40px}}
+.lvl{display:inline-block;min-width:52px;text-align:center;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.02em;color:#fff;white-space:nowrap}
+.lvl.al{background:#248a3d}.lvl.tut{background:#8e8e93}.lvl.azalt{background:#ff9f0a}.lvl.sat{background:#d70015}.lvl.yok{background:#e5e5ea;color:#1d1d1f}
+.lvl.big{font-size:15px;padding:6px 16px;vertical-align:middle;margin-left:10px}
+.kpi span.lvl{display:inline-block;color:#fff;font-size:13px;line-height:1.4}.kpi span.lvl.yok{color:#1d1d1f}
+.wrap{background:linear-gradient(to right,var(--card) 30%,rgba(255,255,255,0)) left/40px 100% no-repeat local,
+linear-gradient(to left,var(--card) 30%,rgba(255,255,255,0)) right/40px 100% no-repeat local,
+radial-gradient(farthest-side at 0 50%,rgba(0,0,0,.12),transparent) left/12px 100% no-repeat scroll,
+radial-gradient(farthest-side at 100% 50%,rgba(0,0,0,.12),transparent) right/12px 100% no-repeat scroll,var(--card)}
+.wrap td.l{white-space:normal;min-width:110px;max-width:420px}.wrap td:first-child{white-space:nowrap;min-width:0}
+.tw td.l{max-width:520px}
+footer a{color:var(--muted);text-decoration:underline}footer .links{margin-bottom:8px;display:flex;flex-wrap:wrap;gap:14px}
+@media print{.nav,footer{display:none}body{background:#fff}table,.kpi,.card{box-shadow:none}}
+</style><!--seo--><meta name='google-site-verification' content='m1HmCEtdRpV9c6KnBaNNnEVRQq2Z4N7As5znHe2d05o'><meta name='description' content='Agenda · KAPSAM — IAS 29-adjusted quarters, core earnings, DCF valuation, earnings quality and risk metrics. Borsa Istanbul, updated every business day.'><link rel='canonical' href='https://serhanyokus.github.io/kapsam/en/gundem.html'><link rel='alternate' hreflang='tr' href='https://serhanyokus.github.io/kapsam/gundem.html'><link rel='alternate' hreflang='en' href='https://serhanyokus.github.io/kapsam/en/gundem.html'><link rel='alternate' hreflang='x-default' href='https://serhanyokus.github.io/kapsam/gundem.html'><meta property='og:type' content='website'><meta property='og:site_name' content='KAPSAM'><meta property='og:title' content='Agenda · KAPSAM'><meta property='og:description' content='Agenda · KAPSAM — IAS 29-adjusted quarters, core earnings, DCF valuation, earnings quality and risk metrics. Borsa Istanbul, updated every business day.'><meta property='og:url' content='https://serhanyokus.github.io/kapsam/en/gundem.html'><meta property='og:image' content='https://serhanyokus.github.io/kapsam/og.png'><meta property='og:locale' content='en_US'><meta name='twitter:card' content='summary_large_image'><meta name='twitter:image' content='https://serhanyokus.github.io/kapsam/og.png'><!--/seo--></head><body><nav class='nav'><div class='in'><a class='brand' href='index.html'>KAPSAM</a><a href='index.html'>Overview</a><a href='tarama.html'>Screener</a><a href='sektor/index.html'>Sectors</a><a href='risk/index.html'>Risk</a><a href='kalite.html'>Quality</a><a href='gundem.html' class=on>Agenda</a><a class='lang' href='../gundem.html'>TR</a></div></nav><main>
+<div class="eyebrow">Agenda · refreshed every business day</div><h1>Turkey and the world, today.</h1>
+<p class="lead">Market indicators, macro and global headlines, 0 companies' news from the last 14 days. These feed the DCF discount rate in company notes and the quality flags through explicit rules.</p>
+<div class="kpis"><div class="kpi"><span>Equity risk premium</span><b>6%</b><span>base 6% + agenda add-on 0%</span></div>
+<div class="kpi"><span>Negative news flag</span><b>0</b><span>HABER- (minor flag)</span></div>
+<div class="kpi"><span>Positive news flow</span><b>0</b><span>informational</span></div>
+<div class="kpi"><span>Companies scanned</span><b>0</b><span>last 14 days</span></div></div>
+<div class="warn">Agenda add-on: normal conditions: no extra risk premium. News tone is inferred automatically from headline words and may be wrong; click the headline to read the source. Not investment advice. 2026-11-27 23:42 UTC.</div>
+<h2>Market indicators</h2><div class='tw'><table><tr><th class='l'>Metric</th><th>Last</th><th>1 day</th><th>1 month</th><th>1 year</th><th class='l'>Date</th></tr><tr><td class='l'>BIST 100</td><td>10,743.10</td><td>0.0%</td><td>−3.8%</td><td>−4.0%</td><td class='l'>2026-11-27</td></tr><tr><td class='l'>Dolar/TL</td><td>50.74</td><td>+0.1%</td><td>+1.8%</td><td>+19.4%</td><td class='l'>2026-11-27</td></tr><tr><td class='l'>Euro/TL</td><td>55.49</td><td>−0.5%</td><td>−0.3%</td><td>+12.0%</td><td class='l'>2026-11-27</td></tr><tr><td class='l'>S&amp;P 500</td><td>7,297.49</td><td>+1.6%</td><td>−5.5%</td><td>+6.6%</td><td class='l'>2026-11-27</td></tr><tr><td class='l'>Nasdaq</td><td>24,129.50</td><td>+2.3%</td><td>−7.8%</td><td>+2.5%</td><td class='l'>2026-11-27</td></tr><tr><td class='l'>VIX (küresel korku endeksi)</td><td>23.81</td><td>−11.2%</td><td>+38.4%</td><td>+42.9%</td><td class='l'>2026-11-27</td></tr><tr><td class='l'>Dolar endeksi (DXY)</td><td>104.01</td><td>+0.3%</td><td>+1.9%</td><td>+5.0%</td><td class='l'>2026-11-27</td></tr><tr><td class='l'>ABD 10 yıllık faiz</td><td>4.94</td><td>+1.8%</td><td>−1.1%</td><td>+18.3%</td><td class='l'>2026-11-27</td></tr><tr><td class='l'>Brent petrol</td><td>90.84</td><td>−4.0%</td><td>−20.9%</td><td>+45.4%</td><td class='l'>2026-11-27</td></tr><tr><td class='l'>Altın (ons)</td><td>3,668.50</td><td>+3.8%</td><td>−9.0%</td><td>−13.0%</td><td class='l'>2026-11-27</td></tr><tr><td class='l'>Euro Stoxx 50</td><td>6,014.74</td><td>0.0%</td><td>−3.1%</td><td>+5.1%</td><td class='l'>2026-11-27</td></tr><tr><td class='l'>Türkiye ETF (TUR, USD)</td><td>29.71</td><td>+2.2%</td><td>−3.4%</td><td>−11.7%</td><td class='l'>2026-11-27</td></tr></table></div>
+<h3 id='faiz-enflasyon'>Policy rate and inflation expectations</h3><div class='tw'><table><tr><th class='l'>Metric</th><th>Oran</th><th class='l'>Date</th><th class='l'>Source</th></tr><tr><td class='l'>CBRT policy rate (one-week repo)</td><td><b>36.00%</b></td><td class='l'>2026-10-22</td><td class='l'>haber: Anadolu Ajansı</td></tr><tr><td class='l'>12-month-ahead inflation expectation (CBRT Survey of Market Participants)</td><td><b>23.89%</b></td><td class='l'>2026-10-23</td><td class='l'>haber: Anka Haber</td></tr></table></div>
+<h2>Turkey</h2><p class='muted'>No headlines found.</p>
+<h2>World</h2><p class='muted'>No headlines found.</p>
+<h2>Company news</h2><p class='muted'>Negative flow (HABER-): –<br>Positive flow (HABER+): –</p>
+
+<p class="m">Sources: Yahoo Finance (indicators, delayed), Google News RSS (headline and link). Article text is not stored.</p>
+</main><footer><div class='links'><a href='yontem.html'>Methodology</a><a href='durum.html'>System status</a><a href='https://github.com/serhanyokus/kapsam'>Source code (GitHub)</a><a href='https://github.com/serhanyokus/kapsam/issues'>Feedback</a></div>KAPSAM · IAS 29-aware Borsa Istanbul research assistant · Data: KAP, CBRT EVDS, Yahoo Finance (delayed). These pages are the output of a research tool; not investment advice.<br>Company counts differ by page: the screener and notes cover companies with financial statements, the risk page covers stocks with price series, and the universe is the full BIST list from İş Yatırım.</footer></body></html>
